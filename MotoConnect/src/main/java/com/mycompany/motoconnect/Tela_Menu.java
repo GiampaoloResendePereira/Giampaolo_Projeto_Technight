@@ -43,7 +43,7 @@ public class Tela_Menu extends javax.swing.JFrame {
         jPanel1.setPreferredSize(new java.awt.Dimension(1200, 600));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        JBTsair2.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        JBTsair2.setFont(new java.awt.Font("Arial Black", 1, 12)); // NOI18N
         JBTsair2.setText("SAIR");
         JBTsair2.setPreferredSize(new java.awt.Dimension(70, 30));
         JBTsair2.addActionListener(new java.awt.event.ActionListener() {
@@ -57,6 +57,11 @@ public class Tela_Menu extends javax.swing.JFrame {
         JBTcadastrodefubcionario2.setMaximumSize(new java.awt.Dimension(50, 50));
         JBTcadastrodefubcionario2.setMinimumSize(new java.awt.Dimension(0, 0));
         JBTcadastrodefubcionario2.setPreferredSize(new java.awt.Dimension(50, 50));
+        JBTcadastrodefubcionario2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                JBTcadastrodefubcionario2ActionPerformed(evt);
+            }
+        });
         jPanel1.add(JBTcadastrodefubcionario2, new org.netbeans.lib.awtextra.AbsoluteConstraints(118, 177, 75, 75));
 
         JBTregistrocalculodefrete2.setText("Registro de calculo frete");
@@ -100,11 +105,11 @@ public class Tela_Menu extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
@@ -116,6 +121,13 @@ public class Tela_Menu extends javax.swing.JFrame {
         Tela_Login JBTsair2 = new Tela_Login();
         JBTsair2.setVisible(true);
     }//GEN-LAST:event_JBTsair2ActionPerformed
+
+    private void JBTcadastrodefubcionario2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBTcadastrodefubcionario2ActionPerformed
+        // TODO add your handling code here:
+        Tela_Menu.this.dispose();
+        Tela_Cadastro_Funcionario JBTcadastrodefuncionario2 = new Tela_Cadastro_Funcionario();
+        JBTcadastrodefuncionario2.setVisible(true);
+    }//GEN-LAST:event_JBTcadastrodefubcionario2ActionPerformed
 
     /**
      * @param args the command line arguments

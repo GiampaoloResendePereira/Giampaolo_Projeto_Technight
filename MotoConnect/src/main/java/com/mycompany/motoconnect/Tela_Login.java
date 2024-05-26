@@ -48,13 +48,13 @@ public class Tela_Login extends javax.swing.JFrame {
         jPanel1.setBackground(new java.awt.Color(0, 102, 204));
 
         JBTcadastrar1.setBackground(new java.awt.Color(255, 51, 51));
-        JBTcadastrar1.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        JBTcadastrar1.setFont(new java.awt.Font("Arial Black", 1, 12)); // NOI18N
         JBTcadastrar1.setForeground(new java.awt.Color(255, 255, 255));
         JBTcadastrar1.setText("CADASTRAR");
         JBTcadastrar1.setPreferredSize(new java.awt.Dimension(115, 25));
 
         JBTentrar1.setBackground(new java.awt.Color(255, 51, 51));
-        JBTentrar1.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        JBTentrar1.setFont(new java.awt.Font("Arial Black", 1, 12)); // NOI18N
         JBTentrar1.setForeground(new java.awt.Color(255, 255, 255));
         JBTentrar1.setText("ENTRAR");
         JBTentrar1.setPreferredSize(new java.awt.Dimension(115, 25));
@@ -82,9 +82,9 @@ public class Tela_Login extends javax.swing.JFrame {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(44, 44, 44)
-                .addComponent(JBTcadastrar1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 93, Short.MAX_VALUE)
-                .addComponent(JBTentrar1, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(JBTcadastrar1, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 68, Short.MAX_VALUE)
+                .addComponent(JBTentrar1, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(40, 40, 40))
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)

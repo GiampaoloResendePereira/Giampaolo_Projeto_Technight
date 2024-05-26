@@ -28,11 +28,11 @@ public class Tela_Cadastro_Funcionario extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        JBTentregador3 = new javax.swing.JButton();
+        JBTatendente3 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        jButton3 = new javax.swing.JButton();
+        JBTvoltar3 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setPreferredSize(new java.awt.Dimension(1200, 600));
@@ -43,19 +43,24 @@ public class Tela_Cadastro_Funcionario extends javax.swing.JFrame {
         jPanel2.setBackground(new java.awt.Color(0, 102, 204));
         jPanel2.setPreferredSize(new java.awt.Dimension(402, 491));
 
-        jButton1.setBackground(new java.awt.Color(0, 51, 204));
-        jButton1.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
-        jButton1.setForeground(new java.awt.Color(255, 255, 255));
-        jButton1.setText("Entregador");
-        jButton1.setMaximumSize(new java.awt.Dimension(115, 25));
-        jButton1.setPreferredSize(new java.awt.Dimension(115, 25));
+        JBTentregador3.setBackground(new java.awt.Color(0, 51, 204));
+        JBTentregador3.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        JBTentregador3.setForeground(new java.awt.Color(255, 255, 255));
+        JBTentregador3.setText("Entregador");
+        JBTentregador3.setMaximumSize(new java.awt.Dimension(115, 25));
+        JBTentregador3.setPreferredSize(new java.awt.Dimension(115, 25));
 
-        jButton2.setBackground(new java.awt.Color(0, 51, 204));
-        jButton2.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
-        jButton2.setForeground(new java.awt.Color(255, 255, 255));
-        jButton2.setText("Atendente");
-        jButton2.setMaximumSize(new java.awt.Dimension(115, 25));
-        jButton2.setPreferredSize(new java.awt.Dimension(115, 25));
+        JBTatendente3.setBackground(new java.awt.Color(0, 51, 204));
+        JBTatendente3.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        JBTatendente3.setForeground(new java.awt.Color(255, 255, 255));
+        JBTatendente3.setText("Atendente");
+        JBTatendente3.setMaximumSize(new java.awt.Dimension(115, 25));
+        JBTatendente3.setPreferredSize(new java.awt.Dimension(115, 25));
+        JBTatendente3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                JBTatendente3ActionPerformed(evt);
+            }
+        });
 
         jLabel1.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
@@ -74,8 +79,8 @@ public class Tela_Cadastro_Funcionario extends javax.swing.JFrame {
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(JBTatendente3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(JBTentregador3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(139, 139, 139))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                         .addComponent(jLabel2)
@@ -90,17 +95,25 @@ public class Tela_Cadastro_Funcionario extends javax.swing.JFrame {
                 .addContainerGap(265, Short.MAX_VALUE)
                 .addComponent(jLabel1)
                 .addGap(18, 18, 18)
-                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(JBTatendente3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jLabel2)
                 .addGap(19, 19, 19)
-                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(JBTentregador3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(93, 93, 93))
         );
 
-        jButton3.setText("VOLTAR");
-        jButton3.setMaximumSize(new java.awt.Dimension(75, 30));
-        jButton3.setPreferredSize(new java.awt.Dimension(70, 30));
+        JBTvoltar3.setBackground(new java.awt.Color(255, 51, 51));
+        JBTvoltar3.setFont(new java.awt.Font("Arial Black", 1, 12)); // NOI18N
+        JBTvoltar3.setForeground(new java.awt.Color(255, 255, 255));
+        JBTvoltar3.setText("VOLTAR");
+        JBTvoltar3.setMaximumSize(new java.awt.Dimension(75, 30));
+        JBTvoltar3.setPreferredSize(new java.awt.Dimension(70, 30));
+        JBTvoltar3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                JBTvoltar3ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -108,8 +121,8 @@ public class Tela_Cadastro_Funcionario extends javax.swing.JFrame {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addGap(73, 73, 73)
-                .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 263, Short.MAX_VALUE)
+                .addComponent(JBTvoltar3, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 255, Short.MAX_VALUE)
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(381, 381, 381))
         );
@@ -118,7 +131,7 @@ public class Tela_Cadastro_Funcionario extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addContainerGap(59, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(JBTvoltar3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(50, 50, 50))
         );
@@ -127,17 +140,31 @@ public class Tela_Cadastro_Funcionario extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(0, 0, 0))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void JBTvoltar3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBTvoltar3ActionPerformed
+        // TODO add your handling code here:
+        Tela_Cadastro_Funcionario.this.dispose();
+        Tela_Menu JBTvoltar3 = new Tela_Menu();
+        JBTvoltar3.setVisible(true);
+    }//GEN-LAST:event_JBTvoltar3ActionPerformed
+
+    private void JBTatendente3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBTatendente3ActionPerformed
+        // TODO add your handling code here:
+        Tela_Cadastro_Funcionario.this.dispose();
+        Tela_Informacoes_Atendente JBTatendente3 = new Tela_Informacoes_Atendente();
+        JBTatendente3.setVisible(true);
+    }//GEN-LAST:event_JBTatendente3ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -175,9 +202,9 @@ public class Tela_Cadastro_Funcionario extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
+    private javax.swing.JButton JBTatendente3;
+    private javax.swing.JButton JBTentregador3;
+    private javax.swing.JButton JBTvoltar3;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
