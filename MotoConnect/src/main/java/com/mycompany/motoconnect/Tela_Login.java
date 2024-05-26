@@ -58,6 +58,11 @@ public class Tela_Login extends javax.swing.JFrame {
         JBTentrar1.setForeground(new java.awt.Color(255, 255, 255));
         JBTentrar1.setText("ENTRAR");
         JBTentrar1.setPreferredSize(new java.awt.Dimension(115, 25));
+        JBTentrar1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                JBTentrar1ActionPerformed(evt);
+            }
+        });
 
         JBTesqueceusenha1.setBackground(new java.awt.Color(0, 51, 204));
         JBTesqueceusenha1.setForeground(new java.awt.Color(255, 255, 255));
@@ -185,6 +190,13 @@ public class Tela_Login extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void JBTentrar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBTentrar1ActionPerformed
+        // TODO add your handling code here:
+        Tela_Login.this.dispose();
+        Tela_Menu JBTentrar1 = new Tela_Menu();
+        JBTentrar1.setVisible(true);
+    }//GEN-LAST:event_JBTentrar1ActionPerformed
 
     /**
      * @param args the command line arguments

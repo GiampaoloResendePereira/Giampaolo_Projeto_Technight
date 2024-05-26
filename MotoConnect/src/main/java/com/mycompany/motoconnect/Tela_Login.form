@@ -177,6 +177,9 @@
                   <Dimension value="[115, 25]"/>
                 </Property>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="JBTentrar1ActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JButton" name="JBTesqueceusenha1">
               <Properties>
