@@ -23,7 +23,7 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Component id="jPanel2" alignment="0" max="32767" attributes="0"/>
+          <Component id="jPanel2" pref="898" max="32767" attributes="0"/>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
@@ -39,7 +39,7 @@
           <Color blue="cc" green="33" red="0" type="rgb"/>
         </Property>
         <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
-          <Dimension value="[1200, 600]"/>
+          <Dimension value="[900, 600]"/>
         </Property>
       </Properties>
 
@@ -47,37 +47,40 @@
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
-                  <EmptySpace min="-2" pref="165" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                      <Component id="JBTadministrador1" alignment="0" pref="125" max="32767" attributes="0"/>
-                      <Component id="JBTatendente1" alignment="0" pref="125" max="32767" attributes="0"/>
-                      <Component id="JBTentregador1" max="32767" attributes="0"/>
+                  <EmptySpace min="-2" pref="69" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Component id="JBTatendente1" min="-2" pref="125" max="-2" attributes="0"/>
+                      <Component id="JBTentregador1" min="-2" pref="125" max="-2" attributes="0"/>
+                      <Component id="JBTadministrador1" min="-2" pref="125" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace min="-2" pref="125" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="64" max="-2" attributes="0"/>
                   <Component id="jPanel1" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace pref="183" max="32767" attributes="0"/>
+                  <EmptySpace min="-2" pref="89" max="-2" attributes="0"/>
                   <Component id="JBTsair1" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace min="-2" pref="130" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="79" max="-2" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
         <DimensionLayout dim="1">
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
-                  <EmptySpace min="-2" pref="41" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="52" max="-2" attributes="0"/>
                   <Component id="JBTadministrador1" min="-2" pref="39" max="-2" attributes="0"/>
-                  <EmptySpace min="-2" pref="353" max="-2" attributes="0"/>
-                  <Component id="JBTatendente1" min="-2" pref="34" max="-2" attributes="0"/>
                   <EmptySpace max="32767" attributes="0"/>
-              </Group>
-              <Group type="102" attributes="0">
-                  <EmptySpace pref="48" max="32767" attributes="0"/>
-                  <Group type="103" groupAlignment="1" attributes="0">
-                      <Component id="JBTsair1" min="-2" max="-2" attributes="0"/>
-                      <Component id="JBTentregador1" min="-2" pref="32" max="-2" attributes="0"/>
-                      <Component id="jPanel1" min="-2" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Component id="JBTsair1" alignment="1" min="-2" max="-2" attributes="0"/>
+                      <Group type="102" alignment="1" attributes="0">
+                          <Component id="JBTatendente1" min="-2" pref="34" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="74" max="-2" attributes="0"/>
+                          <Component id="JBTentregador1" min="-2" pref="32" max="-2" attributes="0"/>
+                      </Group>
                   </Group>
-                  <EmptySpace pref="48" max="32767" attributes="0"/>
+                  <EmptySpace min="48" pref="48" max="-2" attributes="0"/>
+              </Group>
+              <Group type="102" alignment="0" attributes="0">
+                  <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
+                  <Component id="jPanel1" max="32767" attributes="0"/>
+                  <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -94,28 +97,25 @@
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="44" max="-2" attributes="0"/>
-                      <Component id="JBTcadastrar1" min="-2" pref="125" max="-2" attributes="0"/>
-                      <EmptySpace pref="68" max="32767" attributes="0"/>
-                      <Component id="JBTentrar1" min="-2" pref="125" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="40" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="72" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="JLnomedousuario1" min="-2" max="-2" attributes="0"/>
+                          <Component id="JLsenha1" min="-2" max="-2" attributes="0"/>
+                          <Component id="JPFsenha1" alignment="0" max="32767" attributes="0"/>
+                          <Component id="JTFnomedousuario1" alignment="0" max="32767" attributes="0"/>
+                      </Group>
+                      <EmptySpace min="-2" pref="81" max="-2" attributes="0"/>
                   </Group>
                   <Group type="102" attributes="0">
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="102" alignment="0" attributes="0">
-                              <EmptySpace min="-2" pref="72" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                  <Component id="JLnomedousuario1" min="-2" max="-2" attributes="0"/>
-                                  <Component id="JLsenha1" min="-2" max="-2" attributes="0"/>
-                                  <Component id="JPFsenha1" alignment="0" pref="249" max="32767" attributes="0"/>
-                                  <Component id="JTFnomedousuario1" alignment="0" max="32767" attributes="0"/>
-                              </Group>
-                          </Group>
-                          <Group type="102" alignment="0" attributes="0">
-                              <EmptySpace min="-2" pref="129" max="-2" attributes="0"/>
-                              <Component id="JBTesqueceusenha1" min="-2" max="-2" attributes="0"/>
-                          </Group>
-                      </Group>
+                      <EmptySpace pref="49" max="32767" attributes="0"/>
+                      <Component id="JBTcadastrar1" min="-2" pref="134" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="46" max="-2" attributes="0"/>
+                      <Component id="JBTentrar1" pref="125" max="32767" attributes="0"/>
+                      <EmptySpace min="-2" pref="48" max="-2" attributes="0"/>
+                  </Group>
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace min="-2" pref="118" max="-2" attributes="0"/>
+                      <Component id="JBTesqueceusenha1" min="-2" pref="167" max="-2" attributes="0"/>
                       <EmptySpace max="32767" attributes="0"/>
                   </Group>
               </Group>
@@ -123,22 +123,22 @@
             <DimensionLayout dim="1">
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="1" attributes="0">
-                      <EmptySpace pref="221" max="32767" attributes="0"/>
+                      <EmptySpace min="-2" pref="221" max="-2" attributes="0"/>
                       <Component id="JLnomedousuario1" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="JTFnomedousuario1" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Component id="JTFnomedousuario1" min="-2" pref="30" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
                       <Component id="JLsenha1" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="JPFsenha1" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="48" max="-2" attributes="0"/>
-                      <Component id="JBTesqueceusenha1" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="37" max="-2" attributes="0"/>
+                      <Component id="JPFsenha1" min="-2" pref="30" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="35" max="-2" attributes="0"/>
+                      <Component id="JBTesqueceusenha1" min="-2" pref="34" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="JBTcadastrar1" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="JBTentrar1" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="JBTcadastrar1" alignment="3" max="32767" attributes="0"/>
+                          <Component id="JBTentrar1" alignment="3" max="32767" attributes="0"/>
                       </Group>
-                      <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="43" max="-2" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>

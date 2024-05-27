@@ -34,13 +34,11 @@ public class Tela_Menu extends javax.swing.JFrame {
         JBTalertas2 = new javax.swing.JButton();
         JBTcadastrodecliente2 = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        jTextArea1 = new javax.swing.JTextArea();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jPanel1.setBackground(new java.awt.Color(0, 51, 204));
-        jPanel1.setPreferredSize(new java.awt.Dimension(1200, 600));
+        jPanel1.setPreferredSize(new java.awt.Dimension(900, 600));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         JBTsair2.setFont(new java.awt.Font("Arial Black", 1, 12)); // NOI18N
@@ -51,7 +49,7 @@ public class Tela_Menu extends javax.swing.JFrame {
                 JBTsair2ActionPerformed(evt);
             }
         });
-        jPanel1.add(JBTsair2, new org.netbeans.lib.awtextra.AbsoluteConstraints(1002, 499, -1, -1));
+        jPanel1.add(JBTsair2, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 520, -1, -1));
 
         JBTcadastrodefubcionario2.setText("Cadastro defuncionario");
         JBTcadastrodefubcionario2.setMaximumSize(new java.awt.Dimension(50, 50));
@@ -62,22 +60,22 @@ public class Tela_Menu extends javax.swing.JFrame {
                 JBTcadastrodefubcionario2ActionPerformed(evt);
             }
         });
-        jPanel1.add(JBTcadastrodefubcionario2, new org.netbeans.lib.awtextra.AbsoluteConstraints(118, 177, 75, 75));
+        jPanel1.add(JBTcadastrodefubcionario2, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 200, 75, 75));
 
         JBTregistrocalculodefrete2.setText("Registro de calculo frete");
         JBTregistrocalculodefrete2.setMaximumSize(new java.awt.Dimension(50, 50));
         JBTregistrocalculodefrete2.setMinimumSize(new java.awt.Dimension(50, 50));
         JBTregistrocalculodefrete2.setPreferredSize(new java.awt.Dimension(50, 50));
-        jPanel1.add(JBTregistrocalculodefrete2, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 177, 74, 75));
+        jPanel1.add(JBTregistrocalculodefrete2, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 200, 74, 75));
 
         JBTobservacoesecomentarios2.setText("Observações e comentaros");
-        jPanel1.add(JBTobservacoesecomentarios2, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 177, 73, 75));
+        jPanel1.add(JBTobservacoesecomentarios2, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 200, 73, 75));
 
         JBTalertas2.setText("Alertas");
-        jPanel1.add(JBTalertas2, new org.netbeans.lib.awtextra.AbsoluteConstraints(766, 178, -1, 73));
+        jPanel1.add(JBTalertas2, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 200, -1, 73));
 
         JBTcadastrodecliente2.setText("Cadastro de cliente");
-        jPanel1.add(JBTcadastrodecliente2, new org.netbeans.lib.awtextra.AbsoluteConstraints(437, 177, 71, 75));
+        jPanel1.add(JBTcadastrodecliente2, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 200, 71, 75));
 
         jPanel2.setBackground(new java.awt.Color(0, 102, 255));
 
@@ -92,20 +90,13 @@ public class Tela_Menu extends javax.swing.JFrame {
             .addGap(0, 76, Short.MAX_VALUE)
         );
 
-        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(897, 16, -1, -1));
-
-        jTextArea1.setBackground(new java.awt.Color(0, 102, 255));
-        jTextArea1.setColumns(20);
-        jTextArea1.setRows(5);
-        jScrollPane1.setViewportView(jTextArea1);
-
-        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(118, 321, 720, 172));
+        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 30, -1, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 900, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -174,7 +165,5 @@ public class Tela_Menu extends javax.swing.JFrame {
     private javax.swing.JButton JBTsair2;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTextArea jTextArea1;
     // End of variables declaration//GEN-END:variables
 }
