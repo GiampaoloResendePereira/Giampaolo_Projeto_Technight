@@ -56,7 +56,6 @@ public class Tela_Informacoes_Atendente extends javax.swing.JFrame {
         JBTconfirmar4 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setPreferredSize(new java.awt.Dimension(1200, 600));
 
         jPanel1.setBackground(new java.awt.Color(0, 51, 204));
         jPanel1.setPreferredSize(new java.awt.Dimension(1200, 600));
@@ -225,7 +224,7 @@ public class Tela_Informacoes_Atendente extends javax.swing.JFrame {
         );
 
         JBTcancelar4.setBackground(new java.awt.Color(255, 51, 51));
-        JBTcancelar4.setFont(new java.awt.Font("Arial Black", 1, 12)); // NOI18N
+        JBTcancelar4.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         JBTcancelar4.setForeground(new java.awt.Color(255, 255, 255));
         JBTcancelar4.setText("CANCELAR");
         JBTcancelar4.addActionListener(new java.awt.event.ActionListener() {
@@ -235,7 +234,7 @@ public class Tela_Informacoes_Atendente extends javax.swing.JFrame {
         });
 
         JBTconfirmar4.setBackground(new java.awt.Color(255, 51, 51));
-        JBTconfirmar4.setFont(new java.awt.Font("Arial Black", 1, 12)); // NOI18N
+        JBTconfirmar4.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         JBTconfirmar4.setForeground(new java.awt.Color(255, 255, 255));
         JBTconfirmar4.setText("CONFIRMAR");
         JBTconfirmar4.addActionListener(new java.awt.event.ActionListener() {
@@ -252,13 +251,13 @@ public class Tela_Informacoes_Atendente extends javax.swing.JFrame {
                 .addGap(65, 65, 65)
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 66, Short.MAX_VALUE)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(JBTcancelar4)
-                        .addGap(623, 623, 623)
-                        .addComponent(JBTconfirmar4))
-                    .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(JBTconfirmar4)))
                 .addGap(63, 63, 63))
         );
         jPanel1Layout.setVerticalGroup(
@@ -270,15 +269,15 @@ public class Tela_Informacoes_Atendente extends javax.swing.JFrame {
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(18, 18, 18)
                         .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 59, Short.MAX_VALUE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 94, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(180, 180, 180)))
+                        .addGap(211, 211, 211)))
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(JBTconfirmar4)
-                    .addComponent(JBTcancelar4))
-                .addGap(57, 57, 57))
+                    .addComponent(JBTcancelar4)
+                    .addComponent(JBTconfirmar4))
+                .addGap(26, 26, 26))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
