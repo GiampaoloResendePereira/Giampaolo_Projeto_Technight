@@ -109,6 +109,26 @@ public class Tela_Informacoes_Atendente extends javax.swing.JFrame {
 
         jPanel4.setBackground(new java.awt.Color(0, 102, 255));
 
+        jTextField1.setBackground(new java.awt.Color(204, 204, 204));
+
+        jTextField2.setBackground(new java.awt.Color(204, 204, 204));
+
+        jTextField3.setBackground(new java.awt.Color(204, 204, 204));
+
+        jTextField4.setBackground(new java.awt.Color(204, 204, 204));
+
+        jTextField5.setBackground(new java.awt.Color(204, 204, 204));
+
+        jTextField6.setBackground(new java.awt.Color(204, 204, 204));
+
+        jTextField7.setBackground(new java.awt.Color(204, 204, 204));
+
+        jTextField8.setBackground(new java.awt.Color(204, 204, 204));
+
+        jTextField9.setBackground(new java.awt.Color(204, 204, 204));
+
+        jTextField10.setBackground(new java.awt.Color(204, 204, 204));
+
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("Nome:");
 
