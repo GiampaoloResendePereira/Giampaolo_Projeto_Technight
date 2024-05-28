@@ -40,7 +40,7 @@ public class Tela_Cadastro_Funcionario extends javax.swing.JFrame {
         jPanel1.setBackground(new java.awt.Color(0, 51, 204));
         jPanel1.setPreferredSize(new java.awt.Dimension(900, 600));
 
-        jPanel2.setBackground(new java.awt.Color(0, 102, 204));
+        jPanel2.setBackground(new java.awt.Color(0, 102, 255));
         jPanel2.setPreferredSize(new java.awt.Dimension(402, 491));
 
         JBTentregador3.setBackground(new java.awt.Color(0, 51, 204));

@@ -47,7 +47,7 @@ public class Tela_Login extends javax.swing.JFrame {
         jPanel2.setBackground(new java.awt.Color(0, 51, 204));
         jPanel2.setPreferredSize(new java.awt.Dimension(900, 600));
 
-        jPanel1.setBackground(new java.awt.Color(0, 102, 204));
+        jPanel1.setBackground(new java.awt.Color(0, 102, 255));
 
         JBTcadastrar1.setBackground(new java.awt.Color(255, 51, 51));
         JBTcadastrar1.setFont(new java.awt.Font("Arial Black", 1, 12)); // NOI18N
@@ -78,7 +78,7 @@ public class Tela_Login extends javax.swing.JFrame {
         JLnomedousuario1.setForeground(new java.awt.Color(255, 255, 255));
         JLnomedousuario1.setText("Nome do usuario:");
 
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagem_login/motogrande.png"))); // NOI18N
+        jLabel2.setIcon(new javax.swing.ImageIcon("D:\\Users\\grpereira\\Desktop\\Giampaolo_Projeto_TechNight\\Giampaolo_Projeto_Technight\\Giampaolo_Projeto_Technight\\MotoConnect\\src\\main\\java\\imagem_login\\motogrande.png")); // NOI18N
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
