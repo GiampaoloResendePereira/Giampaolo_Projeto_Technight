@@ -4,9 +4,9 @@
  */
 package com.mycompany.motoconnect;
 
-import javax.swing.JFrame;
+
 import javax.swing.JOptionPane;
-import javax.swing.SwingUtilities;
+
 
 /**
  *
@@ -60,6 +60,11 @@ public class Tela_Login extends javax.swing.JFrame {
         JBTcadastrar1.setForeground(new java.awt.Color(255, 255, 255));
         JBTcadastrar1.setText("CADASTRAR");
         JBTcadastrar1.setPreferredSize(new java.awt.Dimension(115, 25));
+        JBTcadastrar1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                JBTcadastrar1ActionPerformed(evt);
+            }
+        });
 
         JBTentrar1.setBackground(new java.awt.Color(255, 51, 51));
         JBTentrar1.setFont(new java.awt.Font("Arial Black", 1, 12)); // NOI18N
@@ -254,17 +259,23 @@ public class Tela_Login extends javax.swing.JFrame {
     }//GEN-LAST:event_JBTentrar1ActionPerformed
 
     private void JBTsair1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBTsair1ActionPerformed
-        
     
     // Fechar a aplicação quando o botão for pressionado
     System.exit(0);
     }//GEN-LAST:event_JBTsair1ActionPerformed
 
     private void JBTesqueceusenha1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBTesqueceusenha1ActionPerformed
-        // TODO add your handling code here:
-         // Exibir uma mensagem de aviso ao usuário
+  
+    // Exibir uma mensagem de aviso ao usuário
     JOptionPane.showMessageDialog(this, "Um email de recuperação foi enviado para o seu endereço de email cadastrado.", "Recuperação de Senha", JOptionPane.INFORMATION_MESSAGE);
     }//GEN-LAST:event_JBTesqueceusenha1ActionPerformed
+
+    private void JBTcadastrar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBTcadastrar1ActionPerformed
+        // TODO add your handling code here:
+        Tela_Login.this.dispose();
+        Tela_Cadastro_Funcionario JBTcadastrar1 = new Tela_Cadastro_Funcionario();
+        JBTcadastrar1.setVisible(true);
+    }//GEN-LAST:event_JBTcadastrar1ActionPerformed
 
     /**
      * @param args the command line arguments
