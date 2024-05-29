@@ -28,6 +28,7 @@ public class Tela_Menu extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         JBTsair2 = new javax.swing.JButton();
+        JLBsair2 = new javax.swing.JLabel();
         JBTcadastrodefubcionario2 = new javax.swing.JButton();
         JBTregistrocalculodefrete2 = new javax.swing.JButton();
         JBTobservacoesecomentarios2 = new javax.swing.JButton();
@@ -42,14 +43,18 @@ public class Tela_Menu extends javax.swing.JFrame {
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         JBTsair2.setFont(new java.awt.Font("Arial Black", 1, 12)); // NOI18N
-        JBTsair2.setText("SAIR");
+        JBTsair2.setActionCommand("");
+        JBTsair2.setContentAreaFilled(false);
         JBTsair2.setPreferredSize(new java.awt.Dimension(70, 30));
         JBTsair2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 JBTsair2ActionPerformed(evt);
             }
         });
-        jPanel1.add(JBTsair2, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 520, -1, -1));
+        jPanel1.add(JBTsair2, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 480, -1, 80));
+
+        JLBsair2.setIcon(new javax.swing.ImageIcon("C:\\Users\\PC\\Desktop\\MotoConnect_Projeto\\Giampaolo_Projeto_Technight\\MotoConnect\\src\\main\\java\\imagem_login\\sair-removebg-preview.png")); // NOI18N
+        jPanel1.add(JLBsair2, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 480, 90, 80));
 
         JBTcadastrodefubcionario2.setText("Cadastro defuncionario");
         JBTcadastrodefubcionario2.setMaximumSize(new java.awt.Dimension(50, 50));
@@ -163,6 +168,7 @@ public class Tela_Menu extends javax.swing.JFrame {
     private javax.swing.JButton JBTobservacoesecomentarios2;
     private javax.swing.JButton JBTregistrocalculodefrete2;
     private javax.swing.JButton JBTsair2;
+    private javax.swing.JLabel JLBsair2;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     // End of variables declaration//GEN-END:variables

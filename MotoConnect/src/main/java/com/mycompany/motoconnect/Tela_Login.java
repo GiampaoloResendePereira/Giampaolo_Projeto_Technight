@@ -26,8 +26,8 @@ public class Tela_Login extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel2 = new javax.swing.JPanel();
-        jPanel1 = new javax.swing.JPanel();
+        JPNazulescuro1 = new javax.swing.JPanel();
+        JPNazulclaro1 = new javax.swing.JPanel();
         JBTcadastrar1 = new javax.swing.JButton();
         JBTentrar1 = new javax.swing.JButton();
         JBTesqueceusenha1 = new javax.swing.JButton();
@@ -35,22 +35,22 @@ public class Tela_Login extends javax.swing.JFrame {
         JTFnomedousuario1 = new javax.swing.JTextField();
         JLsenha1 = new javax.swing.JLabel();
         JLnomedousuario1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
+        JBLmotoconnect1 = new javax.swing.JLabel();
         JBTadministrador1 = new javax.swing.JButton();
+        JBLsair1 = new javax.swing.JLabel();
         JBTsair1 = new javax.swing.JButton();
         JBTatendente1 = new javax.swing.JButton();
         JBTentregador1 = new javax.swing.JButton();
-        jLabel1 = new javax.swing.JLabel();
+        JLBou1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setPreferredSize(new java.awt.Dimension(1000, 600));
 
-        jPanel2.setBackground(new java.awt.Color(0, 51, 204));
-        jPanel2.setPreferredSize(new java.awt.Dimension(1000, 600));
+        JPNazulescuro1.setBackground(new java.awt.Color(0, 51, 204));
+        JPNazulescuro1.setPreferredSize(new java.awt.Dimension(1000, 600));
 
-        jPanel1.setBackground(new java.awt.Color(0, 102, 255));
-        jPanel1.setPreferredSize(new java.awt.Dimension(500, 375));
+        JPNazulclaro1.setBackground(new java.awt.Color(0, 102, 255));
+        JPNazulclaro1.setPreferredSize(new java.awt.Dimension(500, 375));
 
         JBTcadastrar1.setBackground(new java.awt.Color(255, 51, 51));
         JBTcadastrar1.setFont(new java.awt.Font("Arial Black", 1, 12)); // NOI18N
@@ -81,50 +81,44 @@ public class Tela_Login extends javax.swing.JFrame {
         JLnomedousuario1.setForeground(new java.awt.Color(255, 255, 255));
         JLnomedousuario1.setText("Nome do usuario:");
 
-        jLabel3.setIcon(new javax.swing.ImageIcon("C:\\Users\\PC\\Desktop\\MotoConnect_Projeto\\Giampaolo_Projeto_Technight\\MotoConnect\\src\\main\\java\\imagem_login\\motoqueiro.png")); // NOI18N
+        JBLmotoconnect1.setIcon(new javax.swing.ImageIcon("C:\\Users\\PC\\Desktop\\MotoConnect_Projeto\\Giampaolo_Projeto_Technight\\MotoConnect\\src\\main\\java\\imagem_login\\motoqueiro.png")); // NOI18N
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(101, 101, 101)
-                        .addComponent(jLabel2))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(158, 158, 158)
-                        .addComponent(JBTesqueceusenha1, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(128, 128, 128)
-                        .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 233, javax.swing.GroupLayout.PREFERRED_SIZE)))
+        javax.swing.GroupLayout JPNazulclaro1Layout = new javax.swing.GroupLayout(JPNazulclaro1);
+        JPNazulclaro1.setLayout(JPNazulclaro1Layout);
+        JPNazulclaro1Layout.setHorizontalGroup(
+            JPNazulclaro1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(JPNazulclaro1Layout.createSequentialGroup()
+                .addGap(128, 128, 128)
+                .addComponent(JBLmotoconnect1, javax.swing.GroupLayout.PREFERRED_SIZE, 233, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, JPNazulclaro1Layout.createSequentialGroup()
                 .addContainerGap(78, Short.MAX_VALUE)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGroup(JPNazulclaro1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, JPNazulclaro1Layout.createSequentialGroup()
+                        .addGroup(JPNazulclaro1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addGroup(JPNazulclaro1Layout.createSequentialGroup()
                                 .addComponent(JBTcadastrar1, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(JBTentrar1, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(JPNazulclaro1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                 .addComponent(JLsenha1)
                                 .addComponent(JPFsenha1, javax.swing.GroupLayout.PREFERRED_SIZE, 348, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGap(74, 74, 74))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(JPNazulclaro1Layout.createSequentialGroup()
+                        .addGroup(JPNazulclaro1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(JTFnomedousuario1, javax.swing.GroupLayout.PREFERRED_SIZE, 348, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(JLnomedousuario1))
                         .addContainerGap())))
+            .addGroup(JPNazulclaro1Layout.createSequentialGroup()
+                .addGap(166, 166, 166)
+                .addComponent(JBTesqueceusenha1, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addGap(17, 17, 17)
-                .addComponent(jLabel2)
-                .addGap(40, 40, 40)
-                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)
+        JPNazulclaro1Layout.setVerticalGroup(
+            JPNazulclaro1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, JPNazulclaro1Layout.createSequentialGroup()
+                .addGap(57, 57, 57)
+                .addComponent(JBLmotoconnect1, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(90, 90, 90)
                 .addComponent(JLnomedousuario1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -133,10 +127,10 @@ public class Tela_Login extends javax.swing.JFrame {
                 .addComponent(JLsenha1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(JPFsenha1, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(40, 40, 40)
+                .addGap(37, 37, 37)
                 .addComponent(JBTesqueceusenha1, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(30, 30, 30)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGap(33, 33, 33)
+                .addGroup(JPNazulclaro1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(JBTcadastrar1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(JBTentrar1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(56, 56, 56))
@@ -148,9 +142,16 @@ public class Tela_Login extends javax.swing.JFrame {
         JBTadministrador1.setText("Administrador");
         JBTadministrador1.setPreferredSize(new java.awt.Dimension(115, 25));
 
+        JBLsair1.setIcon(new javax.swing.ImageIcon("C:\\Users\\PC\\Desktop\\MotoConnect_Projeto\\Giampaolo_Projeto_Technight\\MotoConnect\\src\\main\\java\\imagem_login\\sair-removebg-preview.png")); // NOI18N
+
         JBTsair1.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
-        JBTsair1.setText("SAIR");
+        JBTsair1.setContentAreaFilled(false);
         JBTsair1.setPreferredSize(new java.awt.Dimension(70, 30));
+        JBTsair1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                JBTsair1ActionPerformed(evt);
+            }
+        });
 
         JBTatendente1.setBackground(new java.awt.Color(0, 102, 204));
         JBTatendente1.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
@@ -166,49 +167,56 @@ public class Tela_Login extends javax.swing.JFrame {
         JBTentregador1.setMaximumSize(new java.awt.Dimension(115, 25));
         JBTentregador1.setPreferredSize(new java.awt.Dimension(115, 25));
 
-        jLabel1.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel1.setText("ou");
+        JLBou1.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        JLBou1.setForeground(new java.awt.Color(255, 255, 255));
+        JLBou1.setText("ou");
 
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel2Layout.createSequentialGroup()
+        javax.swing.GroupLayout JPNazulescuro1Layout = new javax.swing.GroupLayout(JPNazulescuro1);
+        JPNazulescuro1.setLayout(JPNazulescuro1Layout);
+        JPNazulescuro1Layout.setHorizontalGroup(
+            JPNazulescuro1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(JPNazulescuro1Layout.createSequentialGroup()
+                .addGroup(JPNazulescuro1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(JPNazulescuro1Layout.createSequentialGroup()
                         .addGap(75, 75, 75)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(JPNazulescuro1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(JBTatendente1, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(JBTentregador1, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(JBTadministrador1, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(57, 57, 57))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, JPNazulescuro1Layout.createSequentialGroup()
                         .addContainerGap()
-                        .addComponent(jLabel1)
+                        .addComponent(JLBou1)
                         .addGap(111, 111, 111)))
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(99, 99, 99)
-                .addComponent(JBTsair1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(74, Short.MAX_VALUE))
+                .addComponent(JPNazulclaro1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(64, 64, 64)
+                .addGroup(JPNazulescuro1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(JBLsair1, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(JBTsair1, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(309, Short.MAX_VALUE))
         );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(50, 50, 50)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(JBTadministrador1, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(JBTatendente1, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(jLabel1)
-                        .addGap(18, 18, 18)
-                        .addComponent(JBTentregador1, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 604, Short.MAX_VALUE)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(JBTsair1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+        JPNazulescuro1Layout.setVerticalGroup(
+            JPNazulescuro1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, JPNazulescuro1Layout.createSequentialGroup()
+                .addGroup(JPNazulescuro1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(JPNazulescuro1Layout.createSequentialGroup()
+                        .addGap(50, 50, 50)
+                        .addGroup(JPNazulescuro1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(JPNazulescuro1Layout.createSequentialGroup()
+                                .addComponent(JBTadministrador1, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(JBTatendente1, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(JLBou1)
+                                .addGap(18, 18, 18)
+                                .addComponent(JBTentregador1, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(JPNazulclaro1, javax.swing.GroupLayout.DEFAULT_SIZE, 604, Short.MAX_VALUE)))
+                    .addGroup(JPNazulescuro1Layout.createSequentialGroup()
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(JPNazulescuro1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(JBTsair1, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(JBLsair1, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(2, 2, 2)))
                 .addGap(50, 50, 50))
         );
 
@@ -216,12 +224,12 @@ public class Tela_Login extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(JPNazulescuro1, javax.swing.GroupLayout.DEFAULT_SIZE, 1227, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 704, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(JPNazulescuro1, javax.swing.GroupLayout.PREFERRED_SIZE, 704, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, Short.MAX_VALUE))
         );
 
@@ -234,6 +242,10 @@ public class Tela_Login extends javax.swing.JFrame {
         Tela_Menu JBTentrar1 = new Tela_Menu();
         JBTentrar1.setVisible(true);
     }//GEN-LAST:event_JBTentrar1ActionPerformed
+
+    private void JBTsair1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBTsair1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_JBTsair1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -271,6 +283,8 @@ public class Tela_Login extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel JBLmotoconnect1;
+    private javax.swing.JLabel JBLsair1;
     private javax.swing.JButton JBTadministrador1;
     private javax.swing.JButton JBTatendente1;
     private javax.swing.JButton JBTcadastrar1;
@@ -278,14 +292,12 @@ public class Tela_Login extends javax.swing.JFrame {
     private javax.swing.JButton JBTentregador1;
     private javax.swing.JButton JBTesqueceusenha1;
     private javax.swing.JButton JBTsair1;
+    private javax.swing.JLabel JLBou1;
     private javax.swing.JLabel JLnomedousuario1;
     private javax.swing.JLabel JLsenha1;
     private javax.swing.JPasswordField JPFsenha1;
+    private javax.swing.JPanel JPNazulclaro1;
+    private javax.swing.JPanel JPNazulescuro1;
     private javax.swing.JTextField JTFnomedousuario1;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
     // End of variables declaration//GEN-END:variables
 }
