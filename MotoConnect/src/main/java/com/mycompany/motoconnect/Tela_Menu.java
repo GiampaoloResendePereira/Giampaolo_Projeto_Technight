@@ -39,11 +39,20 @@ public class Tela_Menu extends javax.swing.JFrame {
         JTFusuario2 = new javax.swing.JTextField();
         JLBmotoconnect2 = new javax.swing.JLabel();
         JTBlistaencomendas2 = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
+        jPanel1 = new javax.swing.JPanel();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         JPNazulescuro2.setBackground(new java.awt.Color(0, 51, 204));
-        JPNazulescuro2.setPreferredSize(new java.awt.Dimension(900, 600));
+        JPNazulescuro2.setPreferredSize(new java.awt.Dimension(1000, 600));
         JPNazulescuro2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         JBTsair2.setFont(new java.awt.Font("Arial Black", 1, 12)); // NOI18N
@@ -54,11 +63,10 @@ public class Tela_Menu extends javax.swing.JFrame {
                 JBTsair2ActionPerformed(evt);
             }
         });
-        JPNazulescuro2.add(JBTsair2, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 480, -1, 80));
+        JPNazulescuro2.add(JBTsair2, new org.netbeans.lib.awtextra.AbsoluteConstraints(890, 510, 50, 50));
+        JPNazulescuro2.add(JLBsair2, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 440, 90, 80));
 
-        JLBsair2.setIcon(new javax.swing.ImageIcon("C:\\Users\\PC\\Desktop\\MotoConnect_Projeto\\Giampaolo_Projeto_Technight\\MotoConnect\\src\\main\\java\\imagem_login\\sair-removebg-preview.png")); // NOI18N
-        JPNazulescuro2.add(JLBsair2, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 480, 90, 80));
-
+        JBTcadastrodefubcionario2.setContentAreaFilled(false);
         JBTcadastrodefubcionario2.setMaximumSize(new java.awt.Dimension(50, 50));
         JBTcadastrodefubcionario2.setMinimumSize(new java.awt.Dimension(0, 0));
         JBTcadastrodefubcionario2.setPreferredSize(new java.awt.Dimension(50, 50));
@@ -67,8 +75,9 @@ public class Tela_Menu extends javax.swing.JFrame {
                 JBTcadastrodefubcionario2ActionPerformed(evt);
             }
         });
-        JPNazulescuro2.add(JBTcadastrodefubcionario2, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 320, 70, 70));
+        JPNazulescuro2.add(JBTcadastrodefubcionario2, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 200, 50, 50));
 
+        JBTregistrocalculodefrete2.setContentAreaFilled(false);
         JBTregistrocalculodefrete2.setMaximumSize(new java.awt.Dimension(50, 50));
         JBTregistrocalculodefrete2.setMinimumSize(new java.awt.Dimension(50, 50));
         JBTregistrocalculodefrete2.setPreferredSize(new java.awt.Dimension(50, 50));
@@ -77,25 +86,27 @@ public class Tela_Menu extends javax.swing.JFrame {
                 JBTregistrocalculodefrete2ActionPerformed(evt);
             }
         });
-        JPNazulescuro2.add(JBTregistrocalculodefrete2, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 320, 74, 70));
+        JPNazulescuro2.add(JBTregistrocalculodefrete2, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 200, 50, 50));
 
-        JBTobservacoesecomentarios2.setText("Observações e comentaros");
+        JBTobservacoesecomentarios2.setContentAreaFilled(false);
         JBTobservacoesecomentarios2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 JBTobservacoesecomentarios2ActionPerformed(evt);
             }
         });
-        JPNazulescuro2.add(JBTobservacoesecomentarios2, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 320, 73, 70));
+        JPNazulescuro2.add(JBTobservacoesecomentarios2, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 200, 50, 50));
 
-        JBTalertas2.setText("Alertas");
-        JPNazulescuro2.add(JBTalertas2, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 320, -1, 73));
+        JBTalertas2.setContentAreaFilled(false);
+        JPNazulescuro2.add(JBTalertas2, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 200, 50, 50));
 
+        JBTcadastrodecliente2.setContentAreaFilled(false);
+        JBTcadastrodecliente2.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         JBTcadastrodecliente2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 JBTcadastrodecliente2ActionPerformed(evt);
             }
         });
-        JPNazulescuro2.add(JBTcadastrodecliente2, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 320, 70, 70));
+        JPNazulescuro2.add(JBTcadastrodecliente2, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 200, 50, 50));
 
         JPNusuario2.setBackground(new java.awt.Color(0, 102, 255));
 
@@ -129,28 +140,65 @@ public class Tela_Menu extends javax.swing.JFrame {
                 .addContainerGap(9, Short.MAX_VALUE))
         );
 
-        JPNazulescuro2.add(JPNusuario2, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 30, 300, 60));
-
-        JLBmotoconnect2.setIcon(new javax.swing.ImageIcon("C:\\Users\\PC\\Desktop\\MotoConnect_Projeto\\Giampaolo_Projeto_Technight\\MotoConnect\\src\\main\\java\\imagem_login\\motoqueiro.png")); // NOI18N
+        JPNazulescuro2.add(JPNusuario2, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 30, 300, 60));
         JPNazulescuro2.add(JLBmotoconnect2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, -1, 110));
 
-        JTBlistaencomendas2.setText("jButton1");
+        JTBlistaencomendas2.setContentAreaFilled(false);
         JTBlistaencomendas2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 JTBlistaencomendas2ActionPerformed(evt);
             }
         });
-        JPNazulescuro2.add(JTBlistaencomendas2, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 320, -1, 70));
+        JPNazulescuro2.add(JTBlistaencomendas2, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 200, 50, 50));
+
+        jLabel1.setIcon(new javax.swing.ImageIcon("D:\\Users\\grpereira\\Desktop\\Giampaolo_Projeto_TechNight\\Giampaolo_Projeto_Technight\\Giampaolo_Projeto_Technight\\MotoConnect\\src\\main\\java\\imagem_login\\motoqueiro.png")); // NOI18N
+        JPNazulescuro2.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 20, 240, 120));
+
+        jPanel1.setBackground(new java.awt.Color(255, 51, 51));
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 1000, Short.MAX_VALUE)
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 20, Short.MAX_VALUE)
+        );
+
+        JPNazulescuro2.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 150, 1000, 20));
+
+        jLabel2.setIcon(new javax.swing.ImageIcon("D:\\Users\\grpereira\\Desktop\\Giampaolo_Projeto_TechNight\\Giampaolo_Projeto_Technight\\Giampaolo_Projeto_Technight\\MotoConnect\\src\\main\\java\\imagem_login\\Cadastro de Funcionario.png")); // NOI18N
+        JPNazulescuro2.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 200, -1, -1));
+
+        jLabel3.setIcon(new javax.swing.ImageIcon("D:\\Users\\grpereira\\Desktop\\Giampaolo_Projeto_TechNight\\Giampaolo_Projeto_Technight\\Giampaolo_Projeto_Technight\\MotoConnect\\src\\main\\java\\imagem_login\\Calculo de frete.png")); // NOI18N
+        JPNazulescuro2.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 200, -1, -1));
+
+        jLabel4.setIcon(new javax.swing.ImageIcon("D:\\Users\\grpereira\\Desktop\\Giampaolo_Projeto_TechNight\\Giampaolo_Projeto_Technight\\Giampaolo_Projeto_Technight\\MotoConnect\\src\\main\\java\\imagem_login\\Cadastro de Cliente.png")); // NOI18N
+        JPNazulescuro2.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 200, -1, -1));
+
+        jLabel5.setIcon(new javax.swing.ImageIcon("D:\\Users\\grpereira\\Desktop\\Giampaolo_Projeto_TechNight\\Giampaolo_Projeto_Technight\\Giampaolo_Projeto_Technight\\MotoConnect\\src\\main\\java\\imagem_login\\Observações e Comentarios.png")); // NOI18N
+        JPNazulescuro2.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 190, 50, 60));
+
+        jLabel6.setIcon(new javax.swing.ImageIcon("D:\\Users\\grpereira\\Desktop\\Giampaolo_Projeto_TechNight\\Giampaolo_Projeto_Technight\\Giampaolo_Projeto_Technight\\MotoConnect\\src\\main\\java\\imagem_login\\5-removebg-preview (1).png")); // NOI18N
+        JPNazulescuro2.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 200, -1, -1));
+
+        jLabel7.setIcon(new javax.swing.ImageIcon("D:\\Users\\grpereira\\Desktop\\Giampaolo_Projeto_TechNight\\Giampaolo_Projeto_Technight\\Giampaolo_Projeto_Technight\\MotoConnect\\src\\main\\java\\imagem_login\\Alertas.png")); // NOI18N
+        JPNazulescuro2.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 200, -1, -1));
+
+        jLabel8.setIcon(new javax.swing.ImageIcon("D:\\Users\\grpereira\\Desktop\\Giampaolo_Projeto_TechNight\\Giampaolo_Projeto_Technight\\Giampaolo_Projeto_Technight\\MotoConnect\\src\\main\\java\\imagem_login\\Sair.png")); // NOI18N
+        JPNazulescuro2.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(890, 510, -1, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(JPNazulescuro2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(JPNazulescuro2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(JPNazulescuro2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(JPNazulescuro2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         pack();
@@ -248,5 +296,14 @@ public class Tela_Menu extends javax.swing.JFrame {
     private javax.swing.JPanel JPNusuario2;
     private javax.swing.JButton JTBlistaencomendas2;
     private javax.swing.JTextField JTFusuario2;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
 }

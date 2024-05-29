@@ -47,24 +47,37 @@
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="1" attributes="0">
-                  <EmptySpace min="-2" pref="35" max="-2" attributes="0"/>
+                  <EmptySpace pref="32" max="32767" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="JLBmotoconnect4" alignment="1" min="-2" max="-2" attributes="0"/>
-                      <Component id="JPNcadastrodeatendente4" alignment="1" min="-2" max="-2" attributes="0"/>
+                      <Group type="102" alignment="1" attributes="0">
+                          <Component id="JPNcadastrodeatendente4" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="7" max="-2" attributes="0"/>
+                          <Component id="JLBmotoconnect4" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="57" max="-2" attributes="0"/>
+                      </Group>
+                      <Group type="102" alignment="1" attributes="0">
+                          <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
+                      </Group>
                   </Group>
-                  <EmptySpace pref="26" max="32767" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" attributes="0">
                           <Component id="JBTcancelar4" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace min="-2" pref="525" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="441" max="-2" attributes="0"/>
                           <Component id="JBTconfirmar4" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="61" max="-2" attributes="0"/>
                       </Group>
-                      <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                          <Component id="JPNinformacoesdoatendente4" max="32767" attributes="0"/>
-                          <Component id="JPNazulclaro4" max="32767" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="102" alignment="0" attributes="0">
+                              <Component id="JPNazulclaro4" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" alignment="1" attributes="0">
+                              <Component id="JPNinformacoesdoatendente4" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="51" max="-2" attributes="0"/>
+                          </Group>
                       </Group>
                   </Group>
-                  <EmptySpace min="-2" pref="51" max="-2" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -74,8 +87,10 @@
                   <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
                   <Component id="JPNinformacoesdoatendente4" min="-2" max="-2" attributes="0"/>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                  <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" attributes="0">
+                          <Component id="jLabel1" min="-2" pref="121" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
                           <Component id="JLBmotoconnect4" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="32767" attributes="0"/>
                           <Component id="JPNcadastrodeatendente4" min="-2" max="-2" attributes="0"/>
@@ -145,7 +160,7 @@
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="1" attributes="0">
-                      <EmptySpace pref="289" max="32767" attributes="0"/>
+                      <EmptySpace pref="205" max="32767" attributes="0"/>
                       <Component id="JLBinformacoesdoatendente4" min="-2" pref="157" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="279" max="-2" attributes="0"/>
                   </Group>
@@ -194,7 +209,7 @@
                           <Group type="102" attributes="0">
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Group type="103" alignment="0" groupAlignment="0" attributes="0">
-                                      <Component id="JTFcep4" max="32767" attributes="0"/>
+                                      <Component id="JTFcep4" pref="161" max="32767" attributes="0"/>
                                       <Component id="JTFbairro4" max="32767" attributes="0"/>
                                   </Group>
                                   <Component id="JLBcep4" alignment="0" min="-2" max="-2" attributes="0"/>
@@ -203,7 +218,7 @@
                               <EmptySpace min="-2" pref="50" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Group type="103" alignment="0" groupAlignment="0" attributes="0">
-                                      <Component id="JTFrua4" max="32767" attributes="0"/>
+                                      <Component id="JTFrua4" pref="161" max="32767" attributes="0"/>
                                       <Component id="JTFestado4" max="32767" attributes="0"/>
                                   </Group>
                                   <Component id="JLBestado4" alignment="0" min="-2" max="-2" attributes="0"/>
@@ -213,7 +228,7 @@
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Component id="JLBcidade4" min="-2" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="JTFcidade4" max="32767" attributes="0"/>
+                                      <Component id="JTFcidade4" pref="162" max="32767" attributes="0"/>
                                       <Component id="JTFnumero4" max="32767" attributes="0"/>
                                   </Group>
                                   <Component id="JLBnumero4" alignment="0" min="-2" max="-2" attributes="0"/>
@@ -482,9 +497,11 @@
           </Events>
         </Component>
         <Component class="javax.swing.JLabel" name="JLBmotoconnect4">
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabel1">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="2" name="C:\Users\PC\Desktop\MotoConnect_Projeto\Giampaolo_Projeto_Technight\MotoConnect\src\main\java\imagem_login\motopequena.png"/>
+              <Image iconType="2" name="D:\Users\grpereira\Desktop\Giampaolo_Projeto_TechNight\Giampaolo_Projeto_Technight\Giampaolo_Projeto_Technight\MotoConnect\src\main\java\imagem_login\motoqueiro.png"/>
             </Property>
           </Properties>
         </Component>

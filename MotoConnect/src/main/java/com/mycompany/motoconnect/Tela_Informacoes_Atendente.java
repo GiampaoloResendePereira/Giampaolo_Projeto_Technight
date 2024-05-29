@@ -55,6 +55,7 @@ public class Tela_Informacoes_Atendente extends javax.swing.JFrame {
         JBTcancelar4 = new javax.swing.JButton();
         JBTconfirmar4 = new javax.swing.JButton();
         JLBmotoconnect4 = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -96,7 +97,7 @@ public class Tela_Informacoes_Atendente extends javax.swing.JFrame {
         JPNinformacoesdoatendente4Layout.setHorizontalGroup(
             JPNinformacoesdoatendente4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, JPNinformacoesdoatendente4Layout.createSequentialGroup()
-                .addContainerGap(289, Short.MAX_VALUE)
+                .addContainerGap(205, Short.MAX_VALUE)
                 .addComponent(JLBinformacoesdoatendente4, javax.swing.GroupLayout.PREFERRED_SIZE, 157, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(279, 279, 279))
         );
@@ -170,14 +171,14 @@ public class Tela_Informacoes_Atendente extends javax.swing.JFrame {
                     .addGroup(JPNazulclaro4Layout.createSequentialGroup()
                         .addGroup(JPNazulclaro4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(JPNazulclaro4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(JTFcep4)
+                                .addComponent(JTFcep4, javax.swing.GroupLayout.DEFAULT_SIZE, 161, Short.MAX_VALUE)
                                 .addComponent(JTFbairro4))
                             .addComponent(JLBcep4)
                             .addComponent(JLBbairro4))
                         .addGap(50, 50, 50)
                         .addGroup(JPNazulclaro4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(JPNazulclaro4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(JTFrua4)
+                                .addComponent(JTFrua4, javax.swing.GroupLayout.DEFAULT_SIZE, 161, Short.MAX_VALUE)
                                 .addComponent(JTFestado4))
                             .addComponent(JLBestado4)
                             .addComponent(JLBrua4))
@@ -185,7 +186,7 @@ public class Tela_Informacoes_Atendente extends javax.swing.JFrame {
                         .addGroup(JPNazulclaro4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(JLBcidade4)
                             .addGroup(JPNazulclaro4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(JTFcidade4)
+                                .addComponent(JTFcidade4, javax.swing.GroupLayout.DEFAULT_SIZE, 162, Short.MAX_VALUE)
                                 .addComponent(JTFnumero4))
                             .addComponent(JLBnumero4)))
                     .addGroup(JPNazulclaro4Layout.createSequentialGroup()
@@ -266,27 +267,36 @@ public class Tela_Informacoes_Atendente extends javax.swing.JFrame {
             }
         });
 
-        JLBmotoconnect4.setIcon(new javax.swing.ImageIcon("C:\\Users\\PC\\Desktop\\MotoConnect_Projeto\\Giampaolo_Projeto_Technight\\MotoConnect\\src\\main\\java\\imagem_login\\motopequena.png")); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon("D:\\Users\\grpereira\\Desktop\\Giampaolo_Projeto_TechNight\\Giampaolo_Projeto_Technight\\Giampaolo_Projeto_Technight\\MotoConnect\\src\\main\\java\\imagem_login\\motoqueiro.png")); // NOI18N
 
         javax.swing.GroupLayout JPNfundo4Layout = new javax.swing.GroupLayout(JPNfundo4);
         JPNfundo4.setLayout(JPNfundo4Layout);
         JPNfundo4Layout.setHorizontalGroup(
             JPNfundo4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, JPNfundo4Layout.createSequentialGroup()
-                .addGap(35, 35, 35)
+                .addContainerGap(32, Short.MAX_VALUE)
                 .addGroup(JPNfundo4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(JLBmotoconnect4, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(JPNcadastrodeatendente4, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 26, Short.MAX_VALUE)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, JPNfundo4Layout.createSequentialGroup()
+                        .addComponent(JPNcadastrodeatendente4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(7, 7, 7)
+                        .addComponent(JLBmotoconnect4)
+                        .addGap(57, 57, 57))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, JPNfundo4Layout.createSequentialGroup()
+                        .addComponent(jLabel1)
+                        .addGap(26, 26, 26)))
                 .addGroup(JPNfundo4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(JPNfundo4Layout.createSequentialGroup()
                         .addComponent(JBTcancelar4)
-                        .addGap(525, 525, 525)
-                        .addComponent(JBTconfirmar4))
-                    .addGroup(JPNfundo4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                        .addComponent(JPNinformacoesdoatendente4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(JPNazulclaro4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                .addGap(51, 51, 51))
+                        .addGap(441, 441, 441)
+                        .addComponent(JBTconfirmar4)
+                        .addGap(61, 61, 61))
+                    .addGroup(JPNfundo4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(JPNfundo4Layout.createSequentialGroup()
+                            .addComponent(JPNazulclaro4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addContainerGap())
+                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, JPNfundo4Layout.createSequentialGroup()
+                            .addComponent(JPNinformacoesdoatendente4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGap(51, 51, 51)))))
         );
         JPNfundo4Layout.setVerticalGroup(
             JPNfundo4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -294,8 +304,10 @@ public class Tela_Informacoes_Atendente extends javax.swing.JFrame {
                 .addGap(31, 31, 31)
                 .addComponent(JPNinformacoesdoatendente4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addGroup(JPNfundo4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                .addGroup(JPNfundo4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(JPNfundo4Layout.createSequentialGroup()
+                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(31, 31, 31)
                         .addComponent(JLBmotoconnect4)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(JPNcadastrodeatendente4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -400,5 +412,6 @@ public class Tela_Informacoes_Atendente extends javax.swing.JFrame {
     private javax.swing.JTextField JTFrua4;
     private javax.swing.JTextField JTFsenha4;
     private javax.swing.JTextField JTFsobrenome4;
+    private javax.swing.JLabel jLabel1;
     // End of variables declaration//GEN-END:variables
 }
