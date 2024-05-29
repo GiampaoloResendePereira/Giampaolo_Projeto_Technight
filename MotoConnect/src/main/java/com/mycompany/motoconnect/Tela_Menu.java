@@ -35,7 +35,10 @@ public class Tela_Menu extends javax.swing.JFrame {
         JBTalertas2 = new javax.swing.JButton();
         JBTcadastrodecliente2 = new javax.swing.JButton();
         JPNusuario2 = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
+        JLBbemvindo2 = new javax.swing.JLabel();
+        JTFusuario2 = new javax.swing.JTextField();
+        JLBmotoconnect2 = new javax.swing.JLabel();
+        JTBlistaencomendas2 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -82,10 +85,10 @@ public class Tela_Menu extends javax.swing.JFrame {
                 JBTobservacoesecomentarios2ActionPerformed(evt);
             }
         });
-        JPNazulescuro2.add(JBTobservacoesecomentarios2, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 320, 73, 70));
+        JPNazulescuro2.add(JBTobservacoesecomentarios2, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 320, 73, 70));
 
         JBTalertas2.setText("Alertas");
-        JPNazulescuro2.add(JBTalertas2, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 320, -1, 73));
+        JPNazulescuro2.add(JBTalertas2, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 320, -1, 73));
 
         JBTcadastrodecliente2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -96,21 +99,48 @@ public class Tela_Menu extends javax.swing.JFrame {
 
         JPNusuario2.setBackground(new java.awt.Color(0, 102, 255));
 
+        JLBbemvindo2.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        JLBbemvindo2.setForeground(new java.awt.Color(255, 255, 255));
+        JLBbemvindo2.setText("Bem vindo !");
+
+        JTFusuario2.setBackground(new java.awt.Color(0, 102, 255));
+        JTFusuario2.setForeground(new java.awt.Color(255, 255, 255));
+
         javax.swing.GroupLayout JPNusuario2Layout = new javax.swing.GroupLayout(JPNusuario2);
         JPNusuario2.setLayout(JPNusuario2Layout);
         JPNusuario2Layout.setHorizontalGroup(
             JPNusuario2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 283, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, JPNusuario2Layout.createSequentialGroup()
+                .addContainerGap(111, Short.MAX_VALUE)
+                .addComponent(JLBbemvindo2)
+                .addGap(108, 108, 108))
+            .addGroup(JPNusuario2Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(JTFusuario2)
+                .addContainerGap())
         );
         JPNusuario2Layout.setVerticalGroup(
             JPNusuario2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 76, Short.MAX_VALUE)
+            .addGroup(JPNusuario2Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(JLBbemvindo2)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(JTFusuario2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(9, Short.MAX_VALUE))
         );
 
-        JPNazulescuro2.add(JPNusuario2, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 30, -1, -1));
+        JPNazulescuro2.add(JPNusuario2, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 30, 300, 60));
 
-        jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\PC\\Desktop\\MotoConnect_Projeto\\Giampaolo_Projeto_Technight\\MotoConnect\\src\\main\\java\\imagem_login\\motoqueiro.png")); // NOI18N
-        JPNazulescuro2.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, -1, 110));
+        JLBmotoconnect2.setIcon(new javax.swing.ImageIcon("C:\\Users\\PC\\Desktop\\MotoConnect_Projeto\\Giampaolo_Projeto_Technight\\MotoConnect\\src\\main\\java\\imagem_login\\motoqueiro.png")); // NOI18N
+        JPNazulescuro2.add(JLBmotoconnect2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, -1, 110));
+
+        JTBlistaencomendas2.setText("jButton1");
+        JTBlistaencomendas2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                JTBlistaencomendas2ActionPerformed(evt);
+            }
+        });
+        JPNazulescuro2.add(JTBlistaencomendas2, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 320, -1, 70));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -156,10 +186,17 @@ public class Tela_Menu extends javax.swing.JFrame {
 
     private void JBTobservacoesecomentarios2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBTobservacoesecomentarios2ActionPerformed
         // TODO add your handling code here:
-         Tela_Menu.this.dispose();
+        Tela_Menu.this.dispose();
         Tela_Observacoes_Comentarioes JBTobservacoesecomentarios2 = new Tela_Observacoes_Comentarioes();
         JBTobservacoesecomentarios2.setVisible(true);
     }//GEN-LAST:event_JBTobservacoesecomentarios2ActionPerformed
+
+    private void JTBlistaencomendas2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JTBlistaencomendas2ActionPerformed
+        // TODO add your handling code here:
+        Tela_Menu.this.dispose();
+        Tela_Lista_Encomendas JTBlistaencomendas2 = new Tela_Lista_Encomendas();
+        JTBlistaencomendas2.setVisible(true);
+    }//GEN-LAST:event_JTBlistaencomendas2ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -204,9 +241,12 @@ public class Tela_Menu extends javax.swing.JFrame {
     private javax.swing.JButton JBTobservacoesecomentarios2;
     private javax.swing.JButton JBTregistrocalculodefrete2;
     private javax.swing.JButton JBTsair2;
+    private javax.swing.JLabel JLBbemvindo2;
+    private javax.swing.JLabel JLBmotoconnect2;
     private javax.swing.JLabel JLBsair2;
     private javax.swing.JPanel JPNazulescuro2;
     private javax.swing.JPanel JPNusuario2;
-    private javax.swing.JLabel jLabel1;
+    private javax.swing.JButton JTBlistaencomendas2;
+    private javax.swing.JTextField JTFusuario2;
     // End of variables declaration//GEN-END:variables
 }

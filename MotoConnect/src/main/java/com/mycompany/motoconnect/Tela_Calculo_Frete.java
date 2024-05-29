@@ -4,6 +4,8 @@
  */
 package com.mycompany.motoconnect;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author PC
@@ -27,104 +29,139 @@ public class Tela_Calculo_Frete extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jTextField1 = new javax.swing.JTextField();
-        jTextField2 = new javax.swing.JTextField();
-        jTextField3 = new javax.swing.JTextField();
-        jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        jPanel2 = new javax.swing.JPanel();
-        jLabel6 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
-        jRadioButton1 = new javax.swing.JRadioButton();
-        jRadioButton2 = new javax.swing.JRadioButton();
-        jLabel5 = new javax.swing.JLabel();
-        jTextField4 = new javax.swing.JTextField();
-        jButton3 = new javax.swing.JButton();
+        JBTvoltar7 = new javax.swing.JButton();
+        JBTcadastrodocliente7 = new javax.swing.JButton();
+        JTFcidadededestino7 = new javax.swing.JTextField();
+        JTFpesodamercadoria7 = new javax.swing.JTextField();
+        JTFcidadedeorigem7 = new javax.swing.JTextField();
+        JLBpesodamercadoria7 = new javax.swing.JLabel();
+        JLBcidadedeorigem7 = new javax.swing.JLabel();
+        JLBcidadededestino7 = new javax.swing.JLabel();
+        JPNregistrocalculodefrete7 = new javax.swing.JPanel();
+        JLBregistrocalculodefrete7 = new javax.swing.JLabel();
+        JLBopcoesdeentregas7 = new javax.swing.JLabel();
+        RBTentregaprograma7 = new javax.swing.JRadioButton();
+        RBTexpress7 = new javax.swing.JRadioButton();
+        JLBvalordofrete7 = new javax.swing.JLabel();
+        JTFvalor7 = new javax.swing.JTextField();
+        JBTcalcular7 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jPanel1.setBackground(new java.awt.Color(0, 51, 204));
-        jPanel1.setPreferredSize(new java.awt.Dimension(1200, 600));
+        jPanel1.setPreferredSize(new java.awt.Dimension(1000, 600));
 
-        jButton1.setBackground(new java.awt.Color(255, 51, 51));
-        jButton1.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
-        jButton1.setForeground(new java.awt.Color(255, 255, 255));
-        jButton1.setText("VOLTAR");
-        jButton1.setMaximumSize(new java.awt.Dimension(106, 25));
-        jButton1.setPreferredSize(new java.awt.Dimension(106, 25));
+        JBTvoltar7.setBackground(new java.awt.Color(255, 51, 51));
+        JBTvoltar7.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        JBTvoltar7.setForeground(new java.awt.Color(255, 255, 255));
+        JBTvoltar7.setText("VOLTAR");
+        JBTvoltar7.setMaximumSize(new java.awt.Dimension(106, 25));
+        JBTvoltar7.setPreferredSize(new java.awt.Dimension(106, 25));
 
-        jButton2.setBackground(new java.awt.Color(255, 51, 51));
-        jButton2.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
-        jButton2.setForeground(new java.awt.Color(255, 255, 255));
-        jButton2.setText("CADASTRO DO CLIENTE");
+        JBTcadastrodocliente7.setBackground(new java.awt.Color(255, 51, 51));
+        JBTcadastrodocliente7.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        JBTcadastrodocliente7.setForeground(new java.awt.Color(255, 255, 255));
+        JBTcadastrodocliente7.setText("CADASTRO DO CLIENTE");
 
-        jTextField1.setBackground(new java.awt.Color(204, 204, 204));
+        JTFcidadededestino7.setBackground(new java.awt.Color(204, 204, 204));
+        JTFcidadededestino7.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                JTFcidadededestino7ActionPerformed(evt);
+            }
+        });
 
-        jTextField2.setBackground(new java.awt.Color(204, 204, 204));
+        JTFpesodamercadoria7.setBackground(new java.awt.Color(204, 204, 204));
+        JTFpesodamercadoria7.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                JTFpesodamercadoria7ActionPerformed(evt);
+            }
+        });
 
-        jTextField3.setBackground(new java.awt.Color(204, 204, 204));
+        JTFcidadedeorigem7.setBackground(new java.awt.Color(204, 204, 204));
+        JTFcidadedeorigem7.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                JTFcidadedeorigem7ActionPerformed(evt);
+            }
+        });
 
-        jLabel1.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel1.setText("Peso da Mercadoria:");
+        JLBpesodamercadoria7.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        JLBpesodamercadoria7.setForeground(new java.awt.Color(255, 255, 255));
+        JLBpesodamercadoria7.setText("Peso da Mercadoria:");
 
-        jLabel2.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel2.setText("Cidade de origem:");
+        JLBcidadedeorigem7.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        JLBcidadedeorigem7.setForeground(new java.awt.Color(255, 255, 255));
+        JLBcidadedeorigem7.setText("Cidade de origem:");
 
-        jLabel3.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel3.setText("Cidade de destino:");
+        JLBcidadededestino7.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        JLBcidadededestino7.setForeground(new java.awt.Color(255, 255, 255));
+        JLBcidadededestino7.setText("Cidade de destino:");
 
-        jPanel2.setBackground(new java.awt.Color(0, 102, 255));
-        jPanel2.setPreferredSize(new java.awt.Dimension(844, 30));
+        JPNregistrocalculodefrete7.setBackground(new java.awt.Color(0, 102, 255));
+        JPNregistrocalculodefrete7.setPreferredSize(new java.awt.Dimension(844, 30));
 
-        jLabel6.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
-        jLabel6.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel6.setText("Registro de calculo de frete");
+        JLBregistrocalculodefrete7.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        JLBregistrocalculodefrete7.setForeground(new java.awt.Color(255, 255, 255));
+        JLBregistrocalculodefrete7.setText("Registro de calculo de frete");
 
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addContainerGap(313, Short.MAX_VALUE)
-                .addComponent(jLabel6)
-                .addGap(370, 370, 370))
+        javax.swing.GroupLayout JPNregistrocalculodefrete7Layout = new javax.swing.GroupLayout(JPNregistrocalculodefrete7);
+        JPNregistrocalculodefrete7.setLayout(JPNregistrocalculodefrete7Layout);
+        JPNregistrocalculodefrete7Layout.setHorizontalGroup(
+            JPNregistrocalculodefrete7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(JPNregistrocalculodefrete7Layout.createSequentialGroup()
+                .addGap(168, 168, 168)
+                .addComponent(JLBregistrocalculodefrete7)
+                .addContainerGap(172, Short.MAX_VALUE))
         );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
+        JPNregistrocalculodefrete7Layout.setVerticalGroup(
+            JPNregistrocalculodefrete7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(JPNregistrocalculodefrete7Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel6)
+                .addComponent(JLBregistrocalculodefrete7)
                 .addContainerGap(10, Short.MAX_VALUE))
         );
 
-        jLabel4.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel4.setText("Opções de entraga:");
+        JLBopcoesdeentregas7.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        JLBopcoesdeentregas7.setForeground(new java.awt.Color(255, 255, 255));
+        JLBopcoesdeentregas7.setText("Opções de entraga:");
 
-        jRadioButton1.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
-        jRadioButton1.setForeground(new java.awt.Color(255, 255, 255));
-        jRadioButton1.setText("Entrega programada");
+        RBTentregaprograma7.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        RBTentregaprograma7.setForeground(new java.awt.Color(255, 255, 255));
+        RBTentregaprograma7.setText("Entrega programada");
+        RBTentregaprograma7.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                RBTentregaprograma7ActionPerformed(evt);
+            }
+        });
 
-        jRadioButton2.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
-        jRadioButton2.setForeground(new java.awt.Color(255, 255, 255));
-        jRadioButton2.setText("Express");
+        RBTexpress7.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        RBTexpress7.setForeground(new java.awt.Color(255, 255, 255));
+        RBTexpress7.setText("Express");
+        RBTexpress7.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                RBTexpress7ActionPerformed(evt);
+            }
+        });
 
-        jLabel5.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
-        jLabel5.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel5.setText("Valor do Frete:");
+        JLBvalordofrete7.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        JLBvalordofrete7.setForeground(new java.awt.Color(255, 255, 255));
+        JLBvalordofrete7.setText("Valor do Frete:");
 
-        jTextField4.setBackground(new java.awt.Color(204, 204, 204));
+        JTFvalor7.setBackground(new java.awt.Color(204, 204, 204));
+        JTFvalor7.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                JTFvalor7ActionPerformed(evt);
+            }
+        });
 
-        jButton3.setBackground(new java.awt.Color(255, 51, 51));
-        jButton3.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
-        jButton3.setForeground(new java.awt.Color(255, 255, 255));
-        jButton3.setText("CALCULAR");
+        JBTcalcular7.setBackground(new java.awt.Color(255, 51, 51));
+        JBTcalcular7.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        JBTcalcular7.setForeground(new java.awt.Color(255, 255, 255));
+        JBTcalcular7.setText("CALCULAR");
+        JBTcalcular7.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                JBTcalcular7ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -132,72 +169,75 @@ public class Tela_Calculo_Frete extends javax.swing.JFrame {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addGap(35, 35, 35)
-                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jButton2)
-                .addGap(36, 36, 36))
+                .addComponent(JBTvoltar7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(289, Short.MAX_VALUE)
+                .addContainerGap(257, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jPanel2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel1)
-                            .addComponent(jLabel2)
-                            .addComponent(jLabel3)
-                            .addComponent(jLabel4)
-                            .addComponent(jLabel5))
+                            .addComponent(JLBpesodamercadoria7)
+                            .addComponent(JLBcidadedeorigem7)
+                            .addComponent(JLBcidadededestino7)
+                            .addComponent(JLBopcoesdeentregas7)
+                            .addComponent(JLBvalordofrete7))
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGap(18, 18, 18)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(jTextField1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 216, Short.MAX_VALUE)
-                                    .addComponent(jTextField3)
-                                    .addComponent(jTextField2)))
+                                    .addComponent(JTFcidadededestino7, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 216, Short.MAX_VALUE)
+                                    .addComponent(JTFcidadedeorigem7)
+                                    .addComponent(JTFpesodamercadoria7)))
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGap(3, 3, 3)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                     .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(JTFvalor7, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addComponent(jButton3))
+                                        .addComponent(JBTcalcular7))
                                     .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addComponent(jRadioButton1)
+                                        .addComponent(RBTentregaprograma7)
                                         .addGap(18, 18, 18)
-                                        .addComponent(jRadioButton2)))))))
-                .addGap(67, 67, 67))
+                                        .addComponent(RBTexpress7))))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(JBTcadastrodocliente7)))
+                        .addGap(67, 67, 67))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addComponent(JPNregistrocalculodefrete7, javax.swing.GroupLayout.PREFERRED_SIZE, 501, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(242, 242, 242))))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addGap(42, 42, 42)
-                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(JPNregistrocalculodefrete7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel1))
+                    .addComponent(JTFpesodamercadoria7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(JLBpesodamercadoria7))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel2))
+                    .addComponent(JTFcidadedeorigem7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(JLBcidadedeorigem7))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel3))
+                    .addComponent(JTFcidadededestino7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(JLBcidadededestino7))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel4)
-                    .addComponent(jRadioButton1)
-                    .addComponent(jRadioButton2))
+                    .addComponent(JLBopcoesdeentregas7)
+                    .addComponent(RBTentregaprograma7)
+                    .addComponent(RBTexpress7))
                 .addGap(25, 25, 25)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel5)
-                    .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton3))
+                    .addComponent(JLBvalordofrete7)
+                    .addComponent(JTFvalor7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(JBTcalcular7))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 264, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton2))
+                    .addComponent(JBTvoltar7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(JBTcadastrodocliente7))
                 .addGap(33, 33, 33))
         );
 
@@ -205,9 +245,7 @@ public class Tela_Calculo_Frete extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -218,6 +256,130 @@ public class Tela_Calculo_Frete extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void JBTcalcular7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBTcalcular7ActionPerformed
+    // TODO add your handling code here:
+    String cidadeOrigem = JTFcidadedeorigem7.getText();
+    String cidadeDestino = JTFcidadededestino7.getText();
+    double pesoMercadoria = Double.parseDouble(JTFpesodamercadoria7.getText());
+
+    // Define as distâncias e os tempos de deslocamento entre as cidades da Grande Vitória
+    double[][] distancias = {
+           
+            /* Vitória */   {0, 15.1, 35.8, 15.1, 9.5},
+            /* Vila Velha */{15.1, 0, 38.2, 20, 20},
+            /* Serra */     {35.8, 38.2, 0, 30, 44},
+            /* Cariacica */ {15.1, 20, 30, 0, 20},
+            /* Viana */     {9.5, 20, 44, 20, 0}
+    };
+
+    double[][] tempos = {
+            
+            /* Vitória */   {0, 31, 44, 31, 15},
+            /* Vila Velha */{31, 0, 45, 40, 45},
+            /* Serra */     {44, 45, 0, 60, 90},
+            /* Cariacica */ {31, 40, 60, 0, 80},
+            /* Viana */     {15, 45, 90, 80, 0}
+    };
+
+    // Índices das cidades no array
+    String[] cidades = {"Vitória", "Vila Velha", "Serra", "Cariacica", "Viana"};
+
+    int indiceOrigem = -1;
+    int indiceDestino = -1;
+
+    // Encontra os índices das cidades no array
+    for (int i = 0; i < cidades.length; i++) {
+        if (cidades[i].equalsIgnoreCase(cidadeOrigem)) {
+            indiceOrigem = i;
+        }
+        if (cidades[i].equalsIgnoreCase(cidadeDestino)) {
+            indiceDestino = i;
+        }
+    }
+
+    // Verifica se as cidades são válidas
+    if (indiceOrigem == -1 || indiceDestino == -1) {
+        JOptionPane.showMessageDialog(this, "Cidades inválidas. Por favor, insira cidades da Grande Vitória.");
+        return;
+    }
+
+    // Obtém a distância e o tempo de deslocamento entre as cidades
+    double distanciaKm = distancias[indiceOrigem][indiceDestino];
+    double tempoDeslocamentoMinutos = tempos[indiceOrigem][indiceDestino];
+
+    // Calcula o custo com base no peso da mercadoria
+    double valorPeso;
+    if (pesoMercadoria < 1) {
+        valorPeso = 3.00;
+    } else if (pesoMercadoria >= 1 && pesoMercadoria <= 2.9) {
+        valorPeso = 5.00;
+    } else if (pesoMercadoria >= 3 && pesoMercadoria <= 7.9) {
+        valorPeso = 9.00;
+    } else if (pesoMercadoria >= 8 && pesoMercadoria <= 12) {
+        valorPeso = 12.00;
+    } else {
+        JOptionPane.showMessageDialog(this, "Não é possível transportar mercadorias acima de 12 Kg.");
+        return;
+    }
+
+    // Calcula os custos adicionais
+    double custoPorKm = 0.50;
+    double custoPorMinuto = 0.30;
+    double valorDistancia = distanciaKm * custoPorKm;
+    double valorTempo = tempoDeslocamentoMinutos * custoPorMinuto;
+
+    // Calcula o valor total do frete
+    double valorTotalFrete = valorPeso + valorDistancia + valorTempo;
+
+    // Verifica se o usuário escolheu entrega expressa e calcula o valor final do frete
+    if (RBTexpress7.isSelected()) {
+        valorTotalFrete *= 1.15; // Aumenta o valor total em 15%
+    }
+
+    // Exibe o resultado
+    JTFvalor7.setText(String.format("R$ %.2f", valorTotalFrete));
+   
+    }//GEN-LAST:event_JBTcalcular7ActionPerformed
+
+    private void JTFvalor7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JTFvalor7ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_JTFvalor7ActionPerformed
+
+    private void JTFpesodamercadoria7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JTFpesodamercadoria7ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_JTFpesodamercadoria7ActionPerformed
+
+    private void JTFcidadedeorigem7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JTFcidadedeorigem7ActionPerformed
+        // TODO add your handling code here:
+        // Ação a ser realizada quando o campo de cidade de origem for utilizado
+        // Exemplo: Validar a cidade de origem ou atualizar a interface
+        System.out.println("Cidade de origem inserida: " + JTFcidadedeorigem7.getText());
+    }//GEN-LAST:event_JTFcidadedeorigem7ActionPerformed
+
+    private void JTFcidadededestino7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JTFcidadededestino7ActionPerformed
+        // TODO add your handling code here:
+        // Ação a ser realizada quando o campo de cidade de destino for utilizado
+        // Exemplo: Validar a cidade de destino ou atualizar a interface
+        System.out.println("Cidade de destino inserida: " + JTFcidadededestino7.getText());
+
+    }//GEN-LAST:event_JTFcidadededestino7ActionPerformed
+
+    private void RBTentregaprograma7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RBTentregaprograma7ActionPerformed
+        // Ação a ser realizada quando o campo de cidade de destino for utilizado
+        // Exemplo: Validar a cidade de destino ou atualizar a interface
+        if (RBTentregaprograma7.isSelected()) {
+        System.out.println("Entrega programada selecionada.");
+        }
+    }//GEN-LAST:event_RBTentregaprograma7ActionPerformed
+
+    private void RBTexpress7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RBTexpress7ActionPerformed
+        // Ação a ser realizada quando a opção de entrega expressa for selecionada
+        // Exemplo: Atualizar uma variável de estado ou a interface
+        if (RBTexpress7.isSelected()) {
+        System.out.println("Entrega express selecionada.");
+        }
+    }//GEN-LAST:event_RBTexpress7ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -255,22 +417,22 @@ public class Tela_Calculo_Frete extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
+    private javax.swing.JButton JBTcadastrodocliente7;
+    private javax.swing.JButton JBTcalcular7;
+    private javax.swing.JButton JBTvoltar7;
+    private javax.swing.JLabel JLBcidadededestino7;
+    private javax.swing.JLabel JLBcidadedeorigem7;
+    private javax.swing.JLabel JLBopcoesdeentregas7;
+    private javax.swing.JLabel JLBpesodamercadoria7;
+    private javax.swing.JLabel JLBregistrocalculodefrete7;
+    private javax.swing.JLabel JLBvalordofrete7;
+    private javax.swing.JPanel JPNregistrocalculodefrete7;
+    private javax.swing.JTextField JTFcidadededestino7;
+    private javax.swing.JTextField JTFcidadedeorigem7;
+    private javax.swing.JTextField JTFpesodamercadoria7;
+    private javax.swing.JTextField JTFvalor7;
+    private javax.swing.JRadioButton RBTentregaprograma7;
+    private javax.swing.JRadioButton RBTexpress7;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
-    private javax.swing.JRadioButton jRadioButton1;
-    private javax.swing.JRadioButton jRadioButton2;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
-    private javax.swing.JTextField jTextField4;
     // End of variables declaration//GEN-END:variables
 }
