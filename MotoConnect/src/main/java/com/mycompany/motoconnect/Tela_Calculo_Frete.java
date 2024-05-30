@@ -45,6 +45,12 @@ public class Tela_Calculo_Frete extends javax.swing.JFrame {
         JLBvalordofrete7 = new javax.swing.JLabel();
         JTFvalor7 = new javax.swing.JTextField();
         JBTcalcular7 = new javax.swing.JButton();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTable1 = new javax.swing.JTable();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        jTable2 = new javax.swing.JTable();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        jTable3 = new javax.swing.JTable();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -57,11 +63,21 @@ public class Tela_Calculo_Frete extends javax.swing.JFrame {
         JBTvoltar7.setText("VOLTAR");
         JBTvoltar7.setMaximumSize(new java.awt.Dimension(106, 25));
         JBTvoltar7.setPreferredSize(new java.awt.Dimension(106, 25));
+        JBTvoltar7.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                JBTvoltar7ActionPerformed(evt);
+            }
+        });
 
         JBTcadastrodocliente7.setBackground(new java.awt.Color(255, 51, 51));
         JBTcadastrodocliente7.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         JBTcadastrodocliente7.setForeground(new java.awt.Color(255, 255, 255));
         JBTcadastrodocliente7.setText("CADASTRO DO CLIENTE");
+        JBTcadastrodocliente7.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                JBTcadastrodocliente7ActionPerformed(evt);
+            }
+        });
 
         JTFcidadededestino7.setBackground(new java.awt.Color(204, 204, 204));
         JTFcidadededestino7.addActionListener(new java.awt.event.ActionListener() {
@@ -110,7 +126,7 @@ public class Tela_Calculo_Frete extends javax.swing.JFrame {
             .addGroup(JPNregistrocalculodefrete7Layout.createSequentialGroup()
                 .addGap(168, 168, 168)
                 .addComponent(JLBregistrocalculodefrete7)
-                .addContainerGap(172, Short.MAX_VALUE))
+                .addContainerGap(177, Short.MAX_VALUE))
         );
         JPNregistrocalculodefrete7Layout.setVerticalGroup(
             JPNregistrocalculodefrete7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -163,47 +179,108 @@ public class Tela_Calculo_Frete extends javax.swing.JFrame {
             }
         });
 
+        jTable1.setBackground(new java.awt.Color(255, 51, 51));
+        jTable1.setForeground(new java.awt.Color(255, 255, 255));
+        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {"Menos de 1kg", "R$ 3,00"},
+                {"De 1kg ate 2,9kg", "R$ 5,00"},
+                {"De 3kg ate 7,9kg", "R$ 9,00"},
+                {"De 8kg ate 12kg", "R$ 12,00"},
+                {"Acima 12kg", "Não e possivel transportar"},
+                {null, null}
+            },
+            new String [] {
+                "Peso da Mercadoria", "Valor"
+            }
+        ));
+        jScrollPane1.setViewportView(jTable1);
+
+        jTable2.setBackground(new java.awt.Color(255, 51, 51));
+        jTable2.setForeground(new java.awt.Color(255, 255, 255));
+        jTable2.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {"1 munito de deslocamento", "R$ 0,30"},
+                {".", "."}
+            },
+            new String [] {
+                "1 minuto de deslocamento", "Preço"
+            }
+        ));
+        jScrollPane2.setViewportView(jTable2);
+
+        jTable3.setBackground(new java.awt.Color(255, 51, 51));
+        jTable3.setForeground(new java.awt.Color(255, 255, 255));
+        jTable3.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {"1 km rodado", "R$ 0,50"},
+                {null, null},
+                {null, null},
+                {null, null}
+            },
+            new String [] {
+                "1 km rodado", "Preço"
+            }
+        ));
+        jScrollPane3.setViewportView(jTable3);
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addGap(35, 35, 35)
-                .addComponent(JBTvoltar7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(257, Short.MAX_VALUE)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(67, 67, 67)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(JLBpesodamercadoria7)
-                            .addComponent(JLBcidadedeorigem7)
-                            .addComponent(JLBcidadededestino7)
-                            .addComponent(JLBopcoesdeentregas7)
-                            .addComponent(JLBvalordofrete7))
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(18, 18, 18)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(JTFcidadededestino7, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 216, Short.MAX_VALUE)
-                                    .addComponent(JTFcidadedeorigem7)
-                                    .addComponent(JTFpesodamercadoria7)))
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addComponent(JBTvoltar7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(0, 0, Short.MAX_VALUE))
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 315, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(JBTcadastrodocliente7)
+                                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 315, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(3, 3, 3))
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(3, 3, 3)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addGap(0, 0, Short.MAX_VALUE)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                     .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addComponent(JTFvalor7, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addComponent(JBTcalcular7))
+                                        .addComponent(JLBpesodamercadoria7)
+                                        .addGap(29, 29, 29)
+                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                                .addGap(18, 18, 18)
+                                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                                    .addComponent(JTFcidadededestino7, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 216, Short.MAX_VALUE)
+                                                    .addComponent(JTFcidadedeorigem7)
+                                                    .addComponent(JTFpesodamercadoria7)))
+                                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                                .addGap(3, 3, 3)
+                                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                                        .addComponent(JTFvalor7, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                                        .addComponent(JBTcalcular7))
+                                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                                        .addComponent(RBTentregaprograma7)
+                                                        .addGap(18, 18, 18)
+                                                        .addComponent(RBTexpress7))))))
                                     .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addComponent(RBTentregaprograma7)
-                                        .addGap(18, 18, 18)
-                                        .addComponent(RBTexpress7))))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(JBTcadastrodocliente7)))
-                        .addGap(67, 67, 67))
+                                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 315, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(168, 168, 168)
+                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(JLBcidadedeorigem7)
+                                            .addComponent(JLBcidadededestino7)
+                                            .addComponent(JLBvalordofrete7)
+                                            .addComponent(JLBopcoesdeentregas7))
+                                        .addGap(269, 269, 269)))))
+                        .addGap(70, 70, 70))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
                         .addComponent(JPNregistrocalculodefrete7, javax.swing.GroupLayout.PREFERRED_SIZE, 501, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(242, 242, 242))))
         );
@@ -216,29 +293,39 @@ public class Tela_Calculo_Frete extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(JTFpesodamercadoria7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(JLBpesodamercadoria7))
-                .addGap(18, 18, 18)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(JTFcidadedeorigem7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(JLBcidadedeorigem7))
-                .addGap(18, 18, 18)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(JTFcidadededestino7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(JLBcidadededestino7))
-                .addGap(18, 18, 18)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(JLBopcoesdeentregas7)
-                    .addComponent(RBTentregaprograma7)
-                    .addComponent(RBTexpress7))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(JTFcidadedeorigem7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(JLBcidadedeorigem7))
+                        .addGap(24, 24, 24)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(JTFcidadededestino7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(JLBcidadededestino7))
+                        .addGap(24, 24, 24)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(JLBopcoesdeentregas7)
+                            .addComponent(RBTentregaprograma7)
+                            .addComponent(RBTexpress7)))
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(25, 25, 25)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(JLBvalordofrete7)
                     .addComponent(JTFvalor7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(JBTcalcular7))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 264, Short.MAX_VALUE)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(JBTvoltar7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(JBTcadastrodocliente7))
-                .addGap(33, 33, 33))
+                .addGap(75, 75, 75)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 127, Short.MAX_VALUE)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(JBTvoltar7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(JBTcadastrodocliente7))
+                        .addGap(33, 33, 33))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -381,6 +468,20 @@ public class Tela_Calculo_Frete extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_RBTexpress7ActionPerformed
 
+    private void JBTvoltar7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBTvoltar7ActionPerformed
+        // TODO add your handling code here:
+        Tela_Calculo_Frete.this.dispose();
+        Tela_Tipo_Carga JBTvoltar7 = new Tela_Tipo_Carga();
+        JBTvoltar7.setVisible(true);
+    }//GEN-LAST:event_JBTvoltar7ActionPerformed
+
+    private void JBTcadastrodocliente7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBTcadastrodocliente7ActionPerformed
+        // TODO add your handling code here:
+        Tela_Calculo_Frete.this.dispose();
+        Tela_Cadastro_Cliente JBTcadastrodocliente7 = new Tela_Cadastro_Cliente();
+        JBTcadastrodocliente7.setVisible(true);
+    }//GEN-LAST:event_JBTcadastrodocliente7ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -434,5 +535,11 @@ public class Tela_Calculo_Frete extends javax.swing.JFrame {
     private javax.swing.JRadioButton RBTentregaprograma7;
     private javax.swing.JRadioButton RBTexpress7;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JScrollPane jScrollPane3;
+    private javax.swing.JTable jTable1;
+    private javax.swing.JTable jTable2;
+    private javax.swing.JTable jTable3;
     // End of variables declaration//GEN-END:variables
 }

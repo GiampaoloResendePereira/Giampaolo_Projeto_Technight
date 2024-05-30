@@ -39,7 +39,7 @@ public class Tela_Login extends javax.swing.JFrame {
         JTFnomedousuario1 = new javax.swing.JTextField();
         JLsenha1 = new javax.swing.JLabel();
         JLnomedousuario1 = new javax.swing.JLabel();
-        JBLmotoconnect1 = new javax.swing.JLabel();
+        JLBmotoconnect1 = new javax.swing.JLabel();
         JBTadministrador1 = new javax.swing.JButton();
         JBLsair1 = new javax.swing.JLabel();
         JBTsair1 = new javax.swing.JButton();
@@ -94,56 +94,54 @@ public class Tela_Login extends javax.swing.JFrame {
         JLnomedousuario1.setForeground(new java.awt.Color(255, 255, 255));
         JLnomedousuario1.setText("Nome do usuario:");
 
+        JLBmotoconnect1.setIcon(new javax.swing.ImageIcon("D:\\Users\\grpereira\\Desktop\\Giampaolo_Projeto_TechNight\\Giampaolo_Projeto_Technight\\Giampaolo_Projeto_Technight\\MotoConnect\\src\\main\\java\\imagem_login\\motoqueiro.png")); // NOI18N
+
         javax.swing.GroupLayout JPNazulclaro1Layout = new javax.swing.GroupLayout(JPNazulclaro1);
         JPNazulclaro1.setLayout(JPNazulclaro1Layout);
         JPNazulclaro1Layout.setHorizontalGroup(
             JPNazulclaro1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(JPNazulclaro1Layout.createSequentialGroup()
-                .addGap(166, 166, 166)
-                .addComponent(JBTesqueceusenha1, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
-            .addGroup(JPNazulclaro1Layout.createSequentialGroup()
-                .addGroup(JPNazulclaro1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                .addGroup(JPNazulclaro1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(JPNazulclaro1Layout.createSequentialGroup()
                         .addGap(40, 40, 40)
                         .addGroup(JPNazulclaro1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(JPNazulclaro1Layout.createSequentialGroup()
-                                .addComponent(JBTcadastrar1, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(JBTentrar1, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, JPNazulclaro1Layout.createSequentialGroup()
-                                .addGroup(JPNazulclaro1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(JPFsenha1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 304, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(JLsenha1, javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(JLnomedousuario1, javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(JTFnomedousuario1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 304, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(0, 0, Short.MAX_VALUE)))
-                        .addGap(74, 74, 74))
+                            .addComponent(JLsenha1, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(JLnomedousuario1, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(JTFnomedousuario1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 304, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, JPNazulclaro1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, JPNazulclaro1Layout.createSequentialGroup()
+                                    .addComponent(JBTcadastrar1, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(JBTentrar1, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(JPFsenha1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 304, javax.swing.GroupLayout.PREFERRED_SIZE))))
                     .addGroup(JPNazulclaro1Layout.createSequentialGroup()
-                        .addGap(128, 128, 128)
-                        .addComponent(JBLmotoconnect1, javax.swing.GroupLayout.PREFERRED_SIZE, 233, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap())
+                        .addGap(73, 73, 73)
+                        .addComponent(JLBmotoconnect1, javax.swing.GroupLayout.PREFERRED_SIZE, 241, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(JPNazulclaro1Layout.createSequentialGroup()
+                        .addGap(109, 109, 109)
+                        .addComponent(JBTesqueceusenha1, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(39, Short.MAX_VALUE))
         );
         JPNazulclaro1Layout.setVerticalGroup(
             JPNazulclaro1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, JPNazulclaro1Layout.createSequentialGroup()
-                .addGap(57, 57, 57)
-                .addComponent(JBLmotoconnect1, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(90, 90, 90)
+                .addGap(50, 50, 50)
+                .addComponent(JLBmotoconnect1, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(102, 102, 102)
                 .addComponent(JLnomedousuario1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(JTFnomedousuario1, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(JLsenha1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(JPFsenha1, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(37, 37, 37)
+                .addGap(35, 35, 35)
                 .addComponent(JBTesqueceusenha1, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(33, 33, 33)
+                .addGap(26, 26, 26)
                 .addGroup(JPNazulclaro1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(JBTcadastrar1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(JBTentrar1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(56, 56, 56))
+                .addGap(54, 54, 54))
         );
 
         JBTadministrador1.setBackground(new java.awt.Color(0, 102, 204));
@@ -192,9 +190,9 @@ public class Tela_Login extends javax.swing.JFrame {
                     .addGroup(JPNazulescuro1Layout.createSequentialGroup()
                         .addGap(56, 56, 56)
                         .addComponent(JLBou1)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 105, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 102, Short.MAX_VALUE)
                 .addComponent(JPNazulclaro1, javax.swing.GroupLayout.PREFERRED_SIZE, 383, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(133, 133, 133)
+                .addGap(136, 136, 136)
                 .addGroup(JPNazulescuro1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(JBLsair1, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(JBTsair1, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -205,7 +203,7 @@ public class Tela_Login extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, JPNazulescuro1Layout.createSequentialGroup()
                 .addGap(50, 50, 50)
                 .addComponent(JBTadministrador1, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 269, Short.MAX_VALUE)
                 .addComponent(JBTatendente1, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(JLBou1)
@@ -219,9 +217,9 @@ public class Tela_Login extends javax.swing.JFrame {
                     .addComponent(JBLsair1, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(139, 139, 139))
             .addGroup(JPNazulescuro1Layout.createSequentialGroup()
-                .addGap(15, 15, 15)
-                .addComponent(JPNazulclaro1, javax.swing.GroupLayout.DEFAULT_SIZE, 579, Short.MAX_VALUE)
-                .addContainerGap())
+                .addGap(19, 19, 19)
+                .addComponent(JPNazulclaro1, javax.swing.GroupLayout.PREFERRED_SIZE, 564, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -302,7 +300,6 @@ public class Tela_Login extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel JBLmotoconnect1;
     private javax.swing.JLabel JBLsair1;
     private javax.swing.JButton JBTadministrador1;
     private javax.swing.JButton JBTatendente1;
@@ -311,6 +308,7 @@ public class Tela_Login extends javax.swing.JFrame {
     private javax.swing.JButton JBTentregador1;
     private javax.swing.JButton JBTesqueceusenha1;
     private javax.swing.JButton JBTsair1;
+    private javax.swing.JLabel JLBmotoconnect1;
     private javax.swing.JLabel JLBou1;
     private javax.swing.JLabel JLnomedousuario1;
     private javax.swing.JLabel JLsenha1;

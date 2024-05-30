@@ -64,7 +64,7 @@
                       <Group type="102" attributes="0">
                           <Component id="JBTcancelar4" min="-2" max="-2" attributes="0"/>
                           <EmptySpace min="-2" pref="441" max="-2" attributes="0"/>
-                          <Component id="JBTconfirmar4" min="-2" max="-2" attributes="0"/>
+                          <Component id="JBTsalvar4" min="-2" max="-2" attributes="0"/>
                           <EmptySpace min="-2" pref="61" max="-2" attributes="0"/>
                       </Group>
                       <Group type="103" groupAlignment="0" attributes="0">
@@ -99,7 +99,7 @@
                   </Group>
                   <EmptySpace pref="85" max="32767" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="JBTconfirmar4" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="JBTsalvar4" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="JBTcancelar4" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace min="-2" pref="40" max="-2" attributes="0"/>
@@ -160,9 +160,9 @@
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="1" attributes="0">
-                      <EmptySpace pref="205" max="32767" attributes="0"/>
+                      <EmptySpace pref="253" max="32767" attributes="0"/>
                       <Component id="JLBinformacoesdoatendente4" min="-2" pref="157" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="279" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="231" max="-2" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -479,7 +479,7 @@
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="JBTcancelar4ActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JButton" name="JBTconfirmar4">
+        <Component class="javax.swing.JButton" name="JBTsalvar4">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="33" green="33" red="ff" type="rgb"/>
@@ -490,10 +490,10 @@
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="CONFIRMAR"/>
+            <Property name="text" type="java.lang.String" value="SALVAR"/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="JBTconfirmar4ActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="JBTsalvar4ActionPerformed"/>
           </Events>
         </Component>
         <Component class="javax.swing.JLabel" name="JLBmotoconnect4">

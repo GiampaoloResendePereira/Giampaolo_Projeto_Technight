@@ -53,7 +53,7 @@ public class Tela_Informacoes_Atendente extends javax.swing.JFrame {
         JLBrua4 = new javax.swing.JLabel();
         JLBsenha4 = new javax.swing.JLabel();
         JBTcancelar4 = new javax.swing.JButton();
-        JBTconfirmar4 = new javax.swing.JButton();
+        JBTsalvar4 = new javax.swing.JButton();
         JLBmotoconnect4 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
 
@@ -97,9 +97,9 @@ public class Tela_Informacoes_Atendente extends javax.swing.JFrame {
         JPNinformacoesdoatendente4Layout.setHorizontalGroup(
             JPNinformacoesdoatendente4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, JPNinformacoesdoatendente4Layout.createSequentialGroup()
-                .addContainerGap(205, Short.MAX_VALUE)
+                .addContainerGap(253, Short.MAX_VALUE)
                 .addComponent(JLBinformacoesdoatendente4, javax.swing.GroupLayout.PREFERRED_SIZE, 157, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(279, 279, 279))
+                .addGap(231, 231, 231))
         );
         JPNinformacoesdoatendente4Layout.setVerticalGroup(
             JPNinformacoesdoatendente4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -257,13 +257,13 @@ public class Tela_Informacoes_Atendente extends javax.swing.JFrame {
             }
         });
 
-        JBTconfirmar4.setBackground(new java.awt.Color(255, 51, 51));
-        JBTconfirmar4.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
-        JBTconfirmar4.setForeground(new java.awt.Color(255, 255, 255));
-        JBTconfirmar4.setText("CONFIRMAR");
-        JBTconfirmar4.addActionListener(new java.awt.event.ActionListener() {
+        JBTsalvar4.setBackground(new java.awt.Color(255, 51, 51));
+        JBTsalvar4.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        JBTsalvar4.setForeground(new java.awt.Color(255, 255, 255));
+        JBTsalvar4.setText("SALVAR");
+        JBTsalvar4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                JBTconfirmar4ActionPerformed(evt);
+                JBTsalvar4ActionPerformed(evt);
             }
         });
 
@@ -288,7 +288,7 @@ public class Tela_Informacoes_Atendente extends javax.swing.JFrame {
                     .addGroup(JPNfundo4Layout.createSequentialGroup()
                         .addComponent(JBTcancelar4)
                         .addGap(441, 441, 441)
-                        .addComponent(JBTconfirmar4)
+                        .addComponent(JBTsalvar4)
                         .addGap(61, 61, 61))
                     .addGroup(JPNfundo4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addGroup(JPNfundo4Layout.createSequentialGroup()
@@ -314,7 +314,7 @@ public class Tela_Informacoes_Atendente extends javax.swing.JFrame {
                     .addComponent(JPNazulclaro4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 85, Short.MAX_VALUE)
                 .addGroup(JPNfundo4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(JBTconfirmar4)
+                    .addComponent(JBTsalvar4)
                     .addComponent(JBTcancelar4))
                 .addGap(40, 40, 40))
         );
@@ -340,12 +340,12 @@ public class Tela_Informacoes_Atendente extends javax.swing.JFrame {
         JBTcancelar4.setVisible(true);
     }//GEN-LAST:event_JBTcancelar4ActionPerformed
 
-    private void JBTconfirmar4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBTconfirmar4ActionPerformed
+    private void JBTsalvar4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBTsalvar4ActionPerformed
         // TODO add your handling code here:
         Tela_Informacoes_Atendente.this.dispose();
-        Tela_Menu JBTconfirmar4 = new Tela_Menu();
-        JBTconfirmar4.setVisible(true);
-    }//GEN-LAST:event_JBTconfirmar4ActionPerformed
+        Tela_Menu JBTsalvar4 = new Tela_Menu();
+        JBTsalvar4.setVisible(true);
+    }//GEN-LAST:event_JBTsalvar4ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -384,7 +384,7 @@ public class Tela_Informacoes_Atendente extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton JBTcancelar4;
-    private javax.swing.JButton JBTconfirmar4;
+    private javax.swing.JButton JBTsalvar4;
     private javax.swing.JLabel JLBbairro4;
     private javax.swing.JLabel JLBcadastrodeatendente4;
     private javax.swing.JLabel JLBcep4;

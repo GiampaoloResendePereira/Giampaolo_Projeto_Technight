@@ -53,7 +53,7 @@ public class Tela_Lista_Encomendas extends javax.swing.JFrame {
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addContainerGap(514, Short.MAX_VALUE)
+                .addContainerGap(517, Short.MAX_VALUE)
                 .addComponent(jLabel1)
                 .addGap(461, 461, 461))
         );
@@ -92,6 +92,11 @@ public class Tela_Lista_Encomendas extends javax.swing.JFrame {
         jButton2.setText("VOLTAR");
         jButton2.setMaximumSize(new java.awt.Dimension(106, 25));
         jButton2.setPreferredSize(new java.awt.Dimension(106, 25));
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
 
         jPanel3.setBackground(new java.awt.Color(255, 0, 51));
 
@@ -161,6 +166,13 @@ public class Tela_Lista_Encomendas extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        // TODO add your handling code here:
+        Tela_Lista_Encomendas.this.dispose();
+        Tela_Menu JBTvoltar10 = new Tela_Menu();
+        JBTvoltar10.setVisible(true);
+    }//GEN-LAST:event_jButton2ActionPerformed
 
     /**
      * @param args the command line arguments
