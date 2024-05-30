@@ -33,7 +33,6 @@ public class Tela_Cadastro_Funcionario extends javax.swing.JFrame {
         JLBcadastrodefuncionario3 = new javax.swing.JLabel();
         JLBou3 = new javax.swing.JLabel();
         JLBmotoconnect3 = new javax.swing.JLabel();
-        jLabel1 = new javax.swing.JLabel();
         JBTvoltar3 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -76,14 +75,14 @@ public class Tela_Cadastro_Funcionario extends javax.swing.JFrame {
         JLBou3.setForeground(new java.awt.Color(255, 255, 255));
         JLBou3.setText("ou");
 
-        jLabel1.setIcon(new javax.swing.ImageIcon("D:\\Users\\grpereira\\Desktop\\Giampaolo_Projeto_TechNight\\Giampaolo_Projeto_Technight\\Giampaolo_Projeto_Technight\\MotoConnect\\src\\main\\java\\imagem_login\\motoqueiro.png")); // NOI18N
+        JLBmotoconnect3.setIcon(new javax.swing.ImageIcon("C:\\Users\\PC\\Desktop\\MotoConnect_Projeto\\Giampaolo_Projeto_Technight\\MotoConnect\\src\\main\\java\\imagem_login\\motoqueiro.png")); // NOI18N
 
         javax.swing.GroupLayout JPNazulclaro3Layout = new javax.swing.GroupLayout(JPNazulclaro3);
         JPNazulclaro3.setLayout(JPNazulclaro3Layout);
         JPNazulclaro3Layout.setHorizontalGroup(
             JPNazulclaro3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(JPNazulclaro3Layout.createSequentialGroup()
-                .addContainerGap(82, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, JPNazulclaro3Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(JPNazulclaro3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, JPNazulclaro3Layout.createSequentialGroup()
                         .addGroup(JPNazulclaro3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
@@ -95,21 +94,18 @@ public class Tela_Cadastro_Funcionario extends javax.swing.JFrame {
                         .addGap(188, 188, 188))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, JPNazulclaro3Layout.createSequentialGroup()
                         .addComponent(JLBcadastrodefuncionario3)
-                        .addGap(126, 126, 126))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, JPNazulclaro3Layout.createSequentialGroup()
-                        .addGroup(JPNazulclaro3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jLabel1)
-                            .addComponent(JLBmotoconnect3))
-                        .addGap(70, 70, 70))))
+                        .addGap(126, 126, 126))))
+            .addGroup(JPNazulclaro3Layout.createSequentialGroup()
+                .addGap(76, 76, 76)
+                .addComponent(JLBmotoconnect3, javax.swing.GroupLayout.PREFERRED_SIZE, 232, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 94, Short.MAX_VALUE))
         );
         JPNazulclaro3Layout.setVerticalGroup(
             JPNazulclaro3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, JPNazulclaro3Layout.createSequentialGroup()
-                .addGap(49, 49, 49)
-                .addComponent(JLBmotoconnect3)
-                .addGap(20, 20, 20)
-                .addComponent(jLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 91, Short.MAX_VALUE)
+                .addGap(90, 90, 90)
+                .addComponent(JLBmotoconnect3, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 131, Short.MAX_VALUE)
                 .addComponent(JLBcadastrodefuncionario3)
                 .addGap(18, 18, 18)
                 .addComponent(JBTatendente3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -237,6 +233,5 @@ public class Tela_Cadastro_Funcionario extends javax.swing.JFrame {
     private javax.swing.JLabel JLBou3;
     private javax.swing.JPanel JPNazulclaro3;
     private javax.swing.JPanel JPNfundo3;
-    private javax.swing.JLabel jLabel1;
     // End of variables declaration//GEN-END:variables
 }

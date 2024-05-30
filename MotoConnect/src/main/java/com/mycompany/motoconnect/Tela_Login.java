@@ -86,7 +86,11 @@ public class Tela_Login extends javax.swing.JFrame {
             }
         });
 
-        JPFsenha1.setText("jPasswordField1");
+        JTFnomedousuario1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                JTFnomedousuario1ActionPerformed(evt);
+            }
+        });
 
         JLsenha1.setForeground(new java.awt.Color(255, 255, 255));
         JLsenha1.setText("Senha:");
@@ -94,7 +98,7 @@ public class Tela_Login extends javax.swing.JFrame {
         JLnomedousuario1.setForeground(new java.awt.Color(255, 255, 255));
         JLnomedousuario1.setText("Nome do usuario:");
 
-        JLBmotoconnect1.setIcon(new javax.swing.ImageIcon("D:\\Users\\grpereira\\Desktop\\Giampaolo_Projeto_TechNight\\Giampaolo_Projeto_Technight\\Giampaolo_Projeto_Technight\\MotoConnect\\src\\main\\java\\imagem_login\\motoqueiro.png")); // NOI18N
+        JLBmotoconnect1.setIcon(new javax.swing.ImageIcon("C:\\Users\\PC\\Desktop\\MotoConnect_Projeto\\Giampaolo_Projeto_Technight\\MotoConnect\\src\\main\\java\\imagem_login\\motoqueiro.png")); // NOI18N
 
         javax.swing.GroupLayout JPNazulclaro1Layout = new javax.swing.GroupLayout(JPNazulclaro1);
         JPNazulclaro1.setLayout(JPNazulclaro1Layout);
@@ -149,6 +153,11 @@ public class Tela_Login extends javax.swing.JFrame {
         JBTadministrador1.setForeground(new java.awt.Color(255, 255, 255));
         JBTadministrador1.setText("Administrador");
         JBTadministrador1.setPreferredSize(new java.awt.Dimension(115, 25));
+        JBTadministrador1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                JBTadministrador1ActionPerformed(evt);
+            }
+        });
 
         JBTsair1.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         JBTsair1.setContentAreaFilled(false);
@@ -165,6 +174,11 @@ public class Tela_Login extends javax.swing.JFrame {
         JBTatendente1.setText("Atendente");
         JBTatendente1.setMaximumSize(new java.awt.Dimension(115, 25));
         JBTatendente1.setPreferredSize(new java.awt.Dimension(115, 25));
+        JBTatendente1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                JBTatendente1ActionPerformed(evt);
+            }
+        });
 
         JBTentregador1.setBackground(new java.awt.Color(0, 102, 204));
         JBTentregador1.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
@@ -239,7 +253,8 @@ public class Tela_Login extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void JBTentrar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBTentrar1ActionPerformed
-        // TODO add your handling code here:
+         
+        
         Tela_Login.this.dispose();
         Tela_Menu JBTentrar1 = new Tela_Menu();
         JBTentrar1.setVisible(true);
@@ -263,6 +278,19 @@ public class Tela_Login extends javax.swing.JFrame {
         Tela_Cadastro_Funcionario JBTcadastrar1 = new Tela_Cadastro_Funcionario();
         JBTcadastrar1.setVisible(true);
     }//GEN-LAST:event_JBTcadastrar1ActionPerformed
+
+    private void JBTadministrador1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBTadministrador1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_JBTadministrador1ActionPerformed
+
+    private void JBTatendente1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBTatendente1ActionPerformed
+        // TODO add your handling code here:
+        
+    }//GEN-LAST:event_JBTatendente1ActionPerformed
+
+    private void JTFnomedousuario1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JTFnomedousuario1ActionPerformed
+       
+    }//GEN-LAST:event_JTFnomedousuario1ActionPerformed
 
     /**
      * @param args the command line arguments

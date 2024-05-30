@@ -54,6 +54,7 @@ public class Tela_Menu extends javax.swing.JFrame {
         JPNazulescuro2.setPreferredSize(new java.awt.Dimension(1000, 600));
         JPNazulescuro2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        JBTcadastrodefubcionario2.setIcon(new javax.swing.ImageIcon("C:\\Users\\PC\\Desktop\\MotoConnect_Projeto\\Giampaolo_Projeto_Technight\\MotoConnect\\src\\main\\java\\imagem_login\\Cadastro de Funcionario.png")); // NOI18N
         JBTcadastrodefubcionario2.setContentAreaFilled(false);
         JBTcadastrodefubcionario2.setMaximumSize(new java.awt.Dimension(50, 50));
         JBTcadastrodefubcionario2.setMinimumSize(new java.awt.Dimension(0, 0));
@@ -65,6 +66,7 @@ public class Tela_Menu extends javax.swing.JFrame {
         });
         JPNazulescuro2.add(JBTcadastrodefubcionario2, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 200, 50, 50));
 
+        JBTregistrocalculodefrete2.setIcon(new javax.swing.ImageIcon("C:\\Users\\PC\\Desktop\\MotoConnect_Projeto\\Giampaolo_Projeto_Technight\\MotoConnect\\src\\main\\java\\imagem_login\\Calculo de frete.png")); // NOI18N
         JBTregistrocalculodefrete2.setContentAreaFilled(false);
         JBTregistrocalculodefrete2.setMaximumSize(new java.awt.Dimension(50, 50));
         JBTregistrocalculodefrete2.setMinimumSize(new java.awt.Dimension(50, 50));
@@ -76,6 +78,7 @@ public class Tela_Menu extends javax.swing.JFrame {
         });
         JPNazulescuro2.add(JBTregistrocalculodefrete2, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 200, 50, 50));
 
+        JBTobservacoesecomentarios2.setIcon(new javax.swing.ImageIcon("C:\\Users\\PC\\Desktop\\MotoConnect_Projeto\\Giampaolo_Projeto_Technight\\MotoConnect\\src\\main\\java\\imagem_login\\Observações e Comentarios.png")); // NOI18N
         JBTobservacoesecomentarios2.setContentAreaFilled(false);
         JBTobservacoesecomentarios2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -84,9 +87,11 @@ public class Tela_Menu extends javax.swing.JFrame {
         });
         JPNazulescuro2.add(JBTobservacoesecomentarios2, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 200, 50, 50));
 
+        JBTalertas2.setIcon(new javax.swing.ImageIcon("C:\\Users\\PC\\Desktop\\MotoConnect_Projeto\\Giampaolo_Projeto_Technight\\MotoConnect\\src\\main\\java\\imagem_login\\Alertas.png")); // NOI18N
         JBTalertas2.setContentAreaFilled(false);
         JPNazulescuro2.add(JBTalertas2, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 200, 50, 50));
 
+        JBTcadastrodecliente2.setIcon(new javax.swing.ImageIcon("C:\\Users\\PC\\Desktop\\MotoConnect_Projeto\\Giampaolo_Projeto_Technight\\MotoConnect\\src\\main\\java\\imagem_login\\Cadastro de Cliente.png")); // NOI18N
         JBTcadastrodecliente2.setContentAreaFilled(false);
         JBTcadastrodecliente2.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         JBTcadastrodecliente2.addActionListener(new java.awt.event.ActionListener() {
@@ -104,33 +109,37 @@ public class Tela_Menu extends javax.swing.JFrame {
 
         JTFusuario2.setBackground(new java.awt.Color(0, 102, 255));
         JTFusuario2.setForeground(new java.awt.Color(255, 255, 255));
+        JTFusuario2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                JTFusuario2ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout JPNusuario2Layout = new javax.swing.GroupLayout(JPNusuario2);
         JPNusuario2.setLayout(JPNusuario2Layout);
         JPNusuario2Layout.setHorizontalGroup(
             JPNusuario2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, JPNusuario2Layout.createSequentialGroup()
-                .addContainerGap(111, Short.MAX_VALUE)
-                .addComponent(JLBbemvindo2)
-                .addGap(108, 108, 108))
             .addGroup(JPNusuario2Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(JTFusuario2)
+                .addGap(14, 14, 14)
+                .addComponent(JLBbemvindo2)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(JTFusuario2, javax.swing.GroupLayout.DEFAULT_SIZE, 193, Short.MAX_VALUE)
                 .addContainerGap())
         );
         JPNusuario2Layout.setVerticalGroup(
             JPNusuario2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(JPNusuario2Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(JLBbemvindo2)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(JTFusuario2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(9, Short.MAX_VALUE))
+                .addGap(17, 17, 17)
+                .addGroup(JPNusuario2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(JLBbemvindo2)
+                    .addComponent(JTFusuario2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(21, Short.MAX_VALUE))
         );
 
         JPNazulescuro2.add(JPNusuario2, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 30, 300, 60));
         JPNazulescuro2.add(JLBmotoconnect2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, -1, 110));
 
+        JTBlistaencomendas2.setIcon(new javax.swing.ImageIcon("C:\\Users\\PC\\Desktop\\MotoConnect_Projeto\\Giampaolo_Projeto_Technight\\MotoConnect\\src\\main\\java\\imagem_login\\5-removebg-preview (1).png")); // NOI18N
         JTBlistaencomendas2.setContentAreaFilled(false);
         JTBlistaencomendas2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -139,7 +148,7 @@ public class Tela_Menu extends javax.swing.JFrame {
         });
         JPNazulescuro2.add(JTBlistaencomendas2, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 200, 50, 50));
 
-        jLabel1.setIcon(new javax.swing.ImageIcon("D:\\Users\\grpereira\\Desktop\\Giampaolo_Projeto_TechNight\\Giampaolo_Projeto_Technight\\Giampaolo_Projeto_Technight\\MotoConnect\\src\\main\\java\\imagem_login\\motoqueiro.png")); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\PC\\Desktop\\MotoConnect_Projeto\\Giampaolo_Projeto_Technight\\MotoConnect\\src\\main\\java\\imagem_login\\motoqueiro.png")); // NOI18N
         JPNazulescuro2.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 20, 240, 120));
 
         JLBparavermelha2.setBackground(new java.awt.Color(255, 51, 51));
@@ -156,26 +165,14 @@ public class Tela_Menu extends javax.swing.JFrame {
         );
 
         JPNazulescuro2.add(JLBparavermelha2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 150, 1000, 20));
-
-        JLBcadastrodefuncionario2.setIcon(new javax.swing.ImageIcon("D:\\Users\\grpereira\\Desktop\\Giampaolo_Projeto_TechNight\\Giampaolo_Projeto_Technight\\Giampaolo_Projeto_Technight\\MotoConnect\\src\\main\\java\\imagem_login\\Cadastro de Funcionario.png")); // NOI18N
         JPNazulescuro2.add(JLBcadastrodefuncionario2, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 200, -1, -1));
-
-        JLBregistrodecalculofrete2.setIcon(new javax.swing.ImageIcon("D:\\Users\\grpereira\\Desktop\\Giampaolo_Projeto_TechNight\\Giampaolo_Projeto_Technight\\Giampaolo_Projeto_Technight\\MotoConnect\\src\\main\\java\\imagem_login\\Calculo de frete.png")); // NOI18N
         JPNazulescuro2.add(JLBregistrodecalculofrete2, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 200, -1, -1));
-
-        JLBcadastrodecliente2.setIcon(new javax.swing.ImageIcon("D:\\Users\\grpereira\\Desktop\\Giampaolo_Projeto_TechNight\\Giampaolo_Projeto_Technight\\Giampaolo_Projeto_Technight\\MotoConnect\\src\\main\\java\\imagem_login\\Cadastro de Cliente.png")); // NOI18N
         JPNazulescuro2.add(JLBcadastrodecliente2, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 200, -1, -1));
-
-        JLBobservacoesecomentarios2.setIcon(new javax.swing.ImageIcon("D:\\Users\\grpereira\\Desktop\\Giampaolo_Projeto_TechNight\\Giampaolo_Projeto_Technight\\Giampaolo_Projeto_Technight\\MotoConnect\\src\\main\\java\\imagem_login\\Observações e Comentarios.png")); // NOI18N
         JPNazulescuro2.add(JLBobservacoesecomentarios2, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 190, 50, 60));
-
-        JLBlistaencomenda2.setIcon(new javax.swing.ImageIcon("D:\\Users\\grpereira\\Desktop\\Giampaolo_Projeto_TechNight\\Giampaolo_Projeto_Technight\\Giampaolo_Projeto_Technight\\MotoConnect\\src\\main\\java\\imagem_login\\5-removebg-preview (1).png")); // NOI18N
         JPNazulescuro2.add(JLBlistaencomenda2, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 200, -1, -1));
-
-        JLBalertas2.setIcon(new javax.swing.ImageIcon("D:\\Users\\grpereira\\Desktop\\Giampaolo_Projeto_TechNight\\Giampaolo_Projeto_Technight\\Giampaolo_Projeto_Technight\\MotoConnect\\src\\main\\java\\imagem_login\\Alertas.png")); // NOI18N
         JPNazulescuro2.add(JLBalertas2, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 200, -1, -1));
 
-        JLBsair2.setIcon(new javax.swing.ImageIcon("D:\\Users\\grpereira\\Desktop\\Giampaolo_Projeto_TechNight\\Giampaolo_Projeto_Technight\\Giampaolo_Projeto_Technight\\MotoConnect\\src\\main\\java\\imagem_login\\Sair.png")); // NOI18N
+        JLBsair2.setIcon(new javax.swing.ImageIcon("C:\\Users\\PC\\Desktop\\MotoConnect_Projeto\\Giampaolo_Projeto_Technight\\MotoConnect\\src\\main\\java\\imagem_login\\Sair.png")); // NOI18N
         JPNazulescuro2.add(JLBsair2, new org.netbeans.lib.awtextra.AbsoluteConstraints(890, 490, 50, 60));
 
         JBTsair2.setContentAreaFilled(false);
@@ -241,6 +238,10 @@ public class Tela_Menu extends javax.swing.JFrame {
         Tela_Login JBTsair2 = new Tela_Login();
         JBTsair2.setVisible(true);
     }//GEN-LAST:event_JBTsair2ActionPerformed
+
+    private void JTFusuario2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JTFusuario2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_JTFusuario2ActionPerformed
 
     /**
      * @param args the command line arguments
