@@ -109,6 +109,11 @@ public class Tela_Menu extends javax.swing.JFrame {
 
         JBTalertas2.setIcon(new javax.swing.ImageIcon("C:\\Users\\PC\\Desktop\\MotoConnect_Projeto\\Giampaolo_Projeto_Technight\\MotoConnect\\src\\main\\java\\imagem_login\\Alertas.png")); // NOI18N
         JBTalertas2.setContentAreaFilled(false);
+        JBTalertas2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                JBTalertas2ActionPerformed(evt);
+            }
+        });
         JPNazulescuro2.add(JBTalertas2, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 200, 50, 50));
 
         JBTcadastrodecliente2.setIcon(new javax.swing.ImageIcon("C:\\Users\\PC\\Desktop\\MotoConnect_Projeto\\Giampaolo_Projeto_Technight\\MotoConnect\\src\\main\\java\\imagem_login\\Cadastro de Cliente.png")); // NOI18N
@@ -375,6 +380,12 @@ public class Tela_Menu extends javax.swing.JFrame {
     private void JTFusuario2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JTFusuario2ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_JTFusuario2ActionPerformed
+
+    private void JBTalertas2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBTalertas2ActionPerformed
+        Tela_Menu.this.dispose();
+        Tela_Alertas JBTalertas2 = new Tela_Alertas();
+        JBTalertas2.setVisible(true);
+    }//GEN-LAST:event_JBTalertas2ActionPerformed
 
     /**
      * @param args the command line arguments

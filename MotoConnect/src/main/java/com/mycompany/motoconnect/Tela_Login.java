@@ -86,6 +86,8 @@ public class Tela_Login extends javax.swing.JFrame {
             }
         });
 
+        JPFsenha1.setText("123456");
+
         JTFnomedousuario1.setText("GiampaoloRP");
         JTFnomedousuario1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

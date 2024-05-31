@@ -39,39 +39,46 @@
           <Color blue="cc" green="0" red="0" type="rgb"/>
         </Property>
         <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
-          <Dimension value="[1200, 600]"/>
+          <Dimension value="[1000, 600]"/>
         </Property>
       </Properties>
 
       <Layout>
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
-              <Group type="102" attributes="0">
-                  <EmptySpace pref="50" max="32767" attributes="0"/>
-                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                      <Group type="102" alignment="1" attributes="0">
+              <Group type="102" alignment="1" attributes="0">
+                  <EmptySpace min="-2" pref="45" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="1" attributes="0">
+                      <Group type="102" attributes="0">
                           <Component id="jButton1" min="-2" pref="155" max="-2" attributes="0"/>
                           <EmptySpace max="32767" attributes="0"/>
                           <Component id="jButton2" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <Component id="jScrollPane1" max="32767" attributes="0"/>
-                      <Component id="jPanel2" pref="1100" max="32767" attributes="0"/>
                       <Component id="jPanel3" max="32767" attributes="0"/>
+                      <Group type="102" attributes="0">
+                          <Component id="jLabel3" min="-2" pref="240" max="-2" attributes="0"/>
+                          <EmptySpace max="32767" attributes="0"/>
+                          <Component id="jPanel2" min="-2" pref="651" max="-2" attributes="0"/>
+                      </Group>
+                      <Component id="jScrollPane1" alignment="0" max="32767" attributes="0"/>
                   </Group>
-                  <EmptySpace pref="50" max="32767" attributes="0"/>
+                  <EmptySpace min="-2" pref="173" max="-2" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
         <DimensionLayout dim="1">
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
-                  <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
-                  <Component id="jPanel2" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace pref="48" max="32767" attributes="0"/>
+                  <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Component id="jPanel2" min="-2" max="-2" attributes="0"/>
+                      <Component id="jLabel3" min="-2" pref="110" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace pref="29" max="32767" attributes="0"/>
                   <Component id="jPanel3" min="-2" max="-2" attributes="0"/>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
-                  <Component id="jScrollPane1" min="-2" pref="337" max="-2" attributes="0"/>
-                  <EmptySpace min="-2" pref="56" max="-2" attributes="0"/>
+                  <Component id="jScrollPane1" min="-2" pref="167" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="167" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="jButton1" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="jButton2" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -95,10 +102,10 @@
           <Layout>
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" alignment="1" attributes="0">
-                      <EmptySpace pref="517" max="32767" attributes="0"/>
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace min="-2" pref="267" max="-2" attributes="0"/>
                       <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="461" max="-2" attributes="0"/>
+                      <EmptySpace pref="259" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -138,14 +145,83 @@
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="33" green="33" red="ff" type="rgb"/>
                 </Property>
+                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                  <Color blue="ff" green="ff" red="ff" type="rgb"/>
+                </Property>
                 <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
-                  <Table columnCount="6" rowCount="4">
-                    <Column editable="true" title="Numero do pedido" type="java.lang.Object"/>
-                    <Column editable="true" title="Endere&#xe7;o de origem" type="java.lang.Object"/>
-                    <Column editable="true" title="Entregador" type="java.lang.Object"/>
-                    <Column editable="true" title="Endere&#xe7;o do destino" type="java.lang.Object"/>
-                    <Column editable="true" title="Data de entrega" type="java.lang.Object"/>
-                    <Column editable="true" title="Status" type="java.lang.Object"/>
+                  <Table columnCount="6" rowCount="10">
+                    <Column editable="true" title="Numero do pedido" type="java.lang.Object">
+                      <Data value="12345"/>
+                      <Data value="12346"/>
+                      <Data value="12347"/>
+                      <Data value="12348"/>
+                      <Data value="12349"/>
+                      <Data value="12350"/>
+                      <Data value="12351"/>
+                      <Data value="null"/>
+                      <Data value="null"/>
+                      <Data value="null"/>
+                    </Column>
+                    <Column editable="true" title="Endere&#xe7;o de origem" type="java.lang.Object">
+                      <Data value="Rua das Flores, 123, Jardim da Penha, Vit&#xf3;ria"/>
+                      <Data value="Avenida Central, 456, Praia do Canto, Vit&#xf3;ria"/>
+                      <Data value="Travessa do Sol, 789, Centro, Vila Velha"/>
+                      <Data value="Rua dos P&#xe1;ssaros, 321, Itapu&#xe3;, Vila Velha"/>
+                      <Data value="Avenida Beira Mar, 654, Praia da Costa, Vila Velha"/>
+                      <Data value="Rua do Com&#xe9;rcio, 987, Centro, Serra"/>
+                      <Data value="Avenida das Ind&#xfa;strias, 135, Civit II, Serra"/>
+                      <Data value="null"/>
+                      <Data value="null"/>
+                      <Data value="null"/>
+                    </Column>
+                    <Column editable="true" title="Entregador" type="java.lang.Object">
+                      <Data value=" Vitor Ramos"/>
+                      <Data value="Gabriel Ant&#xf5;nio"/>
+                      <Data value="Melissa Lopes"/>
+                      <Data value="Tais Silva"/>
+                      <Data value="Ramon Cardoso"/>
+                      <Data value="Paolo Gimenez"/>
+                      <Data value="Ygor Pereira"/>
+                      <Data value="null"/>
+                      <Data value="null"/>
+                      <Data value="null"/>
+                    </Column>
+                    <Column editable="true" title="Endere&#xe7;o do destino" type="java.lang.Object">
+                      <Data value="Rua das Palmeiras, 123 - Centro, Vit&#xf3;ria"/>
+                      <Data value="Avenida Champagnat, 456 - Praia da Costa, Vila Velha"/>
+                      <Data value="Travessa das Flores, 789 - Jardim Am&#xe9;rica, Cariacica"/>
+                      <Data value="Avenida Tal, 321 - Serra Dourada, Serra"/>
+                      <Data value="Pra&#xe7;a Principal, 101 - Centro, Viana"/>
+                      <Data value="Rua dos Coqueiros, 234 - Jardim Camburi, Vit&#xf3;ria"/>
+                      <Data value="Avenida das Gaivotas, 567 - Itapu&#xe3;, Vila Velha "/>
+                      <Data value="null"/>
+                      <Data value="null"/>
+                      <Data value="null"/>
+                    </Column>
+                    <Column editable="true" title="Data de entrega" type="java.lang.Object">
+                      <Data value="03/05/24"/>
+                      <Data value="04/05/24"/>
+                      <Data value="02/05/24"/>
+                      <Data value="02/05/24"/>
+                      <Data value="03/05/24"/>
+                      <Data value="03/05/24"/>
+                      <Data value="02/05/24"/>
+                      <Data value="null"/>
+                      <Data value="null"/>
+                      <Data value="null"/>
+                    </Column>
+                    <Column editable="true" title="Status" type="java.lang.Object">
+                      <Data value="Em andamento"/>
+                      <Data value="Agendada"/>
+                      <Data value="Finalizada"/>
+                      <Data value="Finalizada"/>
+                      <Data value="Em andamento"/>
+                      <Data value="Em andamento"/>
+                      <Data value="Finalizada"/>
+                      <Data value="null"/>
+                      <Data value="null"/>
+                      <Data value="null"/>
+                    </Column>
                   </Table>
                 </Property>
                 <Property name="columnModel" type="javax.swing.table.TableColumnModel" editor="org.netbeans.modules.form.editors2.TableColumnModelEditor">
@@ -186,6 +262,9 @@
                   <TableHeader reorderingAllowed="true" resizingAllowed="true"/>
                 </Property>
               </Properties>
+              <Events>
+                <EventHandler event="ancestorAdded" listener="javax.swing.event.AncestorListener" parameters="javax.swing.event.AncestorEvent" handler="jTable1AncestorAdded"/>
+              </Events>
             </Component>
           </SubComponents>
         </Container>
@@ -244,7 +323,7 @@
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
+                      <Component id="jLabel2" min="-2" pref="132" max="-2" attributes="0"/>
                       <EmptySpace max="32767" attributes="0"/>
                   </Group>
               </Group>
@@ -273,6 +352,13 @@
             </Component>
           </SubComponents>
         </Container>
+        <Component class="javax.swing.JLabel" name="jLabel3">
+          <Properties>
+            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+              <Image iconType="2" name="C:\Users\PC\Desktop\MotoConnect_Projeto\Giampaolo_Projeto_Technight\MotoConnect\src\main\java\imagem_login\motoqueiro.png"/>
+            </Property>
+          </Properties>
+        </Component>
       </SubComponents>
     </Container>
   </SubComponents>
