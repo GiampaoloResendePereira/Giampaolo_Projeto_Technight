@@ -86,6 +86,7 @@ public class Tela_Login extends javax.swing.JFrame {
             }
         });
 
+        JTFnomedousuario1.setText("GiampaoloRP");
         JTFnomedousuario1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 JTFnomedousuario1ActionPerformed(evt);
@@ -159,7 +160,12 @@ public class Tela_Login extends javax.swing.JFrame {
             }
         });
 
+        JBLsair1.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        JBLsair1.setForeground(new java.awt.Color(255, 255, 255));
+        JBLsair1.setText("SAIR");
+
         JBTsair1.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        JBTsair1.setIcon(new javax.swing.ImageIcon("C:\\Users\\PC\\Desktop\\MotoConnect_Projeto\\Giampaolo_Projeto_Technight\\MotoConnect\\src\\main\\java\\imagem_login\\Sair.png")); // NOI18N
         JBTsair1.setContentAreaFilled(false);
         JBTsair1.setPreferredSize(new java.awt.Dimension(70, 30));
         JBTsair1.addActionListener(new java.awt.event.ActionListener() {
@@ -204,13 +210,16 @@ public class Tela_Login extends javax.swing.JFrame {
                     .addGroup(JPNazulescuro1Layout.createSequentialGroup()
                         .addGap(56, 56, 56)
                         .addComponent(JLBou1)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 102, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 97, Short.MAX_VALUE)
                 .addComponent(JPNazulclaro1, javax.swing.GroupLayout.PREFERRED_SIZE, 383, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(136, 136, 136)
-                .addGroup(JPNazulescuro1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(JBLsair1, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(JBTsair1, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(82, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 214, Short.MAX_VALUE)
+                .addGroup(JPNazulescuro1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, JPNazulescuro1Layout.createSequentialGroup()
+                        .addComponent(JBTsair1, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(47, 47, 47))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, JPNazulescuro1Layout.createSequentialGroup()
+                        .addComponent(JBLsair1)
+                        .addGap(61, 61, 61))))
         );
         JPNazulescuro1Layout.setVerticalGroup(
             JPNazulescuro1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -224,16 +233,16 @@ public class Tela_Login extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addComponent(JBTentregador1, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(126, 126, 126))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, JPNazulescuro1Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(JPNazulescuro1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(JBTsair1, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(JBLsair1, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(139, 139, 139))
             .addGroup(JPNazulescuro1Layout.createSequentialGroup()
                 .addGap(19, 19, 19)
                 .addComponent(JPNazulclaro1, javax.swing.GroupLayout.PREFERRED_SIZE, 564, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, JPNazulescuro1Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(JBTsair1, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(JBLsair1)
+                .addGap(38, 38, 38))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());

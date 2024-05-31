@@ -47,8 +47,28 @@ public class Tela_Menu extends javax.swing.JFrame {
         JLBalertas2 = new javax.swing.JLabel();
         JLBsair2 = new javax.swing.JLabel();
         JBTsair2 = new javax.swing.JButton();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
+        jLabel9 = new javax.swing.JLabel();
+        jLabel10 = new javax.swing.JLabel();
+        jLabel12 = new javax.swing.JLabel();
+        jLabel13 = new javax.swing.JLabel();
+        jLabel11 = new javax.swing.JLabel();
+        jPanel1 = new javax.swing.JPanel();
+        jLabel14 = new javax.swing.JLabel();
+        jLabel15 = new javax.swing.JLabel();
+        jLabel16 = new javax.swing.JLabel();
+        jLabel17 = new javax.swing.JLabel();
+        jLabel18 = new javax.swing.JLabel();
+        jLabel19 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         JPNazulescuro2.setBackground(new java.awt.Color(0, 51, 204));
         JPNazulescuro2.setPreferredSize(new java.awt.Dimension(1000, 600));
@@ -76,7 +96,7 @@ public class Tela_Menu extends javax.swing.JFrame {
                 JBTregistrocalculodefrete2ActionPerformed(evt);
             }
         });
-        JPNazulescuro2.add(JBTregistrocalculodefrete2, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 200, 50, 50));
+        JPNazulescuro2.add(JBTregistrocalculodefrete2, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 200, 50, 50));
 
         JBTobservacoesecomentarios2.setIcon(new javax.swing.ImageIcon("C:\\Users\\PC\\Desktop\\MotoConnect_Projeto\\Giampaolo_Projeto_Technight\\MotoConnect\\src\\main\\java\\imagem_login\\Observações e Comentarios.png")); // NOI18N
         JBTobservacoesecomentarios2.setContentAreaFilled(false);
@@ -85,11 +105,11 @@ public class Tela_Menu extends javax.swing.JFrame {
                 JBTobservacoesecomentarios2ActionPerformed(evt);
             }
         });
-        JPNazulescuro2.add(JBTobservacoesecomentarios2, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 200, 50, 50));
+        JPNazulescuro2.add(JBTobservacoesecomentarios2, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 200, 50, 50));
 
         JBTalertas2.setIcon(new javax.swing.ImageIcon("C:\\Users\\PC\\Desktop\\MotoConnect_Projeto\\Giampaolo_Projeto_Technight\\MotoConnect\\src\\main\\java\\imagem_login\\Alertas.png")); // NOI18N
         JBTalertas2.setContentAreaFilled(false);
-        JPNazulescuro2.add(JBTalertas2, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 200, 50, 50));
+        JPNazulescuro2.add(JBTalertas2, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 200, 50, 50));
 
         JBTcadastrodecliente2.setIcon(new javax.swing.ImageIcon("C:\\Users\\PC\\Desktop\\MotoConnect_Projeto\\Giampaolo_Projeto_Technight\\MotoConnect\\src\\main\\java\\imagem_login\\Cadastro de Cliente.png")); // NOI18N
         JBTcadastrodecliente2.setContentAreaFilled(false);
@@ -99,7 +119,7 @@ public class Tela_Menu extends javax.swing.JFrame {
                 JBTcadastrodecliente2ActionPerformed(evt);
             }
         });
-        JPNazulescuro2.add(JBTcadastrodecliente2, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 200, 50, 50));
+        JPNazulescuro2.add(JBTcadastrodecliente2, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 200, 50, 50));
 
         JPNusuario2.setBackground(new java.awt.Color(0, 102, 255));
 
@@ -146,7 +166,7 @@ public class Tela_Menu extends javax.swing.JFrame {
                 JTBlistaencomendas2ActionPerformed(evt);
             }
         });
-        JPNazulescuro2.add(JTBlistaencomendas2, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 200, 50, 50));
+        JPNazulescuro2.add(JTBlistaencomendas2, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 200, 50, 50));
 
         jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\PC\\Desktop\\MotoConnect_Projeto\\Giampaolo_Projeto_Technight\\MotoConnect\\src\\main\\java\\imagem_login\\motoqueiro.png")); // NOI18N
         JPNazulescuro2.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 20, 240, 120));
@@ -183,16 +203,129 @@ public class Tela_Menu extends javax.swing.JFrame {
         });
         JPNazulescuro2.add(JBTsair2, new org.netbeans.lib.awtextra.AbsoluteConstraints(892, 490, 50, 60));
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(JPNazulescuro2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+        jLabel2.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel2.setText("Cadastro ");
+        JPNazulescuro2.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 250, -1, -1));
+
+        jLabel3.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel3.setText("Funcionario");
+        JPNazulescuro2.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 270, -1, -1));
+
+        jLabel4.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel4.setText("  Frete");
+        JPNazulescuro2.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 270, -1, -1));
+
+        jLabel5.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel5.setText("Calculo");
+        JPNazulescuro2.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 250, -1, -1));
+
+        jLabel6.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel6.setText("Cadastro");
+        JPNazulescuro2.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 250, -1, -1));
+
+        jLabel7.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        jLabel7.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel7.setText(" Cliente");
+        JPNazulescuro2.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 270, -1, -1));
+
+        jLabel8.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        jLabel8.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel8.setText("Lista de");
+        JPNazulescuro2.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 250, -1, -1));
+
+        jLabel9.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        jLabel9.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel9.setText("Encomendas");
+        JPNazulescuro2.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 270, -1, -1));
+
+        jLabel10.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        jLabel10.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel10.setText("Observações e");
+        JPNazulescuro2.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 250, -1, -1));
+
+        jLabel12.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        jLabel12.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel12.setText(" Alertas");
+        JPNazulescuro2.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 250, -1, -1));
+
+        jLabel13.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        jLabel13.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel13.setText("Comentarios");
+        JPNazulescuro2.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 270, -1, -1));
+
+        jLabel11.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        jLabel11.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel11.setText("SAIR");
+        JPNazulescuro2.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(900, 550, -1, -1));
+
+        jPanel1.setBackground(new java.awt.Color(0, 102, 255));
+
+        jLabel14.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        jLabel14.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel14.setText("📢 Aviso Importante: Entregas Disponíveis Apenas na Região da Grande Vitória 📢");
+
+        jLabel15.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel15.setText("Informamos que nosso serviço de entrega está restrito à região da Grande Vitória. Não");
+
+        jLabel16.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel16.setText("estamos realizando entregas fora desta área no momento. Pedimos a compreensão dos");
+
+        jLabel17.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel17.setText("clientes e reforçamos nosso compromisso em oferecer o melhor atendimento possível");
+
+        jLabel18.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel18.setText("dentro da nossa região de atuação, abrangendo os municípios de Vitória, Vila Velha,");
+
+        jLabel19.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel19.setText("Cariacica, Serra e Viana. Agradecemos pela compreensão e pela preferência.");
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(20, 20, 20)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel15)
+                            .addComponent(jLabel14)
+                            .addComponent(jLabel16)
+                            .addComponent(jLabel17)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGap(6, 6, 6)
+                                .addComponent(jLabel18))))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(52, 52, 52)
+                        .addComponent(jLabel19)))
+                .addContainerGap(19, Short.MAX_VALUE))
         );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(JPNazulescuro2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(23, 23, 23)
+                .addComponent(jLabel14)
+                .addGap(18, 18, 18)
+                .addComponent(jLabel15)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel16)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel17)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel19)
+                .addContainerGap(31, Short.MAX_VALUE))
         );
+
+        JPNazulescuro2.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 350, 510, 190));
+
+        getContentPane().add(JPNazulescuro2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -301,5 +434,24 @@ public class Tela_Menu extends javax.swing.JFrame {
     private javax.swing.JButton JTBlistaencomendas2;
     private javax.swing.JTextField JTFusuario2;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel15;
+    private javax.swing.JLabel jLabel16;
+    private javax.swing.JLabel jLabel17;
+    private javax.swing.JLabel jLabel18;
+    private javax.swing.JLabel jLabel19;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
+    private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
 }

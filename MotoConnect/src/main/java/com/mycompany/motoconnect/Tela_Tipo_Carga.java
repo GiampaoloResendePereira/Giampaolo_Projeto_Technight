@@ -198,7 +198,7 @@ public class Tela_Tipo_Carga extends javax.swing.JFrame {
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
         Tela_Tipo_Carga.this.dispose();
-        Tela_Cadastro_Cliente JBTcontinuar6 = new Tela_Cadastro_Cliente();
+        Tela_Calculo_Frete JBTcontinuar6 = new Tela_Calculo_Frete();
         JBTcontinuar6.setVisible(true);
     }//GEN-LAST:event_jButton2ActionPerformed
 
