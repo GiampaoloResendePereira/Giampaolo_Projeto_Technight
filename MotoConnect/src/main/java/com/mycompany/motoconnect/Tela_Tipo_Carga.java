@@ -26,96 +26,96 @@ public class Tela_Tipo_Carga extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel1 = new javax.swing.JPanel();
-        jPanel2 = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
-        jPanel3 = new javax.swing.JPanel();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
+        JPNfundo6 = new javax.swing.JPanel();
+        JPNlinhaazul6 = new javax.swing.JPanel();
+        JLBtiposdecargas6 = new javax.swing.JLabel();
+        JPNfundoazulclaro6 = new javax.swing.JPanel();
+        JLBdocumentos6 = new javax.swing.JLabel();
+        JLBencomendaspequenas6 = new javax.swing.JLabel();
+        JLBpequenosequipamentos6 = new javax.swing.JLabel();
+        JLBmedicamentos6 = new javax.swing.JLabel();
+        JLBprodutos6 = new javax.swing.JLabel();
         JBTvoltar6 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jPanel1.setBackground(new java.awt.Color(0, 51, 204));
-        jPanel1.setPreferredSize(new java.awt.Dimension(1000, 600));
+        JPNfundo6.setBackground(new java.awt.Color(0, 51, 204));
+        JPNfundo6.setPreferredSize(new java.awt.Dimension(1000, 600));
 
-        jPanel2.setBackground(new java.awt.Color(0, 102, 255));
-        jPanel2.setPreferredSize(new java.awt.Dimension(844, 30));
+        JPNlinhaazul6.setBackground(new java.awt.Color(0, 102, 255));
+        JPNlinhaazul6.setPreferredSize(new java.awt.Dimension(844, 30));
 
-        jLabel1.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel1.setText("Tipos de Cargas");
+        JLBtiposdecargas6.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        JLBtiposdecargas6.setForeground(new java.awt.Color(255, 255, 255));
+        JLBtiposdecargas6.setText("Tipos de Cargas");
 
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+        javax.swing.GroupLayout JPNlinhaazul6Layout = new javax.swing.GroupLayout(JPNlinhaazul6);
+        JPNlinhaazul6.setLayout(JPNlinhaazul6Layout);
+        JPNlinhaazul6Layout.setHorizontalGroup(
+            JPNlinhaazul6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, JPNlinhaazul6Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel1)
+                .addComponent(JLBtiposdecargas6)
                 .addGap(366, 366, 366))
         );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
+        JPNlinhaazul6Layout.setVerticalGroup(
+            JPNlinhaazul6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(JPNlinhaazul6Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel1)
+                .addComponent(JLBtiposdecargas6)
                 .addContainerGap(10, Short.MAX_VALUE))
         );
 
-        jPanel3.setBackground(new java.awt.Color(0, 102, 255));
+        JPNfundoazulclaro6.setBackground(new java.awt.Color(0, 102, 255));
 
-        jLabel2.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel2.setText("Documentos: Cartas, contratos, documentos legais.");
+        JLBdocumentos6.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        JLBdocumentos6.setForeground(new java.awt.Color(255, 255, 255));
+        JLBdocumentos6.setText("Documentos: Cartas, contratos, documentos legais.");
 
-        jLabel3.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel3.setText("Encomendas Pequenas: Pacotes pequenos e leves, como correspondência,  produtos de e-commerce.");
+        JLBencomendaspequenas6.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        JLBencomendaspequenas6.setForeground(new java.awt.Color(255, 255, 255));
+        JLBencomendaspequenas6.setText("Encomendas Pequenas: Pacotes pequenos e leves, como correspondência,  produtos de e-commerce.");
 
-        jLabel4.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel4.setText("Pequenos Equipamentos: Peças de reposição, acessórios eletrônicos e ferramentas leves.");
+        JLBpequenosequipamentos6.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        JLBpequenosequipamentos6.setForeground(new java.awt.Color(255, 255, 255));
+        JLBpequenosequipamentos6.setText("Pequenos Equipamentos: Peças de reposição, acessórios eletrônicos e ferramentas leves.");
 
-        jLabel5.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
-        jLabel5.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel5.setText("Medicamentos e Suprimentos Médicos: Entrega de medicamentos, suprimentos  médicos pequenos, amostras médicas.");
+        JLBmedicamentos6.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        JLBmedicamentos6.setForeground(new java.awt.Color(255, 255, 255));
+        JLBmedicamentos6.setText("Medicamentos e Suprimentos Médicos: Entrega de medicamentos, suprimentos  médicos pequenos, amostras médicas.");
 
-        jLabel6.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
-        jLabel6.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel6.setText("Produtos de Varejo: Pequenos produtos de varejo, como cosméticos, roupas leves,  acessórios.");
+        JLBprodutos6.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        JLBprodutos6.setForeground(new java.awt.Color(255, 255, 255));
+        JLBprodutos6.setText("Produtos de Varejo: Pequenos produtos de varejo, como cosméticos, roupas leves,  acessórios.");
 
-        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
-        jPanel3.setLayout(jPanel3Layout);
-        jPanel3Layout.setHorizontalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel3Layout.createSequentialGroup()
+        javax.swing.GroupLayout JPNfundoazulclaro6Layout = new javax.swing.GroupLayout(JPNfundoazulclaro6);
+        JPNfundoazulclaro6.setLayout(JPNfundoazulclaro6Layout);
+        JPNfundoazulclaro6Layout.setHorizontalGroup(
+            JPNfundoazulclaro6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(JPNfundoazulclaro6Layout.createSequentialGroup()
                 .addGap(38, 38, 38)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel6)
-                    .addComponent(jLabel5)
-                    .addComponent(jLabel4)
-                    .addComponent(jLabel3)
-                    .addComponent(jLabel2))
+                .addGroup(JPNfundoazulclaro6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(JLBprodutos6)
+                    .addComponent(JLBmedicamentos6)
+                    .addComponent(JLBpequenosequipamentos6)
+                    .addComponent(JLBencomendaspequenas6)
+                    .addComponent(JLBdocumentos6))
                 .addContainerGap(111, Short.MAX_VALUE))
         );
-        jPanel3Layout.setVerticalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel3Layout.createSequentialGroup()
+        JPNfundoazulclaro6Layout.setVerticalGroup(
+            JPNfundoazulclaro6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(JPNfundoazulclaro6Layout.createSequentialGroup()
                 .addGap(40, 40, 40)
-                .addComponent(jLabel2)
+                .addComponent(JLBdocumentos6)
                 .addGap(44, 44, 44)
-                .addComponent(jLabel3)
+                .addComponent(JLBencomendaspequenas6)
                 .addGap(35, 35, 35)
-                .addComponent(jLabel4)
+                .addComponent(JLBpequenosequipamentos6)
                 .addGap(46, 46, 46)
-                .addComponent(jLabel5)
+                .addComponent(JLBmedicamentos6)
                 .addGap(49, 49, 49)
-                .addComponent(jLabel6)
+                .addComponent(JLBprodutos6)
                 .addContainerGap(51, Short.MAX_VALUE))
         );
 
@@ -143,30 +143,30 @@ public class Tela_Tipo_Carga extends javax.swing.JFrame {
             }
         });
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(102, Short.MAX_VALUE)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
+        javax.swing.GroupLayout JPNfundo6Layout = new javax.swing.GroupLayout(JPNfundo6);
+        JPNfundo6.setLayout(JPNfundo6Layout);
+        JPNfundo6Layout.setHorizontalGroup(
+            JPNfundo6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, JPNfundo6Layout.createSequentialGroup()
+                .addContainerGap(84, Short.MAX_VALUE)
+                .addGroup(JPNfundo6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(JPNfundo6Layout.createSequentialGroup()
                         .addComponent(JBTvoltar6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, 833, Short.MAX_VALUE))
+                    .addComponent(JPNfundoazulclaro6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(JPNlinhaazul6, javax.swing.GroupLayout.DEFAULT_SIZE, 851, Short.MAX_VALUE))
                 .addGap(65, 65, 65))
         );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
+        JPNfundo6Layout.setVerticalGroup(
+            JPNfundo6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(JPNfundo6Layout.createSequentialGroup()
                 .addGap(37, 37, 37)
-                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(JPNlinhaazul6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(JPNfundoazulclaro6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 124, Short.MAX_VALUE)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(JPNfundo6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(JBTvoltar6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(31, 31, 31))
@@ -176,12 +176,12 @@ public class Tela_Tipo_Carga extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(JPNfundo6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(JPNfundo6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, Short.MAX_VALUE))
         );
 
@@ -239,15 +239,15 @@ public class Tela_Tipo_Carga extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton JBTvoltar6;
+    private javax.swing.JLabel JLBdocumentos6;
+    private javax.swing.JLabel JLBencomendaspequenas6;
+    private javax.swing.JLabel JLBmedicamentos6;
+    private javax.swing.JLabel JLBpequenosequipamentos6;
+    private javax.swing.JLabel JLBprodutos6;
+    private javax.swing.JLabel JLBtiposdecargas6;
+    private javax.swing.JPanel JPNfundo6;
+    private javax.swing.JPanel JPNfundoazulclaro6;
+    private javax.swing.JPanel JPNlinhaazul6;
     private javax.swing.JButton jButton2;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
-    private javax.swing.JPanel jPanel3;
     // End of variables declaration//GEN-END:variables
 }
