@@ -26,70 +26,77 @@ public class Tela_Observacoes_Comentarioes extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel1 = new javax.swing.JPanel();
-        jPanel5 = new javax.swing.JPanel();
-        jLabel11 = new javax.swing.JLabel();
-        jLabel1 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
-        jPanel2 = new javax.swing.JPanel();
-        jLabel2 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
-        jLabel3 = new javax.swing.JLabel();
-        jScrollPane1 = new javax.swing.JScrollPane();
+        JPNfundo12 = new javax.swing.JPanel();
+        JPNobservacoesecomentarios12 = new javax.swing.JPanel();
+        JLBobservacoesecomentarios12 = new javax.swing.JLabel();
+        JLBmotoconnect12 = new javax.swing.JLabel();
+        JBTvoltar12 = new javax.swing.JButton();
+        JPNazulclaro12 = new javax.swing.JPanel();
+        JLBadministrador12 = new javax.swing.JLabel();
+        JTFadministrador12 = new javax.swing.JTextField();
+        JLBassunto12 = new javax.swing.JLabel();
+        JSPassunto12 = new javax.swing.JScrollPane();
         jTextArea1 = new javax.swing.JTextArea();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jPanel1.setBackground(new java.awt.Color(0, 51, 204));
-        jPanel1.setPreferredSize(new java.awt.Dimension(1000, 600));
+        JPNfundo12.setBackground(new java.awt.Color(0, 51, 204));
+        JPNfundo12.setPreferredSize(new java.awt.Dimension(1000, 600));
 
-        jPanel5.setBackground(new java.awt.Color(0, 102, 255));
-        jPanel5.setPreferredSize(new java.awt.Dimension(844, 30));
+        JPNobservacoesecomentarios12.setBackground(new java.awt.Color(0, 102, 255));
+        JPNobservacoesecomentarios12.setPreferredSize(new java.awt.Dimension(844, 30));
 
-        jLabel11.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
-        jLabel11.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel11.setText("Observações e comentarios ");
+        JLBobservacoesecomentarios12.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        JLBobservacoesecomentarios12.setForeground(new java.awt.Color(255, 255, 255));
+        JLBobservacoesecomentarios12.setText("Observações e comentarios ");
 
-        javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
-        jPanel5.setLayout(jPanel5Layout);
-        jPanel5Layout.setHorizontalGroup(
-            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel5Layout.createSequentialGroup()
+        javax.swing.GroupLayout JPNobservacoesecomentarios12Layout = new javax.swing.GroupLayout(JPNobservacoesecomentarios12);
+        JPNobservacoesecomentarios12.setLayout(JPNobservacoesecomentarios12Layout);
+        JPNobservacoesecomentarios12Layout.setHorizontalGroup(
+            JPNobservacoesecomentarios12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(JPNobservacoesecomentarios12Layout.createSequentialGroup()
                 .addGap(276, 276, 276)
-                .addComponent(jLabel11)
+                .addComponent(JLBobservacoesecomentarios12)
                 .addContainerGap(232, Short.MAX_VALUE))
         );
-        jPanel5Layout.setVerticalGroup(
-            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel5Layout.createSequentialGroup()
+        JPNobservacoesecomentarios12Layout.setVerticalGroup(
+            JPNobservacoesecomentarios12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(JPNobservacoesecomentarios12Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel11)
+                .addComponent(JLBobservacoesecomentarios12)
                 .addContainerGap(10, Short.MAX_VALUE))
         );
 
-        jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\PC\\Desktop\\MotoConnect_Projeto\\Giampaolo_Projeto_Technight\\MotoConnect\\src\\main\\java\\imagem_login\\motoqueiro.png")); // NOI18N
+        JLBmotoconnect12.setIcon(new javax.swing.ImageIcon("C:\\Users\\PC\\Desktop\\MotoConnect_Projeto\\Giampaolo_Projeto_Technight\\MotoConnect\\src\\main\\java\\imagem_login\\motoqueiro.png")); // NOI18N
 
-        jButton1.setBackground(new java.awt.Color(255, 51, 51));
-        jButton1.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
-        jButton1.setForeground(new java.awt.Color(255, 255, 255));
-        jButton1.setText("VOLTAR");
+        JBTvoltar12.setBackground(new java.awt.Color(255, 51, 51));
+        JBTvoltar12.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        JBTvoltar12.setForeground(new java.awt.Color(255, 255, 255));
+        JBTvoltar12.setText("VOLTAR");
+        JBTvoltar12.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                JBTvoltar12ActionPerformed(evt);
+            }
+        });
 
-        jPanel2.setBackground(new java.awt.Color(0, 102, 255));
+        JPNazulclaro12.setBackground(new java.awt.Color(0, 102, 255));
 
-        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel2.setText("Administrador:");
+        JLBadministrador12.setForeground(new java.awt.Color(255, 255, 255));
+        JLBadministrador12.setText("Administrador:");
 
-        jTextField1.setBackground(new java.awt.Color(0, 102, 255));
-        jTextField1.setForeground(new java.awt.Color(255, 255, 255));
+        JTFadministrador12.setBackground(new java.awt.Color(0, 102, 255));
+        JTFadministrador12.setForeground(new java.awt.Color(255, 255, 255));
+        JTFadministrador12.setText(" Giampaolo Resende");
 
-        jLabel3.setBackground(new java.awt.Color(0, 102, 255));
-        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel3.setText("Assunto:");
+        JLBassunto12.setBackground(new java.awt.Color(0, 102, 255));
+        JLBassunto12.setForeground(new java.awt.Color(255, 255, 255));
+        JLBassunto12.setText("Assunto:");
 
         jTextArea1.setBackground(new java.awt.Color(0, 102, 255));
         jTextArea1.setColumns(20);
         jTextArea1.setForeground(new java.awt.Color(255, 255, 255));
         jTextArea1.setRows(5);
+        jTextArea1.setText("Restrição de Tamanho no Baú do Motoboy\n\nGostaríamos de informar que há uma restrição de tamanho para as encomendas que podem ser transportadas pelos nossos motoboys. \nPor favor, considere as dimensões máximas de 50 cm de comprimento, 40 cm de largura e 30 cm de altura para garantir uma entrega segura \ne eficiente.\nAgradecemos pela compreensão e colaboração.");
         jTextArea1.addAncestorListener(new javax.swing.event.AncestorListener() {
             public void ancestorAdded(javax.swing.event.AncestorEvent evt) {
                 jTextArea1AncestorAdded(evt);
@@ -99,67 +106,67 @@ public class Tela_Observacoes_Comentarioes extends javax.swing.JFrame {
             public void ancestorRemoved(javax.swing.event.AncestorEvent evt) {
             }
         });
-        jScrollPane1.setViewportView(jTextArea1);
+        JSPassunto12.setViewportView(jTextArea1);
 
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
+        javax.swing.GroupLayout JPNazulclaro12Layout = new javax.swing.GroupLayout(JPNazulclaro12);
+        JPNazulclaro12.setLayout(JPNazulclaro12Layout);
+        JPNazulclaro12Layout.setHorizontalGroup(
+            JPNazulclaro12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(JPNazulclaro12Layout.createSequentialGroup()
                 .addGap(31, 31, 31)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel2)
-                    .addComponent(jLabel3))
+                .addGroup(JPNazulclaro12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(JLBadministrador12)
+                    .addComponent(JLBassunto12))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 768, Short.MAX_VALUE)
-                    .addComponent(jTextField1))
+                .addGroup(JPNazulclaro12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(JSPassunto12, javax.swing.GroupLayout.DEFAULT_SIZE, 768, Short.MAX_VALUE)
+                    .addComponent(JTFadministrador12))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
+        JPNazulclaro12Layout.setVerticalGroup(
+            JPNazulclaro12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(JPNazulclaro12Layout.createSequentialGroup()
                 .addGap(23, 23, 23)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel2)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(JPNazulclaro12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(JLBadministrador12)
+                    .addComponent(JTFadministrador12, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel3)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(200, Short.MAX_VALUE))
+                .addGroup(JPNazulclaro12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(JLBassunto12)
+                    .addComponent(JSPassunto12, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(182, Short.MAX_VALUE))
         );
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
+        javax.swing.GroupLayout JPNfundo12Layout = new javax.swing.GroupLayout(JPNfundo12);
+        JPNfundo12.setLayout(JPNfundo12Layout);
+        JPNfundo12Layout.setHorizontalGroup(
+            JPNfundo12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, JPNfundo12Layout.createSequentialGroup()
+                .addGroup(JPNfundo12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(JPNfundo12Layout.createSequentialGroup()
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jButton1))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(JBTvoltar12))
+                    .addGroup(JPNfundo12Layout.createSequentialGroup()
                         .addGap(37, 37, 37)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 239, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(JPNfundo12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(JPNazulclaro12, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addGroup(JPNfundo12Layout.createSequentialGroup()
+                                .addComponent(JLBmotoconnect12, javax.swing.GroupLayout.PREFERRED_SIZE, 239, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jPanel5, javax.swing.GroupLayout.DEFAULT_SIZE, 675, Short.MAX_VALUE)))))
+                                .addComponent(JPNobservacoesecomentarios12, javax.swing.GroupLayout.DEFAULT_SIZE, 675, Short.MAX_VALUE)))))
                 .addGap(43, 43, 43))
         );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
+        JPNfundo12Layout.setVerticalGroup(
+            JPNfundo12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(JPNfundo12Layout.createSequentialGroup()
                 .addGap(33, 33, 33)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(JPNfundo12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(JLBmotoconnect12, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(JPNobservacoesecomentarios12, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(35, 35, 35)
-                .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(JPNazulclaro12, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGap(18, 18, 18)
-                .addComponent(jButton1)
+                .addComponent(JBTvoltar12)
                 .addGap(46, 46, 46))
         );
 
@@ -167,12 +174,12 @@ public class Tela_Observacoes_Comentarioes extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(JPNfundo12, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(JPNfundo12, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, Short.MAX_VALUE))
         );
 
@@ -182,6 +189,12 @@ public class Tela_Observacoes_Comentarioes extends javax.swing.JFrame {
     private void jTextArea1AncestorAdded(javax.swing.event.AncestorEvent evt) {//GEN-FIRST:event_jTextArea1AncestorAdded
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextArea1AncestorAdded
+
+    private void JBTvoltar12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBTvoltar12ActionPerformed
+        Tela_Observacoes_Comentarioes.this.dispose();
+        Tela_Menu JBTvoltar12 = new Tela_Menu();
+        JBTvoltar12.setVisible(true);
+    }//GEN-LAST:event_JBTvoltar12ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -219,16 +232,16 @@ public class Tela_Observacoes_Comentarioes extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel11;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
-    private javax.swing.JPanel jPanel5;
-    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JButton JBTvoltar12;
+    private javax.swing.JLabel JLBadministrador12;
+    private javax.swing.JLabel JLBassunto12;
+    private javax.swing.JLabel JLBmotoconnect12;
+    private javax.swing.JLabel JLBobservacoesecomentarios12;
+    private javax.swing.JPanel JPNazulclaro12;
+    private javax.swing.JPanel JPNfundo12;
+    private javax.swing.JPanel JPNobservacoesecomentarios12;
+    private javax.swing.JScrollPane JSPassunto12;
+    private javax.swing.JTextField JTFadministrador12;
     private javax.swing.JTextArea jTextArea1;
-    private javax.swing.JTextField jTextField1;
     // End of variables declaration//GEN-END:variables
 }

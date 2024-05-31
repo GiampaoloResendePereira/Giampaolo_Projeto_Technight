@@ -56,18 +56,21 @@
                           <Component id="JLBpesquisar8" max="32767" attributes="0"/>
                           <EmptySpace min="-2" pref="92" max="-2" attributes="0"/>
                       </Group>
-                      <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace min="-2" pref="60" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                              <Component id="JPNcadastrodecliente8" max="32767" attributes="0"/>
-                              <Component id="jTextField11" max="32767" attributes="0"/>
+                      <Group type="102" attributes="0">
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Group type="102" alignment="0" attributes="0">
+                                  <EmptySpace min="-2" pref="60" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                      <Component id="JPNcadastrodecliente8" max="32767" attributes="0"/>
+                                      <Component id="jTextField11" max="32767" attributes="0"/>
+                                  </Group>
+                              </Group>
+                              <Group type="102" alignment="0" attributes="0">
+                                  <EmptySpace min="-2" pref="19" max="-2" attributes="0"/>
+                                  <Component id="JLBmotoconnect8" min="-2" pref="233" max="-2" attributes="0"/>
+                              </Group>
                           </Group>
                           <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                      </Group>
-                      <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace min="-2" pref="19" max="-2" attributes="0"/>
-                          <Component id="JLBmotoconnect8" min="-2" pref="233" max="-2" attributes="0"/>
-                          <EmptySpace max="32767" attributes="0"/>
                       </Group>
                   </Group>
                   <Group type="103" groupAlignment="1" max="-2" attributes="0">
@@ -333,6 +336,7 @@
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="cc" green="cc" red="cc" type="rgb"/>
                 </Property>
+                <Property name="text" type="java.lang.String" value=" Jo&#xe3;o Silva"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JTextField" name="JTFcep8">
@@ -340,6 +344,7 @@
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="cc" green="cc" red="cc" type="rgb"/>
                 </Property>
+                <Property name="text" type="java.lang.String" value="12345678"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JTextField" name="JTFbairro8">
@@ -347,13 +352,18 @@
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="cc" green="cc" red="cc" type="rgb"/>
                 </Property>
+                <Property name="text" type="java.lang.String" value=" Jardim da Penha"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="JTFbairro8ActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JTextField" name="JTFemail8">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="cc" green="cc" red="cc" type="rgb"/>
                 </Property>
+                <Property name="text" type="java.lang.String" value=" joaosl1234@email.com"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JTextField" name="JTFcpf8">
@@ -361,6 +371,7 @@
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="cc" green="cc" red="cc" type="rgb"/>
                 </Property>
+                <Property name="text" type="java.lang.String" value="123.456.789-00"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JTextField" name="JTFtelefone8">
@@ -368,6 +379,7 @@
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="cc" green="cc" red="cc" type="rgb"/>
                 </Property>
+                <Property name="text" type="java.lang.String" value=" (27)123456789"/>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="JTFtelefone8ActionPerformed"/>
@@ -378,6 +390,7 @@
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="cc" green="cc" red="cc" type="rgb"/>
                 </Property>
+                <Property name="text" type="java.lang.String" value="ES"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JTextField" name="JTFrua8">
@@ -385,6 +398,7 @@
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="cc" green="cc" red="cc" type="rgb"/>
                 </Property>
+                <Property name="text" type="java.lang.String" value="Rua das Flores"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JTextField" name="JTFcidade8">
@@ -392,6 +406,7 @@
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="cc" green="cc" red="cc" type="rgb"/>
                 </Property>
+                <Property name="text" type="java.lang.String" value="Vit&#xf3;ria"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JTextField" name="JTFnumero8">
@@ -399,6 +414,7 @@
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="cc" green="cc" red="cc" type="rgb"/>
                 </Property>
+                <Property name="text" type="java.lang.String" value="12"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="JLBnomecompleto8">
@@ -528,6 +544,7 @@
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="cc" green="cc" red="cc" type="rgb"/>
             </Property>
+            <Property name="text" type="java.lang.String" value="CPF: 123.456.789-00"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JButton" name="JBTpesquisar8">

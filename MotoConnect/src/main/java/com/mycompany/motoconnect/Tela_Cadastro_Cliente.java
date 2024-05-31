@@ -115,16 +115,27 @@ public class Tela_Cadastro_Cliente extends javax.swing.JFrame {
         JPNfundoazulclaro8.setBackground(new java.awt.Color(0, 102, 255));
 
         JTFnomecompleto8.setBackground(new java.awt.Color(204, 204, 204));
+        JTFnomecompleto8.setText(" João Silva");
 
         JTFcep8.setBackground(new java.awt.Color(204, 204, 204));
+        JTFcep8.setText("12345678");
 
         JTFbairro8.setBackground(new java.awt.Color(204, 204, 204));
+        JTFbairro8.setText(" Jardim da Penha");
+        JTFbairro8.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                JTFbairro8ActionPerformed(evt);
+            }
+        });
 
         JTFemail8.setBackground(new java.awt.Color(204, 204, 204));
+        JTFemail8.setText(" joaosl1234@email.com");
 
         JTFcpf8.setBackground(new java.awt.Color(204, 204, 204));
+        JTFcpf8.setText("123.456.789-00");
 
         JTFtelefone8.setBackground(new java.awt.Color(204, 204, 204));
+        JTFtelefone8.setText(" (27)123456789");
         JTFtelefone8.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 JTFtelefone8ActionPerformed(evt);
@@ -132,12 +143,16 @@ public class Tela_Cadastro_Cliente extends javax.swing.JFrame {
         });
 
         JTFestado8.setBackground(new java.awt.Color(204, 204, 204));
+        JTFestado8.setText("ES");
 
         JTFrua8.setBackground(new java.awt.Color(204, 204, 204));
+        JTFrua8.setText("Rua das Flores");
 
         JTFcidade8.setBackground(new java.awt.Color(204, 204, 204));
+        JTFcidade8.setText("Vitória");
 
         JTFnumero8.setBackground(new java.awt.Color(204, 204, 204));
+        JTFnumero8.setText("12");
 
         JLBnomecompleto8.setForeground(new java.awt.Color(255, 255, 255));
         JLBnomecompleto8.setText("Nome Completo:");
@@ -280,6 +295,7 @@ public class Tela_Cadastro_Cliente extends javax.swing.JFrame {
         });
 
         jTextField11.setBackground(new java.awt.Color(204, 204, 204));
+        jTextField11.setText("CPF: 123.456.789-00");
 
         JBTpesquisar8.setBackground(new java.awt.Color(255, 51, 51));
         JBTpesquisar8.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
@@ -304,15 +320,16 @@ public class Tela_Cadastro_Cliente extends javax.swing.JFrame {
                         .addComponent(JLBpesquisar8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGap(92, 92, 92))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(60, 60, 60)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(JPNcadastrodecliente8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jTextField11))
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(19, 19, 19)
-                        .addComponent(JLBmotoconnect8, javax.swing.GroupLayout.PREFERRED_SIZE, 233, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGap(60, 60, 60)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(JPNcadastrodecliente8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(jTextField11)))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGap(19, 19, 19)
+                                .addComponent(JLBmotoconnect8, javax.swing.GroupLayout.PREFERRED_SIZE, 233, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(0, 0, Short.MAX_VALUE)))
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(20, 20, 20)
@@ -386,6 +403,10 @@ public class Tela_Cadastro_Cliente extends javax.swing.JFrame {
         Tela_Informacoes_Destinatario JBTcontinuar8 = new Tela_Informacoes_Destinatario();
         JBTcontinuar8.setVisible(true);
     }//GEN-LAST:event_JBTcontinuar8ActionPerformed
+
+    private void JTFbairro8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JTFbairro8ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_JTFbairro8ActionPerformed
 
     /**
      * @param args the command line arguments

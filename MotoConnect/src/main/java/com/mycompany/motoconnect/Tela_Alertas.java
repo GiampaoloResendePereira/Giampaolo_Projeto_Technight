@@ -26,73 +26,79 @@ public class Tela_Alertas extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel1 = new javax.swing.JPanel();
-        jPanel5 = new javax.swing.JPanel();
-        jLabel11 = new javax.swing.JLabel();
-        jLabel1 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
-        jPanel2 = new javax.swing.JPanel();
-        jLabel2 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
-        jLabel3 = new javax.swing.JLabel();
-        jScrollPane1 = new javax.swing.JScrollPane();
+        JPNfundo13 = new javax.swing.JPanel();
+        JPNalertas13 = new javax.swing.JPanel();
+        JLBalertas13 = new javax.swing.JLabel();
+        JLBmotoconnect13 = new javax.swing.JLabel();
+        JBTvoltar13 = new javax.swing.JButton();
+        JPNazulclaro13 = new javax.swing.JPanel();
+        JLBcargo13 = new javax.swing.JLabel();
+        JTFcargo13 = new javax.swing.JTextField();
+        JLBassunto13 = new javax.swing.JLabel();
+        JSPassunto13 = new javax.swing.JScrollPane();
         jTextArea1 = new javax.swing.JTextArea();
-        jLabel4 = new javax.swing.JLabel();
-        jTextField2 = new javax.swing.JTextField();
+        JLBnomecompleto13 = new javax.swing.JLabel();
+        JTFnomecompleto13 = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setPreferredSize(new java.awt.Dimension(1000, 600));
 
-        jPanel1.setBackground(new java.awt.Color(0, 51, 204));
-        jPanel1.setPreferredSize(new java.awt.Dimension(1000, 600));
+        JPNfundo13.setBackground(new java.awt.Color(0, 51, 204));
+        JPNfundo13.setPreferredSize(new java.awt.Dimension(1000, 600));
 
-        jPanel5.setBackground(new java.awt.Color(0, 102, 255));
-        jPanel5.setPreferredSize(new java.awt.Dimension(844, 30));
+        JPNalertas13.setBackground(new java.awt.Color(0, 102, 255));
+        JPNalertas13.setPreferredSize(new java.awt.Dimension(844, 30));
 
-        jLabel11.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
-        jLabel11.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel11.setText("Alertas");
+        JLBalertas13.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        JLBalertas13.setForeground(new java.awt.Color(255, 255, 255));
+        JLBalertas13.setText("Alertas");
 
-        javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
-        jPanel5.setLayout(jPanel5Layout);
-        jPanel5Layout.setHorizontalGroup(
-            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
+        javax.swing.GroupLayout JPNalertas13Layout = new javax.swing.GroupLayout(JPNalertas13);
+        JPNalertas13.setLayout(JPNalertas13Layout);
+        JPNalertas13Layout.setHorizontalGroup(
+            JPNalertas13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, JPNalertas13Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel11)
+                .addComponent(JLBalertas13)
                 .addGap(301, 301, 301))
         );
-        jPanel5Layout.setVerticalGroup(
-            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel5Layout.createSequentialGroup()
+        JPNalertas13Layout.setVerticalGroup(
+            JPNalertas13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(JPNalertas13Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel11)
+                .addComponent(JLBalertas13)
                 .addContainerGap(10, Short.MAX_VALUE))
         );
 
-        jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\PC\\Desktop\\MotoConnect_Projeto\\Giampaolo_Projeto_Technight\\MotoConnect\\src\\main\\java\\imagem_login\\motoqueiro.png")); // NOI18N
+        JLBmotoconnect13.setIcon(new javax.swing.ImageIcon("C:\\Users\\PC\\Desktop\\MotoConnect_Projeto\\Giampaolo_Projeto_Technight\\MotoConnect\\src\\main\\java\\imagem_login\\motoqueiro.png")); // NOI18N
 
-        jButton1.setBackground(new java.awt.Color(255, 51, 51));
-        jButton1.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
-        jButton1.setForeground(new java.awt.Color(255, 255, 255));
-        jButton1.setText("VOLTAR");
+        JBTvoltar13.setBackground(new java.awt.Color(255, 51, 51));
+        JBTvoltar13.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        JBTvoltar13.setForeground(new java.awt.Color(255, 255, 255));
+        JBTvoltar13.setText("VOLTAR");
+        JBTvoltar13.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                JBTvoltar13ActionPerformed(evt);
+            }
+        });
 
-        jPanel2.setBackground(new java.awt.Color(0, 102, 255));
+        JPNazulclaro13.setBackground(new java.awt.Color(0, 102, 255));
 
-        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel2.setText("Cargo:");
+        JLBcargo13.setForeground(new java.awt.Color(255, 255, 255));
+        JLBcargo13.setText("Cargo:");
 
-        jTextField1.setBackground(new java.awt.Color(0, 102, 255));
-        jTextField1.setForeground(new java.awt.Color(255, 255, 255));
+        JTFcargo13.setBackground(new java.awt.Color(0, 102, 255));
+        JTFcargo13.setForeground(new java.awt.Color(255, 255, 255));
+        JTFcargo13.setText("Atendente");
 
-        jLabel3.setBackground(new java.awt.Color(0, 102, 255));
-        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel3.setText("Assunto:");
+        JLBassunto13.setBackground(new java.awt.Color(0, 102, 255));
+        JLBassunto13.setForeground(new java.awt.Color(255, 255, 255));
+        JLBassunto13.setText("Assunto:");
 
         jTextArea1.setBackground(new java.awt.Color(0, 102, 255));
         jTextArea1.setColumns(20);
         jTextArea1.setForeground(new java.awt.Color(255, 255, 255));
         jTextArea1.setRows(5);
+        jTextArea1.setText("Segunda ponte fechada, por favor procurar rota alternativa.");
         jTextArea1.addAncestorListener(new javax.swing.event.AncestorListener() {
             public void ancestorAdded(javax.swing.event.AncestorEvent evt) {
                 jTextArea1AncestorAdded(evt);
@@ -102,79 +108,80 @@ public class Tela_Alertas extends javax.swing.JFrame {
             public void ancestorRemoved(javax.swing.event.AncestorEvent evt) {
             }
         });
-        jScrollPane1.setViewportView(jTextArea1);
+        JSPassunto13.setViewportView(jTextArea1);
 
-        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel4.setText("Nome Completo:");
+        JLBnomecompleto13.setForeground(new java.awt.Color(255, 255, 255));
+        JLBnomecompleto13.setText("Nome Completo:");
 
-        jTextField2.setBackground(new java.awt.Color(0, 102, 255));
-        jTextField2.setForeground(new java.awt.Color(255, 255, 255));
+        JTFnomecompleto13.setBackground(new java.awt.Color(0, 102, 255));
+        JTFnomecompleto13.setForeground(new java.awt.Color(255, 255, 255));
+        JTFnomecompleto13.setText("Gabriel Resende");
 
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
+        javax.swing.GroupLayout JPNazulclaro13Layout = new javax.swing.GroupLayout(JPNazulclaro13);
+        JPNazulclaro13.setLayout(JPNazulclaro13Layout);
+        JPNazulclaro13Layout.setHorizontalGroup(
+            JPNazulclaro13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(JPNazulclaro13Layout.createSequentialGroup()
                 .addGap(31, 31, 31)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel2)
-                    .addComponent(jLabel3)
-                    .addComponent(jLabel4))
+                .addGroup(JPNazulclaro13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(JLBcargo13)
+                    .addComponent(JLBassunto13)
+                    .addComponent(JLBnomecompleto13))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 768, Short.MAX_VALUE)
-                    .addComponent(jTextField1)
-                    .addComponent(jTextField2))
+                .addGroup(JPNazulclaro13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(JSPassunto13, javax.swing.GroupLayout.DEFAULT_SIZE, 768, Short.MAX_VALUE)
+                    .addComponent(JTFcargo13)
+                    .addComponent(JTFnomecompleto13))
                 .addContainerGap(24, Short.MAX_VALUE))
         );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
+        JPNazulclaro13Layout.setVerticalGroup(
+            JPNazulclaro13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(JPNazulclaro13Layout.createSequentialGroup()
                 .addGap(23, 23, 23)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel2)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(JPNazulclaro13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(JLBcargo13)
+                    .addComponent(JTFcargo13, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(23, 23, 23)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel4))
+                .addGroup(JPNazulclaro13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(JTFnomecompleto13, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(JLBnomecompleto13))
                 .addGap(18, 18, 18)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel3)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(JPNazulclaro13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(JLBassunto13)
+                    .addComponent(JSPassunto13, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(143, Short.MAX_VALUE))
         );
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
+        javax.swing.GroupLayout JPNfundo13Layout = new javax.swing.GroupLayout(JPNfundo13);
+        JPNfundo13.setLayout(JPNfundo13Layout);
+        JPNfundo13Layout.setHorizontalGroup(
+            JPNfundo13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, JPNfundo13Layout.createSequentialGroup()
+                .addGroup(JPNfundo13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(JPNfundo13Layout.createSequentialGroup()
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jButton1))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(JBTvoltar13))
+                    .addGroup(JPNfundo13Layout.createSequentialGroup()
                         .addGap(37, 37, 37)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 239, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(JPNfundo13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(JPNazulclaro13, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addGroup(JPNfundo13Layout.createSequentialGroup()
+                                .addComponent(JLBmotoconnect13, javax.swing.GroupLayout.PREFERRED_SIZE, 239, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jPanel5, javax.swing.GroupLayout.DEFAULT_SIZE, 675, Short.MAX_VALUE)))))
+                                .addComponent(JPNalertas13, javax.swing.GroupLayout.DEFAULT_SIZE, 675, Short.MAX_VALUE)))))
                 .addGap(43, 43, 43))
         );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
+        JPNfundo13Layout.setVerticalGroup(
+            JPNfundo13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(JPNfundo13Layout.createSequentialGroup()
                 .addGap(33, 33, 33)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(JPNfundo13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(JLBmotoconnect13, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(JPNalertas13, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(35, 35, 35)
-                .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(JPNazulclaro13, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGap(18, 18, 18)
-                .addComponent(jButton1)
+                .addComponent(JBTvoltar13)
                 .addGap(46, 46, 46))
         );
 
@@ -182,12 +189,12 @@ public class Tela_Alertas extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(JPNfundo13, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(JPNfundo13, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, Short.MAX_VALUE))
         );
 
@@ -197,6 +204,12 @@ public class Tela_Alertas extends javax.swing.JFrame {
     private void jTextArea1AncestorAdded(javax.swing.event.AncestorEvent evt) {//GEN-FIRST:event_jTextArea1AncestorAdded
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextArea1AncestorAdded
+
+    private void JBTvoltar13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBTvoltar13ActionPerformed
+        Tela_Alertas.this.dispose();
+        Tela_Menu JBTvoltar13 = new Tela_Menu();
+        JBTvoltar13.setVisible(true);
+    }//GEN-LAST:event_JBTvoltar13ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -234,18 +247,18 @@ public class Tela_Alertas extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel11;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
-    private javax.swing.JPanel jPanel5;
-    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JButton JBTvoltar13;
+    private javax.swing.JLabel JLBalertas13;
+    private javax.swing.JLabel JLBassunto13;
+    private javax.swing.JLabel JLBcargo13;
+    private javax.swing.JLabel JLBmotoconnect13;
+    private javax.swing.JLabel JLBnomecompleto13;
+    private javax.swing.JPanel JPNalertas13;
+    private javax.swing.JPanel JPNazulclaro13;
+    private javax.swing.JPanel JPNfundo13;
+    private javax.swing.JScrollPane JSPassunto13;
+    private javax.swing.JTextField JTFcargo13;
+    private javax.swing.JTextField JTFnomecompleto13;
     private javax.swing.JTextArea jTextArea1;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
     // End of variables declaration//GEN-END:variables
 }

@@ -26,49 +26,49 @@ public class Tela_Lista_Encomendas extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel1 = new javax.swing.JPanel();
-        jPanel2 = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jPanel3 = new javax.swing.JPanel();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
+        JPNfundo10 = new javax.swing.JPanel();
+        JPNlista10 = new javax.swing.JPanel();
+        JLBlista10 = new javax.swing.JLabel();
+        JSPtabela10 = new javax.swing.JScrollPane();
+        JTBtabela10 = new javax.swing.JTable();
+        JTBatualizar10 = new javax.swing.JButton();
+        JTBvoltar10 = new javax.swing.JButton();
+        JPNtabelaencomenda10 = new javax.swing.JPanel();
+        JLBtabelaencomenda10 = new javax.swing.JLabel();
+        JLBmotoconnect10 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jPanel1.setBackground(new java.awt.Color(0, 0, 204));
-        jPanel1.setPreferredSize(new java.awt.Dimension(1000, 600));
+        JPNfundo10.setBackground(new java.awt.Color(0, 0, 204));
+        JPNfundo10.setPreferredSize(new java.awt.Dimension(1000, 600));
 
-        jPanel2.setBackground(new java.awt.Color(0, 102, 255));
-        jPanel2.setPreferredSize(new java.awt.Dimension(844, 30));
+        JPNlista10.setBackground(new java.awt.Color(0, 102, 255));
+        JPNlista10.setPreferredSize(new java.awt.Dimension(844, 30));
 
-        jLabel1.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel1.setText("Lista de encomendas");
+        JLBlista10.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        JLBlista10.setForeground(new java.awt.Color(255, 255, 255));
+        JLBlista10.setText("Lista de encomendas");
 
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
+        javax.swing.GroupLayout JPNlista10Layout = new javax.swing.GroupLayout(JPNlista10);
+        JPNlista10.setLayout(JPNlista10Layout);
+        JPNlista10Layout.setHorizontalGroup(
+            JPNlista10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(JPNlista10Layout.createSequentialGroup()
                 .addGap(267, 267, 267)
-                .addComponent(jLabel1)
+                .addComponent(JLBlista10)
                 .addContainerGap(259, Short.MAX_VALUE))
         );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
+        JPNlista10Layout.setVerticalGroup(
+            JPNlista10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(JPNlista10Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(JLBlista10, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(10, Short.MAX_VALUE))
         );
 
-        jTable1.setBackground(new java.awt.Color(255, 51, 51));
-        jTable1.setForeground(new java.awt.Color(255, 255, 255));
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        JTBtabela10.setBackground(new java.awt.Color(255, 51, 51));
+        JTBtabela10.setForeground(new java.awt.Color(255, 255, 255));
+        JTBtabela10.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {"12345", "Rua das Flores, 123, Jardim da Penha, Vitória", " Vitor Ramos", "Rua das Palmeiras, 123 - Centro, Vitória", "03/05/24", "Em andamento"},
                 {"12346", "Avenida Central, 456, Praia do Canto, Vitória", "Gabriel Antõnio", "Avenida Champagnat, 456 - Praia da Costa, Vila Velha", "04/05/24", "Agendada"},
@@ -85,95 +85,95 @@ public class Tela_Lista_Encomendas extends javax.swing.JFrame {
                 "Numero do pedido", "Endereço de origem", "Entregador", "Endereço do destino", "Data de entrega", "Status"
             }
         ));
-        jTable1.addAncestorListener(new javax.swing.event.AncestorListener() {
+        JTBtabela10.addAncestorListener(new javax.swing.event.AncestorListener() {
             public void ancestorAdded(javax.swing.event.AncestorEvent evt) {
-                jTable1AncestorAdded(evt);
+                JTBtabela10AncestorAdded(evt);
             }
             public void ancestorMoved(javax.swing.event.AncestorEvent evt) {
             }
             public void ancestorRemoved(javax.swing.event.AncestorEvent evt) {
             }
         });
-        jScrollPane1.setViewportView(jTable1);
+        JSPtabela10.setViewportView(JTBtabela10);
 
-        jButton1.setBackground(new java.awt.Color(255, 51, 51));
-        jButton1.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
-        jButton1.setForeground(new java.awt.Color(255, 255, 255));
-        jButton1.setText("ATUALIZAR STATUS");
-        jButton1.setMaximumSize(new java.awt.Dimension(106, 25));
-        jButton1.setPreferredSize(new java.awt.Dimension(106, 25));
+        JTBatualizar10.setBackground(new java.awt.Color(255, 51, 51));
+        JTBatualizar10.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        JTBatualizar10.setForeground(new java.awt.Color(255, 255, 255));
+        JTBatualizar10.setText("ATUALIZAR STATUS");
+        JTBatualizar10.setMaximumSize(new java.awt.Dimension(106, 25));
+        JTBatualizar10.setPreferredSize(new java.awt.Dimension(106, 25));
 
-        jButton2.setBackground(new java.awt.Color(255, 51, 51));
-        jButton2.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
-        jButton2.setForeground(new java.awt.Color(255, 255, 255));
-        jButton2.setText("VOLTAR");
-        jButton2.setMaximumSize(new java.awt.Dimension(106, 25));
-        jButton2.setPreferredSize(new java.awt.Dimension(106, 25));
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        JTBvoltar10.setBackground(new java.awt.Color(255, 51, 51));
+        JTBvoltar10.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        JTBvoltar10.setForeground(new java.awt.Color(255, 255, 255));
+        JTBvoltar10.setText("VOLTAR");
+        JTBvoltar10.setMaximumSize(new java.awt.Dimension(106, 25));
+        JTBvoltar10.setPreferredSize(new java.awt.Dimension(106, 25));
+        JTBvoltar10.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                JTBvoltar10ActionPerformed(evt);
             }
         });
 
-        jPanel3.setBackground(new java.awt.Color(255, 0, 51));
+        JPNtabelaencomenda10.setBackground(new java.awt.Color(255, 0, 51));
 
-        jLabel2.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel2.setText("Tabela encomendas");
+        JLBtabelaencomenda10.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        JLBtabelaencomenda10.setForeground(new java.awt.Color(255, 255, 255));
+        JLBtabelaencomenda10.setText("Tabela encomendas");
 
-        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
-        jPanel3.setLayout(jPanel3Layout);
-        jPanel3Layout.setHorizontalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel3Layout.createSequentialGroup()
+        javax.swing.GroupLayout JPNtabelaencomenda10Layout = new javax.swing.GroupLayout(JPNtabelaencomenda10);
+        JPNtabelaencomenda10.setLayout(JPNtabelaencomenda10Layout);
+        JPNtabelaencomenda10Layout.setHorizontalGroup(
+            JPNtabelaencomenda10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(JPNtabelaencomenda10Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(JLBtabelaencomenda10, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
-        jPanel3Layout.setVerticalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel3Layout.createSequentialGroup()
+        JPNtabelaencomenda10Layout.setVerticalGroup(
+            JPNtabelaencomenda10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(JPNtabelaencomenda10Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel2)
+                .addComponent(JLBtabelaencomenda10)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        jLabel3.setIcon(new javax.swing.ImageIcon("C:\\Users\\PC\\Desktop\\MotoConnect_Projeto\\Giampaolo_Projeto_Technight\\MotoConnect\\src\\main\\java\\imagem_login\\motoqueiro.png")); // NOI18N
+        JLBmotoconnect10.setIcon(new javax.swing.ImageIcon("C:\\Users\\PC\\Desktop\\MotoConnect_Projeto\\Giampaolo_Projeto_Technight\\MotoConnect\\src\\main\\java\\imagem_login\\motoqueiro.png")); // NOI18N
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+        javax.swing.GroupLayout JPNfundo10Layout = new javax.swing.GroupLayout(JPNfundo10);
+        JPNfundo10.setLayout(JPNfundo10Layout);
+        JPNfundo10Layout.setHorizontalGroup(
+            JPNfundo10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, JPNfundo10Layout.createSequentialGroup()
                 .addGap(45, 45, 45)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(JPNfundo10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(JPNfundo10Layout.createSequentialGroup()
+                        .addComponent(JTBatualizar10, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(JTBvoltar10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(JPNtabelaencomenda10, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(JPNfundo10Layout.createSequentialGroup()
+                        .addComponent(JLBmotoconnect10, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 651, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.LEADING))
+                        .addComponent(JPNlista10, javax.swing.GroupLayout.PREFERRED_SIZE, 651, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(JSPtabela10, javax.swing.GroupLayout.Alignment.LEADING))
                 .addGap(173, 173, 173))
         );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
+        JPNfundo10Layout.setVerticalGroup(
+            JPNfundo10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(JPNfundo10Layout.createSequentialGroup()
                 .addGap(26, 26, 26)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(JPNfundo10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(JPNlista10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(JLBmotoconnect10, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 29, Short.MAX_VALUE)
-                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(JPNtabelaencomenda10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(JSPtabela10, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(167, 167, 167)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(JPNfundo10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(JTBatualizar10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(JTBvoltar10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(32, 32, 32))
         );
 
@@ -181,26 +181,26 @@ public class Tela_Lista_Encomendas extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(JPNfundo10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(JPNfundo10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void JTBvoltar10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JTBvoltar10ActionPerformed
         // TODO add your handling code here:
         Tela_Lista_Encomendas.this.dispose();
         Tela_Menu JBTvoltar10 = new Tela_Menu();
         JBTvoltar10.setVisible(true);
-    }//GEN-LAST:event_jButton2ActionPerformed
+    }//GEN-LAST:event_JTBvoltar10ActionPerformed
 
-    private void jTable1AncestorAdded(javax.swing.event.AncestorEvent evt) {//GEN-FIRST:event_jTable1AncestorAdded
+    private void JTBtabela10AncestorAdded(javax.swing.event.AncestorEvent evt) {//GEN-FIRST:event_JTBtabela10AncestorAdded
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTable1AncestorAdded
+    }//GEN-LAST:event_JTBtabela10AncestorAdded
 
     /**
      * @param args the command line arguments
@@ -238,15 +238,15 @@ public class Tela_Lista_Encomendas extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
-    private javax.swing.JPanel jPanel3;
-    private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTable1;
+    private javax.swing.JLabel JLBlista10;
+    private javax.swing.JLabel JLBmotoconnect10;
+    private javax.swing.JLabel JLBtabelaencomenda10;
+    private javax.swing.JPanel JPNfundo10;
+    private javax.swing.JPanel JPNlista10;
+    private javax.swing.JPanel JPNtabelaencomenda10;
+    private javax.swing.JScrollPane JSPtabela10;
+    private javax.swing.JButton JTBatualizar10;
+    private javax.swing.JTable JTBtabela10;
+    private javax.swing.JButton JTBvoltar10;
     // End of variables declaration//GEN-END:variables
 }
