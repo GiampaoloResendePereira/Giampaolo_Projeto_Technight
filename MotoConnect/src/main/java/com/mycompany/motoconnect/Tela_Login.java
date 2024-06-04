@@ -101,7 +101,7 @@ public class Tela_Login extends javax.swing.JFrame {
         JLnomedousuario1.setForeground(new java.awt.Color(255, 255, 255));
         JLnomedousuario1.setText("Nome do usuario:");
 
-        JLBmotoconnect1.setIcon(new javax.swing.ImageIcon("C:\\Users\\PC\\Desktop\\MotoConnect_Projeto\\Giampaolo_Projeto_Technight\\MotoConnect\\src\\main\\java\\imagem_login\\motoqueiro.png")); // NOI18N
+        JLBmotoconnect1.setIcon(new javax.swing.ImageIcon("D:\\Users\\grpereira\\Desktop\\Giampaolo_Projeto_TechNight\\Giampaolo_Projeto_Technight\\Giampaolo_Projeto_Technight\\MotoConnect\\src\\main\\java\\imagem_login\\motoqueiro.png")); // NOI18N
 
         javax.swing.GroupLayout JPNazulclaro1Layout = new javax.swing.GroupLayout(JPNazulclaro1);
         JPNazulclaro1.setLayout(JPNazulclaro1Layout);
@@ -167,7 +167,7 @@ public class Tela_Login extends javax.swing.JFrame {
         JBLsair1.setText("SAIR");
 
         JBTsair1.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
-        JBTsair1.setIcon(new javax.swing.ImageIcon("C:\\Users\\PC\\Desktop\\MotoConnect_Projeto\\Giampaolo_Projeto_Technight\\MotoConnect\\src\\main\\java\\imagem_login\\Sair.png")); // NOI18N
+        JBTsair1.setIcon(new javax.swing.ImageIcon("D:\\Users\\grpereira\\Desktop\\Giampaolo_Projeto_TechNight\\Giampaolo_Projeto_Technight\\Giampaolo_Projeto_Technight\\MotoConnect\\src\\main\\java\\imagem_login\\Sair.png")); // NOI18N
         JBTsair1.setContentAreaFilled(false);
         JBTsair1.setPreferredSize(new java.awt.Dimension(70, 30));
         JBTsair1.addActionListener(new java.awt.event.ActionListener() {
