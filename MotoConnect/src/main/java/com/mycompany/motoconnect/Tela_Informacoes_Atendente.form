@@ -225,9 +225,9 @@
                                   <Component id="JLBcidade4" min="-2" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="0" attributes="0">
                                       <Component id="JTFcidade4" pref="162" max="32767" attributes="0"/>
-                                      <Component id="JTFnumero4" max="32767" attributes="0"/>
+                                      <Component id="JTFtelefone4" max="32767" attributes="0"/>
                                   </Group>
-                                  <Component id="JLBnumero4" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="JLBtelefone4" alignment="0" min="-2" max="-2" attributes="0"/>
                               </Group>
                           </Group>
                           <Group type="102" alignment="0" attributes="0">
@@ -281,14 +281,14 @@
                       <EmptySpace min="-2" pref="39" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="JLBbairro4" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="JLBnumero4" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="JLBtelefone4" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="JLBrua4" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="JTFbairro4" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="JTFrua4" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="JTFnumero4" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="JTFtelefone4" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace pref="44" max="32767" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
@@ -369,7 +369,7 @@
                 </Property>
               </Properties>
             </Component>
-            <Component class="javax.swing.JTextField" name="JTFnumero4">
+            <Component class="javax.swing.JTextField" name="JTFtelefone4">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="cc" green="cc" red="cc" type="rgb"/>
@@ -432,12 +432,12 @@
                 <Property name="text" type="java.lang.String" value="Cidade:"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JLabel" name="JLBnumero4">
+            <Component class="javax.swing.JLabel" name="JLBtelefone4">
               <Properties>
                 <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
                 </Property>
-                <Property name="text" type="java.lang.String" value="Numero:"/>
+                <Property name="text" type="java.lang.String" value="Telefone:"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="JLBrua4">

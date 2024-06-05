@@ -4,6 +4,10 @@
  */
 package com.mycompany.motoconnect;
 
+import java.sql.Connection;
+import java.sql.DriverManager;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author PC
@@ -37,7 +41,7 @@ public class Tela_Informacoes_Entregador extends javax.swing.JFrame {
         JTFsenha5 = new javax.swing.JTextField();
         JTFrua5 = new javax.swing.JTextField();
         JTFbairro5 = new javax.swing.JTextField();
-        JTFnumero5 = new javax.swing.JTextField();
+        JTFtelefone5 = new javax.swing.JTextField();
         JLBnome5 = new javax.swing.JLabel();
         JLBsobrenome5 = new javax.swing.JLabel();
         JLBcep5 = new javax.swing.JLabel();
@@ -85,7 +89,7 @@ public class Tela_Informacoes_Entregador extends javax.swing.JFrame {
 
         JTFbairro5.setBackground(new java.awt.Color(204, 204, 204));
 
-        JTFnumero5.setBackground(new java.awt.Color(204, 204, 204));
+        JTFtelefone5.setBackground(new java.awt.Color(204, 204, 204));
 
         JLBnome5.setForeground(new java.awt.Color(255, 255, 255));
         JLBnome5.setText("Nome:");
@@ -109,7 +113,7 @@ public class Tela_Informacoes_Entregador extends javax.swing.JFrame {
         JLBcidade5.setText("Cidade:");
 
         JLBnumero5.setForeground(new java.awt.Color(255, 255, 255));
-        JLBnumero5.setText("Numero:");
+        JLBnumero5.setText("Telefone:");
 
         JLBrua5.setForeground(new java.awt.Color(255, 255, 255));
         JLBrua5.setText("Rua:");
@@ -177,7 +181,7 @@ public class Tela_Informacoes_Entregador extends javax.swing.JFrame {
                                     .addComponent(JTFcidade5, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(JTFsenha5, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(JLBnumero5)
-                                    .addComponent(JTFnumero5, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(JTFtelefone5, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(JLBsenha5)
                                     .addComponent(JLBcidade5)))
                             .addGroup(JPNazulclaro5Layout.createSequentialGroup()
@@ -234,7 +238,7 @@ public class Tela_Informacoes_Entregador extends javax.swing.JFrame {
                         .addGroup(JPNazulclaro5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(JTFbairro5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(JTFrua5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(JTFnumero5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(JTFtelefone5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(31, 31, 31)
                         .addGroup(JPNazulclaro5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(JLBcpf5)
@@ -388,7 +392,25 @@ public class Tela_Informacoes_Entregador extends javax.swing.JFrame {
     }//GEN-LAST:event_JBTcancelar5ActionPerformed
 
     private void JBTsalvar5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBTsalvar5ActionPerformed
-        // TODO add your handling code here:
+        Class.forName("com.mysql.cj.jdbc.Driver");
+        Connection com = DriverManager.getConnection("jdbc:mysql://localhost/login","root","");
+        java.sql.Statement st = com.createStatement();
+        
+        st.executeUpdate ("INSERT INTO entregador (id,nome, sobrenome, cep, estado, cidade, bairro, rua, telefone, cpf, documento_da_moto, senha) VALUES("
+                +this.JTFnome5.getText()+","
+                +this.JTFsobrenome5.getText()+","
+                +this.JTFcep5.getText()+",");
+                +this.JTFestado5.getText()+","
+                +this.JTFcidade5.getText()+","
+                +this.JTFbairro5.getText()+","        
+                +this.JTFrua5.getText()+","
+                +this.JTFtelefone5.getText()+","
+                +this.JTFcpf5.getText()+","
+                +this.JTFdocumentodamoto5.getText()+","        
+                +this.JTFsenha5.getText()+")"  
+                        
+        JOptionPane.showMessageDialog(null, "Cadastro de entregador concluido");
+        
         Tela_Informacoes_Entregador.this.dispose();
         Tela_Menu JBTsalvar5 = new Tela_Menu();
         JBTsalvar5.setVisible(true);
@@ -458,10 +480,10 @@ public class Tela_Informacoes_Entregador extends javax.swing.JFrame {
     private javax.swing.JTextField JTFdocumentodamoto5;
     private javax.swing.JTextField JTFestado5;
     private javax.swing.JTextField JTFnome5;
-    private javax.swing.JTextField JTFnumero5;
     private javax.swing.JTextField JTFrua5;
     private javax.swing.JTextField JTFsenha5;
     private javax.swing.JTextField JTFsobrenome5;
+    private javax.swing.JTextField JTFtelefone5;
     private javax.swing.JLabel jLabel1;
     // End of variables declaration//GEN-END:variables
 }

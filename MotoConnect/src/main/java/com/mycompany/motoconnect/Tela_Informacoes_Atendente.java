@@ -4,6 +4,10 @@
  */
 package com.mycompany.motoconnect;
 
+import java.sql.Connection;
+import java.sql.DriverManager;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author PC
@@ -41,7 +45,7 @@ public class Tela_Informacoes_Atendente extends javax.swing.JFrame {
         JTFestado4 = new javax.swing.JTextField();
         JTFrua4 = new javax.swing.JTextField();
         JTFcidade4 = new javax.swing.JTextField();
-        JTFnumero4 = new javax.swing.JTextField();
+        JTFtelefone4 = new javax.swing.JTextField();
         JLBnome4 = new javax.swing.JLabel();
         JLBsobrenome4 = new javax.swing.JLabel();
         JLBcep4 = new javax.swing.JLabel();
@@ -49,7 +53,7 @@ public class Tela_Informacoes_Atendente extends javax.swing.JFrame {
         JLBbairro4 = new javax.swing.JLabel();
         JLBcpf4 = new javax.swing.JLabel();
         JLBcidade4 = new javax.swing.JLabel();
-        JLBnumero4 = new javax.swing.JLabel();
+        JLBtelefone4 = new javax.swing.JLabel();
         JLBrua4 = new javax.swing.JLabel();
         JLBsenha4 = new javax.swing.JLabel();
         JBTcancelar4 = new javax.swing.JButton();
@@ -128,7 +132,7 @@ public class Tela_Informacoes_Atendente extends javax.swing.JFrame {
 
         JTFcidade4.setBackground(new java.awt.Color(204, 204, 204));
 
-        JTFnumero4.setBackground(new java.awt.Color(204, 204, 204));
+        JTFtelefone4.setBackground(new java.awt.Color(204, 204, 204));
 
         JLBnome4.setForeground(new java.awt.Color(255, 255, 255));
         JLBnome4.setText("Nome:");
@@ -151,8 +155,8 @@ public class Tela_Informacoes_Atendente extends javax.swing.JFrame {
         JLBcidade4.setForeground(new java.awt.Color(255, 255, 255));
         JLBcidade4.setText("Cidade:");
 
-        JLBnumero4.setForeground(new java.awt.Color(255, 255, 255));
-        JLBnumero4.setText("Numero:");
+        JLBtelefone4.setForeground(new java.awt.Color(255, 255, 255));
+        JLBtelefone4.setText("Telefone:");
 
         JLBrua4.setForeground(new java.awt.Color(255, 255, 255));
         JLBrua4.setText("Rua:");
@@ -186,8 +190,8 @@ public class Tela_Informacoes_Atendente extends javax.swing.JFrame {
                             .addComponent(JLBcidade4)
                             .addGroup(JPNazulclaro4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                 .addComponent(JTFcidade4, javax.swing.GroupLayout.DEFAULT_SIZE, 162, Short.MAX_VALUE)
-                                .addComponent(JTFnumero4))
-                            .addComponent(JLBnumero4)))
+                                .addComponent(JTFtelefone4))
+                            .addComponent(JLBtelefone4)))
                     .addGroup(JPNazulclaro4Layout.createSequentialGroup()
                         .addGroup(JPNazulclaro4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(JTFnome4)
@@ -228,13 +232,13 @@ public class Tela_Informacoes_Atendente extends javax.swing.JFrame {
                 .addGap(39, 39, 39)
                 .addGroup(JPNazulclaro4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(JLBbairro4)
-                    .addComponent(JLBnumero4)
+                    .addComponent(JLBtelefone4)
                     .addComponent(JLBrua4))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(JPNazulclaro4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(JTFbairro4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(JTFrua4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(JTFnumero4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(JTFtelefone4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 44, Short.MAX_VALUE)
                 .addGroup(JPNazulclaro4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(JLBcpf4)
@@ -336,7 +340,24 @@ public class Tela_Informacoes_Atendente extends javax.swing.JFrame {
     }//GEN-LAST:event_JBTcancelar4ActionPerformed
 
     private void JBTsalvar4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBTsalvar4ActionPerformed
-        // TODO add your handling code here:
+        
+        Class.forName("com.mysql.cj.jdbc.Driver");
+        Connection com = DriverManager.getConnection("jdbc:mysql://localhost/login","root","");
+        java.sql.Statement st = com.createStatement();
+            
+        st.executeUpdate ("INSERT INTO atendente (id,nome, sobrenome, cep, estado, cidade, bairro, rua, telefone, cpf, senha) VALUES("
+                +this.JTFnome4.getText()+","
+                +this.JTFsobrenome4.getText()+","
+                +this.JTFcep4.getText()+",");
+                +this.JTFestado4.getText()+","
+                +this.JTFcidade4.getText()+","
+                +this.JTFbairro4.getText()+","        
+                +this.JTFrua4.getText()+","
+                +this.JTFtelefone4.getText()+","
+                +this.JTFcpf4.getText()+","
+                +this.JTFsenha4.getText()+")"        
+        JOptionPane.showMessageDialog(null, "Cadastro de atendente concluido");
+        
         Tela_Informacoes_Atendente.this.dispose();
         Tela_Menu JBTsalvar4 = new Tela_Menu();
         JBTsalvar4.setVisible(true);
@@ -389,10 +410,10 @@ public class Tela_Informacoes_Atendente extends javax.swing.JFrame {
     private javax.swing.JLabel JLBinformacoesdoatendente4;
     private javax.swing.JLabel JLBmotoconnect4;
     private javax.swing.JLabel JLBnome4;
-    private javax.swing.JLabel JLBnumero4;
     private javax.swing.JLabel JLBrua4;
     private javax.swing.JLabel JLBsenha4;
     private javax.swing.JLabel JLBsobrenome4;
+    private javax.swing.JLabel JLBtelefone4;
     private javax.swing.JPanel JPNazulclaro4;
     private javax.swing.JPanel JPNcadastrodeatendente4;
     private javax.swing.JPanel JPNfundo4;
@@ -403,9 +424,9 @@ public class Tela_Informacoes_Atendente extends javax.swing.JFrame {
     private javax.swing.JTextField JTFcpf4;
     private javax.swing.JTextField JTFestado4;
     private javax.swing.JTextField JTFnome4;
-    private javax.swing.JTextField JTFnumero4;
     private javax.swing.JTextField JTFrua4;
     private javax.swing.JTextField JTFsenha4;
     private javax.swing.JTextField JTFsobrenome4;
+    private javax.swing.JTextField JTFtelefone4;
     // End of variables declaration//GEN-END:variables
 }
