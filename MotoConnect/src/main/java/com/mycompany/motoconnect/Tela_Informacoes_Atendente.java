@@ -342,20 +342,20 @@ public class Tela_Informacoes_Atendente extends javax.swing.JFrame {
     private void JBTsalvar4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBTsalvar4ActionPerformed
         
         Class.forName("com.mysql.cj.jdbc.Driver");
-        Connection com = DriverManager.getConnection("jdbc:mysql://localhost/login","root","");
+        Connection com = DriverManager.getConnection("jdbc:mysql://localhost/motoconnect","root","");
         java.sql.Statement st = com.createStatement();
             
-        st.executeUpdate ("INSERT INTO atendente (id,nome, sobrenome, cep, estado, cidade, bairro, rua, telefone, cpf, senha) VALUES("
+        st.executeUpdate ("INSERT INTO atendente (id, nome, sobrenome, cep, estado, cidade, bairro, rua, telefone, cpf, senha) VALUES("
                 +this.JTFnome4.getText()+","
                 +this.JTFsobrenome4.getText()+","
-                +this.JTFcep4.getText()+",");
+                +this.JTFcep4.getText()+","
                 +this.JTFestado4.getText()+","
                 +this.JTFcidade4.getText()+","
                 +this.JTFbairro4.getText()+","        
                 +this.JTFrua4.getText()+","
                 +this.JTFtelefone4.getText()+","
                 +this.JTFcpf4.getText()+","
-                +this.JTFsenha4.getText()+")"        
+                +this.JTFsenha4.getText()+")");        
         JOptionPane.showMessageDialog(null, "Cadastro de atendente concluido");
         
         Tela_Informacoes_Atendente.this.dispose();

@@ -392,24 +392,6 @@ public class Tela_Informacoes_Entregador extends javax.swing.JFrame {
     }//GEN-LAST:event_JBTcancelar5ActionPerformed
 
     private void JBTsalvar5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBTsalvar5ActionPerformed
-        Class.forName("com.mysql.cj.jdbc.Driver");
-        Connection com = DriverManager.getConnection("jdbc:mysql://localhost/login","root","");
-        java.sql.Statement st = com.createStatement();
-        
-        st.executeUpdate ("INSERT INTO entregador (id,nome, sobrenome, cep, estado, cidade, bairro, rua, telefone, cpf, documento_da_moto, senha) VALUES("
-                +this.JTFnome5.getText()+","
-                +this.JTFsobrenome5.getText()+","
-                +this.JTFcep5.getText()+",");
-                +this.JTFestado5.getText()+","
-                +this.JTFcidade5.getText()+","
-                +this.JTFbairro5.getText()+","        
-                +this.JTFrua5.getText()+","
-                +this.JTFtelefone5.getText()+","
-                +this.JTFcpf5.getText()+","
-                +this.JTFdocumentodamoto5.getText()+","        
-                +this.JTFsenha5.getText()+")"  
-                        
-        JOptionPane.showMessageDialog(null, "Cadastro de entregador concluido");
         
         Tela_Informacoes_Entregador.this.dispose();
         Tela_Menu JBTsalvar5 = new Tela_Menu();
