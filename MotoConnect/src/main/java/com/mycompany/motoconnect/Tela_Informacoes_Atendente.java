@@ -342,7 +342,9 @@ public class Tela_Informacoes_Atendente extends javax.swing.JFrame {
     private void JBTsalvar4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBTsalvar4ActionPerformed
         
         Class.forName("com.mysql.cj.jdbc.Driver");
-        Connection com = DriverManager.getConnection("jdbc:mysql://localhost/motoconnect","root","");
+        String url = "jdbc:mysql://localhost:3306/moto_connect";
+        String user = "root";
+        String password = "";
         java.sql.Statement st = com.createStatement();
             
         st.executeUpdate ("INSERT INTO atendente (id, nome, sobrenome, cep, estado, cidade, bairro, rua, telefone, cpf, senha) VALUES("
