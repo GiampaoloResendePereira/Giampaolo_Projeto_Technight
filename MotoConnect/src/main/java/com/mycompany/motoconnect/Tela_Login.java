@@ -5,7 +5,12 @@
 package com.mycompany.motoconnect;
 
 
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
 import javax.swing.JOptionPane;
+
 
 
 /**
@@ -13,6 +18,9 @@ import javax.swing.JOptionPane;
  * @author grpereira
  */
 public class Tela_Login extends javax.swing.JFrame {
+    
+    
+    
 
     /**
      * Creates new form Tela_Login
@@ -20,6 +28,11 @@ public class Tela_Login extends javax.swing.JFrame {
     public Tela_Login() {
         initComponents();
     }
+    
+    // Define os detalhes de conexão com o banco de dados
+    private static final String JDBC_URL = "jdbc:mysql://localhost:3306/moto_connect";
+    private static final String JDBC_USER = "root";
+    private static final String JDBC_PASSWORD = "";
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -263,11 +276,47 @@ public class Tela_Login extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void JBTentrar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBTentrar1ActionPerformed
-         
-        
-        Tela_Login.this.dispose();
-        Tela_Menu JBTentrar1 = new Tela_Menu();
-        JBTentrar1.setVisible(true);
+        // Obtenha os dados inseridos pelo usuário
+        String nomeUsuario = JTFnomedousuario1.getText();
+        String senha = new String(JPFsenha1.getPassword());
+
+
+        // Verifique se os campos não estão vazios
+        if (nomeUsuario.isEmpty() || senha.isEmpty()) {
+            JOptionPane.showMessageDialog(this, "Por favor, preencha todos os campos.", "Erro", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+
+        try {
+            // Estabeleça a conexão com o banco de dados
+            Connection con = DriverManager.getConnection(JDBC_URL, JDBC_USER, JDBC_PASSWORD);
+
+            // Prepare a consulta SQL para inserir um novo usuário
+            String sql = "INSERT INTO usuarios (nome_do_usuario, senha) VALUES (?, ?)";
+            PreparedStatement statement = con.prepareStatement(sql);
+
+            // Configure os parâmetros da consulta
+            statement.setString(1, nomeUsuario);
+            statement.setString(2, senha);
+
+            // Execute a consulta
+            int rowsInserted = statement.executeUpdate();
+            if (rowsInserted > 0) {
+                JOptionPane.showMessageDialog(this, "Usuário inserido com sucesso!", "Sucesso", JOptionPane.INFORMATION_MESSAGE);
+
+            // Feche a tela de login e abra o menu
+            Tela_Login.this.dispose();
+            Tela_Menu JBTentrar1 = new Tela_Menu();
+            JBTentrar1.setVisible(true);
+        }
+
+        // Feche a conexão e o statement
+        statement.close();
+        con.close();
+    } catch (SQLException e) {
+        JOptionPane.showMessageDialog(this, "Erro ao conectar ao banco de dados: " + e.getMessage(), "Erro", JOptionPane.ERROR_MESSAGE);
+        e.printStackTrace();
+    }
     }//GEN-LAST:event_JBTentrar1ActionPerformed
 
     private void JBTsair1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBTsair1ActionPerformed
@@ -283,7 +332,7 @@ public class Tela_Login extends javax.swing.JFrame {
     }//GEN-LAST:event_JBTesqueceusenha1ActionPerformed
 
     private void JBTcadastrar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBTcadastrar1ActionPerformed
-        // TODO add your handling code here:
+        // Feche a tela de login e abra a tela de cadastro de funcionario
         Tela_Login.this.dispose();
         Tela_Cadastro_Funcionario JBTcadastrar1 = new Tela_Cadastro_Funcionario();
         JBTcadastrar1.setVisible(true);

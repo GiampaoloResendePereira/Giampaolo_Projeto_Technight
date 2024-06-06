@@ -6,6 +6,8 @@ package com.mycompany.motoconnect;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
 import javax.swing.JOptionPane;
 
 /**
@@ -20,6 +22,11 @@ public class Tela_Informacoes_Entregador extends javax.swing.JFrame {
     public Tela_Informacoes_Entregador() {
         initComponents();
     }
+    
+    // Define os detalhes de conexão com o banco de dados
+    private static final String JDBC_URL = "jdbc:mysql://localhost:3306/moto_connect";
+    private static final String JDBC_USER = "root";
+    private static final String JDBC_PASSWORD = "";
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -55,6 +62,7 @@ public class Tela_Informacoes_Entregador extends javax.swing.JFrame {
         JTFcidade5 = new javax.swing.JTextField();
         JLBdocumentodamoto5 = new javax.swing.JLabel();
         JPNimagemdecnh5 = new javax.swing.JPanel();
+        JTFimagemcnh5 = new javax.swing.JTextField();
         JLBimagemdecnh5 = new javax.swing.JLabel();
         JPNcadastrodeentregador5 = new javax.swing.JPanel();
         JLBcadastrodeentregador5 = new javax.swing.JLabel();
@@ -132,11 +140,17 @@ public class Tela_Informacoes_Entregador extends javax.swing.JFrame {
         JPNimagemdecnh5.setLayout(JPNimagemdecnh5Layout);
         JPNimagemdecnh5Layout.setHorizontalGroup(
             JPNimagemdecnh5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 181, Short.MAX_VALUE)
+            .addGroup(JPNimagemdecnh5Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(JTFimagemcnh5, javax.swing.GroupLayout.DEFAULT_SIZE, 169, Short.MAX_VALUE)
+                .addContainerGap())
         );
         JPNimagemdecnh5Layout.setVerticalGroup(
             JPNimagemdecnh5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 100, Short.MAX_VALUE)
+            .addGroup(JPNimagemdecnh5Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(JTFimagemcnh5, javax.swing.GroupLayout.DEFAULT_SIZE, 88, Short.MAX_VALUE)
+                .addContainerGap())
         );
 
         JLBimagemdecnh5.setForeground(new java.awt.Color(255, 255, 255));
@@ -325,8 +339,6 @@ public class Tela_Informacoes_Entregador extends javax.swing.JFrame {
             }
         });
 
-        jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\PC\\Desktop\\MotoConnect_Projeto\\Giampaolo_Projeto_Technight\\MotoConnect\\src\\main\\java\\imagem_login\\motoqueiro.png")); // NOI18N
-
         javax.swing.GroupLayout JPNfundo5Layout = new javax.swing.GroupLayout(JPNfundo5);
         JPNfundo5.setLayout(JPNfundo5Layout);
         JPNfundo5Layout.setHorizontalGroup(
@@ -392,6 +404,56 @@ public class Tela_Informacoes_Entregador extends javax.swing.JFrame {
     }//GEN-LAST:event_JBTcancelar5ActionPerformed
 
     private void JBTsalvar5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBTsalvar5ActionPerformed
+        // Obtenha os dados dos campos de texto
+        String nome = JTFnome5.getText();
+        String sobrenome = JTFsobrenome5.getText();
+        String cep = JTFcep5.getText();
+        String estado = JTFestado5.getText();
+        String cidade = JTFcidade5.getText();
+        String bairro = JTFbairro5.getText();
+        String rua = JTFrua5.getText();
+        String telefone = JTFtelefone5.getText();
+        String cpf = JTFcpf5.getText();
+        String senha = JTFsenha5.getText();
+        String documento_moto = JTFdocumentodamoto5.getText();
+        String imagem_cnh = JTFimagemcnh5.getText();
+        
+        // Insira os dados no banco de dados
+        try {
+            // Estabeleça a conexão
+            Connection con = DriverManager.getConnection(JDBC_URL, JDBC_USER, JDBC_PASSWORD);
+            
+            // Crie a declaração SQL
+            String sql = "INSERT INTO atendente (nome, sobrenome, cep, estado, cidade, bairro, rua, telefone, cpf, senha, documento_moto, imagem_cnh) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+            PreparedStatement preparedStatement = con.prepareStatement(sql);
+            
+            // Configure os parâmetros da declaração SQL
+            preparedStatement.setString(1, nome);
+            preparedStatement.setString(2, sobrenome);
+            preparedStatement.setString(3, cep);
+            preparedStatement.setString(4, estado);
+            preparedStatement.setString(5, cidade);
+            preparedStatement.setString(6, bairro);
+            preparedStatement.setString(7, rua);
+            preparedStatement.setString(8, telefone);
+            preparedStatement.setString(9, cpf);
+            preparedStatement.setString(10, senha);
+            preparedStatement.setString(11, documento_moto);
+            preparedStatement.setString(12, imagem_cnh);
+            
+            // Execute a declaração SQL
+            preparedStatement.executeUpdate();
+            
+            // Feche a conexão
+            preparedStatement.close();
+            con.close();
+            
+            // Exiba uma mensagem de sucesso
+            javax.swing.JOptionPane.showMessageDialog(this, "Entregador cadastrado com sucesso!");
+        } catch (SQLException e) {
+            e.printStackTrace();
+            javax.swing.JOptionPane.showMessageDialog(this, "Erro ao cadastrar entregador: " + e.getMessage());
+        }
         
         Tela_Informacoes_Entregador.this.dispose();
         Tela_Menu JBTsalvar5 = new Tela_Menu();
@@ -461,6 +523,7 @@ public class Tela_Informacoes_Entregador extends javax.swing.JFrame {
     private javax.swing.JTextField JTFcpf5;
     private javax.swing.JTextField JTFdocumentodamoto5;
     private javax.swing.JTextField JTFestado5;
+    private javax.swing.JTextField JTFimagemcnh5;
     private javax.swing.JTextField JTFnome5;
     private javax.swing.JTextField JTFrua5;
     private javax.swing.JTextField JTFsenha5;
