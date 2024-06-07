@@ -4,6 +4,12 @@
  */
 package com.mycompany.motoconnect;
 
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+
 /**
  *
  * @author PC
@@ -16,6 +22,11 @@ public class Tela_Cadastro_Cliente extends javax.swing.JFrame {
     public Tela_Cadastro_Cliente() {
         initComponents();
     }
+    
+    // Define os detalhes de conexão com o banco de dados
+    private static final String URL = "jdbc:mysql://localhost:3306/moto_connect";
+    private static final String USER = "root";
+    private static final String PASSWORD = "";
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -303,6 +314,11 @@ public class Tela_Cadastro_Cliente extends javax.swing.JFrame {
         JBTpesquisar8.setText("PESQUISAR");
         JBTpesquisar8.setMaximumSize(new java.awt.Dimension(106, 25));
         JBTpesquisar8.setPreferredSize(new java.awt.Dimension(106, 25));
+        JBTpesquisar8.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                JBTpesquisar8ActionPerformed(evt);
+            }
+        });
 
         JLBpesquisar8.setForeground(new java.awt.Color(255, 255, 255));
         JLBpesquisar8.setText("Pesquisa Cliente:");
@@ -398,7 +414,53 @@ public class Tela_Cadastro_Cliente extends javax.swing.JFrame {
     }//GEN-LAST:event_JBTcancelar8ActionPerformed
 
     private void JBTcontinuar8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBTcontinuar8ActionPerformed
-        // TODO add your handling code here:
+        // Obtenha os dados dos campos de texto
+        String nomecompleto8 = JTFnomecompleto8.getText();
+        String cpf8 = JTFcpf8.getText();
+        String cep8 = JTFcep8.getText();
+        String estado8 = JTFestado8.getText();
+        String cidade8 = JTFcidade8.getText();
+        String bairro8 = JTFbairro8.getText();
+        String rua8 = JTFrua8.getText();
+        String nunero8 = JTFnumero8.getText();
+        String email8 = JTFemail8.getText();
+        String telefone8 = JTFtelefone8.getText();
+        
+        // Insira os dados no banco de dados
+        try {
+            // Estabeleça a conexão
+            Connection con = DriverManager.getConnection(URL, USER, PASSWORD);
+            
+            // Crie a declaração SQL
+            String sql = "INSERT INTO atendente (nomecompleto, cpf, cep, estado, cidade, bairro, rua, nunero, email, telefone8) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+            PreparedStatement preparedStatement = con.prepareStatement(sql);
+            
+            // Configure os parâmetros da declaração SQL
+            preparedStatement.setString(1, nomecompleto8);
+            preparedStatement.setString(2, cpf8);
+            preparedStatement.setString(3, cep8);
+            preparedStatement.setString(4, estado8);
+            preparedStatement.setString(5, cidade8);
+            preparedStatement.setString(6, bairro8);
+            preparedStatement.setString(7, rua8);
+            preparedStatement.setString(8, nunero8);
+            preparedStatement.setString(9, email8);
+            preparedStatement.setString(10, telefone8);
+            
+            // Execute a declaração SQL
+            preparedStatement.executeUpdate();
+            
+            // Feche a conexão
+            preparedStatement.close();
+            con.close();
+            
+            // Exiba uma mensagem de sucesso
+            javax.swing.JOptionPane.showMessageDialog(this, "Cliente cadastrado com sucesso!");
+        } catch (SQLException e) {
+            e.printStackTrace();
+            javax.swing.JOptionPane.showMessageDialog(this, "Erro ao cadastrar cliente: " + e.getMessage());
+        }
+        
         Tela_Cadastro_Cliente.this.dispose();
         Tela_Informacoes_Destinatario JBTcontinuar8 = new Tela_Informacoes_Destinatario();
         JBTcontinuar8.setVisible(true);
@@ -407,6 +469,58 @@ public class Tela_Cadastro_Cliente extends javax.swing.JFrame {
     private void JTFbairro8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JTFbairro8ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_JTFbairro8ActionPerformed
+
+    private void JBTpesquisar8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBTpesquisar8ActionPerformed
+        // Obtenha o CPF do campo de texto
+    String cpf8 = JTFcpf8.getText();
+
+    // Verifique se o CPF foi informado
+    if (cpf8.isEmpty()) {
+        javax.swing.JOptionPane.showMessageDialog(this, "Por favor, insira um CPF.");
+        return;
+    }
+
+    // Busque os dados do cliente no banco de dados
+    try {
+        // Estabeleça a conexão
+        Connection con = DriverManager.getConnection(URL, USER, PASSWORD);
+
+        // Crie a declaração SQL
+        String sql = "SELECT nomecompleto, cep, estado, cidade, bairro, rua, nunero, email, telefone FROM cliente WHERE cpf = ?";
+        PreparedStatement preparedStatement = con.prepareStatement(sql);
+
+        // Configure o parâmetro da declaração SQL
+        preparedStatement.setString(1, cpf8);
+
+        // Execute a consulta
+        ResultSet res = preparedStatement.executeQuery();
+
+        // Verifique se o cliente foi encontrado
+        if (res.next()) {
+            // Preencha os campos com os dados do cliente
+            JTFnomecompleto8.setText(res.getString("nomecompleto"));
+            JTFcep8.setText(res.getString("cep"));
+            JTFestado8.setText(res.getString("estado"));
+            JTFcidade8.setText(res.getString("cidade"));
+            JTFbairro8.setText(res.getString("bairro"));
+            JTFrua8.setText(res.getString("rua"));
+            JTFnumero8.setText(res.getString("nunero"));
+            JTFemail8.setText(res.getString("email"));
+            JTFtelefone8.setText(res.getString("telefone"));
+        } else {
+            // Exiba uma mensagem se o cliente não for encontrado
+            javax.swing.JOptionPane.showMessageDialog(this, "Cliente não encontrado.");
+        }
+
+        // Feche a conexão
+        res.close();
+        preparedStatement.close();
+        con.close();
+    } catch (SQLException e) {
+        e.printStackTrace();
+        javax.swing.JOptionPane.showMessageDialog(this, "Erro ao buscar cliente: " + e.getMessage());
+    }
+    }//GEN-LAST:event_JBTpesquisar8ActionPerformed
 
     /**
      * @param args the command line arguments

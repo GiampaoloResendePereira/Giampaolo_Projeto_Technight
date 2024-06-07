@@ -25,9 +25,9 @@ public class Tela_Informacoes_Atendente extends javax.swing.JFrame {
     }
     
     // Define os detalhes de conexão com o banco de dados
-    private static final String JDBC_URL = "jdbc:mysql://localhost:3306/moto_connect";
-    private static final String JDBC_USER = "root";
-    private static final String JDBC_PASSWORD = "";
+    private static final String URL = "jdbc:mysql://localhost:3306/moto_connect";
+    private static final String USER = "root";
+    private static final String PASSWORD = "";
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -363,7 +363,7 @@ public class Tela_Informacoes_Atendente extends javax.swing.JFrame {
         // Insira os dados no banco de dados
         try {
             // Estabeleça a conexão
-            Connection con = DriverManager.getConnection(JDBC_URL, JDBC_USER, JDBC_PASSWORD);
+            Connection con = DriverManager.getConnection(URL, USER, PASSWORD);
             
             // Crie a declaração SQL
             String sql = "INSERT INTO atendente (nome, sobrenome, cep, estado, cidade, bairro, rua, telefone, cpf, senha) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";

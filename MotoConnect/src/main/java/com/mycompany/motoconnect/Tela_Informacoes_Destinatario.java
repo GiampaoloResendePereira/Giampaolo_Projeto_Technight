@@ -4,6 +4,10 @@
  */
 package com.mycompany.motoconnect;
 
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.JOptionPane;
 
@@ -19,6 +23,10 @@ public class Tela_Informacoes_Destinatario extends javax.swing.JFrame {
     public Tela_Informacoes_Destinatario() {
         initComponents();
     }
+    
+    private static final String URL = "jdbc:mysql://localhost:3306/moto_connect";
+    private static final String USER = "root";
+    private static final String PASSWORD = "";
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -447,39 +455,82 @@ public class Tela_Informacoes_Destinatario extends javax.swing.JFrame {
     }//GEN-LAST:event_JBTcancelar9ActionPerformed
 
     private void JBTfinalizar9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBTfinalizar9ActionPerformed
-        // TODO add your handling code here:Tela_Informacoes_Destinatario.this.dispose();
+        // Obtenha os dados dos campos de texto
+        String destinatario9 = JTFdestinatario9.getText();
+        String telefonedestinatario9 = JTFtelefone9.getText();
+        String cepdestino9 = JTFcep9.getText();
+        String estado9 = JTFestado9.getText();
+        String cidade9 = JTFcidade9.getText();
+        String bairro9 = JTFbairro9.getText();
+        String rua9 =JTFrua9.getText();
+        String numero9 = JTFnumero9.getText();
+        
+        // Insira os dados no banco de dados
+        try {
+            // Estabeleça a conexão
+            Connection con = DriverManager.getConnection(URL, USER, PASSWORD);
+            
+            // Crie a declaração SQL
+            String sql = "INSERT INTO atendente (destinatario, telefonedestinatario, cep, estado, cidade, bairro, rua, numero) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
+            PreparedStatement preparedStatement = con.prepareStatement(sql);
+            
+            // Configure os parâmetros da declaração SQL
+            preparedStatement.setString(1, destinatario9);
+            preparedStatement.setString(2, telefonedestinatario9);
+            preparedStatement.setString(3, cepdestino9);
+            preparedStatement.setString(4, estado9);
+            preparedStatement.setString(5, cidade9);
+            preparedStatement.setString(6, bairro9);
+            preparedStatement.setString(7, rua9);
+            preparedStatement.setString(8, numero9);
+            
+            
+            // Execute a declaração SQL
+            preparedStatement.executeUpdate();
+            
+            // Feche a conexão
+            preparedStatement.close();
+            con.close();
+            
+            // Exiba uma mensagem de sucesso
+            javax.swing.JOptionPane.showMessageDialog(this, "Atendente cadastrado com sucesso!");
+        } catch (SQLException e) {
+            e.printStackTrace();
+            javax.swing.JOptionPane.showMessageDialog(this, "Erro ao cadastrar atendente: " + e.getMessage());
+        }
+
         Tela_Informacoes_Destinatario.this.dispose();
         Tela_Menu JBTfinalizar9 = new Tela_Menu();
         JBTfinalizar9.setVisible(true);
     }//GEN-LAST:event_JBTfinalizar9ActionPerformed
 
     private void JCBopcaoP19ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JCBopcaoP19ActionPerformed
-        String selectedItem = (String) JCBopcaoP19.getSelectedItem();
-        if (selectedItem.equals("Selecione uma opção")) {
+        String opcao1 = (String) JCBopcaoP19.getSelectedItem();
+        if (opcao1.equals("Selecione uma opção")) {
             JOptionPane.showMessageDialog(null, "Selecione uma opção válida!");
         } else {
             // Processa a opção selecionada
-            System.out.println("Opção selecionada: " + selectedItem);
+            System.out.println("Opção selecionada: " + opcao1);
         }
     }//GEN-LAST:event_JCBopcaoP19ActionPerformed
 
     private void JCBopcaoP29ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JCBopcaoP29ActionPerformed
-        String selectedItem = (String) JCBopcaoP29.getSelectedItem();
-        if (selectedItem.equals("Selecione uma opção")) {
+        String opcao2 = (String) JCBopcaoP29.getSelectedItem();
+        if (opcao2.equals("Selecione uma opção")) {
             JOptionPane.showMessageDialog(null, "Selecione uma opção válida!");
         } else {
             // Processa a opção selecionada
-            System.out.println("Opção selecionada: " + selectedItem);
+            System.out.println("Opção selecionada: " + opcao2);
         }
     }//GEN-LAST:event_JCBopcaoP29ActionPerformed
 
     private void JCBopcaoP39ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JCBopcaoP39ActionPerformed
-        String selectedItem = (String) JCBopcaoP39.getSelectedItem();
-        if (selectedItem.equals("Selecione uma opção")) {
+        String opcao3 = (String) JCBopcaoP39.getSelectedItem();
+        if (opcao3.equals("Selecione uma opção")) {
             JOptionPane.showMessageDialog(null, "Selecione uma opção válida!");
         } else {
             // Processa a opção selecionada
-            System.out.println("Opção selecionada: " + selectedItem);
+            System.out.println("Opção selecionada: " + opcao3);
         }
     }//GEN-LAST:event_JCBopcaoP39ActionPerformed
 

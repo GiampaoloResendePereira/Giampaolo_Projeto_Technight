@@ -19,7 +19,10 @@ public class Tela_Detalhes_Encomenda extends javax.swing.JFrame {
      */
     public Tela_Detalhes_Encomenda() {
         initComponents();
+        
     }
+    
+    
     
     // Método para gerar o texto formatado para impressão
     private String gerarTextoImpressao(String nomeCompleto, String cpf, String enderecoCompleto, String telefoneCliente, String emailCliente, double valorFrete, String tipoCarga, String destino, String destinatario, String telefoneDestinatario, int numeroPedido, double pesoMercadoria) {
@@ -601,7 +604,7 @@ public class Tela_Detalhes_Encomenda extends javax.swing.JFrame {
     }//GEN-LAST:event_JTFvalor11ActionPerformed
 
     private void JTFcarga11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JTFcarga11ActionPerformed
-        // TODO add your handling code here:
+        
     }//GEN-LAST:event_JTFcarga11ActionPerformed
 
     private void JTFnomedestinatario11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JTFnomedestinatario11ActionPerformed

@@ -566,6 +566,9 @@
               <Dimension value="[106, 25]"/>
             </Property>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="JBTpesquisar8ActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JLabel" name="JLBpesquisar8">
           <Properties>
