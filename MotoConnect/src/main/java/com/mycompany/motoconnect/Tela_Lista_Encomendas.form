@@ -287,6 +287,9 @@
               <Dimension value="[106, 25]"/>
             </Property>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="JTBatualizar10ActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="JTBvoltar10">
           <Properties>

@@ -4,6 +4,16 @@
  */
 package com.mycompany.motoconnect;
 
+import java.sql.Connection;
+import java.sql.Date;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import javax.swing.JOptionPane;
+import javax.swing.SwingUtilities;
+import javax.swing.table.DefaultTableModel;
+
 /**
  *
  * @author PC
@@ -16,6 +26,8 @@ public class Tela_Lista_Encomendas extends javax.swing.JFrame {
     public Tela_Lista_Encomendas() {
         initComponents();
     }
+    
+    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -102,6 +114,11 @@ public class Tela_Lista_Encomendas extends javax.swing.JFrame {
         JTBatualizar10.setText("ATUALIZAR STATUS");
         JTBatualizar10.setMaximumSize(new java.awt.Dimension(106, 25));
         JTBatualizar10.setPreferredSize(new java.awt.Dimension(106, 25));
+        JTBatualizar10.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                JTBatualizar10ActionPerformed(evt);
+            }
+        });
 
         JTBvoltar10.setBackground(new java.awt.Color(255, 51, 51));
         JTBvoltar10.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
@@ -201,6 +218,11 @@ public class Tela_Lista_Encomendas extends javax.swing.JFrame {
     private void JTBtabela10AncestorAdded(javax.swing.event.AncestorEvent evt) {//GEN-FIRST:event_JTBtabela10AncestorAdded
         // TODO add your handling code here:
     }//GEN-LAST:event_JTBtabela10AncestorAdded
+
+    private void JTBatualizar10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JTBatualizar10ActionPerformed
+        
+    
+    }//GEN-LAST:event_JTBatualizar10ActionPerformed
 
     /**
      * @param args the command line arguments
