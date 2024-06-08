@@ -23,10 +23,7 @@ public class Tela_Informacoes_Entregador extends javax.swing.JFrame {
         initComponents();
     }
     
-    // Define os detalhes de conexão com o banco de dados
-    private static final String URL = "jdbc:mysql://localhost:3306/moto_connect";
-    private static final String USER = "root";
-    private static final String PASSWORD = "";
+    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -404,55 +401,30 @@ public class Tela_Informacoes_Entregador extends javax.swing.JFrame {
     }//GEN-LAST:event_JBTcancelar5ActionPerformed
 
     private void JBTsalvar5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBTsalvar5ActionPerformed
-        // Obtenha os dados dos campos de texto
-        String nome = JTFnome5.getText();
-        String sobrenome = JTFsobrenome5.getText();
-        String cep = JTFcep5.getText();
-        String estado = JTFestado5.getText();
-        String cidade = JTFcidade5.getText();
-        String bairro = JTFbairro5.getText();
-        String rua = JTFrua5.getText();
-        String telefone = JTFtelefone5.getText();
-        String cpf = JTFcpf5.getText();
-        String senha = JTFsenha5.getText();
-        String documento_moto = JTFdocumentodamoto5.getText();
-        String imagem_cnh = JTFimagemcnh5.getText();
-        
-        // Insira os dados no banco de dados
         try {
-            // Estabeleça a conexão
-            Connection con = DriverManager.getConnection(URL, USER, PASSWORD);
-            
-            // Crie a declaração SQL
-            String sql = "INSERT INTO atendente (nome, sobrenome, cep, estado, cidade, bairro, rua, telefone, cpf, senha, documento_moto, imagem_cnh) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
-            PreparedStatement preparedStatement = con.prepareStatement(sql);
-            
-            // Configure os parâmetros da declaração SQL
-            preparedStatement.setString(1, nome);
-            preparedStatement.setString(2, sobrenome);
-            preparedStatement.setString(3, cep);
-            preparedStatement.setString(4, estado);
-            preparedStatement.setString(5, cidade);
-            preparedStatement.setString(6, bairro);
-            preparedStatement.setString(7, rua);
-            preparedStatement.setString(8, telefone);
-            preparedStatement.setString(9, cpf);
-            preparedStatement.setString(10, senha);
-            preparedStatement.setString(11, documento_moto);
-            preparedStatement.setString(12, imagem_cnh);
-            
-            // Execute a declaração SQL
-            preparedStatement.executeUpdate();
-            
-            // Feche a conexão
-            preparedStatement.close();
-            con.close();
-            
-            // Exiba uma mensagem de sucesso
-            javax.swing.JOptionPane.showMessageDialog(this, "Entregador cadastrado com sucesso!");
-        } catch (SQLException e) {
-            e.printStackTrace();
-            javax.swing.JOptionPane.showMessageDialog(this, "Erro ao cadastrar entregador: " + e.getMessage());
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            Connection com = DriverManager.getConnection("jdbc:mysql://localhost/moto_connect","root","");
+            java.sql.Statement st = com.createStatement();
+
+            st.executeUpdate ("INSERT INTO entregador (nome, sobrenome, cep, estado, cidade, bairro, rua, telefone, cpf, senha, documento_moto, imagem_cnh) VALUES("
+                    +this.JTFnome5.getText()+","
+                    +this.JTFsobrenome5.getText()+","
+                    +this.JTFcep5.getText()+","
+                    +this.JTFestado5.getText()+","
+                    +this.JTFcidade5.getText()+","
+                    +this.JTFbairro5.getText()+","
+                    +this.JTFrua5.getText()+","
+                    +this.JTFtelefone5.getText()+","
+                    +this.JTFcpf5.getText()+","
+                    +this.JTFsenha5.getText()+","
+                    +this.JTFdocumentodamoto5.getText()+","
+                    +this.JTFimagemcnh5.getText()+")");
+
+            JOptionPane.showMessageDialog(null, "Informações enviadas");
+
+            com.close();
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, "Erro ao enviar informações: " + e.getMessage());
         }
         
         Tela_Informacoes_Entregador.this.dispose();

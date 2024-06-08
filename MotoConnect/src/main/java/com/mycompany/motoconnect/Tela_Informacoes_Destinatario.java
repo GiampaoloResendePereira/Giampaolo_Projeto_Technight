@@ -24,9 +24,7 @@ public class Tela_Informacoes_Destinatario extends javax.swing.JFrame {
         initComponents();
     }
     
-    private static final String URL = "jdbc:mysql://localhost:3306/moto_connect";
-    private static final String USER = "root";
-    private static final String PASSWORD = "";
+    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -455,49 +453,28 @@ public class Tela_Informacoes_Destinatario extends javax.swing.JFrame {
     }//GEN-LAST:event_JBTcancelar9ActionPerformed
 
     private void JBTfinalizar9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBTfinalizar9ActionPerformed
-        // Obtenha os dados dos campos de texto
-        String destinatario9 = JTFdestinatario9.getText();
-        String telefonedestinatario9 = JTFtelefone9.getText();
-        String cepdestino9 = JTFcep9.getText();
-        String estado9 = JTFestado9.getText();
-        String cidade9 = JTFcidade9.getText();
-        String bairro9 = JTFbairro9.getText();
-        String rua9 =JTFrua9.getText();
-        String numero9 = JTFnumero9.getText();
-        
-        // Insira os dados no banco de dados
-        try {
-            // Estabeleça a conexão
-            Connection con = DriverManager.getConnection(URL, USER, PASSWORD);
+        try {    
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            Connection com = DriverManager.getConnection("jdbc:mysql://localhost/moto_connect","root","");
+            java.sql.Statement st = com.createStatement();
             
-            // Crie a declaração SQL
-            String sql = "INSERT INTO atendente (destinatario, telefonedestinatario, cep, estado, cidade, bairro, rua, numero) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
-            PreparedStatement preparedStatement = con.prepareStatement(sql);
+            st.executeUpdate ("INSERT INTO destinatario (destinatario, telefonedestinatario, cep, estado, cidade, bairro, rua, numero) VALUES("
+                    +this.JTFdestinatario9.getText()+","
+                    +this.JTFtelefone9.getText()+","
+                    +this.JTFcep9.getText()+","
+                    +this.JTFestado9.getText()+","
+                    +this.JTFcidade9.getText()+","
+                    +this.JTFbairro9.getText()+","
+                    +this.JTFrua9.getText()+","                
+                    +this.JTFnumero9.getText()+")");
             
-            // Configure os parâmetros da declaração SQL
-            preparedStatement.setString(1, destinatario9);
-            preparedStatement.setString(2, telefonedestinatario9);
-            preparedStatement.setString(3, cepdestino9);
-            preparedStatement.setString(4, estado9);
-            preparedStatement.setString(5, cidade9);
-            preparedStatement.setString(6, bairro9);
-            preparedStatement.setString(7, rua9);
-            preparedStatement.setString(8, numero9);
+            JOptionPane.showMessageDialog(null, "Informações enviadas");
             
-            
-            // Execute a declaração SQL
-            preparedStatement.executeUpdate();
-            
-            // Feche a conexão
-            preparedStatement.close();
-            con.close();
-            
-            // Exiba uma mensagem de sucesso
-            javax.swing.JOptionPane.showMessageDialog(this, "Atendente cadastrado com sucesso!");
-        } catch (SQLException e) {
-            e.printStackTrace();
-            javax.swing.JOptionPane.showMessageDialog(this, "Erro ao cadastrar atendente: " + e.getMessage());
+                com.close();
+            } catch (Exception e) {
+                JOptionPane.showMessageDialog(null, "Erro ao enviar informações: " + e.getMessage());
         }
+        
 
         Tela_Informacoes_Destinatario.this.dispose();
         Tela_Menu JBTfinalizar9 = new Tela_Menu();

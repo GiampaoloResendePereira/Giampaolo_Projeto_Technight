@@ -8,6 +8,7 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
+import javax.swing.JOptionPane;
 
 
 
@@ -24,10 +25,7 @@ public class Tela_Informacoes_Atendente extends javax.swing.JFrame {
         initComponents();
     }
     
-    // Define os detalhes de conexão com o banco de dados
-    private static final String URL = "jdbc:mysql://localhost:3306/moto_connect";
-    private static final String USER = "root";
-    private static final String PASSWORD = "";
+    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -348,51 +346,28 @@ public class Tela_Informacoes_Atendente extends javax.swing.JFrame {
     }//GEN-LAST:event_JBTcancelar4ActionPerformed
 
     private void JBTsalvar4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBTsalvar4ActionPerformed
-        // Obtenha os dados dos campos de texto
-        String nome = JTFnome4.getText();
-        String sobrenome = JTFsobrenome4.getText();
-        String cep = JTFcep4.getText();
-        String estado = JTFestado4.getText();
-        String cidade = JTFcidade4.getText();
-        String bairro = JTFbairro4.getText();
-        String rua = JTFrua4.getText();
-        String telefone = JTFtelefone4.getText();
-        String cpf = JTFcpf4.getText();
-        String senha = JTFsenha4.getText();
-
-        // Insira os dados no banco de dados
         try {
-            // Estabeleça a conexão
-            Connection con = DriverManager.getConnection(URL, USER, PASSWORD);
-            
-            // Crie a declaração SQL
-            String sql = "INSERT INTO atendente (nome, sobrenome, cep, estado, cidade, bairro, rua, telefone, cpf, senha) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
-            PreparedStatement preparedStatement = con.prepareStatement(sql);
-            
-            // Configure os parâmetros da declaração SQL
-            preparedStatement.setString(1, nome);
-            preparedStatement.setString(2, sobrenome);
-            preparedStatement.setString(3, cep);
-            preparedStatement.setString(4, estado);
-            preparedStatement.setString(5, cidade);
-            preparedStatement.setString(6, bairro);
-            preparedStatement.setString(7, rua);
-            preparedStatement.setString(8, telefone);
-            preparedStatement.setString(9, cpf);
-            preparedStatement.setString(10, senha);
-            
-            // Execute a declaração SQL
-            preparedStatement.executeUpdate();
-            
-            // Feche a conexão
-            preparedStatement.close();
-            con.close();
-            
-            // Exiba uma mensagem de sucesso
-            javax.swing.JOptionPane.showMessageDialog(this, "Atendente cadastrado com sucesso!");
-        } catch (SQLException e) {
-            e.printStackTrace();
-            javax.swing.JOptionPane.showMessageDialog(this, "Erro ao cadastrar atendente: " + e.getMessage());
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            Connection com = DriverManager.getConnection("jdbc:mysql://localhost/moto_connect","root","");
+            java.sql.Statement st = com.createStatement();
+
+            st.executeUpdate ("INSERT INTO atendente (nome, sobrenome, cep, estado, cidade, bairro, rua, telefone, cpf, senha) VALUES("
+                    +this.JTFnome4.getText()+","
+                    +this.JTFsobrenome4.getText()+","
+                    +this.JTFcep4.getText()+","
+                    +this.JTFestado4.getText()+","
+                    +this.JTFcidade4.getText()+","
+                    +this.JTFbairro4.getText()+","
+                    +this.JTFrua4.getText()+","
+                    +this.JTFtelefone4.getText()+","
+                    +this.JTFcpf4.getText()+","
+                    +this.JTFsenha4.getText()+")");
+
+            JOptionPane.showMessageDialog(null, "Informações enviadas");
+
+            com.close();
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, "Erro ao enviar informações: " + e.getMessage());
         }
 
         Tela_Informacoes_Atendente.this.dispose();
