@@ -65,6 +65,7 @@ public class Tela_Informacoes_Atendente extends javax.swing.JFrame {
         JBTcancelar4 = new javax.swing.JButton();
         JBTsalvar4 = new javax.swing.JButton();
         JLBmotoconnect4 = new javax.swing.JLabel();
+        JTBcontinuar4 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -276,7 +277,15 @@ public class Tela_Informacoes_Atendente extends javax.swing.JFrame {
             }
         });
 
-        JLBmotoconnect4.setIcon(new javax.swing.ImageIcon("C:\\Users\\PC\\Desktop\\MotoConnect_Projeto\\Giampaolo_Projeto_Technight\\MotoConnect\\src\\main\\java\\imagem_login\\motoqueiro.png")); // NOI18N
+        JTBcontinuar4.setBackground(new java.awt.Color(255, 51, 51));
+        JTBcontinuar4.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        JTBcontinuar4.setForeground(new java.awt.Color(255, 255, 255));
+        JTBcontinuar4.setText("CONTINUAR");
+        JTBcontinuar4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                JTBcontinuar4ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout JPNfundo4Layout = new javax.swing.GroupLayout(JPNfundo4);
         JPNfundo4.setLayout(JPNfundo4Layout);
@@ -292,18 +301,20 @@ public class Tela_Informacoes_Atendente extends javax.swing.JFrame {
                         .addComponent(JLBmotoconnect4, javax.swing.GroupLayout.PREFERRED_SIZE, 234, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(26, 26, 26)))
                 .addGroup(JPNfundo4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(JPNfundo4Layout.createSequentialGroup()
-                        .addComponent(JBTcancelar4)
-                        .addGap(441, 441, 441)
-                        .addComponent(JBTsalvar4)
-                        .addGap(61, 61, 61))
                     .addGroup(JPNfundo4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addGroup(JPNfundo4Layout.createSequentialGroup()
                             .addComponent(JPNazulclaro4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addContainerGap())
                         .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, JPNfundo4Layout.createSequentialGroup()
                             .addComponent(JPNinformacoesdoatendente4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGap(51, 51, 51)))))
+                            .addGap(51, 51, 51)))
+                    .addGroup(JPNfundo4Layout.createSequentialGroup()
+                        .addComponent(JBTcancelar4)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(JBTsalvar4)
+                        .addGap(29, 29, 29)
+                        .addComponent(JTBcontinuar4)
+                        .addGap(80, 80, 80))))
         );
         JPNfundo4Layout.setVerticalGroup(
             JPNfundo4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -320,7 +331,8 @@ public class Tela_Informacoes_Atendente extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 85, Short.MAX_VALUE)
                 .addGroup(JPNfundo4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(JBTsalvar4)
-                    .addComponent(JBTcancelar4))
+                    .addComponent(JBTcancelar4)
+                    .addComponent(JTBcontinuar4))
                 .addGap(40, 40, 40))
         );
 
@@ -352,6 +364,7 @@ public class Tela_Informacoes_Atendente extends javax.swing.JFrame {
             java.sql.Statement st = com.createStatement();
 
             st.executeUpdate ("INSERT INTO atendente (nome, sobrenome, cep, estado, cidade, bairro, rua, telefone, cpf, senha) VALUES("
+                    
                     +this.JTFnome4.getText()+","
                     +this.JTFsobrenome4.getText()+","
                     +this.JTFcep4.getText()+","
@@ -370,11 +383,15 @@ public class Tela_Informacoes_Atendente extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "Erro ao enviar informações: " + e.getMessage());
         }
 
-        Tela_Informacoes_Atendente.this.dispose();
-        Tela_Menu JBTsalvar4 = new Tela_Menu();
-        JBTsalvar4.setVisible(true);
+        
                                              
     }//GEN-LAST:event_JBTsalvar4ActionPerformed
+
+    private void JTBcontinuar4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JTBcontinuar4ActionPerformed
+        Tela_Informacoes_Atendente.this.dispose();
+        Tela_Menu JTBcontinuar4 = new Tela_Menu();
+        JTBcontinuar4.setVisible(true);
+    }//GEN-LAST:event_JTBcontinuar4ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -431,6 +448,7 @@ public class Tela_Informacoes_Atendente extends javax.swing.JFrame {
     private javax.swing.JPanel JPNcadastrodeatendente4;
     private javax.swing.JPanel JPNfundo4;
     private javax.swing.JPanel JPNinformacoesdoatendente4;
+    private javax.swing.JButton JTBcontinuar4;
     private javax.swing.JTextField JTFbairro4;
     private javax.swing.JTextField JTFcep4;
     private javax.swing.JTextField JTFcidade4;

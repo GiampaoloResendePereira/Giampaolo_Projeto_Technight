@@ -62,11 +62,12 @@ public class Tela_Cadastro_Cliente extends javax.swing.JFrame {
         JLBcidade8 = new javax.swing.JLabel();
         JLBnumero8 = new javax.swing.JLabel();
         JBTcancelar8 = new javax.swing.JButton();
-        JBTcontinuar8 = new javax.swing.JButton();
+        JBTsalvar8 = new javax.swing.JButton();
         jTextField11 = new javax.swing.JTextField();
         JBTpesquisar8 = new javax.swing.JButton();
         JLBpesquisar8 = new javax.swing.JLabel();
         JLBmotoconnect8 = new javax.swing.JLabel();
+        JTBcontinuar8 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -124,13 +125,10 @@ public class Tela_Cadastro_Cliente extends javax.swing.JFrame {
         JPNfundoazulclaro8.setBackground(new java.awt.Color(0, 102, 255));
 
         JTFnomecompleto8.setBackground(new java.awt.Color(204, 204, 204));
-        JTFnomecompleto8.setText(" João Silva");
 
         JTFcep8.setBackground(new java.awt.Color(204, 204, 204));
-        JTFcep8.setText("12345678");
 
         JTFbairro8.setBackground(new java.awt.Color(204, 204, 204));
-        JTFbairro8.setText(" Jardim da Penha");
         JTFbairro8.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 JTFbairro8ActionPerformed(evt);
@@ -138,13 +136,10 @@ public class Tela_Cadastro_Cliente extends javax.swing.JFrame {
         });
 
         JTFemail8.setBackground(new java.awt.Color(204, 204, 204));
-        JTFemail8.setText(" joaosl1234@email.com");
 
         JTFcpf8.setBackground(new java.awt.Color(204, 204, 204));
-        JTFcpf8.setText("123.456.789-00");
 
         JTFtelefone8.setBackground(new java.awt.Color(204, 204, 204));
-        JTFtelefone8.setText(" (27)123456789");
         JTFtelefone8.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 JTFtelefone8ActionPerformed(evt);
@@ -152,16 +147,12 @@ public class Tela_Cadastro_Cliente extends javax.swing.JFrame {
         });
 
         JTFestado8.setBackground(new java.awt.Color(204, 204, 204));
-        JTFestado8.setText("ES");
 
         JTFrua8.setBackground(new java.awt.Color(204, 204, 204));
-        JTFrua8.setText("Rua das Flores");
 
         JTFcidade8.setBackground(new java.awt.Color(204, 204, 204));
-        JTFcidade8.setText("Vitória");
 
         JTFnumero8.setBackground(new java.awt.Color(204, 204, 204));
-        JTFnumero8.setText("12");
 
         JLBnomecompleto8.setForeground(new java.awt.Color(255, 255, 255));
         JLBnomecompleto8.setText("Nome Completo:");
@@ -293,13 +284,13 @@ public class Tela_Cadastro_Cliente extends javax.swing.JFrame {
             }
         });
 
-        JBTcontinuar8.setBackground(new java.awt.Color(255, 51, 51));
-        JBTcontinuar8.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
-        JBTcontinuar8.setForeground(new java.awt.Color(255, 255, 255));
-        JBTcontinuar8.setText("CONTINUAR");
-        JBTcontinuar8.addActionListener(new java.awt.event.ActionListener() {
+        JBTsalvar8.setBackground(new java.awt.Color(255, 51, 51));
+        JBTsalvar8.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        JBTsalvar8.setForeground(new java.awt.Color(255, 255, 255));
+        JBTsalvar8.setText("SALVAR");
+        JBTsalvar8.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                JBTcontinuar8ActionPerformed(evt);
+                JBTsalvar8ActionPerformed(evt);
             }
         });
 
@@ -323,6 +314,16 @@ public class Tela_Cadastro_Cliente extends javax.swing.JFrame {
 
         JLBmotoconnect8.setIcon(new javax.swing.ImageIcon("C:\\Users\\PC\\Desktop\\MotoConnect_Projeto\\Giampaolo_Projeto_Technight\\MotoConnect\\src\\main\\java\\imagem_login\\motoqueiro.png")); // NOI18N
 
+        JTBcontinuar8.setBackground(new java.awt.Color(255, 51, 51));
+        JTBcontinuar8.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        JTBcontinuar8.setForeground(new java.awt.Color(255, 255, 255));
+        JTBcontinuar8.setText("CONTINUAR");
+        JTBcontinuar8.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                JTBcontinuar8ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -345,11 +346,13 @@ public class Tela_Cadastro_Cliente extends javax.swing.JFrame {
                                 .addComponent(JLBmotoconnect8, javax.swing.GroupLayout.PREFERRED_SIZE, 233, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGap(0, 0, Short.MAX_VALUE)))
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
                         .addGap(20, 20, 20)
                         .addComponent(JBTcancelar8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(JBTcontinuar8))
+                        .addComponent(JBTsalvar8)
+                        .addGap(67, 67, 67)
+                        .addComponent(JTBcontinuar8))
                     .addComponent(JPNinformacoesdocliente8, javax.swing.GroupLayout.PREFERRED_SIZE, 665, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(JPNfundoazulclaro8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(248, 248, 248))
@@ -368,7 +371,8 @@ public class Tela_Cadastro_Cliente extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 109, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(JBTcancelar8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(JBTcontinuar8))
+                    .addComponent(JBTsalvar8)
+                    .addComponent(JTBcontinuar8))
                 .addGap(38, 38, 38))
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(74, 74, 74)
@@ -411,15 +415,15 @@ public class Tela_Cadastro_Cliente extends javax.swing.JFrame {
         JBTcancelar8.setVisible(true);
     }//GEN-LAST:event_JBTcancelar8ActionPerformed
 
-    private void JBTcontinuar8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBTcontinuar8ActionPerformed
+    private void JBTsalvar8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBTsalvar8ActionPerformed
     try {    
         Class.forName("com.mysql.cj.jdbc.Driver");
         Connection com = DriverManager.getConnection("jdbc:mysql://localhost/moto_connect","root","");
         java.sql.Statement st = com.createStatement();
 
-        st.executeUpdate ("INSERT INTO cliente (nomecompleto, cpf, cep, estado, cidade, bairro, rua, nunero, email, telefone) VALUES("
-                +this.JTFnomecompleto8.getText()+","
+        st.executeUpdate ("INSERT INTO cliente (cpf, nomecompleto, cep, estado, cidade, bairro, rua, nunero, email, telefone) VALUES("
                 +this.JTFcpf8.getText()+","
+                +this.JTFnomecompleto8.getText()+","
                 +this.JTFcep8.getText()+","
                 +this.JTFestado8.getText()+","
                 +this.JTFcidade8.getText()+","
@@ -436,10 +440,8 @@ public class Tela_Cadastro_Cliente extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "Erro ao enviar informações: " + e.getMessage());
         }
         
-        Tela_Cadastro_Cliente.this.dispose();
-        Tela_Informacoes_Destinatario JBTcontinuar8 = new Tela_Informacoes_Destinatario();
-        JBTcontinuar8.setVisible(true);
-    }//GEN-LAST:event_JBTcontinuar8ActionPerformed
+        
+    }//GEN-LAST:event_JBTsalvar8ActionPerformed
 
     private void JTFbairro8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JTFbairro8ActionPerformed
         // TODO add your handling code here:
@@ -476,6 +478,12 @@ public class Tela_Cadastro_Cliente extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "Erro ao buscar cliente: " + e.getMessage());
         }
     }//GEN-LAST:event_JBTpesquisar8ActionPerformed
+
+    private void JTBcontinuar8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JTBcontinuar8ActionPerformed
+        Tela_Cadastro_Cliente.this.dispose();
+        Tela_Informacoes_Destinatario JBTcontinuar8 = new Tela_Informacoes_Destinatario();
+        JBTcontinuar8.setVisible(true);
+    }//GEN-LAST:event_JTBcontinuar8ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -514,8 +522,8 @@ public class Tela_Cadastro_Cliente extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton JBTcancelar8;
-    private javax.swing.JButton JBTcontinuar8;
     private javax.swing.JButton JBTpesquisar8;
+    private javax.swing.JButton JBTsalvar8;
     private javax.swing.JLabel JLBbairro8;
     private javax.swing.JLabel JLBcadastrodecliente8;
     private javax.swing.JLabel JLBcep8;
@@ -533,6 +541,7 @@ public class Tela_Cadastro_Cliente extends javax.swing.JFrame {
     private javax.swing.JPanel JPNcadastrodecliente8;
     private javax.swing.JPanel JPNfundoazulclaro8;
     private javax.swing.JPanel JPNinformacoesdocliente8;
+    private javax.swing.JButton JTBcontinuar8;
     private javax.swing.JTextField JTFbairro8;
     private javax.swing.JTextField JTFcep8;
     private javax.swing.JTextField JTFcidade8;

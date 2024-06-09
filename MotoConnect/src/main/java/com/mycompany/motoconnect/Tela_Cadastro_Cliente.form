@@ -74,11 +74,13 @@
                       </Group>
                   </Group>
                   <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                      <Group type="102" attributes="0">
+                      <Group type="102" alignment="0" attributes="0">
                           <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
                           <Component id="JBTcancelar8" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="32767" attributes="0"/>
-                          <Component id="JBTcontinuar8" min="-2" max="-2" attributes="0"/>
+                          <Component id="JBTsalvar8" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="67" max="-2" attributes="0"/>
+                          <Component id="JTBcontinuar8" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <Component id="JPNinformacoesdocliente8" alignment="1" min="-2" pref="665" max="-2" attributes="0"/>
                       <Component id="JPNfundoazulclaro8" min="-2" max="-2" attributes="0"/>
@@ -102,7 +104,8 @@
                   <EmptySpace pref="109" max="32767" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="JBTcancelar8" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="JBTcontinuar8" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="JBTsalvar8" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="JTBcontinuar8" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace min="-2" pref="38" max="-2" attributes="0"/>
               </Group>
@@ -336,7 +339,6 @@
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="cc" green="cc" red="cc" type="rgb"/>
                 </Property>
-                <Property name="text" type="java.lang.String" value=" Jo&#xe3;o Silva"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JTextField" name="JTFcep8">
@@ -344,7 +346,6 @@
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="cc" green="cc" red="cc" type="rgb"/>
                 </Property>
-                <Property name="text" type="java.lang.String" value="12345678"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JTextField" name="JTFbairro8">
@@ -352,7 +353,6 @@
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="cc" green="cc" red="cc" type="rgb"/>
                 </Property>
-                <Property name="text" type="java.lang.String" value=" Jardim da Penha"/>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="JTFbairro8ActionPerformed"/>
@@ -363,7 +363,6 @@
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="cc" green="cc" red="cc" type="rgb"/>
                 </Property>
-                <Property name="text" type="java.lang.String" value=" joaosl1234@email.com"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JTextField" name="JTFcpf8">
@@ -371,7 +370,6 @@
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="cc" green="cc" red="cc" type="rgb"/>
                 </Property>
-                <Property name="text" type="java.lang.String" value="123.456.789-00"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JTextField" name="JTFtelefone8">
@@ -379,7 +377,6 @@
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="cc" green="cc" red="cc" type="rgb"/>
                 </Property>
-                <Property name="text" type="java.lang.String" value=" (27)123456789"/>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="JTFtelefone8ActionPerformed"/>
@@ -390,7 +387,6 @@
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="cc" green="cc" red="cc" type="rgb"/>
                 </Property>
-                <Property name="text" type="java.lang.String" value="ES"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JTextField" name="JTFrua8">
@@ -398,7 +394,6 @@
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="cc" green="cc" red="cc" type="rgb"/>
                 </Property>
-                <Property name="text" type="java.lang.String" value="Rua das Flores"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JTextField" name="JTFcidade8">
@@ -406,7 +401,6 @@
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="cc" green="cc" red="cc" type="rgb"/>
                 </Property>
-                <Property name="text" type="java.lang.String" value="Vit&#xf3;ria"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JTextField" name="JTFnumero8">
@@ -414,7 +408,6 @@
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="cc" green="cc" red="cc" type="rgb"/>
                 </Property>
-                <Property name="text" type="java.lang.String" value="12"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="JLBnomecompleto8">
@@ -522,7 +515,7 @@
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="JBTcancelar8ActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JButton" name="JBTcontinuar8">
+        <Component class="javax.swing.JButton" name="JBTsalvar8">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="33" green="33" red="ff" type="rgb"/>
@@ -533,10 +526,10 @@
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="CONTINUAR"/>
+            <Property name="text" type="java.lang.String" value="SALVAR"/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="JBTcontinuar8ActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="JBTsalvar8ActionPerformed"/>
           </Events>
         </Component>
         <Component class="javax.swing.JTextField" name="jTextField11">
@@ -584,6 +577,23 @@
               <Image iconType="2" name="C:\Users\PC\Desktop\MotoConnect_Projeto\Giampaolo_Projeto_Technight\MotoConnect\src\main\java\imagem_login\motoqueiro.png"/>
             </Property>
           </Properties>
+        </Component>
+        <Component class="javax.swing.JButton" name="JTBcontinuar8">
+          <Properties>
+            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="33" green="33" red="ff" type="rgb"/>
+            </Property>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Arial" size="12" style="1"/>
+            </Property>
+            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="ff" green="ff" red="ff" type="rgb"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="CONTINUAR"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="JTBcontinuar8ActionPerformed"/>
+          </Events>
         </Component>
       </SubComponents>
     </Container>

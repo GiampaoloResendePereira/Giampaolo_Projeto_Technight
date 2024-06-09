@@ -68,6 +68,7 @@ public class Tela_Informacoes_Entregador extends javax.swing.JFrame {
         JBTcancelar5 = new javax.swing.JButton();
         JBTsalvar5 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
+        jButton1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -336,6 +337,16 @@ public class Tela_Informacoes_Entregador extends javax.swing.JFrame {
             }
         });
 
+        jButton1.setBackground(new java.awt.Color(255, 51, 51));
+        jButton1.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        jButton1.setForeground(new java.awt.Color(255, 255, 255));
+        jButton1.setText("CONTINUAR");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout JPNfundo5Layout = new javax.swing.GroupLayout(JPNfundo5);
         JPNfundo5.setLayout(JPNfundo5Layout);
         JPNfundo5Layout.setHorizontalGroup(
@@ -349,12 +360,14 @@ public class Tela_Informacoes_Entregador extends javax.swing.JFrame {
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, JPNfundo5Layout.createSequentialGroup()
                         .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 234, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(50, 50, 50)))
-                .addGroup(JPNfundo5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(JPNfundo5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(JPNinformacoesdoentregador5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(JPNfundo5Layout.createSequentialGroup()
                         .addComponent(JBTcancelar5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(387, 387, 387)
-                        .addComponent(JBTsalvar5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(JBTsalvar5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(51, 51, 51)
+                        .addComponent(jButton1))
                     .addComponent(JPNazulclaro5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(44, 44, 44))
         );
@@ -373,7 +386,8 @@ public class Tela_Informacoes_Entregador extends javax.swing.JFrame {
                 .addGap(38, 38, 38)
                 .addGroup(JPNfundo5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(JBTsalvar5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(JBTcancelar5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(JBTcancelar5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButton1))
                 .addGap(41, 41, 41))
         );
 
@@ -427,10 +441,14 @@ public class Tela_Informacoes_Entregador extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "Erro ao enviar informações: " + e.getMessage());
         }
         
-        Tela_Informacoes_Entregador.this.dispose();
-        Tela_Menu JBTsalvar5 = new Tela_Menu();
-        JBTsalvar5.setVisible(true);
+        
     }//GEN-LAST:event_JBTsalvar5ActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        Tela_Informacoes_Entregador.this.dispose();
+        Tela_Menu JBTcontinuar5 = new Tela_Menu();
+        JBTcontinuar5.setVisible(true);
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -489,6 +507,8 @@ public class Tela_Informacoes_Entregador extends javax.swing.JFrame {
     private javax.swing.JPanel JPNfundo5;
     private javax.swing.JPanel JPNimagemdecnh5;
     private javax.swing.JPanel JPNinformacoesdoentregador5;
+    private javax.swing.JButton JTBcontinuar4;
+    private javax.swing.JButton JTBcontinuar5;
     private javax.swing.JTextField JTFbairro5;
     private javax.swing.JTextField JTFcep5;
     private javax.swing.JTextField JTFcidade5;
@@ -501,6 +521,7 @@ public class Tela_Informacoes_Entregador extends javax.swing.JFrame {
     private javax.swing.JTextField JTFsenha5;
     private javax.swing.JTextField JTFsobrenome5;
     private javax.swing.JTextField JTFtelefone5;
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     // End of variables declaration//GEN-END:variables
 }

@@ -146,10 +146,8 @@ public class Tela_Informacoes_Destinatario extends javax.swing.JFrame {
         );
 
         JTFbairro9.setBackground(new java.awt.Color(204, 204, 204));
-        JTFbairro9.setText("São Torquato");
 
         JTFcep9.setBackground(new java.awt.Color(204, 204, 204));
-        JTFcep9.setText("87654321");
         JTFcep9.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 JTFcep9ActionPerformed(evt);
@@ -157,7 +155,6 @@ public class Tela_Informacoes_Destinatario extends javax.swing.JFrame {
         });
 
         JTFdestinatario9.setBackground(new java.awt.Color(204, 204, 204));
-        JTFdestinatario9.setText(" Davi Silva");
         JTFdestinatario9.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 JTFdestinatario9ActionPerformed(evt);
@@ -165,7 +162,6 @@ public class Tela_Informacoes_Destinatario extends javax.swing.JFrame {
         });
 
         JTFestado9.setBackground(new java.awt.Color(204, 204, 204));
-        JTFestado9.setText("ES");
         JTFestado9.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 JTFestado9ActionPerformed(evt);
@@ -173,10 +169,8 @@ public class Tela_Informacoes_Destinatario extends javax.swing.JFrame {
         });
 
         JTFcidade9.setBackground(new java.awt.Color(204, 204, 204));
-        JTFcidade9.setText("Vila Velha");
 
         JTFrua9.setBackground(new java.awt.Color(204, 204, 204));
-        JTFrua9.setText("Rua Tabajara");
         JTFrua9.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 JTFrua9ActionPerformed(evt);
@@ -184,10 +178,8 @@ public class Tela_Informacoes_Destinatario extends javax.swing.JFrame {
         });
 
         JTFnumero9.setBackground(new java.awt.Color(204, 204, 204));
-        JTFnumero9.setText("11");
 
         JTFtelefone9.setBackground(new java.awt.Color(204, 204, 204));
-        JTFtelefone9.setText(" (27)123876789");
 
         JCBopcaoP19.setBackground(new java.awt.Color(204, 204, 204));
         JCBopcaoP19.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Documentos", "Encomendas Pequenas", "Pequenos Equipamentos", "Medicamentos e Suprimentos Médicos", "Produtos de Varejo" }));
