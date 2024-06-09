@@ -222,7 +222,7 @@ public class Tela_Calculo_Frete extends javax.swing.JFrame {
             }
         });
 
-        JBTlimpar7.setBackground(new java.awt.Color(0, 102, 255));
+        JBTlimpar7.setBackground(new java.awt.Color(255, 51, 51));
         JBTlimpar7.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         JBTlimpar7.setForeground(new java.awt.Color(255, 255, 255));
         JBTlimpar7.setText("LIMPAR");
@@ -1016,19 +1016,19 @@ public class Tela_Calculo_Frete extends javax.swing.JFrame {
     }//GEN-LAST:event_JBTcadastrodocliente7ActionPerformed
 
     private void JBTlimpar7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBTlimpar7ActionPerformed
-        // Diálogo de Confirmação (Opcional)
-        int confirmation = JOptionPane.showConfirmDialog(null, 
+        // Diálogo de Confirmação
+    int confirmation = JOptionPane.showConfirmDialog(null, 
         "Você tem certeza que deseja limpar todos os campos?", "Limpar", 
         JOptionPane.YES_NO_OPTION);
 
+    // Verifica se o usuário clicou no botão "Sim" (YES_OPTION)
         if (confirmation == JOptionPane.YES_OPTION) {
-        
-        }
-        // Limpar todos os campos de texto
-        for (Component component : this.getContentPane().getComponents()) {
-            if (component instanceof JTextField) {
-                ((JTextField) component).setText("");
-            }
+            // Limpa todos os campos
+            JTFpesodamercadoria7.setText("");
+            JTFcidadedeorigem7.setText("");
+            JTFcidadededestino7.setText("");
+            JTFvalor7.setText("");
+
         }
     }//GEN-LAST:event_JBTlimpar7ActionPerformed
 

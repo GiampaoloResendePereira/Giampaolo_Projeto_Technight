@@ -66,6 +66,7 @@ public class Tela_Informacoes_Atendente extends javax.swing.JFrame {
         JBTsalvar4 = new javax.swing.JButton();
         JLBmotoconnect4 = new javax.swing.JLabel();
         JTBcontinuar4 = new javax.swing.JButton();
+        JTBlimpar4 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -124,6 +125,11 @@ public class Tela_Informacoes_Atendente extends javax.swing.JFrame {
         JTFnome4.setBackground(new java.awt.Color(204, 204, 204));
 
         JTFcep4.setBackground(new java.awt.Color(204, 204, 204));
+        JTFcep4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                JTFcep4ActionPerformed(evt);
+            }
+        });
 
         JTFbairro4.setBackground(new java.awt.Color(204, 204, 204));
 
@@ -277,6 +283,8 @@ public class Tela_Informacoes_Atendente extends javax.swing.JFrame {
             }
         });
 
+        JLBmotoconnect4.setIcon(new javax.swing.ImageIcon("C:\\Users\\PC\\Desktop\\MotoConnect_Projeto\\Giampaolo_Projeto_Technight\\MotoConnect\\src\\main\\java\\imagem_login\\motoqueiro.png")); // NOI18N
+
         JTBcontinuar4.setBackground(new java.awt.Color(255, 51, 51));
         JTBcontinuar4.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         JTBcontinuar4.setForeground(new java.awt.Color(255, 255, 255));
@@ -287,11 +295,21 @@ public class Tela_Informacoes_Atendente extends javax.swing.JFrame {
             }
         });
 
+        JTBlimpar4.setBackground(new java.awt.Color(255, 51, 51));
+        JTBlimpar4.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        JTBlimpar4.setForeground(new java.awt.Color(255, 255, 255));
+        JTBlimpar4.setText("LIMPAR");
+        JTBlimpar4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                JTBlimpar4ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout JPNfundo4Layout = new javax.swing.GroupLayout(JPNfundo4);
         JPNfundo4.setLayout(JPNfundo4Layout);
         JPNfundo4Layout.setHorizontalGroup(
             JPNfundo4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, JPNfundo4Layout.createSequentialGroup()
+            .addGroup(JPNfundo4Layout.createSequentialGroup()
                 .addContainerGap(48, Short.MAX_VALUE)
                 .addGroup(JPNfundo4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, JPNfundo4Layout.createSequentialGroup()
@@ -301,20 +319,20 @@ public class Tela_Informacoes_Atendente extends javax.swing.JFrame {
                         .addComponent(JLBmotoconnect4, javax.swing.GroupLayout.PREFERRED_SIZE, 234, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(26, 26, 26)))
                 .addGroup(JPNfundo4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(JPNfundo4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(JPNfundo4Layout.createSequentialGroup()
-                            .addComponent(JPNazulclaro4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addContainerGap())
-                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, JPNfundo4Layout.createSequentialGroup()
-                            .addComponent(JPNinformacoesdoatendente4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGap(51, 51, 51)))
                     .addGroup(JPNfundo4Layout.createSequentialGroup()
                         .addComponent(JBTcancelar4)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(JBTsalvar4)
                         .addGap(29, 29, 29)
                         .addComponent(JTBcontinuar4)
-                        .addGap(80, 80, 80))))
+                        .addGap(80, 80, 80))
+                    .addGroup(JPNfundo4Layout.createSequentialGroup()
+                        .addGroup(JPNfundo4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(JTBlimpar4)
+                            .addGroup(JPNfundo4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(JPNazulclaro4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(JPNinformacoesdoatendente4, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(0, 51, Short.MAX_VALUE))))
         );
         JPNfundo4Layout.setVerticalGroup(
             JPNfundo4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -325,10 +343,12 @@ public class Tela_Informacoes_Atendente extends javax.swing.JFrame {
                 .addGroup(JPNfundo4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(JPNfundo4Layout.createSequentialGroup()
                         .addComponent(JLBmotoconnect4, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 205, Short.MAX_VALUE)
                         .addComponent(JPNcadastrodeatendente4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(JPNazulclaro4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 85, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(JTBlimpar4)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 57, Short.MAX_VALUE)
                 .addGroup(JPNfundo4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(JBTsalvar4)
                     .addComponent(JBTcancelar4)
@@ -352,13 +372,105 @@ public class Tela_Informacoes_Atendente extends javax.swing.JFrame {
 
     private void JBTcancelar4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBTcancelar4ActionPerformed
         // TODO add your handling code here:
+        JOptionPane.showMessageDialog(null, "Você voltara para tela de menu");
+        
         Tela_Informacoes_Atendente.this.dispose();
-        Tela_Cadastro_Funcionario JBTcancelar4 = new Tela_Cadastro_Funcionario();
+        Tela_Menu JBTcancelar4 = new Tela_Menu();
         JBTcancelar4.setVisible(true);
     }//GEN-LAST:event_JBTcancelar4ActionPerformed
 
     private void JBTsalvar4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBTsalvar4ActionPerformed
         try {
+            String text1 = JTFnome4.getText();
+                //(!text.matches("\\d*"))
+                 if (!text1.matches("[a-zA-ZáéíóúÁÉÍÓÚàèìòùÀÈÌÒÙãõÃÕâêîôûÂÊÎÔÛäëïöüÄËÏÖÜçÇ ]*"))  { // Verifica se o texto contém apenas letras
+                    JOptionPane.showMessageDialog(null,
+                                                  "Por favor, insira apenas letras.",
+                                                  "Entrada Inválida",
+                                                  JOptionPane.ERROR_MESSAGE);
+                    JTFnome4.requestFocus(); // Requer foco novamente se a entrada for inválida
+                }
+                 
+                String text2 = JTFsobrenome4.getText();
+                //(!text.matches("\\d*"))
+                 if (!text2.matches("[a-zA-ZáéíóúÁÉÍÓÚàèìòùÀÈÌÒÙãõÃÕâêîôûÂÊÎÔÛäëïöüÄËÏÖÜçÇ ]*"))  { // Verifica se o texto contém apenas letras
+                    JOptionPane.showMessageDialog(null,
+                                                  "Por favor, insira apenas letras.",
+                                                  "Entrada Inválida",
+                                                  JOptionPane.ERROR_MESSAGE);
+                    JTFsobrenome4.requestFocus(); // Requer foco novamente se a entrada for inválida
+                }
+                 
+                 String text3 = JTFcep4.getText();
+                //
+                 if (!text3.matches("\\d*"))  { // Verifica se o texto contém apenas letras
+                    JOptionPane.showMessageDialog(null,
+                                                  "Por favor, insira apenas número.",
+                                                  "Entrada Inválida",
+                                                  JOptionPane.ERROR_MESSAGE);
+                    JTFcep4.requestFocus(); // Requer foco novamente se a entrada for inválida
+                }
+                
+                String text4 = JTFestado4.getText();
+                //(!text.matches("\\d*"))
+                 if (!text4.matches("[a-zA-ZáéíóúÁÉÍÓÚàèìòùÀÈÌÒÙãõÃÕâêîôûÂÊÎÔÛäëïöüÄËÏÖÜçÇ ]*"))  { // Verifica se o texto contém apenas letras
+                    JOptionPane.showMessageDialog(null,
+                                                  "Por favor, insira apenas letras.",
+                                                  "Entrada Inválida",
+                                                  JOptionPane.ERROR_MESSAGE);
+                    JTFestado4.requestFocus(); // Requer foco novamente se a entrada for inválida
+                }
+                
+                 String text5 = JTFcidade4.getText();
+                //(!text.matches("\\d*"))
+                 if (!text5.matches("[a-zA-ZáéíóúÁÉÍÓÚàèìòùÀÈÌÒÙãõÃÕâêîôûÂÊÎÔÛäëïöüÄËÏÖÜçÇ ]*"))  { // Verifica se o texto contém apenas letras
+                    JOptionPane.showMessageDialog(null,
+                                                  "Por favor, insira apenas letras.",
+                                                  "Entrada Inválida",
+                                                  JOptionPane.ERROR_MESSAGE);
+                    JTFcidade4.requestFocus(); // Requer foco novamente se a entrada for inválida
+                }
+                 
+                 String text6 = JTFbairro4.getText();
+                //(!text.matches("\\d*"))
+                 if (!text6.matches("[a-zA-ZáéíóúÁÉÍÓÚàèìòùÀÈÌÒÙãõÃÕâêîôûÂÊÎÔÛäëïöüÄËÏÖÜçÇ ]*"))  { // Verifica se o texto contém apenas letras
+                    JOptionPane.showMessageDialog(null,
+                                                  "Por favor, insira apenas letras.",
+                                                  "Entrada Inválida",
+                                                  JOptionPane.ERROR_MESSAGE);
+                    JTFbairro4.requestFocus(); // Requer foco novamente se a entrada for inválida
+                }
+                 
+                 String text7 = JTFrua4.getText();
+                //(!text.matches("\\d*"))
+                 if (!text7.matches("[a-zA-ZáéíóúÁÉÍÓÚàèìòùÀÈÌÒÙãõÃÕâêîôûÂÊÎÔÛäëïöüÄËÏÖÜçÇ ]*"))  { // Verifica se o texto contém apenas letras
+                    JOptionPane.showMessageDialog(null,
+                                                  "Por favor, insira apenas letras.",
+                                                  "Entrada Inválida",
+                                                  JOptionPane.ERROR_MESSAGE);
+                    JTFrua4.requestFocus(); // Requer foco novamente se a entrada for inválida
+                }
+                 
+                 String text8 = JTFtelefone4.getText();
+                //
+                 if (!text8.matches("\\d*"))  { // Verifica se o texto contém apenas letras
+                    JOptionPane.showMessageDialog(null,
+                                                  "Por favor, insira apenas número.",
+                                                  "Entrada Inválida",
+                                                  JOptionPane.ERROR_MESSAGE);
+                    JTFtelefone4.requestFocus(); // Requer foco novamente se a entrada for inválida
+                }
+                 
+                 String text9 = JTFcpf4.getText();
+                //
+                 if (!text9.matches("\\d*"))  { // Verifica se o texto contém apenas letras
+                    JOptionPane.showMessageDialog(null,
+                                                  "Por favor, insira apenas número.",
+                                                  "Entrada Inválida",
+                                                  JOptionPane.ERROR_MESSAGE);
+                    JTFcpf4.requestFocus(); // Requer foco novamente se a entrada for inválida
+                }
+            
             Class.forName("com.mysql.cj.jdbc.Driver");
             Connection com = DriverManager.getConnection("jdbc:mysql://localhost/mysql","root","");
             java.sql.Statement st = com.createStatement();
@@ -375,6 +487,8 @@ public class Tela_Informacoes_Atendente extends javax.swing.JFrame {
                     +this.JTFtelefone4.getText()+","
                     +this.JTFcpf4.getText()+","
                     +this.JTFsenha4.getText()+")");
+            
+            
 
             JOptionPane.showMessageDialog(null, "Informações enviadas");
 
@@ -392,6 +506,24 @@ public class Tela_Informacoes_Atendente extends javax.swing.JFrame {
         Tela_Menu JTBcontinuar4 = new Tela_Menu();
         JTBcontinuar4.setVisible(true);
     }//GEN-LAST:event_JTBcontinuar4ActionPerformed
+
+    private void JTFcep4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JTFcep4ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_JTFcep4ActionPerformed
+
+    private void JTBlimpar4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JTBlimpar4ActionPerformed
+        // Limpa todos os campos
+        JTFbairro4.setText("");
+        JTFcep4.setText("");
+        JTFcidade4.setText("");
+        JTFcpf4.setText("");
+        JTFestado4.setText("");
+        JTFnome4.setText("");
+        JTFrua4.setText("");
+        JTFsenha4.setText("");
+        JTFsobrenome4.setText("");
+        JTFtelefone4.setText("");
+    }//GEN-LAST:event_JTBlimpar4ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -449,6 +581,7 @@ public class Tela_Informacoes_Atendente extends javax.swing.JFrame {
     private javax.swing.JPanel JPNfundo4;
     private javax.swing.JPanel JPNinformacoesdoatendente4;
     private javax.swing.JButton JTBcontinuar4;
+    private javax.swing.JButton JTBlimpar4;
     private javax.swing.JTextField JTFbairro4;
     private javax.swing.JTextField JTFcep4;
     private javax.swing.JTextField JTFcidade4;

@@ -68,6 +68,7 @@ public class Tela_Cadastro_Cliente extends javax.swing.JFrame {
         JLBpesquisar8 = new javax.swing.JLabel();
         JLBmotoconnect8 = new javax.swing.JLabel();
         JTBcontinuar8 = new javax.swing.JButton();
+        JTBlimpar8 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -295,7 +296,6 @@ public class Tela_Cadastro_Cliente extends javax.swing.JFrame {
         });
 
         jTextField11.setBackground(new java.awt.Color(204, 204, 204));
-        jTextField11.setText("CPF: 123.456.789-00");
 
         JBTpesquisar8.setBackground(new java.awt.Color(255, 51, 51));
         JBTpesquisar8.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
@@ -324,6 +324,16 @@ public class Tela_Cadastro_Cliente extends javax.swing.JFrame {
             }
         });
 
+        JTBlimpar8.setBackground(new java.awt.Color(255, 51, 51));
+        JTBlimpar8.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        JTBlimpar8.setForeground(new java.awt.Color(255, 255, 255));
+        JTBlimpar8.setText("LIMPAR");
+        JTBlimpar8.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                JTBlimpar8ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -344,7 +354,11 @@ public class Tela_Cadastro_Cliente extends javax.swing.JFrame {
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGap(19, 19, 19)
                                 .addComponent(JLBmotoconnect8, javax.swing.GroupLayout.PREFERRED_SIZE, 233, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(0, 0, Short.MAX_VALUE)))
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(89, 89, 89)
+                        .addComponent(JBTpesquisar8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
                         .addGap(20, 20, 20)
@@ -354,12 +368,9 @@ public class Tela_Cadastro_Cliente extends javax.swing.JFrame {
                         .addGap(67, 67, 67)
                         .addComponent(JTBcontinuar8))
                     .addComponent(JPNinformacoesdocliente8, javax.swing.GroupLayout.PREFERRED_SIZE, 665, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(JPNfundoazulclaro8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(JPNfundoazulclaro8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(JTBlimpar8))
                 .addGap(248, 248, 248))
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(89, 89, 89)
-                .addComponent(JBTpesquisar8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -368,7 +379,9 @@ public class Tela_Cadastro_Cliente extends javax.swing.JFrame {
                 .addComponent(JPNinformacoesdocliente8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(JPNfundoazulclaro8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 109, Short.MAX_VALUE)
+                .addGap(18, 18, 18)
+                .addComponent(JTBlimpar8)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 70, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(JBTcancelar8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(JBTsalvar8)
@@ -410,6 +423,8 @@ public class Tela_Cadastro_Cliente extends javax.swing.JFrame {
 
     private void JBTcancelar8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBTcancelar8ActionPerformed
         // TODO add your handling code here:
+        JOptionPane.showMessageDialog(null, "Você voltara para tela de menu");
+        
         Tela_Cadastro_Cliente.this.dispose();
         Tela_Menu JBTcancelar8 = new Tela_Menu();
         JBTcancelar8.setVisible(true);
@@ -417,6 +432,96 @@ public class Tela_Cadastro_Cliente extends javax.swing.JFrame {
 
     private void JBTsalvar8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBTsalvar8ActionPerformed
     try {    
+            String text1 = JTFcpf8.getText();
+                //
+                if (!text1.matches("\\d*"))  { // Verifica se o texto contém apenas letras
+                    JOptionPane.showMessageDialog(null,
+                                                  "Por favor, insira apenas número.",
+                                                  "Entrada Inválida",
+                                                  JOptionPane.ERROR_MESSAGE);
+                    JTFcpf8.requestFocus(); // Requer foco novamente se a entrada for inválida
+                }
+                 
+                String text2 = JTFnomecompleto8.getText();
+                    //(!text.matches("\\d*"))
+                    if (!text2.matches("[a-zA-ZáéíóúÁÉÍÓÚàèìòùÀÈÌÒÙãõÃÕâêîôûÂÊÎÔÛäëïöüÄËÏÖÜçÇ ]*"))  { // Verifica se o texto contém apenas letras
+                        JOptionPane.showMessageDialog(null,
+                                                  "Por favor, insira apenas letras.",
+                                                  "Entrada Inválida",
+                                                  JOptionPane.ERROR_MESSAGE);
+                    JTFnomecompleto8.requestFocus(); // Requer foco novamente se a entrada for inválida
+                    }
+                 
+                String text3 = JTFcep8.getText();
+                    //
+                    if (!text3.matches("\\d*"))  { // Verifica se o texto contém apenas letras
+                        JOptionPane.showMessageDialog(null,
+                                                  "Por favor, insira apenas número.",
+                                                  "Entrada Inválida",
+                                                  JOptionPane.ERROR_MESSAGE);
+                    JTFcep8.requestFocus(); // Requer foco novamente se a entrada for inválida
+                    }
+                 
+                String text4 = JTFestado8.getText();
+                    //(!text.matches("\\d*"))
+                    if (!text4.matches("[a-zA-ZáéíóúÁÉÍÓÚàèìòùÀÈÌÒÙãõÃÕâêîôûÂÊÎÔÛäëïöüÄËÏÖÜçÇ ]*"))  { // Verifica se o texto contém apenas letras
+                        JOptionPane.showMessageDialog(null,
+                                                  "Por favor, insira apenas letras.",
+                                                  "Entrada Inválida",
+                                                  JOptionPane.ERROR_MESSAGE);
+                    JTFestado8.requestFocus(); // Requer foco novamente se a entrada for inválida
+                    }
+                
+                String text5 = JTFcidade8.getText();
+                    //(!text.matches("\\d*"))
+                    if (!text5.matches("[a-zA-ZáéíóúÁÉÍÓÚàèìòùÀÈÌÒÙãõÃÕâêîôûÂÊÎÔÛäëïöüÄËÏÖÜçÇ ]*"))  { // Verifica se o texto contém apenas letras
+                        JOptionPane.showMessageDialog(null,
+                                                  "Por favor, insira apenas letras.",
+                                                  "Entrada Inválida",
+                                                  JOptionPane.ERROR_MESSAGE);
+                    JTFcidade8.requestFocus(); // Requer foco novamente se a entrada for inválida
+                    }
+                 
+                String text6 = JTFbairro8.getText();
+                    //(!text.matches("\\d*"))
+                    if (!text6.matches("[a-zA-ZáéíóúÁÉÍÓÚàèìòùÀÈÌÒÙãõÃÕâêîôûÂÊÎÔÛäëïöüÄËÏÖÜçÇ ]*"))  { // Verifica se o texto contém apenas letras
+                        JOptionPane.showMessageDialog(null,
+                                                  "Por favor, insira apenas letras.",
+                                                  "Entrada Inválida",
+                                                  JOptionPane.ERROR_MESSAGE);
+                    JTFbairro8.requestFocus(); // Requer foco novamente se a entrada for inválida
+                    }
+                 
+                String text7 = JTFrua8.getText();
+                    //(!text.matches("\\d*"))
+                    if (!text7.matches("[a-zA-ZáéíóúÁÉÍÓÚàèìòùÀÈÌÒÙãõÃÕâêîôûÂÊÎÔÛäëïöüÄËÏÖÜçÇ ]*"))  { // Verifica se o texto contém apenas letras
+                        JOptionPane.showMessageDialog(null,
+                                                  "Por favor, insira apenas letras.",
+                                                  "Entrada Inválida",
+                                                  JOptionPane.ERROR_MESSAGE);
+                    JTFrua8.requestFocus(); // Requer foco novamente se a entrada for inválida
+                    }
+                 
+                String text8 = JTFnumero8.getText();
+                    //
+                    if (!text8.matches("\\d*"))  { // Verifica se o texto contém apenas letras
+                        JOptionPane.showMessageDialog(null,
+                                                  "Por favor, insira apenas número.",
+                                                  "Entrada Inválida",
+                                                  JOptionPane.ERROR_MESSAGE);
+                    JTFnumero8.requestFocus(); // Requer foco novamente se a entrada for inválida
+                    }
+                 
+                String text10 = JTFtelefone8.getText();
+                    //
+                    if (!text10.matches("\\d*"))  { // Verifica se o texto contém apenas letras
+                        JOptionPane.showMessageDialog(null,
+                                                  "Por favor, insira apenas número.",
+                                                  "Entrada Inválida",
+                                                  JOptionPane.ERROR_MESSAGE);
+                    JTFtelefone8.requestFocus(); // Requer foco novamente se a entrada for inválida
+                    }
+        
         Class.forName("com.mysql.cj.jdbc.Driver");
         Connection com = DriverManager.getConnection("jdbc:mysql://localhost/mysql","root","");
         java.sql.Statement st = com.createStatement();
@@ -432,6 +537,9 @@ public class Tela_Cadastro_Cliente extends javax.swing.JFrame {
                 +this.JTFnumero8.getText()+","
                 +this.JTFemail8.getText()+","
                 +this.JTFtelefone8.getText()+")");
+        
+        
+        
         
         JOptionPane.showMessageDialog(null, "Informações enviadas");
 
@@ -449,8 +557,18 @@ public class Tela_Cadastro_Cliente extends javax.swing.JFrame {
 
     private void JBTpesquisar8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBTpesquisar8ActionPerformed
         try {
+            String text1 = JTFcep8.getText();
+                //
+                if (!text1.matches("\\d*"))  { // Verifica se o texto contém apenas letras
+                    JOptionPane.showMessageDialog(null,
+                                                  "Por favor, insira apenas número.",
+                                                  "Entrada Inválida",
+                                                  JOptionPane.ERROR_MESSAGE);
+                    JTFcep8.requestFocus(); // Requer foco novamente se a entrada for inválida
+                }
+            
             Class.forName("com.mysql.cj.jdbc.Driver");
-            Connection com = DriverManager.getConnection("jdbc:mysql://localhost/moto_connect", "root", "");
+            Connection com = DriverManager.getConnection("jdbc:mysql://localhost/mysql", "root", "");
         
             String sql = "SELECT * FROM cliente WHERE cpf = ?";
             PreparedStatement pst = com.prepareStatement(sql);
@@ -484,6 +602,21 @@ public class Tela_Cadastro_Cliente extends javax.swing.JFrame {
         Tela_Informacoes_Destinatario JBTcontinuar8 = new Tela_Informacoes_Destinatario();
         JBTcontinuar8.setVisible(true);
     }//GEN-LAST:event_JTBcontinuar8ActionPerformed
+
+    private void JTBlimpar8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JTBlimpar8ActionPerformed
+        
+        // Limpa todos os campos
+        JTFcpf8.setText("");
+        JTFnomecompleto8.setText("");
+        JTFcep8.setText("");
+        JTFestado8.setText("");
+        JTFcidade8.setText("");
+        JTFbairro8.setText("");
+        JTFrua8.setText("");
+        JTFnumero8.setText("");
+        JTFemail8.setText("");
+        JTFtelefone8.setText("");
+    }//GEN-LAST:event_JTBlimpar8ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -542,6 +675,7 @@ public class Tela_Cadastro_Cliente extends javax.swing.JFrame {
     private javax.swing.JPanel JPNfundoazulclaro8;
     private javax.swing.JPanel JPNinformacoesdocliente8;
     private javax.swing.JButton JTBcontinuar8;
+    private javax.swing.JButton JTBlimpar8;
     private javax.swing.JTextField JTFbairro8;
     private javax.swing.JTextField JTFcep8;
     private javax.swing.JTextField JTFcidade8;

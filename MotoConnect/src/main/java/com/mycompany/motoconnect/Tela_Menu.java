@@ -34,7 +34,6 @@ public class Tela_Menu extends javax.swing.JFrame {
         JBTcadastrodecliente2 = new javax.swing.JButton();
         JPNusuario2 = new javax.swing.JPanel();
         JLBbemvindo2 = new javax.swing.JLabel();
-        JTFusuario2 = new javax.swing.JTextField();
         JLBmotoconnect2 = new javax.swing.JLabel();
         JTBlistaencomendas2 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
@@ -130,35 +129,23 @@ public class Tela_Menu extends javax.swing.JFrame {
 
         JLBbemvindo2.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         JLBbemvindo2.setForeground(new java.awt.Color(255, 255, 255));
-        JLBbemvindo2.setText("Bem vindo !");
-
-        JTFusuario2.setBackground(new java.awt.Color(0, 102, 255));
-        JTFusuario2.setForeground(new java.awt.Color(255, 255, 255));
-        JTFusuario2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                JTFusuario2ActionPerformed(evt);
-            }
-        });
+        JLBbemvindo2.setText("                            Bem vindo !");
 
         javax.swing.GroupLayout JPNusuario2Layout = new javax.swing.GroupLayout(JPNusuario2);
         JPNusuario2.setLayout(JPNusuario2Layout);
         JPNusuario2Layout.setHorizontalGroup(
             JPNusuario2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(JPNusuario2Layout.createSequentialGroup()
-                .addGap(14, 14, 14)
-                .addComponent(JLBbemvindo2)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(JTFusuario2, javax.swing.GroupLayout.DEFAULT_SIZE, 193, Short.MAX_VALUE)
-                .addContainerGap())
+                .addContainerGap()
+                .addComponent(JLBbemvindo2, javax.swing.GroupLayout.PREFERRED_SIZE, 266, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(28, Short.MAX_VALUE))
         );
         JPNusuario2Layout.setVerticalGroup(
             JPNusuario2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(JPNusuario2Layout.createSequentialGroup()
-                .addGap(17, 17, 17)
-                .addGroup(JPNusuario2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(JLBbemvindo2)
-                    .addComponent(JTFusuario2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(21, Short.MAX_VALUE))
+                .addContainerGap()
+                .addComponent(JLBbemvindo2, javax.swing.GroupLayout.DEFAULT_SIZE, 48, Short.MAX_VALUE)
+                .addContainerGap())
         );
 
         JPNazulescuro2.add(JPNusuario2, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 30, 300, 60));
@@ -172,6 +159,8 @@ public class Tela_Menu extends javax.swing.JFrame {
             }
         });
         JPNazulescuro2.add(JTBlistaencomendas2, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 200, 50, 50));
+
+        jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\PC\\Desktop\\MotoConnect_Projeto\\Giampaolo_Projeto_Technight\\MotoConnect\\src\\main\\java\\imagem_login\\motoqueiro.png")); // NOI18N
         JPNazulescuro2.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 20, 240, 120));
 
         JLBparavermelha2.setBackground(new java.awt.Color(255, 51, 51));
@@ -377,10 +366,6 @@ public class Tela_Menu extends javax.swing.JFrame {
         JBTsair2.setVisible(true);
     }//GEN-LAST:event_JBTsair2ActionPerformed
 
-    private void JTFusuario2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JTFusuario2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_JTFusuario2ActionPerformed
-
     private void JBTalertas2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBTalertas2ActionPerformed
         Tela_Menu.this.dispose();
         Tela_Alertas JBTalertas2 = new Tela_Alertas();
@@ -443,7 +428,6 @@ public class Tela_Menu extends javax.swing.JFrame {
     private javax.swing.JPanel JPNazulescuro2;
     private javax.swing.JPanel JPNusuario2;
     private javax.swing.JButton JTBlistaencomendas2;
-    private javax.swing.JTextField JTFusuario2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
