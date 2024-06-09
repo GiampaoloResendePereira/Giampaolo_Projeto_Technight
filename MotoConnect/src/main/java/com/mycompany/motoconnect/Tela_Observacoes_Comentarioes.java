@@ -22,11 +22,18 @@ public class Tela_Observacoes_Comentarioes extends javax.swing.JFrame {
         initComponents();
     }
     
+    private Connection getConnection() throws SQLException {
+        String url = "jdbc:mysql://localhost:3306/mysql";
+        String user = "root";
+        String password = "";
+        return DriverManager.getConnection(url, user, password);
+    }
+    
     private void salvarObservacoes() {
         String observacoes = JTAobservacoes12.getText();
         if (!observacoes.isEmpty()) {
             try (Connection conn = getConnection()) {
-                String sql = "INSERT INTO observacoes_comentarios (comentario) VALUES (?)";
+                String sql = "INSERT INTO observacoes(observacao) VALUES (?)";
                 try (PreparedStatement pstmt = conn.prepareStatement(sql)) {
                     pstmt.setString(1, observacoes);
                     int rowsAffected = pstmt.executeUpdate();
@@ -41,12 +48,7 @@ public class Tela_Observacoes_Comentarioes extends javax.swing.JFrame {
         }
     }
 
-    private Connection getConnection() throws SQLException {
-        String url = "jdbc:mysql://localhost:3306/mysql";
-        String user = "root";
-        String password = "";
-        return DriverManager.getConnection(url, user, password);
-    }
+    
 
 
     /**

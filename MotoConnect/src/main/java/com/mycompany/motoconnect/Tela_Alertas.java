@@ -28,7 +28,7 @@ public class Tela_Alertas extends javax.swing.JFrame {
         String senha = "";
         
         try (Connection con = DriverManager.getConnection(url, usuario, senha)) {
-            String sql = "INSERT INTO alertas (alertas) VALUES (?)";
+            String sql = "INSERT INTO alertas (alerta) VALUES (?)";
             try (PreparedStatement stmt = con.prepareStatement(sql)) {
                 stmt.setString(1, alertas);
                 stmt.executeUpdate();

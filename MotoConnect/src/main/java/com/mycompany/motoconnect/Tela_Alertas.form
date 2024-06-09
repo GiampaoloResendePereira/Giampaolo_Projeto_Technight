@@ -202,7 +202,7 @@
                           <Component id="JLBassunto13" min="-2" max="-2" attributes="0"/>
                           <Component id="JSPassunto13" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace pref="143" max="32767" attributes="0"/>
+                      <EmptySpace pref="133" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
