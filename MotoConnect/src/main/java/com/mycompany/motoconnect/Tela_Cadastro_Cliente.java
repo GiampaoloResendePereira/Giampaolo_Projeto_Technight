@@ -418,7 +418,7 @@ public class Tela_Cadastro_Cliente extends javax.swing.JFrame {
     private void JBTsalvar8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBTsalvar8ActionPerformed
     try {    
         Class.forName("com.mysql.cj.jdbc.Driver");
-        Connection com = DriverManager.getConnection("jdbc:mysql://localhost/moto_connect","root","");
+        Connection com = DriverManager.getConnection("jdbc:mysql://localhost/mysql","root","");
         java.sql.Statement st = com.createStatement();
 
         st.executeUpdate ("INSERT INTO cliente (cpf, nomecompleto, cep, estado, cidade, bairro, rua, nunero, email, telefone) VALUES("

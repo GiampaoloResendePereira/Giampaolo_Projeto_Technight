@@ -417,7 +417,7 @@ public class Tela_Informacoes_Entregador extends javax.swing.JFrame {
     private void JBTsalvar5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBTsalvar5ActionPerformed
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
-            Connection com = DriverManager.getConnection("jdbc:mysql://localhost/moto_connect","root","");
+            Connection com = DriverManager.getConnection("jdbc:mysql://localhost/mysql","root","");
             java.sql.Statement st = com.createStatement();
 
             st.executeUpdate ("INSERT INTO entregador (nome, sobrenome, cep, estado, cidade, bairro, rua, telefone, cpf, senha, documento_moto, imagem_cnh) VALUES("
