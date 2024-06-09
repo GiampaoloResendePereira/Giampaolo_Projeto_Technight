@@ -99,9 +99,6 @@ public class Tela_Login extends javax.swing.JFrame {
             }
         });
 
-        JPFsenha1.setText("123456");
-
-        JTFnomedousuario1.setText("GiampaoloRP");
         JTFnomedousuario1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 JTFnomedousuario1ActionPerformed(evt);
@@ -224,9 +221,9 @@ public class Tela_Login extends javax.swing.JFrame {
                     .addGroup(JPNazulescuro1Layout.createSequentialGroup()
                         .addGap(56, 56, 56)
                         .addComponent(JLBou1)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 97, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 91, Short.MAX_VALUE)
                 .addComponent(JPNazulclaro1, javax.swing.GroupLayout.PREFERRED_SIZE, 383, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 214, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 220, Short.MAX_VALUE)
                 .addGroup(JPNazulescuro1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, JPNazulescuro1Layout.createSequentialGroup()
                         .addComponent(JBTsair1, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)

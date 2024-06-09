@@ -60,9 +60,9 @@
                           <Component id="JLBou1" min="-2" max="-2" attributes="0"/>
                       </Group>
                   </Group>
-                  <EmptySpace pref="97" max="32767" attributes="0"/>
+                  <EmptySpace pref="91" max="32767" attributes="0"/>
                   <Component id="JPNazulclaro1" min="-2" pref="383" max="-2" attributes="0"/>
-                  <EmptySpace pref="214" max="32767" attributes="0"/>
+                  <EmptySpace pref="220" max="32767" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="1" attributes="0">
                           <Component id="JBTsair1" min="-2" pref="59" max="-2" attributes="0"/>
@@ -230,14 +230,8 @@
               </Events>
             </Component>
             <Component class="javax.swing.JPasswordField" name="JPFsenha1">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="123456"/>
-              </Properties>
             </Component>
             <Component class="javax.swing.JTextField" name="JTFnomedousuario1">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="GiampaoloRP"/>
-              </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="JTFnomedousuario1ActionPerformed"/>
               </Events>
