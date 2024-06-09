@@ -4,6 +4,11 @@
  */
 package com.mycompany.motoconnect;
 
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+
 /**
  *
  * @author PC
@@ -15,6 +20,22 @@ public class Tela_Alertas extends javax.swing.JFrame {
      */
     public Tela_Alertas() {
         initComponents();
+    }
+    
+    private void salvarAlertas(String alertas) {
+        String url = "jdbc:mysql://localhost/mysql";
+        String usuario = "root";
+        String senha = "";
+        
+        try (Connection con = DriverManager.getConnection(url, usuario, senha)) {
+            String sql = "INSERT INTO alertas (alertas) VALUES (?)";
+            try (PreparedStatement stmt = con.prepareStatement(sql)) {
+                stmt.setString(1, alertas);
+                stmt.executeUpdate();
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
     }
 
     /**
@@ -39,6 +60,7 @@ public class Tela_Alertas extends javax.swing.JFrame {
         jTextArea1 = new javax.swing.JTextArea();
         JLBnomecompleto13 = new javax.swing.JLabel();
         JTFnomecompleto13 = new javax.swing.JTextField();
+        JTBsalvar13 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -89,6 +111,11 @@ public class Tela_Alertas extends javax.swing.JFrame {
         JTFcargo13.setBackground(new java.awt.Color(0, 102, 255));
         JTFcargo13.setForeground(new java.awt.Color(255, 255, 255));
         JTFcargo13.setText("Atendente");
+        JTFcargo13.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                JTFcargo13ActionPerformed(evt);
+            }
+        });
 
         JLBassunto13.setBackground(new java.awt.Color(0, 102, 255));
         JLBassunto13.setForeground(new java.awt.Color(255, 255, 255));
@@ -116,6 +143,11 @@ public class Tela_Alertas extends javax.swing.JFrame {
         JTFnomecompleto13.setBackground(new java.awt.Color(0, 102, 255));
         JTFnomecompleto13.setForeground(new java.awt.Color(255, 255, 255));
         JTFnomecompleto13.setText("Gabriel Resende");
+        JTFnomecompleto13.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                JTFnomecompleto13ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout JPNazulclaro13Layout = new javax.swing.GroupLayout(JPNazulclaro13);
         JPNazulclaro13.setLayout(JPNazulclaro13Layout);
@@ -152,23 +184,32 @@ public class Tela_Alertas extends javax.swing.JFrame {
                 .addContainerGap(143, Short.MAX_VALUE))
         );
 
+        JTBsalvar13.setBackground(new java.awt.Color(255, 51, 51));
+        JTBsalvar13.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        JTBsalvar13.setForeground(new java.awt.Color(255, 255, 255));
+        JTBsalvar13.setText("SALVAR");
+        JTBsalvar13.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                JTBsalvar13ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout JPNfundo13Layout = new javax.swing.GroupLayout(JPNfundo13);
         JPNfundo13.setLayout(JPNfundo13Layout);
         JPNfundo13Layout.setHorizontalGroup(
             JPNfundo13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, JPNfundo13Layout.createSequentialGroup()
+                .addGap(37, 37, 37)
                 .addGroup(JPNfundo13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(JPNfundo13Layout.createSequentialGroup()
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(JTBsalvar13)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(JBTvoltar13))
+                    .addComponent(JPNazulclaro13, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(JPNfundo13Layout.createSequentialGroup()
-                        .addGap(37, 37, 37)
-                        .addGroup(JPNfundo13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(JPNazulclaro13, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addGroup(JPNfundo13Layout.createSequentialGroup()
-                                .addComponent(JLBmotoconnect13, javax.swing.GroupLayout.PREFERRED_SIZE, 239, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(JPNalertas13, javax.swing.GroupLayout.DEFAULT_SIZE, 675, Short.MAX_VALUE)))))
+                        .addComponent(JLBmotoconnect13, javax.swing.GroupLayout.PREFERRED_SIZE, 239, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(JPNalertas13, javax.swing.GroupLayout.DEFAULT_SIZE, 675, Short.MAX_VALUE)))
                 .addGap(43, 43, 43))
         );
         JPNfundo13Layout.setVerticalGroup(
@@ -181,7 +222,9 @@ public class Tela_Alertas extends javax.swing.JFrame {
                 .addGap(35, 35, 35)
                 .addComponent(JPNazulclaro13, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGap(18, 18, 18)
-                .addComponent(JBTvoltar13)
+                .addGroup(JPNfundo13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(JBTvoltar13)
+                    .addComponent(JTBsalvar13))
                 .addGap(46, 46, 46))
         );
 
@@ -210,6 +253,19 @@ public class Tela_Alertas extends javax.swing.JFrame {
         Tela_Menu JBTvoltar13 = new Tela_Menu();
         JBTvoltar13.setVisible(true);
     }//GEN-LAST:event_JBTvoltar13ActionPerformed
+
+    private void JTFcargo13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JTFcargo13ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_JTFcargo13ActionPerformed
+
+    private void JTFnomecompleto13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JTFnomecompleto13ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_JTFnomecompleto13ActionPerformed
+
+    private void JTBsalvar13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JTBsalvar13ActionPerformed
+        String alertas = jTextArea1.getText(); // Obtém o texto do JTextArea
+        salvarAlertas(alertas); // Chama o método para salvar no banco de dados
+    }//GEN-LAST:event_JTBsalvar13ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -257,6 +313,7 @@ public class Tela_Alertas extends javax.swing.JFrame {
     private javax.swing.JPanel JPNazulclaro13;
     private javax.swing.JPanel JPNfundo13;
     private javax.swing.JScrollPane JSPassunto13;
+    private javax.swing.JButton JTBsalvar13;
     private javax.swing.JTextField JTFcargo13;
     private javax.swing.JTextField JTFnomecompleto13;
     private javax.swing.JTextArea jTextArea1;

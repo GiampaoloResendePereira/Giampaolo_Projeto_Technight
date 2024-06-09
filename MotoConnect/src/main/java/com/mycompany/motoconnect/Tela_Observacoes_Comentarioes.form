@@ -50,21 +50,18 @@
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="1" attributes="0">
+                  <EmptySpace min="-2" pref="37" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="1" attributes="0">
                       <Group type="102" attributes="0">
+                          <Component id="JTBsalvar12" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="32767" attributes="0"/>
                           <Component id="JBTvoltar12" min="-2" max="-2" attributes="0"/>
                       </Group>
+                      <Component id="JPNazulclaro12" max="32767" attributes="0"/>
                       <Group type="102" attributes="0">
-                          <EmptySpace min="-2" pref="37" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="1" attributes="0">
-                              <Component id="JPNazulclaro12" max="32767" attributes="0"/>
-                              <Group type="102" attributes="0">
-                                  <Component id="JLBmotoconnect12" min="-2" pref="239" max="-2" attributes="0"/>
-                                  <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="JPNobservacoesecomentarios12" pref="675" max="32767" attributes="0"/>
-                              </Group>
-                          </Group>
+                          <Component id="JLBmotoconnect12" min="-2" pref="239" max="-2" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="JPNobservacoesecomentarios12" pref="675" max="32767" attributes="0"/>
                       </Group>
                   </Group>
                   <EmptySpace min="-2" pref="43" max="-2" attributes="0"/>
@@ -82,7 +79,10 @@
                   <EmptySpace min="-2" pref="35" max="-2" attributes="0"/>
                   <Component id="JPNazulclaro12" max="32767" attributes="0"/>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
-                  <Component id="JBTvoltar12" min="-2" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="JBTvoltar12" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="JTBsalvar12" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
                   <EmptySpace min="-2" pref="46" max="-2" attributes="0"/>
               </Group>
           </Group>
@@ -219,6 +219,9 @@
                 </Property>
                 <Property name="text" type="java.lang.String" value=" Giampaolo Resende"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="JTFadministrador12ActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JLabel" name="JLBassunto12">
               <Properties>
@@ -238,7 +241,7 @@
 
               <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
               <SubComponents>
-                <Component class="javax.swing.JTextArea" name="jTextArea1">
+                <Component class="javax.swing.JTextArea" name="JTAobservacoes12">
                   <Properties>
                     <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="ff" green="66" red="0" type="rgb"/>
@@ -251,13 +254,30 @@
                     <Property name="text" type="java.lang.String" value="Restri&#xe7;&#xe3;o de Tamanho no Ba&#xfa; do Motoboy&#xa;&#xa;Gostar&#xed;amos de informar que h&#xe1; uma restri&#xe7;&#xe3;o de tamanho para as encomendas que podem ser transportadas pelos nossos motoboys. &#xa;Por favor, considere as dimens&#xf5;es m&#xe1;ximas de 50 cm de comprimento, 40 cm de largura e 30 cm de altura para garantir uma entrega segura &#xa;e eficiente.&#xa;Agradecemos pela compreens&#xe3;o e colabora&#xe7;&#xe3;o."/>
                   </Properties>
                   <Events>
-                    <EventHandler event="ancestorAdded" listener="javax.swing.event.AncestorListener" parameters="javax.swing.event.AncestorEvent" handler="jTextArea1AncestorAdded"/>
+                    <EventHandler event="ancestorAdded" listener="javax.swing.event.AncestorListener" parameters="javax.swing.event.AncestorEvent" handler="JTAobservacoes12AncestorAdded"/>
                   </Events>
                 </Component>
               </SubComponents>
             </Container>
           </SubComponents>
         </Container>
+        <Component class="javax.swing.JButton" name="JTBsalvar12">
+          <Properties>
+            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="33" green="33" red="ff" type="rgb"/>
+            </Property>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Arial" size="12" style="1"/>
+            </Property>
+            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="ff" green="ff" red="ff" type="rgb"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="SALVAR"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="JTBsalvar12ActionPerformed"/>
+          </Events>
+        </Component>
       </SubComponents>
     </Container>
   </SubComponents>
