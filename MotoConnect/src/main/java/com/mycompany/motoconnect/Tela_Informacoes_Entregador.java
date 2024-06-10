@@ -68,7 +68,7 @@ public class Tela_Informacoes_Entregador extends javax.swing.JFrame {
         JBTcancelar5 = new javax.swing.JButton();
         JBTsalvar5 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
+        JBTcontinuar5 = new javax.swing.JButton();
         JTBlimpar5 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -338,13 +338,13 @@ public class Tela_Informacoes_Entregador extends javax.swing.JFrame {
             }
         });
 
-        jButton1.setBackground(new java.awt.Color(255, 51, 51));
-        jButton1.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
-        jButton1.setForeground(new java.awt.Color(255, 255, 255));
-        jButton1.setText("CONTINUAR");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        JBTcontinuar5.setBackground(new java.awt.Color(255, 51, 51));
+        JBTcontinuar5.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        JBTcontinuar5.setForeground(new java.awt.Color(255, 255, 255));
+        JBTcontinuar5.setText("CONTINUAR");
+        JBTcontinuar5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                JBTcontinuar5ActionPerformed(evt);
             }
         });
 
@@ -378,7 +378,7 @@ public class Tela_Informacoes_Entregador extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(JBTsalvar5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(51, 51, 51)
-                        .addComponent(jButton1))
+                        .addComponent(JBTcontinuar5))
                     .addComponent(JPNazulclaro5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(JTBlimpar5, javax.swing.GroupLayout.Alignment.TRAILING))
                 .addGap(44, 44, 44))
@@ -401,7 +401,7 @@ public class Tela_Informacoes_Entregador extends javax.swing.JFrame {
                 .addGroup(JPNfundo5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(JBTsalvar5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(JBTcancelar5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton1))
+                    .addComponent(JBTcontinuar5))
                 .addGap(41, 41, 41))
         );
 
@@ -432,7 +432,13 @@ public class Tela_Informacoes_Entregador extends javax.swing.JFrame {
 
     private void JBTsalvar5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBTsalvar5ActionPerformed
         try {
-            String text1 = JTFnome5.getText();
+            
+            
+            Class.forName("com.mysql.cj.jdbc.Driver");
+        Connection com = DriverManager.getConnection("jdbc:mysql://localhost:3306/mysql","root","");
+        java.sql.Statement st = com.createStatement();
+        
+        String text1 = JTFnome5.getText();
                 //(!text.matches("\\d*"))
                  if (!text1.matches("[a-zA-ZáéíóúÁÉÍÓÚàèìòùÀÈÌÒÙãõÃÕâêîôûÂÊÎÔÛäëïöüÄËÏÖÜçÇ ]*"))  { // Verifica se o texto contém apenas letras
                     JOptionPane.showMessageDialog(null,
@@ -531,40 +537,39 @@ public class Tela_Informacoes_Entregador extends javax.swing.JFrame {
                                                   JOptionPane.ERROR_MESSAGE);
                     JTFdocumentodamoto5.requestFocus(); // Requer foco novamente se a entrada for inválida
                 }
-            
-            Class.forName("com.mysql.cj.jdbc.Driver");
-            Connection com = DriverManager.getConnection("jdbc:mysql://localhost:3306/mysql","root","");
-            java.sql.Statement st = com.createStatement();
 
-            st.executeUpdate ("INSERT INTO entregador (nome, sobrenome, cep, estado, cidade, bairro, rua, telefone, cpf, senha, documento_moto, imagem_cnh) VALUES("
-                    +this.JTFnome5.getText()+","
-                    +this.JTFsobrenome5.getText()+","
-                    +this.JTFcep5.getText()+","
-                    +this.JTFestado5.getText()+","
-                    +this.JTFcidade5.getText()+","
-                    +this.JTFbairro5.getText()+","
-                    +this.JTFrua5.getText()+","
-                    +this.JTFtelefone5.getText()+","
-                    +this.JTFcpf5.getText()+","
-                    +this.JTFsenha5.getText()+","
-                    +this.JTFdocumentodamoto5.getText()+","
-                    +this.JTFimagemcnh5.getText()+")");
+            String sql = ("INSERT INTO entregador (nome, sobrenome, cep, estado, cidade, bairro, rua, telefone, cpf, senha, documento_moto, imagem_cnh) VALUES("
+                    + "'"+this.JTFnome5.getText()+","
+                    + "'"+this.JTFsobrenome5.getText()+","
+                    + "'"+this.JTFcep5.getText()+","
+                    + "'"+this.JTFestado5.getText()+","
+                    + "'"+this.JTFcidade5.getText()+","
+                    + "'"+this.JTFbairro5.getText()+","
+                    + "'"+this.JTFrua5.getText()+","
+                    + "'"+this.JTFtelefone5.getText()+","
+                    + "'"+this.JTFcpf5.getText()+","
+                    + "'"+this.JTFsenha5.getText()+","
+                    + "'"+this.JTFdocumentodamoto5.getText()+","
+                    + "'"+this.JTFimagemcnh5.getText()+")");
 
-            JOptionPane.showMessageDialog(null, "Informações enviadas");
+            st.executeUpdate(sql);
 
-            com.close();
-        } catch (Exception e) {
-            JOptionPane.showMessageDialog(null, "Erro ao enviar informações: " + e.getMessage());
-        }
+        JOptionPane.showMessageDialog(null, "Informações enviadas");
+
+        com.close();
+    } catch (Exception e) {
+        JOptionPane.showMessageDialog(null, "Erro ao enviar informações: " + e.getMessage());
+
+    } 
         
         
     }//GEN-LAST:event_JBTsalvar5ActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void JBTcontinuar5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBTcontinuar5ActionPerformed
         Tela_Informacoes_Entregador.this.dispose();
         Tela_Menu JBTcontinuar5 = new Tela_Menu();
         JBTcontinuar5.setVisible(true);
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_JBTcontinuar5ActionPerformed
 
     private void JTBlimpar5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JTBlimpar5ActionPerformed
         // Limpa todos os campos
@@ -618,6 +623,7 @@ public class Tela_Informacoes_Entregador extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton JBTcancelar5;
+    private javax.swing.JButton JBTcontinuar5;
     private javax.swing.JButton JBTsalvar5;
     private javax.swing.JLabel JLBbairro5;
     private javax.swing.JLabel JLBcadastrodeentregador5;
@@ -651,7 +657,6 @@ public class Tela_Informacoes_Entregador extends javax.swing.JFrame {
     private javax.swing.JTextField JTFsenha5;
     private javax.swing.JTextField JTFsobrenome5;
     private javax.swing.JTextField JTFtelefone5;
-    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     // End of variables declaration//GEN-END:variables
 }

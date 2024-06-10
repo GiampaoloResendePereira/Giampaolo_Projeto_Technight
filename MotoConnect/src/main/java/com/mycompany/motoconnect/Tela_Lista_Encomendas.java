@@ -7,6 +7,7 @@ package com.mycompany.motoconnect;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 
 /**
@@ -28,67 +29,7 @@ public class Tela_Lista_Encomendas extends javax.swing.JFrame {
         String password = "";
         return DriverManager.getConnection(url, user, password);
     }
-    
-    
-
-    private void atualizarStatusEncomenda() {
-        int selectedRow = JTBtabela10.getSelectedRow();
-        if (selectedRow != -1) {
-            String numeroPedido = JTBtabela10.getValueAt(selectedRow, 0).toString();
-            String novoStatus = JTFstatus10.getText();
-
-            // Atualizar o status na tabela (modelo de dados)
-            JTBtabela10.setValueAt(novoStatus, selectedRow, 5);
-
-            // Atualizar o status no banco de dados
-            try (Connection conn = getConnection()) {
-                String sql = "UPDATE lista_encomendas SET statuss = ? WHERE numero_pedido = ?";
-                try (PreparedStatement pstmt = conn.prepareStatement(sql)) {
-                    pstmt.setString(1, novoStatus);
-                    pstmt.setInt(2, Integer.parseInt(numeroPedido));
-                    int rowsAffected = pstmt.executeUpdate();
-                    System.out.println("Status da encomenda " + numeroPedido + " atualizado para " + novoStatus + ". Linhas afetadas: " + rowsAffected);
-                }
-            } catch (SQLException e) {
-                e.printStackTrace();
-                System.out.println("Erro ao atualizar o status da encomenda no banco de dados.");
-            }
-        } else {
-            System.out.println("Selecione uma encomenda para atualizar o status.");
-        }
-    }
-    
-    
-
-    private void excluirEncomenda() {
-        int selectedRow = JTBtabela10.getSelectedRow();
-        if (selectedRow != -1) {
-            String numeroPedido = JTBtabela10.getValueAt(selectedRow, 0).toString();
-
-            // Remover a linha da tabela (modelo de dados)
-            ((javax.swing.table.DefaultTableModel) JTBtabela10.getModel()).removeRow(selectedRow);
-
-            // Excluir a encomenda do banco de dados
-            try (Connection conn = getConnection()) {
-                String sql = "DELETE FROM lista_encomendas WHERE numero_pedido = ?";
-                try (PreparedStatement pstmt = conn.prepareStatement(sql)) {
-                    pstmt.setInt(1, Integer.parseInt(numeroPedido));
-                    int rowsAffected = pstmt.executeUpdate();
-                    System.out.println("Encomenda " + numeroPedido + " excluída. Linhas afetadas: " + rowsAffected);
-                }
-            } catch (SQLException e) {
-                e.printStackTrace();
-                System.out.println("Erro ao excluir a encomenda no banco de dados.");
-            }
-        } else {
-            System.out.println("Selecione uma encomenda para excluir.");
-        }
-    }
-
-    
-    
-    
-
+  
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -155,19 +96,10 @@ public class Tela_Lista_Encomendas extends javax.swing.JFrame {
         JTBtabela10.setForeground(new java.awt.Color(255, 255, 255));
         JTBtabela10.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {"12345", "Rua das Flores, 123, Jardim da Penha, Vitória", " Vitor Ramos", "Rua das Palmeiras, 123 - Centro, Vitória", "03/05/24", "Em andamento"},
-                {"12346", "Avenida Central, 456, Praia do Canto, Vitória", "Gabriel Antõnio", "Avenida Champagnat, 456 - Praia da Costa, Vila Velha", "04/05/24", "Agendada"},
-                {"12347", "Travessa do Sol, 789, Centro, Vila Velha", "Melissa Lopes", "Travessa das Flores, 789 - Jardim América, Cariacica", "02/05/24", "Finalizada"},
-                {"12348", "Rua dos Pássaros, 321, Itapuã, Vila Velha", "Tais Silva", "Avenida Tal, 321 - Serra Dourada, Serra", "02/05/24", "Finalizada"},
-                {"12349", "Avenida Beira Mar, 654, Praia da Costa, Vila Velha", "Ramon Cardoso", "Praça Principal, 101 - Centro, Viana", "03/05/24", "Em andamento"},
-                {"12350", "Rua do Comércio, 987, Centro, Serra", "Paolo Gimenez", "Rua dos Coqueiros, 234 - Jardim Camburi, Vitória", "03/05/24", "Em andamento"},
-                {"12351", "Avenida das Indústrias, 135, Civit II, Serra", "Ygor Pereira", "Avenida das Gaivotas, 567 - Itapuã, Vila Velha ", "02/05/24", "Finalizada"},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null}
+
             },
             new String [] {
-                "Numero do pedido", "Endereço de origem", "Entregador", "Endereço do destino", "Data de entrega", "Status"
+                "numero_pedido", "endereco_origem", "nome_entregador", "endereco_destino", "data_entrega", "statuss"
             }
         ));
         JTBtabela10.addAncestorListener(new javax.swing.event.AncestorListener() {
@@ -379,12 +311,59 @@ public class Tela_Lista_Encomendas extends javax.swing.JFrame {
     }//GEN-LAST:event_JTBtabela10AncestorAdded
 
     private void JTBatualizar10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JTBatualizar10ActionPerformed
-        atualizarStatusEncomenda();
+    String url = "jdbc:mysql://localhost:3306/mysql";
+    String user = "root";
+    String password = "";
+
+    try {
+        Connection conn = DriverManager.getConnection(url, user, password);
+
+        // Para atualizar um registro
+        String sqlUpdate = "UPDATE lista_encomendas SET nome_entregador = ?, endereco_destino = ? WHERE numero_pedido = ?";
+        PreparedStatement statementUpdate = conn.prepareStatement(sqlUpdate);
+        statementUpdate.setString(1, "novo_nome_entregador");
+        statementUpdate.setString(2, "novo_endereco_destino");
+        statementUpdate.setInt(3, 1);
+        int rowsUpdated = statementUpdate.executeUpdate();
+        if (rowsUpdated > 0) {
+            System.out.println("A atualização foi feita com sucesso!");
+        }
+
+        // Para buscar um registro
+        String sqlSelect = "SELECT * FROM lista_encomendas WHERE endereco_origem = ?";
+        PreparedStatement statementSelect = conn.prepareStatement(sqlSelect);
+        statementSelect.setString(1, "endereco_origem_especifico");
+        ResultSet result = statementSelect.executeQuery();
+        while (result.next()){
+            String nome_entregador = result.getString("nome_entregador");
+            String endereco_destino = result.getString("endereco_destino");
+            System.out.println("Entregador: " + nome_entregador + ", Endereço de destino: " + endereco_destino);
+        }
+    } catch (SQLException ex) {
+        ex.printStackTrace();
+    }
     
     }//GEN-LAST:event_JTBatualizar10ActionPerformed
 
     private void JTBexcluir10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JTBexcluir10ActionPerformed
-        excluirEncomenda();
+    String url = "jdbc:mysql://localhost:3306/mysql";
+    String user = "root";
+    String password = "";
+
+    try {
+        Connection conn = DriverManager.getConnection(url, user, password);
+
+        // Para excluir um registro
+        String sqlDelete = "DELETE FROM lista_encomendas WHERE numero_pedido = ?";
+        PreparedStatement statementDelete = conn.prepareStatement(sqlDelete);
+        statementDelete.setInt(1, 1);
+        int rowsDeleted = statementDelete.executeUpdate();
+        if (rowsDeleted > 0) {
+            System.out.println("A exclusão foi feita com sucesso!");
+        }
+    } catch (SQLException ex) {
+        ex.printStackTrace();
+    }
     }//GEN-LAST:event_JTBexcluir10ActionPerformed
 
     /**
