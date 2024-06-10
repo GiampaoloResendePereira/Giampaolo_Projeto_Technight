@@ -527,7 +527,7 @@ public class Tela_Informacoes_Destinatario extends javax.swing.JFrame {
                     }
             
             Class.forName("com.mysql.cj.jdbc.Driver");
-            Connection com = DriverManager.getConnection("jdbc:mysql://localhost/mysql","root","");
+            Connection com = DriverManager.getConnection("jdbc:mysql://localhost:3306/mysql","root","");
             java.sql.Statement st = com.createStatement();
             
             st.executeUpdate ("INSERT INTO destinatario (destinatario, telefonedestinatario, cep, estado, cidade, bairro, rua, numero) VALUES("

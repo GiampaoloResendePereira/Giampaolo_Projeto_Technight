@@ -353,12 +353,11 @@ public class Tela_Cadastro_Cliente extends javax.swing.JFrame {
                                     .addComponent(jTextField11)))
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGap(19, 19, 19)
-                                .addComponent(JLBmotoconnect8, javax.swing.GroupLayout.PREFERRED_SIZE, 233, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(89, 89, 89)
-                        .addComponent(JBTpesquisar8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                                .addComponent(JLBmotoconnect8, javax.swing.GroupLayout.PREFERRED_SIZE, 233, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGap(89, 89, 89)
+                                .addComponent(JBTpesquisar8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(0, 0, Short.MAX_VALUE)))
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
                         .addGap(20, 20, 20)
@@ -432,7 +431,9 @@ public class Tela_Cadastro_Cliente extends javax.swing.JFrame {
 
     private void JBTsalvar8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBTsalvar8ActionPerformed
     try {    
-            String text1 = JTFcpf8.getText();
+            
+        
+        String text1 = JTFcpf8.getText();
                 //
                 if (!text1.matches("\\d*"))  { // Verifica se o texto contém apenas letras
                     JOptionPane.showMessageDialog(null,
@@ -523,7 +524,7 @@ public class Tela_Cadastro_Cliente extends javax.swing.JFrame {
                     }
         
         Class.forName("com.mysql.cj.jdbc.Driver");
-        Connection com = DriverManager.getConnection("jdbc:mysql://localhost/mysql","root","");
+        Connection com = DriverManager.getConnection("jdbc:mysql://localhost:3306/mysql","root","");
         java.sql.Statement st = com.createStatement();
 
         st.executeUpdate ("INSERT INTO cliente (cpf, nomecompleto, cep, estado, cidade, bairro, rua, nunero, email, telefone) VALUES("
@@ -568,7 +569,7 @@ public class Tela_Cadastro_Cliente extends javax.swing.JFrame {
                 }
             
             Class.forName("com.mysql.cj.jdbc.Driver");
-            Connection com = DriverManager.getConnection("jdbc:mysql://localhost/mysql", "root", "");
+            Connection com = DriverManager.getConnection("jdbc:mysql://localhost:3306/mysql", "root", "");
         
             String sql = "SELECT * FROM cliente WHERE cpf = ?";
             PreparedStatement pst = com.prepareStatement(sql);

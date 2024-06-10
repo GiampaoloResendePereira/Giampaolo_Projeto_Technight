@@ -472,7 +472,7 @@ public class Tela_Informacoes_Atendente extends javax.swing.JFrame {
                 }
             
             Class.forName("com.mysql.cj.jdbc.Driver");
-            Connection com = DriverManager.getConnection("jdbc:mysql://localhost/mysql","root","");
+            Connection com = DriverManager.getConnection("jdbc:mysql://localhost:3306/mysql","root","");
             java.sql.Statement st = com.createStatement();
 
             st.executeUpdate ("INSERT INTO atendente (nome, sobrenome, cep, estado, cidade, bairro, rua, telefone, cpf, senha) VALUES("
