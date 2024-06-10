@@ -431,8 +431,11 @@ public class Tela_Cadastro_Cliente extends javax.swing.JFrame {
 
     private void JBTsalvar8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBTsalvar8ActionPerformed
     try {    
-            
+        Class.forName("com.mysql.cj.jdbc.Driver");
+        Connection com = DriverManager.getConnection("jdbc:mysql://localhost:3306/mysql","root","");
+        java.sql.Statement st = com.createStatement();   
         
+        // Validação dos campos de texto
         String text1 = JTFcpf8.getText();
                 //
                 if (!text1.matches("\\d*"))  { // Verifica se o texto contém apenas letras
@@ -523,31 +526,31 @@ public class Tela_Cadastro_Cliente extends javax.swing.JFrame {
                     JTFtelefone8.requestFocus(); // Requer foco novamente se a entrada for inválida
                     }
         
-        Class.forName("com.mysql.cj.jdbc.Driver");
-        Connection com = DriverManager.getConnection("jdbc:mysql://localhost:3306/mysql","root","");
-        java.sql.Statement st = com.createStatement();
+        
+        String sql = ("INSERT INTO cliente (cpf, nomecompleto, cep, estado, cidade, bairro, rua, nunero, email, telefone) VALUES("
+                + "'"+this.JTFcpf8.getText()+","
+                + "'"+this.JTFnomecompleto8.getText()+","
+                + "'"+this.JTFcep8.getText()+","
+                + "'"+this.JTFestado8.getText()+","
+                + "'"+this.JTFcidade8.getText()+","
+                + "'"+this.JTFbairro8.getText()+","
+                + "'"+this.JTFrua8.getText()+","
+                + "'"+this.JTFnumero8.getText()+","
+                + "'"+this.JTFemail8.getText()+","
+                + "'"+this.JTFtelefone8.getText()+")");
+        
+        
+        
+        
+        st.executeUpdate(sql);
 
-        st.executeUpdate ("INSERT INTO cliente (cpf, nomecompleto, cep, estado, cidade, bairro, rua, nunero, email, telefone) VALUES("
-                +this.JTFcpf8.getText()+","
-                +this.JTFnomecompleto8.getText()+","
-                +this.JTFcep8.getText()+","
-                +this.JTFestado8.getText()+","
-                +this.JTFcidade8.getText()+","
-                +this.JTFbairro8.getText()+","
-                +this.JTFrua8.getText()+","
-                +this.JTFnumero8.getText()+","
-                +this.JTFemail8.getText()+","
-                +this.JTFtelefone8.getText()+")");
-        
-        
-        
-        
         JOptionPane.showMessageDialog(null, "Informações enviadas");
 
-            com.close();
-        } catch (Exception e) {
-            JOptionPane.showMessageDialog(null, "Erro ao enviar informações: " + e.getMessage());
-        }
+        com.close();
+    } catch (Exception e) {
+        JOptionPane.showMessageDialog(null, "Erro ao enviar informações: " + e.getMessage());
+
+    } 
         
         
     }//GEN-LAST:event_JBTsalvar8ActionPerformed
@@ -558,44 +561,44 @@ public class Tela_Cadastro_Cliente extends javax.swing.JFrame {
 
     private void JBTpesquisar8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBTpesquisar8ActionPerformed
         try {
-            String text1 = JTFcep8.getText();
-                //
-                if (!text1.matches("\\d*"))  { // Verifica se o texto contém apenas letras
-                    JOptionPane.showMessageDialog(null,
-                                                  "Por favor, insira apenas número.",
-                                                  "Entrada Inválida",
-                                                  JOptionPane.ERROR_MESSAGE);
-                    JTFcep8.requestFocus(); // Requer foco novamente se a entrada for inválida
-                }
-            
-            Class.forName("com.mysql.cj.jdbc.Driver");
-            Connection com = DriverManager.getConnection("jdbc:mysql://localhost:3306/mysql", "root", "");
-        
-            String sql = "SELECT * FROM cliente WHERE cpf = ?";
-            PreparedStatement pst = com.prepareStatement(sql);
-        
-            pst.setString(1, this.JTFcpf8.getText());
-        
-            ResultSet rs = pst.executeQuery();
-        
-            if (rs.next()) {
-                this.JTFnomecompleto8.setText(rs.getString("nomecompleto"));
-                this.JTFcep8.setText(rs.getString("cep"));
-                this.JTFestado8.setText(rs.getString("estado"));
-                this.JTFcidade8.setText(rs.getString("cidade"));
-                this.JTFbairro8.setText(rs.getString("bairro"));
-                this.JTFrua8.setText(rs.getString("rua"));
-                this.JTFnumero8.setText(rs.getString("numero"));
-                this.JTFemail8.setText(rs.getString("email"));
-                this.JTFtelefone8.setText(rs.getString("telefone"));
-            } else {
-                JOptionPane.showMessageDialog(null, "Cliente não encontrado");
-            }
-        
-            com.close();
-        } catch (Exception e) {
-            JOptionPane.showMessageDialog(null, "Erro ao buscar cliente: " + e.getMessage());
+        String cpf = JTFcpf8.getText();
+        if (!cpf.matches("\\d*"))  { // Verifica se o CPF contém apenas números
+            JOptionPane.showMessageDialog(null,
+                                          "Por favor, insira apenas números no CPF.",
+                                          "Entrada Inválida",
+                                          JOptionPane.ERROR_MESSAGE);
+            JTFcpf8.requestFocus(); // Requer foco novamente se a entrada for inválida
+            return;
         }
+        
+        Class.forName("com.mysql.cj.jdbc.Driver");
+        Connection com = DriverManager.getConnection("jdbc:mysql://localhost:3306/mysql", "root", "");
+    
+        String sql = "SELECT * FROM cliente WHERE cpf = ?";
+        PreparedStatement pst = com.prepareStatement(sql);
+    
+        pst.setString(1, cpf);
+    
+        ResultSet rs = pst.executeQuery();
+    
+        if (rs.next()) {
+            this.JTFnomecompleto8.setText(rs.getString("nomecompleto"));
+            this.JTFcep8.setText(rs.getString("cep"));
+            this.JTFestado8.setText(rs.getString("estado"));
+            this.JTFcidade8.setText(rs.getString("cidade"));
+            this.JTFbairro8.setText(rs.getString("bairro"));
+            this.JTFrua8.setText(rs.getString("rua"));
+            this.JTFnumero8.setText(rs.getString("numero"));
+            this.JTFemail8.setText(rs.getString("email"));
+            this.JTFtelefone8.setText(rs.getString("telefone"));
+        } else {
+            JOptionPane.showMessageDialog(null, "Cliente não encontrado");
+        }
+    
+        com.close();
+    } catch (Exception e) {
+        JOptionPane.showMessageDialog(null, "Erro ao buscar cliente: " + e.getMessage());
+    }
     }//GEN-LAST:event_JBTpesquisar8ActionPerformed
 
     private void JTBcontinuar8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JTBcontinuar8ActionPerformed

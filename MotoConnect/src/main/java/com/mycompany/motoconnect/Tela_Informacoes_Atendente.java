@@ -387,28 +387,99 @@ public class Tela_Informacoes_Atendente extends javax.swing.JFrame {
         java.sql.Statement st = com.createStatement();
         
         // Validação dos campos de texto
-        String[] textFields = {JTFnome4.getText(), JTFsobrenome4.getText(), JTFestado4.getText(), JTFcidade4.getText(), JTFbairro4.getText(), JTFrua4.getText()};
-        String[] fieldNames = {"nome", "sobrenome", "estado", "cidade", "bairro", "rua"};
-        for (int i = 0; i < textFields.length; i++) {
-            if (!textFields[i].matches("[a-zA-ZáéíóúÁÉÍÓÚàèìòùÀÈÌÒÙãõÃÕâêîôûÂÊÎÔÛäëïöüÄËÏÖÜçÇ ]*")) {
-                JOptionPane.showMessageDialog(null,
-                                              "Por favor, insira apenas letras no campo " + fieldNames[i] + ".",
-                                              "Entrada Inválida",
-                                              JOptionPane.ERROR_MESSAGE);
-                return; // Retorna se a entrada for inválida
-            }
-        }
+        String text1 = JTFnome4.getText();
+                //(!text.matches("\\d*"))
+                 if (!text1.matches("[a-zA-ZáéíóúÁÉÍÓÚàèìòùÀÈÌÒÙãõÃÕâêîôûÂÊÎÔÛäëïöüÄËÏÖÜçÇ ]*"))  { // Verifica se o texto contém apenas letras
+                    JOptionPane.showMessageDialog(null,
+                                                  "Por favor, insira apenas letras.",
+                                                  "Entrada Inválida",
+                                                  JOptionPane.ERROR_MESSAGE);
+                    JTFnome4.requestFocus(); // Requer foco novamente se a entrada for inválida
+                }
+                 
+                String text2 = JTFsobrenome4.getText();
+                //(!text.matches("\\d*"))
+                 if (!text2.matches("[a-zA-ZáéíóúÁÉÍÓÚàèìòùÀÈÌÒÙãõÃÕâêîôûÂÊÎÔÛäëïöüÄËÏÖÜçÇ ]*"))  { // Verifica se o texto contém apenas letras
+                    JOptionPane.showMessageDialog(null,
+                                                  "Por favor, insira apenas letras.",
+                                                  "Entrada Inválida",
+                                                  JOptionPane.ERROR_MESSAGE);
+                    JTFsobrenome4.requestFocus(); // Requer foco novamente se a entrada for inválida
+                }
+                 
+                 String text3 = JTFcep4.getText();
+                //
+                 if (!text3.matches("\\d*"))  { // Verifica se o texto contém apenas letras
+                    JOptionPane.showMessageDialog(null,
+                                                  "Por favor, insira apenas número.",
+                                                  "Entrada Inválida",
+                                                  JOptionPane.ERROR_MESSAGE);
+                    JTFcep4.requestFocus(); // Requer foco novamente se a entrada for inválida
+                }
+                
+                String text4 = JTFestado4.getText();
+                //(!text.matches("\\d*"))
+                 if (!text4.matches("[a-zA-ZáéíóúÁÉÍÓÚàèìòùÀÈÌÒÙãõÃÕâêîôûÂÊÎÔÛäëïöüÄËÏÖÜçÇ ]*"))  { // Verifica se o texto contém apenas letras
+                    JOptionPane.showMessageDialog(null,
+                                                  "Por favor, insira apenas letras.",
+                                                  "Entrada Inválida",
+                                                  JOptionPane.ERROR_MESSAGE);
+                    JTFestado4.requestFocus(); // Requer foco novamente se a entrada for inválida
+                }
+                
+                 String text5 = JTFcidade4.getText();
+                //(!text.matches("\\d*"))
+                 if (!text5.matches("[a-zA-ZáéíóúÁÉÍÓÚàèìòùÀÈÌÒÙãõÃÕâêîôûÂÊÎÔÛäëïöüÄËÏÖÜçÇ ]*"))  { // Verifica se o texto contém apenas letras
+                    JOptionPane.showMessageDialog(null,
+                                                  "Por favor, insira apenas letras.",
+                                                  "Entrada Inválida",
+                                                  JOptionPane.ERROR_MESSAGE);
+                    JTFcidade4.requestFocus(); // Requer foco novamente se a entrada for inválida
+                }
+                 
+                 String text6 = JTFbairro4.getText();
+                //(!text.matches("\\d*"))
+                 if (!text6.matches("[a-zA-ZáéíóúÁÉÍÓÚàèìòùÀÈÌÒÙãõÃÕâêîôûÂÊÎÔÛäëïöüÄËÏÖÜçÇ ]*"))  { // Verifica se o texto contém apenas letras
+                    JOptionPane.showMessageDialog(null,
+                                                  "Por favor, insira apenas letras.",
+                                                  "Entrada Inválida",
+                                                  JOptionPane.ERROR_MESSAGE);
+                    JTFbairro4.requestFocus(); // Requer foco novamente se a entrada for inválida
+                }
+                 
+                 String text7 = JTFrua4.getText();
+                //(!text.matches("\\d*"))
+                 if (!text7.matches("[a-zA-ZáéíóúÁÉÍÓÚàèìòùÀÈÌÒÙãõÃÕâêîôûÂÊÎÔÛäëïöüÄËÏÖÜçÇ ]*"))  { // Verifica se o texto contém apenas letras
+                    JOptionPane.showMessageDialog(null,
+                                                  "Por favor, insira apenas letras.",
+                                                  "Entrada Inválida",
+                                                  JOptionPane.ERROR_MESSAGE);
+                    JTFrua4.requestFocus(); // Requer foco novamente se a entrada for inválida
+                }
+                 
+                 String text8 = JTFtelefone4.getText();
+                //
+                 if (!text8.matches("\\d*"))  { // Verifica se o texto contém apenas letras
+                    JOptionPane.showMessageDialog(null,
+                                                  "Por favor, insira apenas número.",
+                                                  "Entrada Inválida",
+                                                  JOptionPane.ERROR_MESSAGE);
+                    JTFtelefone4.requestFocus(); // Requer foco novamente se a entrada for inválida
+                }
+                 
+                 String text9 = JTFcpf4.getText();
+                //
+                 if (!text9.matches("\\d*"))  { // Verifica se o texto contém apenas letras
+                    JOptionPane.showMessageDialog(null,
+                                                  "Por favor, insira apenas número.",
+                                                  "Entrada Inválida",
+                                                  JOptionPane.ERROR_MESSAGE);
+                    JTFcpf4.requestFocus(); // Requer foco novamente se a entrada for inválida
+                }
+                 
+                 
 
-        String cep = JTFcep4.getText();
-        if (!cep.matches("\\d*")) {
-            JOptionPane.showMessageDialog(null,
-                                          "Por favor, insira apenas números no campo CEP.",
-                                          "Entrada Inválida",
-                                          JOptionPane.ERROR_MESSAGE);
-            return; // Retorna se a entrada for inválida
-        }
-
-    String sql = "INSERT INTO atendente (nome, sobrenome, cep, estado, cidade, bairro, rua, telefone, cpf, senha) VALUES("
+    String sql = ("INSERT INTO atendente (nome, sobrenome, cep, estado, cidade, bairro, rua, telefone, cpf, senha) VALUES("
         + "'" + this.JTFnome4.getText() + "',"
         + "'" + this.JTFsobrenome4.getText() + "',"
         + "'" + this.JTFcep4.getText() + "',"
@@ -418,7 +489,7 @@ public class Tela_Informacoes_Atendente extends javax.swing.JFrame {
         + "'" + this.JTFrua4.getText() + "',"
         + "'" + this.JTFtelefone4.getText() + "',"
         + "'" + this.JTFcpf4.getText() + "',"
-        + "'" + this.JTFsenha4.getText() + "')";
+        + "'" + this.JTFsenha4.getText() + "')");
 
         st.executeUpdate(sql);
 

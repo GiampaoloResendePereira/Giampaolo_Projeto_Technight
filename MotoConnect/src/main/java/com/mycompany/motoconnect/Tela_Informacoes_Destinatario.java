@@ -445,7 +445,11 @@ public class Tela_Informacoes_Destinatario extends javax.swing.JFrame {
     }//GEN-LAST:event_JBTcancelar9ActionPerformed
 
     private void JBTfinalizar9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBTfinalizar9ActionPerformed
-        try {    
+        try { 
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            Connection com = DriverManager.getConnection("jdbc:mysql://localhost:3306/mysql","root","");
+            java.sql.Statement st = com.createStatement();
+        
                 String text1 = JTFdestinatario9.getText();
                     //(!text.matches("\\d*"))
                     if (!text1.matches("[a-zA-ZáéíóúÁÉÍÓÚàèìòùÀÈÌÒÙãõÃÕâêîôûÂÊÎÔÛäëïöüÄËÏÖÜçÇ ]*"))  { // Verifica se o texto contém apenas letras
@@ -526,11 +530,9 @@ public class Tela_Informacoes_Destinatario extends javax.swing.JFrame {
                     JTFnumero9.requestFocus(); // Requer foco novamente se a entrada for inválida
                     }
             
-            Class.forName("com.mysql.cj.jdbc.Driver");
-            Connection com = DriverManager.getConnection("jdbc:mysql://localhost:3306/mysql","root","");
-            java.sql.Statement st = com.createStatement();
             
-            st.executeUpdate ("INSERT INTO destinatario (destinatario, telefonedestinatario, cep, estado, cidade, bairro, rua, numero) VALUES("
+            
+            String sql =  ("INSERT INTO destinatario (destinatario, telefonedestinatario, cep, estado, cidade, bairro, rua, numero) VALUES("
                     +this.JTFdestinatario9.getText()+","
                     +this.JTFtelefone9.getText()+","
                     +this.JTFcep9.getText()+","
@@ -540,12 +542,15 @@ public class Tela_Informacoes_Destinatario extends javax.swing.JFrame {
                     +this.JTFrua9.getText()+","                
                     +this.JTFnumero9.getText()+")");
             
-            JOptionPane.showMessageDialog(null, "Informações enviadas");
-            
-                com.close();
-            } catch (Exception e) {
-                JOptionPane.showMessageDialog(null, "Erro ao enviar informações: " + e.getMessage());
-        }
+            st.executeUpdate(sql);
+
+        JOptionPane.showMessageDialog(null, "Informações enviadas");
+
+        com.close();
+    } catch (Exception e) {
+        JOptionPane.showMessageDialog(null, "Erro ao enviar informações: " + e.getMessage());
+
+    }     
         
 
         Tela_Informacoes_Destinatario.this.dispose();
