@@ -161,7 +161,7 @@ public class Tela_Observacoes_Comentarioes extends javax.swing.JFrame {
                 .addGroup(JPNazulclaro12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(JSPassunto12, javax.swing.GroupLayout.DEFAULT_SIZE, 768, Short.MAX_VALUE)
                     .addComponent(JTFadministrador12))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(36, Short.MAX_VALUE))
         );
         JPNazulclaro12Layout.setVerticalGroup(
             JPNazulclaro12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
