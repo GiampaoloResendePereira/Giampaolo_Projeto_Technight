@@ -435,10 +435,10 @@ public class Tela_Informacoes_Entregador extends javax.swing.JFrame {
             
             
             Class.forName("com.mysql.cj.jdbc.Driver");
-        Connection com = DriverManager.getConnection("jdbc:mysql://localhost:3306/mysql","root","");
-        java.sql.Statement st = com.createStatement();
+            Connection com = DriverManager.getConnection("jdbc:mysql://localhost:3306/mysql","root","");
+            java.sql.Statement st = com.createStatement(); 
         
-        String text1 = JTFnome5.getText();
+            String text1 = JTFnome5.getText();
                 //(!text.matches("\\d*"))
                  if (!text1.matches("[a-zA-ZáéíóúÁÉÍÓÚàèìòùÀÈÌÒÙãõÃÕâêîôûÂÊÎÔÛäëïöüÄËÏÖÜçÇ ]*"))  { // Verifica se o texto contém apenas letras
                     JOptionPane.showMessageDialog(null,
@@ -538,19 +538,20 @@ public class Tela_Informacoes_Entregador extends javax.swing.JFrame {
                     JTFdocumentodamoto5.requestFocus(); // Requer foco novamente se a entrada for inválida
                 }
 
-            String sql = ("INSERT INTO entregador (nome, sobrenome, cep, estado, cidade, bairro, rua, telefone, cpf, senha, documento_moto, imagem_cnh) VALUES("
-                    + "'"+this.JTFnome5.getText()+","
-                    + "'"+this.JTFsobrenome5.getText()+","
-                    + "'"+this.JTFcep5.getText()+","
-                    + "'"+this.JTFestado5.getText()+","
-                    + "'"+this.JTFcidade5.getText()+","
-                    + "'"+this.JTFbairro5.getText()+","
-                    + "'"+this.JTFrua5.getText()+","
-                    + "'"+this.JTFtelefone5.getText()+","
-                    + "'"+this.JTFcpf5.getText()+","
-                    + "'"+this.JTFsenha5.getText()+","
-                    + "'"+this.JTFdocumentodamoto5.getText()+","
-                    + "'"+this.JTFimagemcnh5.getText()+")");
+           String sql = ("INSERT INTO entregador (nome, sobrenome, cep, estado, cidade, bairro, rua, telefone, cpf, senha, documento_moto, imagem_cnh) VALUES("
+               +this.JTFnome5.getText()+"',"
+               +this.JTFsobrenome5.getText()+"',"
+               +this.JTFcep5.getText()+"',"
+               +this.JTFestado5.getText()+"',"
+                +this.JTFcidade5.getText()+"',"
+                +this.JTFbairro5.getText()+"',"
+                +this.JTFrua5.getText()+"',"
+                +this.JTFtelefone5.getText()+"',"
+                +this.JTFcpf5.getText()+"',"
+                +this.JTFsenha5.getText()+"',"
+                +this.JTFdocumentodamoto5.getText()+"',"
+                +this.JTFimagemcnh5.getText()+"')");
+
 
             st.executeUpdate(sql);
 
@@ -560,9 +561,7 @@ public class Tela_Informacoes_Entregador extends javax.swing.JFrame {
     } catch (Exception e) {
         JOptionPane.showMessageDialog(null, "Erro ao enviar informações: " + e.getMessage());
 
-    } 
-        
-        
+    }     
     }//GEN-LAST:event_JBTsalvar5ActionPerformed
 
     private void JBTcontinuar5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBTcontinuar5ActionPerformed

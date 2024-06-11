@@ -162,7 +162,7 @@
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" pref="267" max="-2" attributes="0"/>
                       <Component id="JLBlista10" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace pref="259" max="32767" attributes="0"/>
+                      <EmptySpace pref="262" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -347,11 +347,6 @@
           </SubComponents>
         </Container>
         <Component class="javax.swing.JLabel" name="JLBmotoconnect10">
-          <Properties>
-            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="2" name="C:\Users\PC\Desktop\MotoConnect_Projeto\Giampaolo_Projeto_Technight\MotoConnect\src\main\java\imagem_login\motoqueiro.png"/>
-            </Property>
-          </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="JTFnumero10">
           <Properties>

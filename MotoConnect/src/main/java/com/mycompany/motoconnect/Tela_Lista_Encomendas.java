@@ -9,6 +9,9 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -23,12 +26,7 @@ public class Tela_Lista_Encomendas extends javax.swing.JFrame {
         initComponents();
     }
     
-    private Connection getConnection() throws SQLException {
-        String url = "jdbc:mysql://localhost:3306/mysql";
-        String user = "root";
-        String password = "";
-        return DriverManager.getConnection(url, user, password);
-    }
+    
   
     /**
      * This method is called from within the constructor to initialize the form.
@@ -311,38 +309,29 @@ public class Tela_Lista_Encomendas extends javax.swing.JFrame {
     }//GEN-LAST:event_JTBtabela10AncestorAdded
 
     private void JTBatualizar10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JTBatualizar10ActionPerformed
-    String url = "jdbc:mysql://localhost:3306/mysql";
-    String user = "root";
-    String password = "";
-
-    try {
-        Connection conn = DriverManager.getConnection(url, user, password);
-
-        // Para atualizar um registro
-        String sqlUpdate = "UPDATE lista_encomendas SET nome_entregador = ?, endereco_destino = ? WHERE numero_pedido = ?";
-        PreparedStatement statementUpdate = conn.prepareStatement(sqlUpdate);
-        statementUpdate.setString(1, "novo_nome_entregador");
-        statementUpdate.setString(2, "novo_endereco_destino");
-        statementUpdate.setInt(3, 1);
-        int rowsUpdated = statementUpdate.executeUpdate();
-        if (rowsUpdated > 0) {
-            System.out.println("A atualização foi feita com sucesso!");
+     try {
+            // TODO add your handling code here:
+            Connection conexao = null;
+            PreparedStatement statment = null;
+            
+            String uri = "jdbc:mysql://localhost:3306/mysql";
+            String usuario ="root";
+            String senha = "";
+            
+            conexao =DriverManager.getConnection(uri, usuario, senha);
+            
+            String sql = "UPDATE lista_encomendas SET data_entrega = ?, statuss = ? WHERE numero_pedido = ?";
+            statment = conexao.prepareStatement(sql);
+            statment.setString(1, JTFdata10.getText());
+            statment.setString(2, JTFstatus10.getText());
+            statment.setString(3, JTFnumero10.getText());
+            
+            statment.execute();
+            JOptionPane.showMessageDialog(null, "Informações enviadas");
+            statment.close();
+        } catch (SQLException ex) {
+            Logger.getLogger(Tela_Lista_Encomendas.class.getName()).log(Level.SEVERE, null, ex);
         }
-
-        // Para buscar um registro
-        String sqlSelect = "SELECT * FROM lista_encomendas WHERE endereco_origem = ?";
-        PreparedStatement statementSelect = conn.prepareStatement(sqlSelect);
-        statementSelect.setString(1, "endereco_origem_especifico");
-        ResultSet result = statementSelect.executeQuery();
-        while (result.next()){
-            String nome_entregador = result.getString("nome_entregador");
-            String endereco_destino = result.getString("endereco_destino");
-            System.out.println("Entregador: " + nome_entregador + ", Endereço de destino: " + endereco_destino);
-        }
-    } catch (SQLException ex) {
-        ex.printStackTrace();
-    }
-    
     }//GEN-LAST:event_JTBatualizar10ActionPerformed
 
     private void JTBexcluir10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JTBexcluir10ActionPerformed
