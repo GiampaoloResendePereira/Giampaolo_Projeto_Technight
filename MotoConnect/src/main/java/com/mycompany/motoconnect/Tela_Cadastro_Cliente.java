@@ -25,6 +25,19 @@ public class Tela_Cadastro_Cliente extends javax.swing.JFrame {
         initComponents();
     }
     
+    private void limparCampos() {
+    JTFnomecompleto8.setText("");
+    JTFcpf8.setText("");
+    JTFcep8.setText("");
+    JTFestado8.setText("");
+    JTFcidade8.setText("");
+    JTFbairro8.setText("");
+    JTFrua8.setText("");
+    JTFnumero8.setText("");
+    JTFemail8.setText("");
+    JTFtelefone8.setText("");
+}
+    
     
 
     /**
@@ -524,14 +537,14 @@ public class Tela_Cadastro_Cliente extends javax.swing.JFrame {
         }
 
         // Conexão com o banco de dados e inserção dos dados
-        String url = "jdbc:mysql://localhost:3306/mysql";
+        String url = "jdbc:mysql://localhost:3306/crud";
         String usuario = "root";
         String senha = "";
 
         Class.forName("com.mysql.cj.jdbc.Driver");
         Connection con = DriverManager.getConnection(url, usuario, senha);
 
-        String sql = "INSERT INTO Cliente (cpf, nome_completo, cep, estado, cidade, bairro, rua, numero, email, telefone) " +
+        String sql = "INSERT INTO cliente (cpf, nome_completo, cep, estado, cidade, bairro, rua, numero, email, telefone) " +
                      "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
 
         PreparedStatement pst = con.prepareStatement(sql);
@@ -565,24 +578,41 @@ public class Tela_Cadastro_Cliente extends javax.swing.JFrame {
     }//GEN-LAST:event_JTFbairro8ActionPerformed
 
     private void JBTpesquisar8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBTpesquisar8ActionPerformed
-        try {
-        String url = "jdbc:mysql://localhost:3306/mysql";
-        String usuario = "root";
-        String senha = "";
+       String url = "jdbc:mysql://localhost:3306/crud";
+    String usuario = "root";
+    String senha = "";
 
+    String cpf = JTFcpf8.getText().trim(); // Obtém o CPF e remove espaços em branco
+
+    // Valida se o CPF foi inserido
+    if (cpf.isEmpty()) {
+        JOptionPane.showMessageDialog(null, "Por favor, insira o CPF para pesquisa.", "CPF Vazio", JOptionPane.WARNING_MESSAGE);
+        return;
+    }
+
+    Connection con = null;
+    PreparedStatement pst = null;
+    ResultSet rs = null;
+
+    try {
+        // Carrega o driver do MySQL
         Class.forName("com.mysql.cj.jdbc.Driver");
-        Connection con = DriverManager.getConnection(url, usuario, senha);
 
-        String cpf = JTFcpf8.getText().trim(); // Obtém o CPF e remove espaços em branco
+        // Conecta ao banco de dados
+        con = DriverManager.getConnection(url, usuario, senha);
 
-        String sql = "SELECT * FROM Cliente WHERE cpf = ?";
-        PreparedStatement pst = con.prepareStatement(sql);
+        String sql = "SELECT * FROM cliente WHERE cpf = ?";
+        
+        // Prepara a consulta SQL parametrizada
+        pst = con.prepareStatement(sql);
         pst.setString(1, cpf);
 
-        ResultSet rs = pst.executeQuery();
-
+        // Executa a consulta e verifica se encontrou o cliente
+        rs = pst.executeQuery();
         if (rs.next()) {
+            // Preenche os campos com os dados do cliente encontrado
             JTFnomecompleto8.setText(rs.getString("nome_completo"));
+          
             JTFcep8.setText(rs.getString("cep"));
             JTFestado8.setText(rs.getString("estado"));
             JTFcidade8.setText(rs.getString("cidade"));
@@ -592,14 +622,35 @@ public class Tela_Cadastro_Cliente extends javax.swing.JFrame {
             JTFemail8.setText(rs.getString("email"));
             JTFtelefone8.setText(rs.getString("telefone"));
         } else {
-            JOptionPane.showMessageDialog(null, "Cliente não encontrado");
+            // Não faz nada se o cliente não foi encontrado
+            JOptionPane.showMessageDialog(null, "Cliente com CPF " + cpf + " não encontrado.", "Cliente Não Encontrado", JOptionPane.INFORMATION_MESSAGE);
         }
-
-        con.close();
     } catch (ClassNotFoundException | SQLException e) {
-        JOptionPane.showMessageDialog(null, "Erro ao buscar cliente: " + e.getMessage());
-    }
-        
+        JOptionPane.showMessageDialog(null, "Erro ao buscar cliente: " + e.getMessage(), "Erro de Busca", JOptionPane.ERROR_MESSAGE);
+    } finally {
+        // Fechar os recursos (ResultSet, PreparedStatement, Connection) para liberar memória e conexão
+        if (rs != null) {
+            try {
+                rs.close();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
+        if (pst != null) {
+            try {
+                pst.close();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
+        if (con != null) {
+            try {
+                con.close();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
+    }  
     }//GEN-LAST:event_JBTpesquisar8ActionPerformed
 
     private void JTBcontinuar8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JTBcontinuar8ActionPerformed
@@ -609,18 +660,7 @@ public class Tela_Cadastro_Cliente extends javax.swing.JFrame {
     }//GEN-LAST:event_JTBcontinuar8ActionPerformed
 
     private void JTBlimpar8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JTBlimpar8ActionPerformed
-        
-        // Limpa todos os campos
-        JTFcpf8.setText("");
-        JTFnomecompleto8.setText("");
-        JTFcep8.setText("");
-        JTFestado8.setText("");
-        JTFcidade8.setText("");
-        JTFbairro8.setText("");
-        JTFrua8.setText("");
-        JTFnumero8.setText("");
-        JTFemail8.setText("");
-        JTFtelefone8.setText("");
+        limparCampos();
     }//GEN-LAST:event_JTBlimpar8ActionPerformed
 
     /**

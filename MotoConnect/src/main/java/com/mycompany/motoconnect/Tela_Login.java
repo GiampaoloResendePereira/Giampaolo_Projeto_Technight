@@ -8,6 +8,7 @@ package com.mycompany.motoconnect;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import javax.swing.JOptionPane;
 
@@ -206,6 +207,11 @@ public class Tela_Login extends javax.swing.JFrame {
         JBTentregador1.setText("Entregador");
         JBTentregador1.setMaximumSize(new java.awt.Dimension(115, 25));
         JBTentregador1.setPreferredSize(new java.awt.Dimension(115, 25));
+        JBTentregador1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                JBTentregador1ActionPerformed(evt);
+            }
+        });
 
         JLBou1.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         JLBou1.setForeground(new java.awt.Color(255, 255, 255));
@@ -276,43 +282,144 @@ public class Tela_Login extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void JBTentrar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBTentrar1ActionPerformed
-        // Feche a tela de login e abra o menu
-            Tela_Login.this.dispose();
-            Tela_Menu JBTentrar1 = new Tela_Menu();
-            JBTentrar1.setVisible(true);
+        String username = JTFnomedousuario1.getText();
+        String password = new String(JPFsenha1.getPassword());
+
+        try {
+            // Carrega o driver do MySQL e conecta ao banco de dados
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/crud", "root", "");
+
+            // Consulta SQL para verificar o nome de usuário e a senha
+            String sql = "SELECT * FROM login WHERE nome_do_usuario = ? AND senha = ?";
+            PreparedStatement pst = conn.prepareStatement(sql);
+            pst.setString(1, username);
+            pst.setString(2, password);
+
+            ResultSet rs = pst.executeQuery();
+
+            // Verifica se a consulta retornou algum resultado
+            if (rs.next()) {
+                // Nome de usuário e senha corretos, abrir o menu
+                Tela_Login.this.dispose();
+                Tela_Menu telaMenu = new Tela_Menu();
+                telaMenu.setVisible(true);
+            } else {
+                // Nome de usuário ou senha incorretos
+               JOptionPane.showMessageDialog(this, "Nome de usuário ou senha inválidos.", "Erro de Login", JOptionPane.ERROR_MESSAGE);
+               JTFnomedousuario1.requestFocus();
+            }
+
+            // Fecha a conexão com o banco de dados
+            conn.close();
+            } catch (SQLException | ClassNotFoundException e) {
+            // Exibe uma mensagem de erro em caso de exceção
+            JOptionPane.showMessageDialog(this, "Erro ao verificar credenciais: " + e.getMessage(), "Erro de Login", JOptionPane.ERROR_MESSAGE);
+        }
     }//GEN-LAST:event_JBTentrar1ActionPerformed
 
     private void JBTsair1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBTsair1ActionPerformed
-    
-    // Fechar a aplicação quando o botão for pressionado
-    System.exit(0);
+        // Fechar a aplicação quando o botão for pressionado
+        System.exit(0);
     }//GEN-LAST:event_JBTsair1ActionPerformed
 
     private void JBTesqueceusenha1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBTesqueceusenha1ActionPerformed
-  
-    // Exibir uma mensagem de aviso ao usuário
-    JOptionPane.showMessageDialog(this, "Um email de recuperação foi enviado para o seu endereço de email cadastrado.", "Recuperação de Senha", JOptionPane.INFORMATION_MESSAGE);
+        // Exibir uma mensagem de aviso ao usuário
+        JOptionPane.showMessageDialog(this, "Um email de recuperação foi enviado para o seu endereço de email cadastrado.", "Recuperação de Senha", JOptionPane.INFORMATION_MESSAGE);
     }//GEN-LAST:event_JBTesqueceusenha1ActionPerformed
 
     private void JBTcadastrar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBTcadastrar1ActionPerformed
-        // Feche a tela de login e abra a tela de cadastro de funcionario
-        Tela_Login.this.dispose();
-        Tela_Cadastro_Funcionario JBTcadastrar1 = new Tela_Cadastro_Funcionario();
-        JBTcadastrar1.setVisible(true);
+        // Solicita o nome de usuário do administrador
+        String adminUsername = JOptionPane.showInputDialog(this, "Digite o nome de usuário do administrador:", "Autenticação", JOptionPane.PLAIN_MESSAGE);
+    
+        // Solicita a senha do administrador
+        String adminPassword = JOptionPane.showInputDialog(this, "Digite a senha do administrador:", "Autenticação", JOptionPane.PLAIN_MESSAGE);
+    
+        if (adminUsername == null || adminPassword == null) {
+            // O usuário cancelou a entrada de nome de usuário ou senha
+            return;
+        }
+    
+        try {
+            // Carrega o driver do MySQL e conecta ao banco de dados
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/crud", "root", "");
+        
+            // Consulta SQL para verificar o nome de usuário e a senha
+            String sql = "SELECT * FROM login WHERE nome_do_usuario = ? AND senha = ?";
+            PreparedStatement pst = conn.prepareStatement(sql);
+            pst.setString(1, adminUsername);
+            pst.setString(2, adminPassword);
+        
+            ResultSet rs = pst.executeQuery();
+        
+            // Verifica se a consulta retornou algum resultado
+            if (rs.next()) {
+                // Nome de usuário e senha corretos, abrir a tela de cadastro
+                Tela_Login.this.dispose();
+                Tela_Cadastro_Funcionario telaCadastro = new Tela_Cadastro_Funcionario();
+                telaCadastro.setVisible(true);
+            } else {
+                // Nome de usuário ou senha incorretos
+                JOptionPane.showMessageDialog(this, "Nome de usuário ou senha do administrador incorretos.", "Erro de Autenticação", JOptionPane.ERROR_MESSAGE);
+            }
+        
+            // Fecha a conexão com o banco de dados
+            conn.close();
+        } catch (SQLException | ClassNotFoundException e) {
+            // Exibe uma mensagem de erro em caso de exceção
+            JOptionPane.showMessageDialog(this, "Erro ao verificar credenciais: " + e.getMessage(), "Erro de Autenticação", JOptionPane.ERROR_MESSAGE);
+        }
     }//GEN-LAST:event_JBTcadastrar1ActionPerformed
 
     private void JBTadministrador1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBTadministrador1ActionPerformed
-        // TODO add your handling code here:
+        // Adicione a lógica para o login de administrador
+        String username = JTFnomedousuario1.getText();
+        String password = new String(JPFsenha1.getPassword());
+    
+        if (username.equals("admin") && password.equals("admin123")) {
+            Tela_Login.this.dispose();
+            Tela_Menu telaAdmin = new Tela_Menu();
+            telaAdmin.setVisible(true);
+        } else {
+            JOptionPane.showMessageDialog(this, "Nome de usuário ou senha inválidos para administrador.", "Erro de Login", JOptionPane.ERROR_MESSAGE);
+            JTFnomedousuario1.requestFocus();
+        }
     }//GEN-LAST:event_JBTadministrador1ActionPerformed
 
     private void JBTatendente1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBTatendente1ActionPerformed
-        // TODO add your handling code here:
-        
+        // Adicione a lógica para o login de atendente
+        String username = JTFnomedousuario1.getText();
+        String password = new String(JPFsenha1.getPassword());
+    
+        if (username.equals("atendente") && password.equals("atendente123")) {
+            Tela_Login.this.dispose();
+            Tela_Menu telaAtendente = new Tela_Menu();
+            telaAtendente.setVisible(true);
+        } else {
+            JOptionPane.showMessageDialog(this, "Nome de usuário ou senha inválidos para atendente.", "Erro de Login", JOptionPane.ERROR_MESSAGE);
+            JTFnomedousuario1.requestFocus();
+        }
     }//GEN-LAST:event_JBTatendente1ActionPerformed
 
     private void JTFnomedousuario1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JTFnomedousuario1ActionPerformed
        
     }//GEN-LAST:event_JTFnomedousuario1ActionPerformed
+
+    private void JBTentregador1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBTentregador1ActionPerformed
+        // Adicione a lógica para o login de entregador
+        String username = JTFnomedousuario1.getText();
+        String password = new String(JPFsenha1.getPassword());
+    
+        if (username.equals("entregador") && password.equals("entregador123")) {
+            Tela_Login.this.dispose();
+            Tela_Menu telaEntregador = new Tela_Menu();
+            telaEntregador.setVisible(true);
+        } else {
+            JOptionPane.showMessageDialog(this, "Nome de usuário ou senha inválidos para entregador.", "Erro de Login", JOptionPane.ERROR_MESSAGE);
+            JTFnomedousuario1.requestFocus();
+        }
+    }//GEN-LAST:event_JBTentregador1ActionPerformed
 
     /**
      * @param args the command line arguments
