@@ -9,6 +9,7 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
 import javax.swing.JOptionPane;
 
 /**
@@ -430,129 +431,133 @@ public class Tela_Cadastro_Cliente extends javax.swing.JFrame {
     }//GEN-LAST:event_JBTcancelar8ActionPerformed
 
     private void JBTsalvar8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBTsalvar8ActionPerformed
-    try {    
-        Class.forName("com.mysql.cj.jdbc.Driver");
-        Connection com = DriverManager.getConnection("jdbc:mysql://localhost:3306/mysql","root","");
-        java.sql.Statement st = com.createStatement();   
-        
+    try {
         // Validação dos campos de texto
         String text1 = JTFcpf8.getText();
-                //
-                if (!text1.matches("\\d*"))  { // Verifica se o texto contém apenas letras
-                    JOptionPane.showMessageDialog(null,
-                                                  "Por favor, insira apenas número.",
-                                                  "Entrada Inválida",
-                                                  JOptionPane.ERROR_MESSAGE);
-                    JTFcpf8.requestFocus(); // Requer foco novamente se a entrada for inválida
-                }
-                 
-                String text2 = JTFnomecompleto8.getText();
-                    //(!text.matches("\\d*"))
-                    if (!text2.matches("[a-zA-ZáéíóúÁÉÍÓÚàèìòùÀÈÌÒÙãõÃÕâêîôûÂÊÎÔÛäëïöüÄËÏÖÜçÇ ]*"))  { // Verifica se o texto contém apenas letras
-                        JOptionPane.showMessageDialog(null,
-                                                  "Por favor, insira apenas letras.",
-                                                  "Entrada Inválida",
-                                                  JOptionPane.ERROR_MESSAGE);
-                    JTFnomecompleto8.requestFocus(); // Requer foco novamente se a entrada for inválida
-                    }
-                 
-                String text3 = JTFcep8.getText();
-                    //
-                    if (!text3.matches("\\d*"))  { // Verifica se o texto contém apenas letras
-                        JOptionPane.showMessageDialog(null,
-                                                  "Por favor, insira apenas número.",
-                                                  "Entrada Inválida",
-                                                  JOptionPane.ERROR_MESSAGE);
-                    JTFcep8.requestFocus(); // Requer foco novamente se a entrada for inválida
-                    }
-                 
-                String text4 = JTFestado8.getText();
-                    //(!text.matches("\\d*"))
-                    if (!text4.matches("[a-zA-ZáéíóúÁÉÍÓÚàèìòùÀÈÌÒÙãõÃÕâêîôûÂÊÎÔÛäëïöüÄËÏÖÜçÇ ]*"))  { // Verifica se o texto contém apenas letras
-                        JOptionPane.showMessageDialog(null,
-                                                  "Por favor, insira apenas letras.",
-                                                  "Entrada Inválida",
-                                                  JOptionPane.ERROR_MESSAGE);
-                    JTFestado8.requestFocus(); // Requer foco novamente se a entrada for inválida
-                    }
-                
-                String text5 = JTFcidade8.getText();
-                    //(!text.matches("\\d*"))
-                    if (!text5.matches("[a-zA-ZáéíóúÁÉÍÓÚàèìòùÀÈÌÒÙãõÃÕâêîôûÂÊÎÔÛäëïöüÄËÏÖÜçÇ ]*"))  { // Verifica se o texto contém apenas letras
-                        JOptionPane.showMessageDialog(null,
-                                                  "Por favor, insira apenas letras.",
-                                                  "Entrada Inválida",
-                                                  JOptionPane.ERROR_MESSAGE);
-                    JTFcidade8.requestFocus(); // Requer foco novamente se a entrada for inválida
-                    }
-                 
-                String text6 = JTFbairro8.getText();
-                    //(!text.matches("\\d*"))
-                    if (!text6.matches("[a-zA-ZáéíóúÁÉÍÓÚàèìòùÀÈÌÒÙãõÃÕâêîôûÂÊÎÔÛäëïöüÄËÏÖÜçÇ ]*"))  { // Verifica se o texto contém apenas letras
-                        JOptionPane.showMessageDialog(null,
-                                                  "Por favor, insira apenas letras.",
-                                                  "Entrada Inválida",
-                                                  JOptionPane.ERROR_MESSAGE);
-                    JTFbairro8.requestFocus(); // Requer foco novamente se a entrada for inválida
-                    }
-                 
-                String text7 = JTFrua8.getText();
-                    //(!text.matches("\\d*"))
-                    if (!text7.matches("[a-zA-ZáéíóúÁÉÍÓÚàèìòùÀÈÌÒÙãõÃÕâêîôûÂÊÎÔÛäëïöüÄËÏÖÜçÇ ]*"))  { // Verifica se o texto contém apenas letras
-                        JOptionPane.showMessageDialog(null,
-                                                  "Por favor, insira apenas letras.",
-                                                  "Entrada Inválida",
-                                                  JOptionPane.ERROR_MESSAGE);
-                    JTFrua8.requestFocus(); // Requer foco novamente se a entrada for inválida
-                    }
-                 
-                String text8 = JTFnumero8.getText();
-                    //
-                    if (!text8.matches("\\d*"))  { // Verifica se o texto contém apenas letras
-                        JOptionPane.showMessageDialog(null,
-                                                  "Por favor, insira apenas número.",
-                                                  "Entrada Inválida",
-                                                  JOptionPane.ERROR_MESSAGE);
-                    JTFnumero8.requestFocus(); // Requer foco novamente se a entrada for inválida
-                    }
-                 
-                String text10 = JTFtelefone8.getText();
-                    //
-                    if (!text10.matches("\\d*"))  { // Verifica se o texto contém apenas letras
-                        JOptionPane.showMessageDialog(null,
-                                                  "Por favor, insira apenas número.",
-                                                  "Entrada Inválida",
-                                                  JOptionPane.ERROR_MESSAGE);
-                    JTFtelefone8.requestFocus(); // Requer foco novamente se a entrada for inválida
-                    }
-        
-        
-        String sql = ("INSERT INTO cliente (cpf, nomecompleto, cep, estado, cidade, bairro, rua, nunero, email, telefone) VALUES("
-                + "'"+this.JTFcpf8.getText()+","
-                + "'"+this.JTFnomecompleto8.getText()+","
-                + "'"+this.JTFcep8.getText()+","
-                + "'"+this.JTFestado8.getText()+","
-                + "'"+this.JTFcidade8.getText()+","
-                + "'"+this.JTFbairro8.getText()+","
-                + "'"+this.JTFrua8.getText()+","
-                + "'"+this.JTFnumero8.getText()+","
-                + "'"+this.JTFemail8.getText()+","
-                + "'"+this.JTFtelefone8.getText()+")");
-        
-        
-        
-        
-        st.executeUpdate(sql);
+        if (!text1.matches("\\d+"))  { // Verifica se o texto contém apenas números
+            JOptionPane.showMessageDialog(null,
+                                          "Por favor, insira apenas números no campo CPF.",
+                                          "Entrada Inválida",
+                                          JOptionPane.ERROR_MESSAGE);
+            JTFcpf8.requestFocus(); // Requer foco novamente se a entrada for inválida
+            return;
+        }
 
-        JOptionPane.showMessageDialog(null, "Informações enviadas");
+        String text2 = JTFnomecompleto8.getText();
+        if (!text2.matches("[a-zA-ZáéíóúÁÉÍÓÚàèìòùÀÈÌÒÙãõÃÕâêîôûÂÊÎÔÛäëïöüÄËÏÖÜçÇ ]+"))  { // Verifica se o texto contém apenas letras
+            JOptionPane.showMessageDialog(null,
+                                          "Por favor, insira apenas letras no campo Nome Completo.",
+                                          "Entrada Inválida",
+                                          JOptionPane.ERROR_MESSAGE);
+            JTFnomecompleto8.requestFocus(); // Requer foco novamente se a entrada for inválida
+            return;
+        }
 
-        com.close();
-    } catch (Exception e) {
+        String text3 = JTFcep8.getText();
+        if (!text3.matches("\\d+"))  { // Verifica se o texto contém apenas números
+            JOptionPane.showMessageDialog(null,
+                                          "Por favor, insira apenas números no campo CEP.",
+                                          "Entrada Inválida",
+                                          JOptionPane.ERROR_MESSAGE);
+            JTFcep8.requestFocus(); // Requer foco novamente se a entrada for inválida
+            return;
+        }
+
+        String text4 = JTFestado8.getText();
+        if (!text4.matches("[a-zA-ZáéíóúÁÉÍÓÚàèìòùÀÈÌÒÙãõÃÕâêîôûÂÊÎÔÛäëïöüÄËÏÖÜçÇ ]+"))  { // Verifica se o texto contém apenas letras
+            JOptionPane.showMessageDialog(null,
+                                          "Por favor, insira apenas letras no campo Estado.",
+                                          "Entrada Inválida",
+                                          JOptionPane.ERROR_MESSAGE);
+            JTFestado8.requestFocus(); // Requer foco novamente se a entrada for inválida
+            return;
+        }
+
+        String text5 = JTFcidade8.getText();
+        if (!text5.matches("[a-zA-ZáéíóúÁÉÍÓÚàèìòùÀÈÌÒÙãõÃÕâêîôûÂÊÎÔÛäëïöüÄËÏÖÜçÇ ]+"))  { // Verifica se o texto contém apenas letras
+            JOptionPane.showMessageDialog(null,
+                                          "Por favor, insira apenas letras no campo Cidade.",
+                                          "Entrada Inválida",
+                                          JOptionPane.ERROR_MESSAGE);
+            JTFcidade8.requestFocus(); // Requer foco novamente se a entrada for inválida
+            return;
+        }
+
+        String text6 = JTFbairro8.getText();
+        if (!text6.matches("[a-zA-ZáéíóúÁÉÍÓÚàèìòùÀÈÌÒÙãõÃÕâêîôûÂÊÎÔÛäëïöüÄËÏÖÜçÇ ]+"))  { // Verifica se o texto contém apenas letras
+            JOptionPane.showMessageDialog(null,
+                                          "Por favor, insira apenas letras no campo Bairro.",
+                                          "Entrada Inválida",
+                                          JOptionPane.ERROR_MESSAGE);
+            JTFbairro8.requestFocus(); // Requer foco novamente se a entrada for inválida
+            return;
+        }
+
+        String text7 = JTFrua8.getText();
+        if (!text7.matches("[a-zA-ZáéíóúÁÉÍÓÚàèìòùÀÈÌÒÙãõÃÕâêîôûÂÊÎÔÛäëïöüÄËÏÖÜçÇ ]+"))  { // Verifica se o texto contém apenas letras
+            JOptionPane.showMessageDialog(null,
+                                          "Por favor, insira apenas letras no campo Rua.",
+                                          "Entrada Inválida",
+                                          JOptionPane.ERROR_MESSAGE);
+            JTFrua8.requestFocus(); // Requer foco novamente se a entrada for inválida
+            return;
+        }
+
+        String text8 = JTFnumero8.getText();
+        if (!text8.matches("\\d+"))  { // Verifica se o texto contém apenas números
+            JOptionPane.showMessageDialog(null,
+                                          "Por favor, insira apenas números no campo Número.",
+                                          "Entrada Inválida",
+                                          JOptionPane.ERROR_MESSAGE);
+            JTFnumero8.requestFocus(); // Requer foco novamente se a entrada for inválida
+            return;
+        }
+
+        String text10 = JTFtelefone8.getText();
+        if (!text10.matches("\\d+"))  { // Verifica se o texto contém apenas números
+            JOptionPane.showMessageDialog(null,
+                                          "Por favor, insira apenas números no campo Telefone.",
+                                          "Entrada Inválida",
+                                          JOptionPane.ERROR_MESSAGE);
+            JTFtelefone8.requestFocus(); // Requer foco novamente se a entrada for inválida
+            return;
+        }
+
+        // Conexão com o banco de dados e inserção dos dados
+        String url = "jdbc:mysql://localhost:3306/mysql";
+        String usuario = "root";
+        String senha = "";
+
+        Class.forName("com.mysql.cj.jdbc.Driver");
+        Connection con = DriverManager.getConnection(url, usuario, senha);
+
+        String sql = "INSERT INTO Cliente (cpf, nome_completo, cep, estado, cidade, bairro, rua, numero, email, telefone) " +
+                     "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+
+        PreparedStatement pst = con.prepareStatement(sql);
+        pst.setString(1, JTFcpf8.getText());
+        pst.setString(2, JTFnomecompleto8.getText());
+        pst.setString(3, JTFcep8.getText());
+        pst.setString(4, JTFestado8.getText());
+        pst.setString(5, JTFcidade8.getText());
+        pst.setString(6, JTFbairro8.getText());
+        pst.setString(7, JTFrua8.getText());
+        pst.setString(8, JTFnumero8.getText());
+        pst.setString(9, JTFemail8.getText());
+        pst.setString(10, JTFtelefone8.getText());
+
+        int rowsAffected = pst.executeUpdate();
+
+        if (rowsAffected > 0) {
+            JOptionPane.showMessageDialog(null, "Informações enviadas com sucesso!");
+        } else {
+            JOptionPane.showMessageDialog(null, "Falha ao enviar informações");
+        }
+
+        con.close();
+    } catch (ClassNotFoundException | SQLException e) {
         JOptionPane.showMessageDialog(null, "Erro ao enviar informações: " + e.getMessage());
-
-    } 
-        
-        
+    }
     }//GEN-LAST:event_JBTsalvar8ActionPerformed
 
     private void JTFbairro8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JTFbairro8ActionPerformed
@@ -561,44 +566,40 @@ public class Tela_Cadastro_Cliente extends javax.swing.JFrame {
 
     private void JBTpesquisar8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBTpesquisar8ActionPerformed
         try {
-        String cpf = JTFcpf8.getText();
-        if (!cpf.matches("\\d*"))  { // Verifica se o CPF contém apenas números
-            JOptionPane.showMessageDialog(null,
-                                          "Por favor, insira apenas números no CPF.",
-                                          "Entrada Inválida",
-                                          JOptionPane.ERROR_MESSAGE);
-            JTFcpf8.requestFocus(); // Requer foco novamente se a entrada for inválida
-            return;
-        }
-        
+        String url = "jdbc:mysql://localhost:3306/mysql";
+        String usuario = "root";
+        String senha = "";
+
         Class.forName("com.mysql.cj.jdbc.Driver");
-        Connection com = DriverManager.getConnection("jdbc:mysql://localhost:3306/mysql", "root", "");
-    
-        String sql = "SELECT * FROM cliente WHERE cpf = ?";
-        PreparedStatement pst = com.prepareStatement(sql);
-    
+        Connection con = DriverManager.getConnection(url, usuario, senha);
+
+        String cpf = JTFcpf8.getText().trim(); // Obtém o CPF e remove espaços em branco
+
+        String sql = "SELECT * FROM Cliente WHERE cpf = ?";
+        PreparedStatement pst = con.prepareStatement(sql);
         pst.setString(1, cpf);
-    
+
         ResultSet rs = pst.executeQuery();
-    
+
         if (rs.next()) {
-            this.JTFnomecompleto8.setText(rs.getString("nomecompleto"));
-            this.JTFcep8.setText(rs.getString("cep"));
-            this.JTFestado8.setText(rs.getString("estado"));
-            this.JTFcidade8.setText(rs.getString("cidade"));
-            this.JTFbairro8.setText(rs.getString("bairro"));
-            this.JTFrua8.setText(rs.getString("rua"));
-            this.JTFnumero8.setText(rs.getString("numero"));
-            this.JTFemail8.setText(rs.getString("email"));
-            this.JTFtelefone8.setText(rs.getString("telefone"));
+            JTFnomecompleto8.setText(rs.getString("nome_completo"));
+            JTFcep8.setText(rs.getString("cep"));
+            JTFestado8.setText(rs.getString("estado"));
+            JTFcidade8.setText(rs.getString("cidade"));
+            JTFbairro8.setText(rs.getString("bairro"));
+            JTFrua8.setText(rs.getString("rua"));
+            JTFnumero8.setText(rs.getString("numero"));
+            JTFemail8.setText(rs.getString("email"));
+            JTFtelefone8.setText(rs.getString("telefone"));
         } else {
             JOptionPane.showMessageDialog(null, "Cliente não encontrado");
         }
-    
-        com.close();
-    } catch (Exception e) {
+
+        con.close();
+    } catch (ClassNotFoundException | SQLException e) {
         JOptionPane.showMessageDialog(null, "Erro ao buscar cliente: " + e.getMessage());
     }
+        
     }//GEN-LAST:event_JBTpesquisar8ActionPerformed
 
     private void JTBcontinuar8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JTBcontinuar8ActionPerformed
