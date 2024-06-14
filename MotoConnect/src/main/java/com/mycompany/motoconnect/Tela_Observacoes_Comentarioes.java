@@ -8,46 +8,21 @@ package com.mycompany.motoconnect;
  *
  * @author PC
  */
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.PreparedStatement;
-import java.sql.SQLException;
+import javax.swing.*;
 
 public class Tela_Observacoes_Comentarioes extends javax.swing.JFrame {
+    
 
     /**
      * Creates new form Tela_Observacoes_Comentarioes
      */
     public Tela_Observacoes_Comentarioes() {
         initComponents();
+        
+        
     }
     
-    private Connection getConnection() throws SQLException {
-        String url = "jdbc:mysql://localhost:3306/mysql";
-        String user = "root";
-        String password = "";
-        return DriverManager.getConnection(url, user, password);
-    }
     
-    private void salvarObservacoes() {
-        String observacoes = JTAobservacoes12.getText();
-        if (!observacoes.isEmpty()) {
-            try (Connection conn = getConnection()) {
-                String sql = "INSERT INTO observacoes(observacao) VALUES (?)";
-                try (PreparedStatement pstmt = conn.prepareStatement(sql)) {
-                    pstmt.setString(1, observacoes);
-                    int rowsAffected = pstmt.executeUpdate();
-                    System.out.println("Observações salvas. Linhas afetadas: " + rowsAffected);
-                }
-            } catch (SQLException e) {
-                e.printStackTrace();
-                System.out.println("Erro ao salvar as observações no banco de dados.");
-            }
-        } else {
-            System.out.println("A área de texto está vazia. Por favor, insira algum comentário.");
-        }
-    }
-
     
 
 
@@ -252,7 +227,7 @@ public class Tela_Observacoes_Comentarioes extends javax.swing.JFrame {
     }//GEN-LAST:event_JTFadministrador12ActionPerformed
 
     private void JTBsalvar12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JTBsalvar12ActionPerformed
-        salvarObservacoes();
+        
         
         
     }//GEN-LAST:event_JTBsalvar12ActionPerformed

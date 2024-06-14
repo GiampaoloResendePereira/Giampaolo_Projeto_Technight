@@ -24,38 +24,7 @@ public class Tela_Detalhes_Encomenda extends javax.swing.JFrame {
     
     
     
-    // Método para gerar o texto formatado para impressão
-    private String gerarTextoImpressao(String nomeCompleto, String cpf, String enderecoCompleto, String telefoneCliente, String emailCliente, double valorFrete, String tipoCarga, String destino, String destinatario, String telefoneDestinatario, int numeroPedido, double pesoMercadoria) {
-        StringBuilder sb = new StringBuilder();
-
-        sb.append("**Informações do Pedido**\n");
-        sb.append("===========================\n");
-
-        sb.append("Cliente:\n");
-        sb.append("    Nome Completo: " + nomeCompleto + "\n");
-        sb.append("    CPF: " + cpf + "\n");
-        sb.append("    Endereço: " + enderecoCompleto + "\n");
-        sb.append("    Telefone: " + telefoneCliente + "\n");
-        sb.append("    Email: " + emailCliente + "\n");
-
-        sb.append("\nFrete:\n");
-        sb.append("    Valor: R$ " + String.format("%.2f", valorFrete) + "\n");
-
-        sb.append("\nCarga:\n");
-        sb.append("    Tipo: " + tipoCarga + "\n");
-
-        sb.append("\nDestino:\n");
-        sb.append("    Endereço: " + destino + "\n");
-
-        sb.append("\nDestinatário:\n");
-        sb.append("    Nome: " + destinatario + "\n");
-        sb.append("    Telefone: " + telefoneDestinatario + "\n");
-
-        sb.append("\nNúmero do Pedido: " + numeroPedido + "\n");
-        sb.append("Peso da Mercadoria: " + pesoMercadoria + " kg\n");
-
-        return sb.toString();
-    }
+    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -534,41 +503,31 @@ public class Tela_Detalhes_Encomenda extends javax.swing.JFrame {
     }//GEN-LAST:event_JBTmenu11ActionPerformed
 
     private void JBTimprimir11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBTimprimir11ActionPerformed
-        // 1. Obter Dados do Pedido (da tabela ou de outras fontes)
-        String nomeCompleto = "João Silva"; // Obtenha o nome completo do cliente
-        String cpf = "123.456.789-00"; // Obtenha o CPF do cliente
-        String enderecoCompleto = "Rua das Flores, 123, Jardim da Penha, Vitória, ES"; // Obtenha o endereço completo do cliente
-        String telefoneCliente = "(27)123456789"; // Obtenha o telefone do cliente
-        String emailCliente = "joaosl1234@email.com"; // Obtenha o email do cliente
-        double valorFrete = 57.00; // Obtenha o valor do frete
-        String tipoCarga = "Encomendas pequenas"; // Obtenha o tipo de carga
-        String destino = "Rua Tabajara, São Torquarto, Vila Velha, ES"; // Obtenha o destino
-        String destinatario = "Davi Silva"; // Obtenha o nome do destinatário
-        String telefoneDestinatario = "(27)123876789"; // Obtenha o telefone do destinatário
-        int numeroPedido = 12345; // Obtenha o número do pedido
-        double pesoMercadoria = 2.0; // Obtenha o peso da mercadoria
-        
-        // 3. Gerar Texto para Impressão
-        String textoImpressao = gerarTextoImpressao(nomeCompleto, cpf, enderecoCompleto, telefoneCliente, emailCliente, valorFrete, tipoCarga, destino, destinatario, telefoneDestinatario, numeroPedido, pesoMercadoria);
-        
-        try {
-        // Opção 1: Imprimir no Console (para depuração ou teste)
-        System.out.println("Texto de impressão:\n" + textoImpressao);
-
-        // Opção 2: Imprimir usando uma API de Impressão (ex: JasperReports, iText)
-        // ... (Implementar lógica de impressão usando uma biblioteca de impressão escolhida, passando o textoImpressao)
-
-        // Salvar texto impresso em um arquivo na pasta Nova pasta
-        String fileName = "pedido_" + numeroPedido + ".txt"; // Substitua por um nome de arquivo desejado
-        File file = new File("C:\\Users\\PC\\Desktop\\Nova pasta\\" + fileName);
-        Files.write(file.toPath(), textoImpressao.getBytes());
-        System.out.println("Texto salvo no arquivo: " + file.getAbsolutePath());
-
-    } catch (Exception e) {
-        JOptionPane.showMessageDialog(null, "Erro ao imprimir: " + e.getMessage());
-    }
-        
-        
+      // Aqui você pode obter os dados do cliente e do destinatário
+    String nomeCliente = JTFnomecompleto11.getText();
+    String cpfCliente = JTFcep11.getText();
+    String enderecoCliente = JTFenderecocompleto11.getText();
+    String telefoneCliente = JTFtelefone11.getText();
+    String emailCliente = JTFemail11.getText();
+    
+    String nomeDestinatario = JTFnomedestinatario11.getText();
+    String telefoneDestinatario = JTFtelefonedestinatario11.getText();
+    String enderecoDestinatario = JTFenderecodestinatario11.getText();
+    
+    // Aqui você pode exibir os dados ou implementar lógica de impressão
+    // Exemplo simples: exibir em uma caixa de mensagem (JOptionPane)
+    String mensagem = "Detalhes do Cliente:\n"
+                    + "Nome: " + nomeCliente + "\n"
+                    + "CPF: " + cpfCliente + "\n"
+                    + "Endereço: " + enderecoCliente + "\n"
+                    + "Telefone: " + telefoneCliente + "\n"
+                    + "Email: " + emailCliente + "\n\n"
+                    + "Detalhes do Destinatário:\n"
+                    + "Nome: " + nomeDestinatario + "\n"
+                    + "Telefone: " + telefoneDestinatario + "\n"
+                    + "Endereço: " + enderecoDestinatario + "\n";
+    
+    JOptionPane.showMessageDialog(this, mensagem, "Detalhes da Encomenda", JOptionPane.INFORMATION_MESSAGE);
     }//GEN-LAST:event_JBTimprimir11ActionPerformed
 
     private void JTFnomecompleto11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JTFnomecompleto11ActionPerformed
