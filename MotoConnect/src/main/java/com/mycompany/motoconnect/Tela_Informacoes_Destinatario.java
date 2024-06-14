@@ -24,6 +24,57 @@ public class Tela_Informacoes_Destinatario extends javax.swing.JFrame {
         initComponents();
     }
     
+    // Método para salvar a opção selecionada no banco de dados
+    private void salvarOpcaoNoBanco(String opcao) {
+        String url = "jdbc:mysql://localhost:3306/crud";
+        String usuario = "root";
+        String senha = "";
+
+        Connection con = null;
+        PreparedStatement pst = null;
+
+        try {
+            // Carrega o driver do MySQL
+            Class.forName("com.mysql.cj.jdbc.Driver");
+
+            // Conecta ao banco de dados
+            con = DriverManager.getConnection(url, usuario, senha);
+
+            String sql = "UPDATE mercadoria SET opcao_selecionada = ? WHERE numero_pedido = ?";
+        
+            // Aqui você deve definir qual número de pedido está sendo atualizado
+            int numeroPedido = 1; // Exemplo: número do pedido a ser atualizado
+
+            // Prepara a consulta SQL parametrizada
+            pst = con.prepareStatement(sql);
+            pst.setString(1, opcao);
+            pst.setInt(2, numeroPedido);
+
+            // Executa a atualização
+            pst.executeUpdate();
+
+            JOptionPane.showMessageDialog(null, "Opção salva com sucesso no banco de dados!");
+
+        } catch (ClassNotFoundException | SQLException e) {
+            JOptionPane.showMessageDialog(null, "Erro ao salvar opção: " + e.getMessage(), "Erro de Banco de Dados", JOptionPane.ERROR_MESSAGE);
+    } finally {
+        if (pst != null) {
+            try {
+                pst.close();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
+        if (con != null) {
+            try {
+                con.close();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+}
+    
     
 
     /**
@@ -583,6 +634,7 @@ public class Tela_Informacoes_Destinatario extends javax.swing.JFrame {
     } else {
         // Processa a opção selecionada
         JOptionPane.showMessageDialog(null, "Opção selecionada: " + opcao1);
+        salvarOpcaoNoBanco(opcao1);
     }
     }//GEN-LAST:event_JCBopcaoP19ActionPerformed
 
@@ -593,6 +645,7 @@ public class Tela_Informacoes_Destinatario extends javax.swing.JFrame {
     } else {
         // Processa a opção selecionada
         JOptionPane.showMessageDialog(null, "Opção selecionada: " + opcao2);
+        salvarOpcaoNoBanco(opcao2);
     }
     }//GEN-LAST:event_JCBopcaoP29ActionPerformed
 
@@ -603,6 +656,7 @@ public class Tela_Informacoes_Destinatario extends javax.swing.JFrame {
     } else {
         // Processa a opção selecionada
         JOptionPane.showMessageDialog(null, "Opção selecionada: " + opcao3);
+        salvarOpcaoNoBanco(opcao3);
     }
     }//GEN-LAST:event_JCBopcaoP39ActionPerformed
 
