@@ -5,6 +5,7 @@
 package com.mycompany.motoconnect;
 
 import java.sql.Connection;
+import java.sql.Date;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -12,19 +13,102 @@ import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
  * @author PC
  */
 public class Tela_Lista_Encomendas extends javax.swing.JFrame {
+    
+    private static final String URI = "jdbc:mysql://localhost:3306/crud";
+    private static final String USUARIO = "root";
+    private static final String SENHA = "";
+
+    private Connection conexao;
+    private DefaultTableModel model;
 
     /**
      * Creates new form Tela_Lista_Encomendas
      */
     public Tela_Lista_Encomendas() {
         initComponents();
+        model = (DefaultTableModel) JTBtabela10.getModel();
+        conectarBanco();
+        atualizarTabela();
+        
     }
+    
+    private void conectarBanco() {
+        try {
+            conexao = DriverManager.getConnection(URI, USUARIO, SENHA);
+        } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(null, "Erro ao conectar ao banco de dados: " + ex.getMessage());
+        }
+    }
+
+    private void atualizarTabela() {
+        model.setRowCount(0); // Limpa todas as linhas da tabela antes de recarregar
+
+        String sql = "SELECT e.numero_pedido, cf.cidade_origem, ent.nome AS nome_entregador, cf.cidade_destino, e.data_entrega, e.statuss "
+                   + "FROM encomendas e "
+                   + "JOIN calculo_frete cf ON e.numero_pedido = cf.numero_pedido "
+                   + "JOIN entregador ent ON e.id_entregador = ent.id_entregador";
+
+        try (PreparedStatement statement = conexao.prepareStatement(sql);
+             ResultSet rs = statement.executeQuery()) {
+
+            while (rs.next()) {
+                int numeroPedido = rs.getInt("numero_pedido");
+                String cidadeOrigem = rs.getString("cidade_origem");
+                String nomeEntregador = rs.getString("nome_entregador");
+                String cidadeDestino = rs.getString("cidade_destino");
+                Date dataEntrega = rs.getDate("data_entrega");
+                String status = rs.getString("statuss");
+
+                // Montar linha para adicionar ao modelo da tabela
+                Object[] row = {
+                    numeroPedido,
+                    cidadeOrigem,
+                    nomeEntregador,
+                    cidadeDestino,
+                    dataEntrega,
+                    status
+                };
+                model.addRow(row); // Adiciona a linha ao modelo da tabela
+            }
+
+        } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(null, "Erro ao carregar dados da tabela: " + ex.getMessage());
+        }
+    }
+
+    private void excluirPedido() {
+        String numeroPedidoStr = JTFnumero10.getText().trim();
+        if (!numeroPedidoStr.isEmpty()) {
+            try {
+                int numeroPedido = Integer.parseInt(numeroPedidoStr);
+                String sqlDelete = "DELETE FROM encomendas WHERE numero_pedido = ?";
+                try (PreparedStatement statement = conexao.prepareStatement(sqlDelete)) {
+                    statement.setInt(1, numeroPedido);
+
+                    int rowsDeleted = statement.executeUpdate();
+
+                    if (rowsDeleted > 0) {
+                        JOptionPane.showMessageDialog(null, "Pedido excluído com sucesso!");
+                        atualizarTabela();
+                    } else {
+                        JOptionPane.showMessageDialog(null, "Falha ao excluir pedido.");
+                    }
+                }
+            } catch (NumberFormatException | SQLException ex) {
+                JOptionPane.showMessageDialog(null, "Erro ao excluir pedido: " + ex.getMessage());
+            }
+        } else {
+            JOptionPane.showMessageDialog(null, "Digite um número de pedido para excluir.");
+        }
+    }
+
     
     
   
@@ -48,15 +132,9 @@ public class Tela_Lista_Encomendas extends javax.swing.JFrame {
         JLBtabelaencomenda10 = new javax.swing.JLabel();
         JLBmotoconnect10 = new javax.swing.JLabel();
         JTFnumero10 = new javax.swing.JTextField();
-        JTForigem10 = new javax.swing.JTextField();
-        JTFentragador10 = new javax.swing.JTextField();
-        JTFdestino10 = new javax.swing.JTextField();
         JTFdata10 = new javax.swing.JTextField();
         JTFstatus10 = new javax.swing.JTextField();
         JLBnumero10 = new javax.swing.JLabel();
-        JLBorigem10 = new javax.swing.JLabel();
-        JLBentragador10 = new javax.swing.JLabel();
-        JLBdestino10 = new javax.swing.JLabel();
         JLBdata10 = new javax.swing.JLabel();
         JLBstatus10 = new javax.swing.JLabel();
         JTBexcluir10 = new javax.swing.JButton();
@@ -97,9 +175,17 @@ public class Tela_Lista_Encomendas extends javax.swing.JFrame {
 
             },
             new String [] {
-                "numero_pedido", "endereco_origem", "nome_entregador", "endereco_destino", "data_entrega", "statuss"
+                "numero_pedido", "cidade_origem", "nome", "cidade_destino", "data_entrega", "statuss"
             }
-        ));
+        ) {
+            Class[] types = new Class [] {
+                java.lang.Integer.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.Object.class, java.lang.String.class
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+        });
         JTBtabela10.addAncestorListener(new javax.swing.event.AncestorListener() {
             public void ancestorAdded(javax.swing.event.AncestorEvent evt) {
                 JTBtabela10AncestorAdded(evt);
@@ -162,27 +248,12 @@ public class Tela_Lista_Encomendas extends javax.swing.JFrame {
 
         JTFnumero10.setBackground(new java.awt.Color(204, 204, 204));
 
-        JTForigem10.setBackground(new java.awt.Color(204, 204, 204));
-
-        JTFentragador10.setBackground(new java.awt.Color(204, 204, 204));
-
-        JTFdestino10.setBackground(new java.awt.Color(204, 204, 204));
-
         JTFdata10.setBackground(new java.awt.Color(204, 204, 204));
 
         JTFstatus10.setBackground(new java.awt.Color(204, 204, 204));
 
         JLBnumero10.setForeground(new java.awt.Color(255, 255, 255));
         JLBnumero10.setText("Numero do pedido:");
-
-        JLBorigem10.setForeground(new java.awt.Color(255, 255, 255));
-        JLBorigem10.setText("Endereço de origem:");
-
-        JLBentragador10.setForeground(new java.awt.Color(255, 255, 255));
-        JLBentragador10.setText("Entregador:");
-
-        JLBdestino10.setForeground(new java.awt.Color(255, 255, 255));
-        JLBdestino10.setText("Endereço de destino:");
 
         JLBdata10.setForeground(new java.awt.Color(255, 255, 255));
         JLBdata10.setText("Data de entrega:");
@@ -223,29 +294,17 @@ public class Tela_Lista_Encomendas extends javax.swing.JFrame {
                             .addComponent(JSPtabela10, javax.swing.GroupLayout.Alignment.LEADING))
                         .addGap(173, 173, 173))
                     .addGroup(JPNfundo10Layout.createSequentialGroup()
-                        .addGroup(JPNfundo10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(JTFnumero10, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(JLBnumero10))
-                        .addGap(44, 44, 44)
-                        .addGroup(JPNfundo10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(JTForigem10, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(JLBorigem10))
-                        .addGap(42, 42, 42)
-                        .addGroup(JPNfundo10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(JLBentragador10)
-                            .addComponent(JTFentragador10, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(76, 76, 76)
-                        .addGroup(JPNfundo10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(JTFdestino10, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(JLBdestino10))
-                        .addGap(36, 36, 36)
+                        .addGroup(JPNfundo10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(JLBnumero10, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(JTFnumero10))
+                        .addGap(46, 46, 46)
                         .addGroup(JPNfundo10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(JTFdata10, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(JLBdata10))
-                        .addGap(64, 64, 64)
+                        .addGap(31, 31, 31)
                         .addGroup(JPNfundo10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(JTFstatus10, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(JLBstatus10))
+                            .addComponent(JLBstatus10)
+                            .addComponent(JTFstatus10, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(0, 0, Short.MAX_VALUE))))
         );
         JPNfundo10Layout.setVerticalGroup(
@@ -262,17 +321,11 @@ public class Tela_Lista_Encomendas extends javax.swing.JFrame {
                 .addGap(24, 24, 24)
                 .addGroup(JPNfundo10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(JLBnumero10)
-                    .addComponent(JLBorigem10)
-                    .addComponent(JLBentragador10)
-                    .addComponent(JLBdestino10)
                     .addComponent(JLBdata10)
                     .addComponent(JLBstatus10))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(JPNfundo10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(JTFnumero10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(JTForigem10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(JTFentragador10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(JTFdestino10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(JTFdata10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(JTFstatus10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(99, 99, 99)
@@ -298,8 +351,7 @@ public class Tela_Lista_Encomendas extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void JTBvoltar10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JTBvoltar10ActionPerformed
-        // TODO add your handling code here:
-        Tela_Lista_Encomendas.this.dispose();
+        this.dispose();
         Tela_Menu JBTvoltar10 = new Tela_Menu();
         JBTvoltar10.setVisible(true);
     }//GEN-LAST:event_JTBvoltar10ActionPerformed
@@ -309,63 +361,12 @@ public class Tela_Lista_Encomendas extends javax.swing.JFrame {
     }//GEN-LAST:event_JTBtabela10AncestorAdded
 
     private void JTBatualizar10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JTBatualizar10ActionPerformed
-     try {
-        Connection conexao = null;
-        PreparedStatement statement = null;
-        
-        String uri = "jdbc:mysql://localhost:3306/crud"; // Altere para o nome do seu banco de dados
-        String usuario = "root"; // Altere conforme o seu usuário
-        String senha = ""; // Altere conforme a sua senha
-        
-        conexao = DriverManager.getConnection(uri, usuario, senha);
-        
-        String sql = "UPDATE lista_encomendas SET data_entrega = ?, statuss = ? WHERE numero_pedido = ?";
-        statement = conexao.prepareStatement(sql);
-        statement.setString(1, JTFdata10.getText()); // Define a data de entrega com base no campo de texto
-        statement.setString(2, JTFstatus10.getText()); // Define o status com base no campo de texto
-        statement.setString(3, JTFnumero10.getText()); // Define o número do pedido com base no campo de texto
-        
-        int rowsUpdated = statement.executeUpdate(); // Executa o comando de atualização
-        
-        if (rowsUpdated > 0) {
-            JOptionPane.showMessageDialog(null, "Informações atualizadas com sucesso!");
-        } else {
-            JOptionPane.showMessageDialog(null, "Falha ao atualizar informações.");
-        }
-        
-        statement.close();
-    } catch (SQLException ex) {
-        JOptionPane.showMessageDialog(null, "Erro ao atualizar informações: " + ex.getMessage());
-    }
+     atualizarTabela();
     }//GEN-LAST:event_JTBatualizar10ActionPerformed
 
     private void JTBexcluir10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JTBexcluir10ActionPerformed
-    try {
-        Connection conexao = null;
-        PreparedStatement statement = null;
-        
-        String uri = "jdbc:mysql://localhost:3306/crud"; // Altere para o nome do seu banco de dados
-        String usuario = "root"; // Altere conforme o seu usuário
-        String senha = ""; // Altere conforme a sua senha
-        
-        conexao = DriverManager.getConnection(uri, usuario, senha);
-        
-        String sqlDelete = "DELETE FROM lista_encomendas WHERE numero_pedido = ?";
-        statement = conexao.prepareStatement(sqlDelete);
-        statement.setString(1, JTFnumero10.getText()); // Define o número do pedido com base no campo de texto
-        
-        int rowsDeleted = statement.executeUpdate(); // Executa o comando de exclusão
-        
-        if (rowsDeleted > 0) {
-            JOptionPane.showMessageDialog(null, "Pedido excluído com sucesso!");
-        } else {
-            JOptionPane.showMessageDialog(null, "Falha ao excluir pedido.");
-        }
-        
-        statement.close();
-    } catch (SQLException ex) {
-        JOptionPane.showMessageDialog(null, "Erro ao excluir pedido: " + ex.getMessage());
-    }
+    // Chamada do método para excluir um pedido
+        excluirPedido();
     }//GEN-LAST:event_JTBexcluir10ActionPerformed
 
     /**
@@ -405,12 +406,9 @@ public class Tela_Lista_Encomendas extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel JLBdata10;
-    private javax.swing.JLabel JLBdestino10;
-    private javax.swing.JLabel JLBentragador10;
     private javax.swing.JLabel JLBlista10;
     private javax.swing.JLabel JLBmotoconnect10;
     private javax.swing.JLabel JLBnumero10;
-    private javax.swing.JLabel JLBorigem10;
     private javax.swing.JLabel JLBstatus10;
     private javax.swing.JLabel JLBtabelaencomenda10;
     private javax.swing.JPanel JPNfundo10;
@@ -422,10 +420,7 @@ public class Tela_Lista_Encomendas extends javax.swing.JFrame {
     private javax.swing.JTable JTBtabela10;
     private javax.swing.JButton JTBvoltar10;
     private javax.swing.JTextField JTFdata10;
-    private javax.swing.JTextField JTFdestino10;
-    private javax.swing.JTextField JTFentragador10;
     private javax.swing.JTextField JTFnumero10;
-    private javax.swing.JTextField JTForigem10;
     private javax.swing.JTextField JTFstatus10;
     // End of variables declaration//GEN-END:variables
 }

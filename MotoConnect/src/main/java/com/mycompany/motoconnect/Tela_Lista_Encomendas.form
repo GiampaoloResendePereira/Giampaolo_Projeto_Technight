@@ -69,34 +69,19 @@
                           <EmptySpace min="-2" pref="173" max="-2" attributes="0"/>
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="JTFnumero10" alignment="0" min="-2" pref="71" max="-2" attributes="0"/>
-                              <Component id="JLBnumero10" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                              <Component id="JLBnumero10" max="32767" attributes="0"/>
+                              <Component id="JTFnumero10" max="32767" attributes="0"/>
                           </Group>
-                          <EmptySpace min="-2" pref="44" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="JTForigem10" alignment="0" min="-2" pref="71" max="-2" attributes="0"/>
-                              <Component id="JLBorigem10" alignment="0" min="-2" max="-2" attributes="0"/>
-                          </Group>
-                          <EmptySpace min="-2" pref="42" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="JLBentragador10" min="-2" max="-2" attributes="0"/>
-                              <Component id="JTFentragador10" min="-2" pref="71" max="-2" attributes="0"/>
-                          </Group>
-                          <EmptySpace min="-2" pref="76" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="JTFdestino10" alignment="0" min="-2" pref="71" max="-2" attributes="0"/>
-                              <Component id="JLBdestino10" alignment="0" min="-2" max="-2" attributes="0"/>
-                          </Group>
-                          <EmptySpace min="-2" pref="36" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="46" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Component id="JTFdata10" alignment="0" min="-2" pref="71" max="-2" attributes="0"/>
                               <Component id="JLBdata10" alignment="0" min="-2" max="-2" attributes="0"/>
                           </Group>
-                          <EmptySpace min="-2" pref="64" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="JTFstatus10" min="-2" pref="71" max="-2" attributes="0"/>
                               <Component id="JLBstatus10" min="-2" max="-2" attributes="0"/>
+                              <Component id="JTFstatus10" min="-2" pref="104" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                       </Group>
@@ -119,18 +104,12 @@
                   <EmptySpace min="-2" pref="24" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="JLBnumero10" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="JLBorigem10" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="JLBentragador10" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="JLBdestino10" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="JLBdata10" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="JLBstatus10" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="JTFnumero10" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="JTForigem10" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="JTFentragador10" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="JTFdestino10" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="JTFdata10" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="JTFstatus10" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
@@ -207,12 +186,12 @@
                 </Property>
                 <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
                   <Table columnCount="6" rowCount="0">
-                    <Column editable="true" title="numero_pedido" type="java.lang.Object"/>
-                    <Column editable="true" title="endereco_origem" type="java.lang.Object"/>
-                    <Column editable="true" title="nome_entregador" type="java.lang.Object"/>
-                    <Column editable="true" title="endereco_destino" type="java.lang.Object"/>
+                    <Column editable="true" title="numero_pedido" type="java.lang.Integer"/>
+                    <Column editable="true" title="cidade_origem" type="java.lang.String"/>
+                    <Column editable="true" title="nome" type="java.lang.String"/>
+                    <Column editable="true" title="cidade_destino" type="java.lang.String"/>
                     <Column editable="true" title="data_entrega" type="java.lang.Object"/>
-                    <Column editable="true" title="statuss" type="java.lang.Object"/>
+                    <Column editable="true" title="statuss" type="java.lang.String"/>
                   </Table>
                 </Property>
                 <Property name="columnModel" type="javax.swing.table.TableColumnModel" editor="org.netbeans.modules.form.editors2.TableColumnModelEditor">
@@ -360,27 +339,6 @@
             </Property>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="JTForigem10">
-          <Properties>
-            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="cc" green="cc" red="cc" type="rgb"/>
-            </Property>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JTextField" name="JTFentragador10">
-          <Properties>
-            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="cc" green="cc" red="cc" type="rgb"/>
-            </Property>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JTextField" name="JTFdestino10">
-          <Properties>
-            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="cc" green="cc" red="cc" type="rgb"/>
-            </Property>
-          </Properties>
-        </Component>
         <Component class="javax.swing.JTextField" name="JTFdata10">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
@@ -401,30 +359,6 @@
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Numero do pedido:"/>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JLabel" name="JLBorigem10">
-          <Properties>
-            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="ff" green="ff" red="ff" type="rgb"/>
-            </Property>
-            <Property name="text" type="java.lang.String" value="Endere&#xe7;o de origem:"/>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JLabel" name="JLBentragador10">
-          <Properties>
-            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="ff" green="ff" red="ff" type="rgb"/>
-            </Property>
-            <Property name="text" type="java.lang.String" value="Entregador:"/>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JLabel" name="JLBdestino10">
-          <Properties>
-            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="ff" green="ff" red="ff" type="rgb"/>
-            </Property>
-            <Property name="text" type="java.lang.String" value="Endere&#xe7;o de destino:"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="JLBdata10">
