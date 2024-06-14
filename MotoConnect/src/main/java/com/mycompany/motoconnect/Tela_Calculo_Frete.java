@@ -4,22 +4,65 @@
  */
 package com.mycompany.motoconnect;
 
-import java.awt.Component;
+
+import java.math.BigDecimal;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+import javax.swing.ButtonGroup;
 import javax.swing.JOptionPane;
-import javax.swing.JTextField;
+
 
 /**
  *
  * @author PC
  */
 public class Tela_Calculo_Frete extends javax.swing.JFrame {
+    
+    
+    
+
+    // ButtonGroup para os JRadioButtons
+    private ButtonGroup entregaGroup;
 
     /**
      * Creates new form Tela_Calculo_Frete
      */
     public Tela_Calculo_Frete() {
         initComponents();
+        initCustomComponents();
     }
+    private void initCustomComponents() {
+        // Inicializa o ButtonGroup
+        entregaGroup = new ButtonGroup();
+
+        // Adiciona os JRadioButtons ao ButtonGroup
+        entregaGroup.add(RBTentregaprograma7);
+        entregaGroup.add(RBTexpress7);
+    }
+    
+    private boolean isValidCity(String city) {
+    // Array de cidades válidas na Grande Vitória
+    String[] validCities = {"Vitória", "Vila Velha", "Serra", "Cariacica", "Viana"};
+
+    // Transforma a cidade recebida para minúsculas para comparação case insensitive
+    String formattedCity = city.trim().toLowerCase()
+                            .replaceAll("[áàâã]", "a")
+                            .replaceAll("[éèê]", "e")
+                            .replaceAll("[íìî]", "i")
+                            .replaceAll("[óòôõ]", "o")
+                            .replaceAll("[úùû]", "u")
+                            .replaceAll("[ç]", "c");
+
+    for (String validCity : validCities) {
+        if (validCity.toLowerCase().equals(formattedCity)) {
+            return true;
+        }
+    }
+    return false;
+}
+    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -878,9 +921,23 @@ public class Tela_Calculo_Frete extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void JBTcalcular7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBTcalcular7ActionPerformed
-    // TODO add your handling code here:
-    String cidadeOrigem = JTFcidadedeorigem7.getText();
-    String cidadeDestino = JTFcidadededestino7.getText();
+    // Obtém os dados do formulário e ajusta para compatibilidade com o banco de dados
+    String cidadeOrigem = JTFcidadedeorigem7.getText().trim().toLowerCase()
+                          .replaceAll("[áàâã]", "a")
+                          .replaceAll("[éèê]", "e")
+                          .replaceAll("[íìî]", "i")
+                          .replaceAll("[óòôõ]", "o")
+                          .replaceAll("[úùû]", "u")
+                          .replaceAll("[ç]", "c");
+
+    String cidadeDestino = JTFcidadededestino7.getText().trim().toLowerCase()
+                           .replaceAll("[áàâã]", "a")
+                           .replaceAll("[éèê]", "e")
+                           .replaceAll("[íìî]", "i")
+                           .replaceAll("[óòôõ]", "o")
+                           .replaceAll("[úùû]", "u")
+                           .replaceAll("[ç]", "c");
+
     double pesoMercadoria = Double.parseDouble(JTFpesodamercadoria7.getText());
 
     // Define as distâncias e os tempos de deslocamento entre as cidades da Grande Vitória
@@ -903,7 +960,7 @@ public class Tela_Calculo_Frete extends javax.swing.JFrame {
     };
 
     // Índices das cidades no array
-    String[] cidades = {"Vitória", "Vila Velha", "Serra", "Cariacica", "Viana"};
+    String[] cidades = {"vitoria", "vila velha", "serra", "cariacica", "viana"};
 
     int indiceOrigem = -1;
     int indiceDestino = -1;
@@ -959,7 +1016,25 @@ public class Tela_Calculo_Frete extends javax.swing.JFrame {
 
     // Exibe o resultado
     JTFvalor7.setText(String.format("R$ %.2f", valorTotalFrete));
-   
+
+    // Insere os dados no banco de dados
+    String sql = "INSERT INTO calculo_frete (peso, cidade_origem, cidade_destino, valor) VALUES (?, ?, ?, ?)";
+    try (Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/crud", "root", "");
+         PreparedStatement pst = con.prepareStatement(sql)) {
+        
+        pst.setBigDecimal(1, BigDecimal.valueOf(pesoMercadoria));  // Usando BigDecimal para representar o peso
+        pst.setString(2, cidadeOrigem);
+        pst.setString(3, cidadeDestino);
+        pst.setFloat(4, (float) valorTotalFrete);  // Armazenando valor como FLOAT
+        
+        pst.executeUpdate();
+        
+        JOptionPane.showMessageDialog(this, "Cálculo de frete salvo com sucesso!");
+
+    } catch (SQLException ex) {
+        ex.printStackTrace();
+        JOptionPane.showMessageDialog(this, "Erro ao salvar cálculo de frete.");
+    }
     }//GEN-LAST:event_JBTcalcular7ActionPerformed
 
     private void JTFvalor7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JTFvalor7ActionPerformed
@@ -971,33 +1046,40 @@ public class Tela_Calculo_Frete extends javax.swing.JFrame {
     }//GEN-LAST:event_JTFpesodamercadoria7ActionPerformed
 
     private void JTFcidadedeorigem7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JTFcidadedeorigem7ActionPerformed
-        // TODO add your handling code here:
-        // Ação a ser realizada quando o campo de cidade de origem for utilizado
-        // Exemplo: Validar a cidade de origem ou atualizar a interface
-        System.out.println("Cidade de origem inserida: " + JTFcidadedeorigem7.getText());
+    // Ação a ser realizada quando o campo de cidade de origem for utilizado
+    String cidadeOrigem = JTFcidadedeorigem7.getText().trim();
+    if (!isValidCity(cidadeOrigem)) {
+        JOptionPane.showMessageDialog(this, "Por favor, insira uma cidade válida da Grande Vitória.");
+        JTFcidadedeorigem7.setText("");  // Limpa o campo se a cidade não for válida
+    }
     }//GEN-LAST:event_JTFcidadedeorigem7ActionPerformed
 
     private void JTFcidadededestino7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JTFcidadededestino7ActionPerformed
-        // TODO add your handling code here:
-        // Ação a ser realizada quando o campo de cidade de destino for utilizado
-        // Exemplo: Validar a cidade de destino ou atualizar a interface
-        System.out.println("Cidade de destino inserida: " + JTFcidadededestino7.getText());
-
+    // Ação a ser realizada quando o campo de cidade de destino for utilizado
+    String cidadeDestino = JTFcidadededestino7.getText().trim();
+    if (!isValidCity(cidadeDestino)) {
+        JOptionPane.showMessageDialog(this, "Por favor, insira uma cidade válida da Grande Vitória.");
+        JTFcidadededestino7.setText("");  // Limpa o campo se a cidade não for válida
+    }
     }//GEN-LAST:event_JTFcidadededestino7ActionPerformed
 
     private void RBTentregaprograma7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RBTentregaprograma7ActionPerformed
-        // Ação a ser realizada quando o campo de cidade de destino for utilizado
-        // Exemplo: Validar a cidade de destino ou atualizar a interface
         if (RBTentregaprograma7.isSelected()) {
-        System.out.println("Entrega programada selecionada.");
+            System.out.println("Entrega programada selecionada.");
+            // Desmarca RBTexpress7 se estiver selecionado
+            if (RBTexpress7.isSelected()) {
+                RBTexpress7.setSelected(false);
+            }
         }
     }//GEN-LAST:event_RBTentregaprograma7ActionPerformed
 
     private void RBTexpress7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RBTexpress7ActionPerformed
-        // Ação a ser realizada quando a opção de entrega expressa for selecionada
-        // Exemplo: Atualizar uma variável de estado ou a interface
         if (RBTexpress7.isSelected()) {
-        System.out.println("Entrega express selecionada.");
+            System.out.println("Entrega express selecionada.");
+            // Desmarca RBTentregaprograma7 se estiver selecionado
+            if (RBTentregaprograma7.isSelected()) {
+                RBTentregaprograma7.setSelected(false);
+            }
         }
     }//GEN-LAST:event_RBTexpress7ActionPerformed
 

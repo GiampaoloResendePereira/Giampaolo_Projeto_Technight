@@ -36,7 +36,6 @@ public class Tela_Cadastro_Cliente extends javax.swing.JFrame {
     JTFnumero8.setText("");
     JTFemail8.setText("");
     JTFtelefone8.setText("");
-    
     }
     
     
@@ -453,92 +452,92 @@ public class Tela_Cadastro_Cliente extends javax.swing.JFrame {
     try {
         // Validação dos campos de texto
         String text1 = JTFcpf8.getText();
-        if (!text1.matches("\\d+"))  { // Verifica se o texto contém apenas números
+        if (!text1.matches("\\d+")) {
             JOptionPane.showMessageDialog(null,
                                           "Por favor, insira apenas números no campo CPF.",
                                           "Entrada Inválida",
                                           JOptionPane.ERROR_MESSAGE);
-            JTFcpf8.requestFocus(); // Requer foco novamente se a entrada for inválida
+            JTFcpf8.requestFocus();
             return;
         }
 
         String text2 = JTFnomecompleto8.getText();
-        if (!text2.matches("[a-zA-ZáéíóúÁÉÍÓÚàèìòùÀÈÌÒÙãõÃÕâêîôûÂÊÎÔÛäëïöüÄËÏÖÜçÇ ]+"))  { // Verifica se o texto contém apenas letras
+        if (!text2.matches("[a-zA-ZáéíóúÁÉÍÓÚàèìòùÀÈÌÒÙãõÃÕâêîôûÂÊÎÔÛäëïöüÄËÏÖÜçÇ ]+")) {
             JOptionPane.showMessageDialog(null,
                                           "Por favor, insira apenas letras no campo Nome Completo.",
                                           "Entrada Inválida",
                                           JOptionPane.ERROR_MESSAGE);
-            JTFnomecompleto8.requestFocus(); // Requer foco novamente se a entrada for inválida
+            JTFnomecompleto8.requestFocus();
             return;
         }
 
         String text3 = JTFcep8.getText();
-        if (!text3.matches("\\d+"))  { // Verifica se o texto contém apenas números
+        if (!text3.matches("\\d+")) {
             JOptionPane.showMessageDialog(null,
                                           "Por favor, insira apenas números no campo CEP.",
                                           "Entrada Inválida",
                                           JOptionPane.ERROR_MESSAGE);
-            JTFcep8.requestFocus(); // Requer foco novamente se a entrada for inválida
+            JTFcep8.requestFocus();
             return;
         }
 
         String text4 = JTFestado8.getText();
-        if (!text4.matches("[a-zA-ZáéíóúÁÉÍÓÚàèìòùÀÈÌÒÙãõÃÕâêîôûÂÊÎÔÛäëïöüÄËÏÖÜçÇ ]+"))  { // Verifica se o texto contém apenas letras
+        if (!text4.matches("[a-zA-ZáéíóúÁÉÍÓÚàèìòùÀÈÌÒÙãõÃÕâêîôûÂÊÎÔÛäëïöüÄËÏÖÜçÇ ]+")) {
             JOptionPane.showMessageDialog(null,
                                           "Por favor, insira apenas letras no campo Estado.",
                                           "Entrada Inválida",
                                           JOptionPane.ERROR_MESSAGE);
-            JTFestado8.requestFocus(); // Requer foco novamente se a entrada for inválida
+            JTFestado8.requestFocus();
             return;
         }
 
         String text5 = JTFcidade8.getText();
-        if (!text5.matches("[a-zA-ZáéíóúÁÉÍÓÚàèìòùÀÈÌÒÙãõÃÕâêîôûÂÊÎÔÛäëïöüÄËÏÖÜçÇ ]+"))  { // Verifica se o texto contém apenas letras
+        if (!text5.matches("[a-zA-ZáéíóúÁÉÍÓÚàèìòùÀÈÌÒÙãõÃÕâêîôûÂÊÎÔÛäëïöüÄËÏÖÜçÇ ]+")) {
             JOptionPane.showMessageDialog(null,
                                           "Por favor, insira apenas letras no campo Cidade.",
                                           "Entrada Inválida",
                                           JOptionPane.ERROR_MESSAGE);
-            JTFcidade8.requestFocus(); // Requer foco novamente se a entrada for inválida
+            JTFcidade8.requestFocus();
             return;
         }
 
         String text6 = JTFbairro8.getText();
-        if (!text6.matches("[a-zA-ZáéíóúÁÉÍÓÚàèìòùÀÈÌÒÙãõÃÕâêîôûÂÊÎÔÛäëïöüÄËÏÖÜçÇ ]+"))  { // Verifica se o texto contém apenas letras
+        if (!text6.matches("[a-zA-ZáéíóúÁÉÍÓÚàèìòùÀÈÌÒÙãõÃÕâêîôûÂÊÎÔÛäëïöüÄËÏÖÜçÇ ]+")) {
             JOptionPane.showMessageDialog(null,
                                           "Por favor, insira apenas letras no campo Bairro.",
                                           "Entrada Inválida",
                                           JOptionPane.ERROR_MESSAGE);
-            JTFbairro8.requestFocus(); // Requer foco novamente se a entrada for inválida
+            JTFbairro8.requestFocus();
             return;
         }
 
         String text7 = JTFrua8.getText();
-        if (!text7.matches("[a-zA-ZáéíóúÁÉÍÓÚàèìòùÀÈÌÒÙãõÃÕâêîôûÂÊÎÔÛäëïöüÄËÏÖÜçÇ ]+"))  { // Verifica se o texto contém apenas letras
+        if (!text7.matches("[a-zA-ZáéíóúÁÉÍÓÚàèìòùÀÈÌÒÙãõÃÕâêîôûÂÊÎÔÛäëïöüÄËÏÖÜçÇ ]+")) {
             JOptionPane.showMessageDialog(null,
                                           "Por favor, insira apenas letras no campo Rua.",
                                           "Entrada Inválida",
                                           JOptionPane.ERROR_MESSAGE);
-            JTFrua8.requestFocus(); // Requer foco novamente se a entrada for inválida
+            JTFrua8.requestFocus();
             return;
         }
 
         String text8 = JTFnumero8.getText();
-        if (!text8.matches("\\d+"))  { // Verifica se o texto contém apenas números
+        if (!text8.matches("\\d+")) {
             JOptionPane.showMessageDialog(null,
                                           "Por favor, insira apenas números no campo Número.",
                                           "Entrada Inválida",
                                           JOptionPane.ERROR_MESSAGE);
-            JTFnumero8.requestFocus(); // Requer foco novamente se a entrada for inválida
+            JTFnumero8.requestFocus();
             return;
         }
 
         String text10 = JTFtelefone8.getText();
-        if (!text10.matches("\\d+"))  { // Verifica se o texto contém apenas números
+        if (!text10.matches("\\d+")) {
             JOptionPane.showMessageDialog(null,
                                           "Por favor, insira apenas números no campo Telefone.",
                                           "Entrada Inválida",
                                           JOptionPane.ERROR_MESSAGE);
-            JTFtelefone8.requestFocus(); // Requer foco novamente se a entrada for inválida
+            JTFtelefone8.requestFocus();
             return;
         }
 
@@ -550,7 +549,7 @@ public class Tela_Cadastro_Cliente extends javax.swing.JFrame {
         Class.forName("com.mysql.cj.jdbc.Driver");
         Connection con = DriverManager.getConnection(url, usuario, senha);
 
-        String sql = "INSERT INTO cliente (cpf, nome_completo, cep, estado, cidade, bairro, rua, numero, email, telefone) " +
+        String sql = "INSERT INTO cliente_destinatario (cpf_cliente, nome_cliente, cep_cliente, estado_cliente, cidade_cliente, bairro_cliente, rua_cliente, numero_cliente, email_cliente, telefone_cliente) " +
                      "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
 
         PreparedStatement pst = con.prepareStatement(sql);
@@ -585,78 +584,78 @@ public class Tela_Cadastro_Cliente extends javax.swing.JFrame {
 
     private void JBTpesquisar8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBTpesquisar8ActionPerformed
         String url = "jdbc:mysql://localhost:3306/crud";
-        String usuario = "root";
-        String senha = "";
+    String usuario = "root";
+    String senha = "";
 
-        String cpf = jTextField11.getText().trim(); // Obtém o CPF do jTextField11 e remove espaços em branco
+    String cpf = jTextField11.getText().trim(); // Obtém o CPF do jTextField11 e remove espaços em branco
 
-        // Valida se o CPF foi inserido
-        if (cpf.isEmpty()) {
-            JOptionPane.showMessageDialog(null, "Por favor, insira o CPF para pesquisa.", "CPF Vazio", JOptionPane.WARNING_MESSAGE);
-            return;
+    // Valida se o CPF foi inserido
+    if (cpf.isEmpty()) {
+        JOptionPane.showMessageDialog(null, "Por favor, insira o CPF para pesquisa.", "CPF Vazio", JOptionPane.WARNING_MESSAGE);
+        return;
+    }
+
+    Connection con = null;
+    PreparedStatement pst = null;
+    ResultSet rs = null;
+
+    try {
+        // Carrega o driver do MySQL
+        Class.forName("com.mysql.cj.jdbc.Driver");
+
+        // Conecta ao banco de dados
+        con = DriverManager.getConnection(url, usuario, senha);
+
+        String sql = "SELECT * FROM cliente_destinatario WHERE cpf_cliente = ?";
+
+        // Prepara a consulta SQL parametrizada
+        pst = con.prepareStatement(sql);
+        pst.setString(1, cpf);
+
+        // Executa a consulta e verifica se encontrou o cliente
+        rs = pst.executeQuery();
+        if (rs.next()) {
+            // Preenche os campos com os dados do cliente encontrado
+            JTFnomecompleto8.setText(rs.getString("nome_cliente"));
+            JTFcpf8.setText(rs.getString("cpf_cliente"));
+            JTFcep8.setText(rs.getString("cep_cliente"));
+            JTFestado8.setText(rs.getString("estado_cliente"));
+            JTFcidade8.setText(rs.getString("cidade_cliente"));
+            JTFbairro8.setText(rs.getString("bairro_cliente"));
+            JTFrua8.setText(rs.getString("rua_cliente"));
+            JTFnumero8.setText(rs.getString("numero_cliente"));
+            JTFemail8.setText(rs.getString("email_cliente"));
+            JTFtelefone8.setText(rs.getString("telefone_cliente"));
+        } else {
+            // Mostra mensagem se o cliente não foi encontrado
+            JOptionPane.showMessageDialog(null, "Cliente com CPF " + cpf + " não encontrado.", "Cliente Não Encontrado", JOptionPane.INFORMATION_MESSAGE);
         }
-
-        Connection con = null;
-        PreparedStatement pst = null;
-        ResultSet rs = null;
-
-        try {
-            // Carrega o driver do MySQL
-            Class.forName("com.mysql.cj.jdbc.Driver");
-   
-            // Conecta ao banco de dados
-            con = DriverManager.getConnection(url, usuario, senha);
-
-            String sql = "SELECT * FROM cliente WHERE cpf = ?";
-
-            // Prepara a consulta SQL parametrizada
-            pst = con.prepareStatement(sql);
-            pst.setString(1, cpf);
-
-            // Executa a consulta e verifica se encontrou o cliente
-            rs = pst.executeQuery();
-            if (rs.next()) {
-                // Preenche os campos com os dados do cliente encontrado
-                JTFnomecompleto8.setText(rs.getString("nome_completo"));
-                JTFcpf8.setText(rs.getString("cpf"));
-                JTFcep8.setText(rs.getString("cep"));
-                JTFestado8.setText(rs.getString("estado"));
-                JTFcidade8.setText(rs.getString("cidade"));
-                JTFbairro8.setText(rs.getString("bairro"));
-                JTFrua8.setText(rs.getString("rua"));
-                JTFnumero8.setText(rs.getString("numero"));
-                JTFemail8.setText(rs.getString("email"));
-                JTFtelefone8.setText(rs.getString("telefone"));
-            } else {
-                // Mostra mensagem se o cliente não foi encontrado
-                JOptionPane.showMessageDialog(null, "Cliente com CPF " + cpf + " não encontrado.", "Cliente Não Encontrado", JOptionPane.INFORMATION_MESSAGE);
+    } catch (ClassNotFoundException | SQLException e) {
+        JOptionPane.showMessageDialog(null, "Erro ao buscar cliente: " + e.getMessage(), "Erro de Busca", JOptionPane.ERROR_MESSAGE);
+    } finally {
+        // Fecha os recursos (ResultSet, PreparedStatement, Connection) para liberar memória e conexão
+        if (rs != null) {
+            try {
+                rs.close();
+            } catch (SQLException e) {
+                e.printStackTrace();
             }
-        } catch (ClassNotFoundException | SQLException e) {
-            JOptionPane.showMessageDialog(null, "Erro ao buscar cliente: " + e.getMessage(), "Erro de Busca", JOptionPane.ERROR_MESSAGE);
-        } finally {
-            // Fecha os recursos (ResultSet, PreparedStatement, Connection) para liberar memória e conexão
-            if (rs != null) {
-                try {
-                    rs.close();
-                } catch (SQLException e) {
-                    e.printStackTrace();
-                }
+        }
+        if (pst != null) {
+            try {
+                pst.close();
+            } catch (SQLException e) {
+                e.printStackTrace();
             }
-            if (pst != null) {
-                try {
-                    pst.close();
-                } catch (SQLException e) {
-                    e.printStackTrace();
-                }
+        }
+        if (con != null) {
+            try {
+                con.close();
+            } catch (SQLException e) {
+                e.printStackTrace();
             }
-            if (con != null) {
-                try {
-                    con.close();
-                } catch (SQLException e) {
-                    e.printStackTrace();
-                }
-            }
-        } 
+        }
+    } 
     }//GEN-LAST:event_JBTpesquisar8ActionPerformed
 
     private void JTBcontinuar8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JTBcontinuar8ActionPerformed

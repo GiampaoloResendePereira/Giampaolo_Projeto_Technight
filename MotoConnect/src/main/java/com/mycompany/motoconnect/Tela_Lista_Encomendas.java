@@ -310,48 +310,61 @@ public class Tela_Lista_Encomendas extends javax.swing.JFrame {
 
     private void JTBatualizar10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JTBatualizar10ActionPerformed
      try {
-            // TODO add your handling code here:
-            Connection conexao = null;
-            PreparedStatement statment = null;
-            
-            String uri = "jdbc:mysql://localhost:3306/mysql";
-            String usuario ="root";
-            String senha = "";
-            
-            conexao =DriverManager.getConnection(uri, usuario, senha);
-            
-            String sql = "UPDATE lista_encomendas SET data_entrega = ?, statuss = ? WHERE numero_pedido = ?";
-            statment = conexao.prepareStatement(sql);
-            statment.setString(1, JTFdata10.getText());
-            statment.setString(2, JTFstatus10.getText());
-            statment.setString(3, JTFnumero10.getText());
-            
-            statment.execute();
-            JOptionPane.showMessageDialog(null, "Informações enviadas");
-            statment.close();
-        } catch (SQLException ex) {
-            Logger.getLogger(Tela_Lista_Encomendas.class.getName()).log(Level.SEVERE, null, ex);
+        Connection conexao = null;
+        PreparedStatement statement = null;
+        
+        String uri = "jdbc:mysql://localhost:3306/crud"; // Altere para o nome do seu banco de dados
+        String usuario = "root"; // Altere conforme o seu usuário
+        String senha = ""; // Altere conforme a sua senha
+        
+        conexao = DriverManager.getConnection(uri, usuario, senha);
+        
+        String sql = "UPDATE lista_encomendas SET data_entrega = ?, statuss = ? WHERE numero_pedido = ?";
+        statement = conexao.prepareStatement(sql);
+        statement.setString(1, JTFdata10.getText()); // Define a data de entrega com base no campo de texto
+        statement.setString(2, JTFstatus10.getText()); // Define o status com base no campo de texto
+        statement.setString(3, JTFnumero10.getText()); // Define o número do pedido com base no campo de texto
+        
+        int rowsUpdated = statement.executeUpdate(); // Executa o comando de atualização
+        
+        if (rowsUpdated > 0) {
+            JOptionPane.showMessageDialog(null, "Informações atualizadas com sucesso!");
+        } else {
+            JOptionPane.showMessageDialog(null, "Falha ao atualizar informações.");
         }
+        
+        statement.close();
+    } catch (SQLException ex) {
+        JOptionPane.showMessageDialog(null, "Erro ao atualizar informações: " + ex.getMessage());
+    }
     }//GEN-LAST:event_JTBatualizar10ActionPerformed
 
     private void JTBexcluir10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JTBexcluir10ActionPerformed
-    String url = "jdbc:mysql://localhost:3306/mysql";
-    String user = "root";
-    String password = "";
-
     try {
-        Connection conn = DriverManager.getConnection(url, user, password);
-
-        // Para excluir um registro
+        Connection conexao = null;
+        PreparedStatement statement = null;
+        
+        String uri = "jdbc:mysql://localhost:3306/crud"; // Altere para o nome do seu banco de dados
+        String usuario = "root"; // Altere conforme o seu usuário
+        String senha = ""; // Altere conforme a sua senha
+        
+        conexao = DriverManager.getConnection(uri, usuario, senha);
+        
         String sqlDelete = "DELETE FROM lista_encomendas WHERE numero_pedido = ?";
-        PreparedStatement statementDelete = conn.prepareStatement(sqlDelete);
-        statementDelete.setInt(1, 1);
-        int rowsDeleted = statementDelete.executeUpdate();
+        statement = conexao.prepareStatement(sqlDelete);
+        statement.setString(1, JTFnumero10.getText()); // Define o número do pedido com base no campo de texto
+        
+        int rowsDeleted = statement.executeUpdate(); // Executa o comando de exclusão
+        
         if (rowsDeleted > 0) {
-            System.out.println("A exclusão foi feita com sucesso!");
+            JOptionPane.showMessageDialog(null, "Pedido excluído com sucesso!");
+        } else {
+            JOptionPane.showMessageDialog(null, "Falha ao excluir pedido.");
         }
+        
+        statement.close();
     } catch (SQLException ex) {
-        ex.printStackTrace();
+        JOptionPane.showMessageDialog(null, "Erro ao excluir pedido: " + ex.getMessage());
     }
     }//GEN-LAST:event_JTBexcluir10ActionPerformed
 
