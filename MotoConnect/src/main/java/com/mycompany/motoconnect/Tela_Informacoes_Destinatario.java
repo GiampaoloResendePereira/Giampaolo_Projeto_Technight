@@ -100,7 +100,7 @@ public class Tela_Informacoes_Destinatario extends javax.swing.JFrame {
         JLBcidade9 = new javax.swing.JLabel();
         JLBnumero9 = new javax.swing.JLabel();
         JLBselecionar9 = new javax.swing.JLabel();
-        JBTvoltar9 = new javax.swing.JButton();
+        JBTsalvar9 = new javax.swing.JButton();
         JBTcancelar9 = new javax.swing.JButton();
         JBTfinalizar9 = new javax.swing.JButton();
         JBTdetalhes9 = new javax.swing.JButton();
@@ -270,15 +270,15 @@ public class Tela_Informacoes_Destinatario extends javax.swing.JFrame {
         JLBselecionar9.setForeground(new java.awt.Color(255, 255, 255));
         JLBselecionar9.setText("Selecione a abaixo:");
 
-        JBTvoltar9.setBackground(new java.awt.Color(255, 51, 51));
-        JBTvoltar9.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
-        JBTvoltar9.setForeground(new java.awt.Color(255, 255, 255));
-        JBTvoltar9.setText("VOLTAR");
-        JBTvoltar9.setMaximumSize(new java.awt.Dimension(106, 25));
-        JBTvoltar9.setPreferredSize(new java.awt.Dimension(106, 25));
-        JBTvoltar9.addActionListener(new java.awt.event.ActionListener() {
+        JBTsalvar9.setBackground(new java.awt.Color(255, 51, 51));
+        JBTsalvar9.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        JBTsalvar9.setForeground(new java.awt.Color(255, 255, 255));
+        JBTsalvar9.setText("SALVAR");
+        JBTsalvar9.setMaximumSize(new java.awt.Dimension(106, 25));
+        JBTsalvar9.setPreferredSize(new java.awt.Dimension(106, 25));
+        JBTsalvar9.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                JBTvoltar9ActionPerformed(evt);
+                JBTsalvar9ActionPerformed(evt);
             }
         });
 
@@ -335,7 +335,7 @@ public class Tela_Informacoes_Destinatario extends javax.swing.JFrame {
                                     .addComponent(JPNtiposdecargas9, javax.swing.GroupLayout.PREFERRED_SIZE, 698, javax.swing.GroupLayout.PREFERRED_SIZE)))
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, JPNfundo9Layout.createSequentialGroup()
                                 .addGap(0, 0, Short.MAX_VALUE)
-                                .addComponent(JBTvoltar9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(JBTsalvar9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(60, 60, 60)
                                 .addComponent(JBTdetalhes9)
                                 .addGap(58, 58, 58)
@@ -442,7 +442,7 @@ public class Tela_Informacoes_Destinatario extends javax.swing.JFrame {
                             .addComponent(JCBopcaoP19, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(94, 94, 94)
                         .addGroup(JPNfundo9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(JBTvoltar9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(JBTsalvar9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(JBTcancelar9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(JBTdetalhes9)
                             .addComponent(JBTfinalizar9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -468,22 +468,149 @@ public class Tela_Informacoes_Destinatario extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void JBTvoltar9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBTvoltar9ActionPerformed
-        // Fecha a tela atual de informações do destinatário (Tela_Informacoes_Destinatario)
-        Tela_Informacoes_Destinatario.this.dispose();
-        // Cria uma nova instância da tela de cadastro de cliente (Tela_Cadastro_Cliente)
-        Tela_Cadastro_Cliente JBTvoltar9 = new Tela_Cadastro_Cliente();
-        // Define a tela de cadastro de cliente como visível
-        JBTvoltar9.setVisible(true);
-    }//GEN-LAST:event_JBTvoltar9ActionPerformed
+    private void JBTsalvar9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBTsalvar9ActionPerformed
+        // Validações de entrada para JTFdestinatario9 (destinatario)
+    String destinatario = JTFdestinatario9.getText().trim();
+    if (!destinatario.matches("[a-zA-ZáéíóúÁÉÍÓÚàèìòùÀÈÌÒÙãõÃÕâêîôûÂÊÎÔÛäëïöüÄËÏÖÜçÇ ]+")) { // Verifica se contém apenas letras e espaços
+        JOptionPane.showMessageDialog(null,
+                "Por favor, insira apenas letras para o destinatário.",
+                "Entrada Inválida",
+                JOptionPane.ERROR_MESSAGE);
+        JTFdestinatario9.requestFocus(); // Requer foco novamente se a entrada for inválida
+        return; // Para a execução do método, pois houve erro na validação
+    }
+
+    // Validações de entrada para JTFtelefone9 (telefonedestinatario)
+    String telefonedestinatario = JTFtelefone9.getText().trim();
+    if (!telefonedestinatario.matches("\\d+")) { // Verifica se contém apenas números
+        JOptionPane.showMessageDialog(null,
+                "Por favor, insira apenas números para o telefone do destinatário.",
+                "Entrada Inválida",
+                JOptionPane.ERROR_MESSAGE);
+        JTFtelefone9.requestFocus(); // Requer foco novamente se a entrada for inválida
+        return; // Para a execução do método, pois houve erro na validação
+    }
+
+    // Validações de entrada para JTFcep9 (cep)
+    String cep = JTFcep9.getText().trim();
+    if (!cep.matches("\\d+")) { // Verifica se contém apenas números
+        JOptionPane.showMessageDialog(null,
+                "Por favor, insira apenas números para o CEP.",
+                "Entrada Inválida",
+                JOptionPane.ERROR_MESSAGE);
+        JTFcep9.requestFocus(); // Requer foco novamente se a entrada for inválida
+        return; // Para a execução do método, pois houve erro na validação
+    }
+
+    // Validações de entrada para JTFestado9 (estado)
+    String estado = JTFestado9.getText().trim();
+    if (!estado.matches("[a-zA-ZáéíóúÁÉÍÓÚàèìòùÀÈÌÒÙãõÃÕâêîôûÂÊÎÔÛäëïöüÄËÏÖÜçÇ ]+")) { // Verifica se contém apenas letras e espaços
+        JOptionPane.showMessageDialog(null,
+                "Por favor, insira apenas letras para o estado.",
+                "Entrada Inválida",
+                JOptionPane.ERROR_MESSAGE);
+        JTFestado9.requestFocus(); // Requer foco novamente se a entrada for inválida
+        return; // Para a execução do método, pois houve erro na validação
+    }
+
+    // Validações de entrada para JTFcidade9 (cidade)
+    String cidade = JTFcidade9.getText().trim();
+    if (!cidade.matches("[a-zA-ZáéíóúÁÉÍÓÚàèìòùÀÈÌÒÙãõÃÕâêîôûÂÊÎÔÛäëïöüÄËÏÖÜçÇ ]+")) { // Verifica se contém apenas letras e espaços
+        JOptionPane.showMessageDialog(null,
+                "Por favor, insira apenas letras para a cidade.",
+                "Entrada Inválida",
+                JOptionPane.ERROR_MESSAGE);
+        JTFcidade9.requestFocus(); // Requer foco novamente se a entrada for inválida
+        return; // Para a execução do método, pois houve erro na validação
+    }
+
+    // Validações de entrada para JTFbairro9 (bairro)
+    String bairro = JTFbairro9.getText().trim();
+    if (!bairro.matches("[a-zA-ZáéíóúÁÉÍÓÚàèìòùÀÈÌÒÙãõÃÕâêîôûÂÊÎÔÛäëïöüÄËÏÖÜçÇ ]+")) { // Verifica se contém apenas letras e espaços
+        JOptionPane.showMessageDialog(null,
+                "Por favor, insira apenas letras para o bairro.",
+                "Entrada Inválida",
+                JOptionPane.ERROR_MESSAGE);
+        JTFbairro9.requestFocus(); // Requer foco novamente se a entrada for inválida
+        return; // Para a execução do método, pois houve erro na validação
+    }
+
+    // Validações de entrada para JTFrua9 (rua)
+    String rua = JTFrua9.getText().trim();
+    if (!rua.matches("[a-zA-ZáéíóúÁÉÍÓÚàèìòùÀÈÌÒÙãõÃÕâêîôûÂÊÎÔÛäëïöüÄËÏÖÜçÇ ]+")) { // Verifica se contém apenas letras e espaços
+        JOptionPane.showMessageDialog(null,
+                "Por favor, insira apenas letras para a rua.",
+                "Entrada Inválida",
+                JOptionPane.ERROR_MESSAGE);
+        JTFrua9.requestFocus(); // Requer foco novamente se a entrada for inválida
+        return; // Para a execução do método, pois houve erro na validação
+    }
+
+    // Validações de entrada para JTFnumero9 (numero)
+    String numero = JTFnumero9.getText().trim();
+    if (!numero.matches("\\d+")) { // Verifica se contém apenas números
+        JOptionPane.showMessageDialog(null,
+                "Por favor, insira apenas números para o número da rua.",
+                "Entrada Inválida",
+                JOptionPane.ERROR_MESSAGE);
+        JTFnumero9.requestFocus(); // Requer foco novamente se a entrada for inválida
+        return; // Para a execução do método, pois houve erro na validação
+    }
+
+    try {
+        // Conexão com o banco de dados MySQL
+        String url = "jdbc:mysql://localhost:3306/crud";
+        String usuario = "root";
+        String senha = "";
+
+        // Carrega o driver do MySQL
+        Class.forName("com.mysql.cj.jdbc.Driver");
+
+        // Estabelece a conexão
+        Connection con = DriverManager.getConnection(url, usuario, senha);
+
+        // SQL parametrizado para inserir dados na tabela cliente_destinatario
+        String sql = "INSERT INTO destinatario (destinatario, telefone_destinatario, cep_destinatario, estado_destinatario, cidade_destinatario, bairro_destinatario, rua_destinatario, numero_destinatario) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
+
+        // Prepara o statement com o SQL parametrizado
+        PreparedStatement pst = con.prepareStatement(sql);
+
+        // Define os valores para os parâmetros do statement
+        pst.setString(1, destinatario);
+        pst.setString(2, telefonedestinatario);
+        pst.setString(3, cep);
+        pst.setString(4, estado);
+        pst.setString(5, cidade);
+        pst.setString(6, bairro);
+        pst.setString(7, rua);
+        pst.setString(8, numero);
+
+        // Executa o comando SQL para inserção de dados
+        int rowsAffected = pst.executeUpdate();
+
+        // Verifica se a inserção foi bem-sucedida
+        if (rowsAffected > 0) {
+            JOptionPane.showMessageDialog(null, "Informações enviadas com sucesso.");
+
+            // Fecha a conexão com o banco de dados
+            con.close();
+
+            
+        } else {
+            JOptionPane.showMessageDialog(null, "Falha ao enviar informações.");
+        }
+
+    } catch (ClassNotFoundException | SQLException e) {
+        // Exibe uma mensagem de erro em caso de exceção
+        JOptionPane.showMessageDialog(null, "Erro ao enviar informações: " + e.getMessage(), "Erro de Inserção", JOptionPane.ERROR_MESSAGE);
+    }
+    }//GEN-LAST:event_JBTsalvar9ActionPerformed
 
     private void JBTcancelar9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBTcancelar9ActionPerformed
-        // Fecha a tela atual de informações do destinatário (Tela_Informacoes_Destinatario)
-        Tela_Informacoes_Destinatario.this.dispose();
-        // Cria uma nova instância da tela de menu (Tela_Menu)
-        Tela_Menu JBTcancelar9 = new Tela_Menu();
-        // Define a tela de menu como visível
-        JBTcancelar9.setVisible(true);
+        // Fecha a janela atual e abre o menu principal (ou outra janela desejada)
+            this.dispose(); // Fecha a janela atual, assumindo que este método está dentro de um JFrame
+            Tela_Menu JBTcancelar9 = new Tela_Menu();
+            JBTcancelar9.setVisible(true);
     }//GEN-LAST:event_JBTcancelar9ActionPerformed
 
     private void JBTfinalizar9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBTfinalizar9ActionPerformed
@@ -612,11 +739,13 @@ public class Tela_Informacoes_Destinatario extends javax.swing.JFrame {
 
             // Fecha a conexão com o banco de dados
             con.close();
-
+            
             // Fecha a janela atual e abre o menu principal (ou outra janela desejada)
             this.dispose(); // Fecha a janela atual, assumindo que este método está dentro de um JFrame
-            Tela_Menu telaMenu = new Tela_Menu();
-            telaMenu.setVisible(true);
+            Tela_Menu JBTfinalizar9 = new Tela_Menu();
+            JBTfinalizar9.setVisible(true);
+
+            
         } else {
             JOptionPane.showMessageDialog(null, "Falha ao enviar informações.");
         }
@@ -708,7 +837,7 @@ public class Tela_Informacoes_Destinatario extends javax.swing.JFrame {
     private javax.swing.JButton JBTcancelar9;
     private javax.swing.JButton JBTdetalhes9;
     private javax.swing.JButton JBTfinalizar9;
-    private javax.swing.JButton JBTvoltar9;
+    private javax.swing.JButton JBTsalvar9;
     private javax.swing.JComboBox<String> JCBopcaoP19;
     private javax.swing.JComboBox<String> JCBopcaoP29;
     private javax.swing.JComboBox<String> JCBopcaoP39;

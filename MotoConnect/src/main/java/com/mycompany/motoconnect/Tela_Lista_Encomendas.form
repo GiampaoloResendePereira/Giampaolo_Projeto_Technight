@@ -69,21 +69,42 @@
                           <EmptySpace min="-2" pref="173" max="-2" attributes="0"/>
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
-                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                              <Component id="JLBnumero10" max="32767" attributes="0"/>
-                              <Component id="JTFnumero10" max="32767" attributes="0"/>
+                          <EmptySpace min="-2" pref="19" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="1" attributes="0">
+                              <Component id="JTFnumero10" min="-2" pref="105" max="-2" attributes="0"/>
+                              <Component id="JLBnumero10" min="-2" max="-2" attributes="0"/>
                           </Group>
-                          <EmptySpace min="-2" pref="46" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="JTFdata10" alignment="0" min="-2" pref="71" max="-2" attributes="0"/>
-                              <Component id="JLBdata10" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Group type="102" attributes="0">
+                                  <Component id="JTFcidadeorigem10" max="32767" attributes="0"/>
+                                  <EmptySpace min="-2" pref="39" max="-2" attributes="0"/>
+                              </Group>
+                              <Group type="102" alignment="0" attributes="0">
+                                  <Component id="JLBcidadeorigem10" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace max="32767" attributes="0"/>
+                              </Group>
                           </Group>
-                          <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="JTFentregador10" alignment="0" min="-2" pref="108" max="-2" attributes="0"/>
+                              <Component id="JLBentregador10" alignment="0" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace min="-2" pref="43" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="JLBcidadedestino10" min="-2" max="-2" attributes="0"/>
+                              <Component id="JTFcidadedestino10" min="-2" pref="110" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace min="-2" pref="40" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="JLBdata10" min="-2" max="-2" attributes="0"/>
+                              <Component id="JTFdata10" min="-2" pref="109" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace min="-2" pref="39" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="JTFstatus10" min="-2" pref="108" max="-2" attributes="0"/>
                               <Component id="JLBstatus10" min="-2" max="-2" attributes="0"/>
-                              <Component id="JTFstatus10" min="-2" pref="104" max="-2" attributes="0"/>
                           </Group>
-                          <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                          <EmptySpace min="-2" pref="192" max="-2" attributes="0"/>
                       </Group>
                   </Group>
               </Group>
@@ -106,12 +127,18 @@
                       <Component id="JLBnumero10" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="JLBdata10" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="JLBstatus10" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="JLBcidadeorigem10" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="JLBentregador10" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="JLBcidadedestino10" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="JTFnumero10" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="JTFdata10" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="JTFstatus10" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="JTFcidadedestino10" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="JTFentregador10" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="JTFcidadeorigem10" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace min="-2" pref="99" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
@@ -393,6 +420,51 @@
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="JTBexcluir10ActionPerformed"/>
           </Events>
+        </Component>
+        <Component class="javax.swing.JTextField" name="JTFcidadedestino10">
+          <Properties>
+            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="cc" green="cc" red="cc" type="rgb"/>
+            </Property>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="JTFentregador10">
+          <Properties>
+            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="cc" green="cc" red="cc" type="rgb"/>
+            </Property>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="JTFcidadeorigem10">
+          <Properties>
+            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="cc" green="cc" red="cc" type="rgb"/>
+            </Property>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="JLBcidadeorigem10">
+          <Properties>
+            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="ff" green="ff" red="ff" type="rgb"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Cidade de origem:"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="JLBentregador10">
+          <Properties>
+            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="ff" green="ff" red="ff" type="rgb"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Entregador:"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="JLBcidadedestino10">
+          <Properties>
+            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="ff" green="ff" red="ff" type="rgb"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Cidade de destino:"/>
+          </Properties>
         </Component>
       </SubComponents>
     </Container>

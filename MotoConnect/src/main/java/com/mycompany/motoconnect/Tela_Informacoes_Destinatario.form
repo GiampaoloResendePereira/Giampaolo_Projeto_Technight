@@ -64,7 +64,7 @@
                               </Group>
                               <Group type="102" alignment="1" attributes="0">
                                   <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                                  <Component id="JBTvoltar9" min="-2" max="-2" attributes="0"/>
+                                  <Component id="JBTsalvar9" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace min="-2" pref="60" max="-2" attributes="0"/>
                                   <Component id="JBTdetalhes9" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace min="-2" pref="58" max="-2" attributes="0"/>
@@ -206,7 +206,7 @@
                           </Group>
                           <EmptySpace min="-2" pref="94" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="JBTvoltar9" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="JBTsalvar9" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="JBTcancelar9" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="JBTdetalhes9" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="JBTfinalizar9" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -561,7 +561,7 @@
             <Property name="text" type="java.lang.String" value="Selecione a abaixo:"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JButton" name="JBTvoltar9">
+        <Component class="javax.swing.JButton" name="JBTsalvar9">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="33" green="33" red="ff" type="rgb"/>
@@ -572,7 +572,7 @@
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="VOLTAR"/>
+            <Property name="text" type="java.lang.String" value="SALVAR"/>
             <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
               <Dimension value="[106, 25]"/>
             </Property>
@@ -581,7 +581,7 @@
             </Property>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="JBTvoltar9ActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="JBTsalvar9ActionPerformed"/>
           </Events>
         </Component>
         <Component class="javax.swing.JButton" name="JBTcancelar9">

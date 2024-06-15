@@ -304,56 +304,49 @@ public class Tela_Detalhes_Encomenda extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        JTFnomecompleto11.setBackground(new java.awt.Color(0, 51, 204));
-        JTFnomecompleto11.setForeground(new java.awt.Color(255, 255, 255));
+        JTFnomecompleto11.setBackground(new java.awt.Color(204, 204, 204));
         JTFnomecompleto11.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 JTFnomecompleto11ActionPerformed(evt);
             }
         });
 
-        JTFcpf11.setBackground(new java.awt.Color(0, 51, 204));
-        JTFcpf11.setForeground(new java.awt.Color(255, 255, 255));
+        JTFcpf11.setBackground(new java.awt.Color(204, 204, 204));
         JTFcpf11.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 JTFcpf11ActionPerformed(evt);
             }
         });
 
-        JTFtelefone11.setBackground(new java.awt.Color(0, 51, 204));
-        JTFtelefone11.setForeground(new java.awt.Color(255, 255, 255));
+        JTFtelefone11.setBackground(new java.awt.Color(204, 204, 204));
         JTFtelefone11.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 JTFtelefone11ActionPerformed(evt);
             }
         });
 
-        JTFenderecocompleto11.setBackground(new java.awt.Color(0, 51, 204));
-        JTFenderecocompleto11.setForeground(new java.awt.Color(255, 255, 255));
+        JTFenderecocompleto11.setBackground(new java.awt.Color(204, 204, 204));
         JTFenderecocompleto11.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 JTFenderecocompleto11ActionPerformed(evt);
             }
         });
 
-        JTFemail11.setBackground(new java.awt.Color(0, 51, 204));
-        JTFemail11.setForeground(new java.awt.Color(255, 255, 255));
+        JTFemail11.setBackground(new java.awt.Color(204, 204, 204));
         JTFemail11.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 JTFemail11ActionPerformed(evt);
             }
         });
 
-        JTFcidadeorigem11.setBackground(new java.awt.Color(0, 51, 204));
-        JTFcidadeorigem11.setForeground(new java.awt.Color(255, 255, 255));
+        JTFcidadeorigem11.setBackground(new java.awt.Color(204, 204, 204));
         JTFcidadeorigem11.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 JTFcidadeorigem11ActionPerformed(evt);
             }
         });
 
-        JTFpeso11.setBackground(new java.awt.Color(0, 51, 204));
-        JTFpeso11.setForeground(new java.awt.Color(255, 255, 255));
+        JTFpeso11.setBackground(new java.awt.Color(204, 204, 204));
         JTFpeso11.setDisabledTextColor(new java.awt.Color(255, 255, 255));
         JTFpeso11.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -361,40 +354,35 @@ public class Tela_Detalhes_Encomenda extends javax.swing.JFrame {
             }
         });
 
-        JTFvalor11.setBackground(new java.awt.Color(0, 51, 204));
-        JTFvalor11.setForeground(new java.awt.Color(255, 255, 255));
+        JTFvalor11.setBackground(new java.awt.Color(204, 204, 204));
         JTFvalor11.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 JTFvalor11ActionPerformed(evt);
             }
         });
 
-        JTFcarga11.setBackground(new java.awt.Color(0, 51, 204));
-        JTFcarga11.setForeground(new java.awt.Color(255, 255, 255));
+        JTFcarga11.setBackground(new java.awt.Color(204, 204, 204));
         JTFcarga11.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 JTFcarga11ActionPerformed(evt);
             }
         });
 
-        JTFnomedestinatario11.setBackground(new java.awt.Color(0, 51, 204));
-        JTFnomedestinatario11.setForeground(new java.awt.Color(255, 255, 255));
+        JTFnomedestinatario11.setBackground(new java.awt.Color(204, 204, 204));
         JTFnomedestinatario11.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 JTFnomedestinatario11ActionPerformed(evt);
             }
         });
 
-        JTFtelefonedestinatario11.setBackground(new java.awt.Color(0, 51, 204));
-        JTFtelefonedestinatario11.setForeground(new java.awt.Color(255, 255, 255));
+        JTFtelefonedestinatario11.setBackground(new java.awt.Color(204, 204, 204));
         JTFtelefonedestinatario11.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 JTFtelefonedestinatario11ActionPerformed(evt);
             }
         });
 
-        JTFenderecodestinatario11.setBackground(new java.awt.Color(0, 51, 204));
-        JTFenderecodestinatario11.setForeground(new java.awt.Color(255, 255, 255));
+        JTFenderecodestinatario11.setBackground(new java.awt.Color(204, 204, 204));
         JTFenderecodestinatario11.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 JTFenderecodestinatario11ActionPerformed(evt);
@@ -439,8 +427,7 @@ public class Tela_Detalhes_Encomenda extends javax.swing.JFrame {
         JLBcidadedestino11.setForeground(new java.awt.Color(255, 255, 255));
         JLBcidadedestino11.setText("Cidade de destino:");
 
-        JTFcidadedestino11.setBackground(new java.awt.Color(0, 51, 204));
-        JTFcidadedestino11.setForeground(new java.awt.Color(255, 255, 255));
+        JTFcidadedestino11.setBackground(new java.awt.Color(204, 204, 204));
 
         javax.swing.GroupLayout JPNfundo11Layout = new javax.swing.GroupLayout(JPNfundo11);
         JPNfundo11.setLayout(JPNfundo11Layout);
@@ -466,48 +453,46 @@ public class Tela_Detalhes_Encomenda extends javax.swing.JFrame {
                     .addGroup(JPNfundo11Layout.createSequentialGroup()
                         .addGroup(JPNfundo11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(JPNfundo11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addGroup(JPNfundo11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(JPNfundo11Layout.createSequentialGroup()
-                                        .addComponent(JLBcidadedestino11)
-                                        .addGap(18, 18, 18)
-                                        .addComponent(JTFcidadedestino11, javax.swing.GroupLayout.PREFERRED_SIZE, 308, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(24, 24, 24))
-                                    .addGroup(JPNfundo11Layout.createSequentialGroup()
-                                        .addGroup(JPNfundo11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addGroup(JPNfundo11Layout.createSequentialGroup()
-                                                .addGroup(JPNfundo11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                    .addComponent(JLBnomecompleto11)
-                                                    .addComponent(JLBcep11))
-                                                .addGap(26, 26, 26)
-                                                .addGroup(JPNfundo11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                                    .addComponent(JTFnomecompleto11, javax.swing.GroupLayout.DEFAULT_SIZE, 310, Short.MAX_VALUE)
-                                                    .addComponent(JTFcpf11)))
-                                            .addGroup(JPNfundo11Layout.createSequentialGroup()
-                                                .addGroup(JPNfundo11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                                    .addGroup(JPNfundo11Layout.createSequentialGroup()
-                                                        .addComponent(JPNcliente11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                        .addGap(52, 52, 52))
-                                                    .addComponent(JLBvalor11, javax.swing.GroupLayout.Alignment.LEADING))
-                                                .addGap(12, 12, 12)
-                                                .addGroup(JPNfundo11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                                    .addComponent(JTFcarga11)
-                                                    .addComponent(JTFvalor11, javax.swing.GroupLayout.DEFAULT_SIZE, 308, Short.MAX_VALUE)))
-                                            .addGroup(JPNfundo11Layout.createSequentialGroup()
-                                                .addGroup(JPNfundo11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                    .addComponent(JLBenderecocompleto11)
-                                                    .addComponent(JLBtelefone11)
-                                                    .addComponent(JLBemail11)
-                                                    .addComponent(JLBpeso11)
-                                                    .addComponent(JLBnumerodopedido11))
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                                .addGroup(JPNfundo11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                    .addComponent(JTFcidadeorigem11, javax.swing.GroupLayout.PREFERRED_SIZE, 308, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                    .addComponent(JTFpeso11, javax.swing.GroupLayout.PREFERRED_SIZE, 308, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                    .addComponent(JTFemail11, javax.swing.GroupLayout.PREFERRED_SIZE, 308, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                    .addComponent(JTFtelefone11, javax.swing.GroupLayout.PREFERRED_SIZE, 308, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                    .addComponent(JTFenderecocompleto11, javax.swing.GroupLayout.PREFERRED_SIZE, 308, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                                        .addGap(0, 0, Short.MAX_VALUE)))
-                                .addComponent(JBTmenu11))
+                                .addGroup(JPNfundo11Layout.createSequentialGroup()
+                                    .addGroup(JPNfundo11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(JLBnomecompleto11)
+                                        .addComponent(JLBcep11))
+                                    .addGap(28, 28, 28)
+                                    .addGroup(JPNfundo11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                        .addComponent(JTFcpf11, javax.swing.GroupLayout.DEFAULT_SIZE, 308, Short.MAX_VALUE)
+                                        .addComponent(JTFnomecompleto11)))
+                                .addGroup(JPNfundo11Layout.createSequentialGroup()
+                                    .addGroup(JPNfundo11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addGroup(JPNfundo11Layout.createSequentialGroup()
+                                            .addComponent(JLBcidadedestino11)
+                                            .addGap(18, 18, 18)
+                                            .addComponent(JTFcidadedestino11, javax.swing.GroupLayout.PREFERRED_SIZE, 308, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addGroup(JPNfundo11Layout.createSequentialGroup()
+                                            .addGroup(JPNfundo11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                                .addGroup(JPNfundo11Layout.createSequentialGroup()
+                                                    .addComponent(JPNcliente11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                    .addGap(52, 52, 52))
+                                                .addComponent(JLBvalor11, javax.swing.GroupLayout.Alignment.LEADING))
+                                            .addGap(12, 12, 12)
+                                            .addGroup(JPNfundo11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                                .addComponent(JTFcarga11)
+                                                .addComponent(JTFvalor11, javax.swing.GroupLayout.DEFAULT_SIZE, 308, Short.MAX_VALUE)))
+                                        .addGroup(JPNfundo11Layout.createSequentialGroup()
+                                            .addGroup(JPNfundo11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                .addComponent(JLBenderecocompleto11)
+                                                .addComponent(JLBtelefone11)
+                                                .addComponent(JLBemail11)
+                                                .addComponent(JLBpeso11)
+                                                .addComponent(JLBnumerodopedido11))
+                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                            .addGroup(JPNfundo11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                .addComponent(JTFcidadeorigem11, javax.swing.GroupLayout.PREFERRED_SIZE, 308, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addComponent(JTFpeso11, javax.swing.GroupLayout.PREFERRED_SIZE, 308, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addComponent(JTFemail11, javax.swing.GroupLayout.PREFERRED_SIZE, 308, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addComponent(JTFtelefone11, javax.swing.GroupLayout.PREFERRED_SIZE, 308, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addComponent(JTFenderecocompleto11, javax.swing.GroupLayout.PREFERRED_SIZE, 308, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                        .addComponent(JBTmenu11))
+                                    .addGap(0, 0, Short.MAX_VALUE)))
                             .addGroup(JPNfundo11Layout.createSequentialGroup()
                                 .addComponent(JLBcarga11)
                                 .addGap(377, 377, 377)))

@@ -33,21 +33,9 @@ public class Tela_Lista_Encomendas extends javax.swing.JFrame {
      */
     public Tela_Lista_Encomendas() {
         initComponents();
-        model = (DefaultTableModel) JTBtabela10.getModel();
-        conectarBanco();
-        atualizarTabela();
-        
+       
     }
     
-    private void conectarBanco() {
-        try {
-            conexao = DriverManager.getConnection(URI, USUARIO, SENHA);
-        } catch (SQLException ex) {
-            // JOptionPane.showMessageDialog(null, "Conexão bem-sucedida ao banco de dados.");
-            JOptionPane.showMessageDialog(null, "Erro ao conectar ao banco de dados: " + ex.getMessage());
-        }
-    }
-
     private void atualizarTabela() {
         model.setRowCount(0); // Limpa todas as linhas da tabela antes de recarregar
 
@@ -67,7 +55,6 @@ public class Tela_Lista_Encomendas extends javax.swing.JFrame {
                 Date dataEntrega = rs.getDate("data_entrega");
                 String status = rs.getString("statuss");
 
-                // Montar linha para adicionar ao modelo da tabela
                 Object[] row = {
                     numeroPedido,
                     cidadeOrigem,
@@ -83,32 +70,11 @@ public class Tela_Lista_Encomendas extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "Erro ao carregar dados da tabela: " + ex.getMessage());
         }
     }
+    
+    
 
-    private void excluirPedido() {
-        String numeroPedidoStr = JTFnumero10.getText().trim();
-        if (!numeroPedidoStr.isEmpty()) {
-            try {
-                int numeroPedido = Integer.parseInt(numeroPedidoStr);
-                String sqlDelete = "DELETE FROM encomendas WHERE numero_pedido = ?";
-                try (PreparedStatement statement = conexao.prepareStatement(sqlDelete)) {
-                    statement.setInt(1, numeroPedido);
 
-                    int rowsDeleted = statement.executeUpdate();
-
-                    if (rowsDeleted > 0) {
-                        JOptionPane.showMessageDialog(null, "Pedido excluído com sucesso!");
-                        atualizarTabela();
-                    } else {
-                        JOptionPane.showMessageDialog(null, "Falha ao excluir pedido.");
-                    }
-                }
-            } catch (NumberFormatException | SQLException ex) {
-                JOptionPane.showMessageDialog(null, "Erro ao excluir pedido: " + ex.getMessage());
-            }
-        } else {
-            JOptionPane.showMessageDialog(null, "Digite um número de pedido para excluir.");
-        }
-    }
+        
 
     
     
@@ -139,6 +105,12 @@ public class Tela_Lista_Encomendas extends javax.swing.JFrame {
         JLBdata10 = new javax.swing.JLabel();
         JLBstatus10 = new javax.swing.JLabel();
         JTBexcluir10 = new javax.swing.JButton();
+        JTFcidadedestino10 = new javax.swing.JTextField();
+        JTFentregador10 = new javax.swing.JTextField();
+        JTFcidadeorigem10 = new javax.swing.JTextField();
+        JLBcidadeorigem10 = new javax.swing.JLabel();
+        JLBentregador10 = new javax.swing.JLabel();
+        JLBcidadedestino10 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -272,6 +244,21 @@ public class Tela_Lista_Encomendas extends javax.swing.JFrame {
             }
         });
 
+        JTFcidadedestino10.setBackground(new java.awt.Color(204, 204, 204));
+
+        JTFentregador10.setBackground(new java.awt.Color(204, 204, 204));
+
+        JTFcidadeorigem10.setBackground(new java.awt.Color(204, 204, 204));
+
+        JLBcidadeorigem10.setForeground(new java.awt.Color(255, 255, 255));
+        JLBcidadeorigem10.setText("Cidade de origem:");
+
+        JLBentregador10.setForeground(new java.awt.Color(255, 255, 255));
+        JLBentregador10.setText("Entregador:");
+
+        JLBcidadedestino10.setForeground(new java.awt.Color(255, 255, 255));
+        JLBcidadedestino10.setText("Cidade de destino:");
+
         javax.swing.GroupLayout JPNfundo10Layout = new javax.swing.GroupLayout(JPNfundo10);
         JPNfundo10.setLayout(JPNfundo10Layout);
         JPNfundo10Layout.setHorizontalGroup(
@@ -295,18 +282,34 @@ public class Tela_Lista_Encomendas extends javax.swing.JFrame {
                             .addComponent(JSPtabela10, javax.swing.GroupLayout.Alignment.LEADING))
                         .addGap(173, 173, 173))
                     .addGroup(JPNfundo10Layout.createSequentialGroup()
-                        .addGroup(JPNfundo10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(JLBnumero10, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(JTFnumero10))
-                        .addGap(46, 46, 46)
+                        .addGap(19, 19, 19)
+                        .addGroup(JPNfundo10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(JTFnumero10, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(JLBnumero10))
+                        .addGap(33, 33, 33)
                         .addGroup(JPNfundo10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(JTFdata10, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(JLBdata10))
-                        .addGap(31, 31, 31)
+                            .addGroup(JPNfundo10Layout.createSequentialGroup()
+                                .addComponent(JTFcidadeorigem10)
+                                .addGap(39, 39, 39))
+                            .addGroup(JPNfundo10Layout.createSequentialGroup()
+                                .addComponent(JLBcidadeorigem10)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                         .addGroup(JPNfundo10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(JLBstatus10)
-                            .addComponent(JTFstatus10, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(0, 0, Short.MAX_VALUE))))
+                            .addComponent(JTFentregador10, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(JLBentregador10))
+                        .addGap(43, 43, 43)
+                        .addGroup(JPNfundo10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(JLBcidadedestino10)
+                            .addComponent(JTFcidadedestino10, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(40, 40, 40)
+                        .addGroup(JPNfundo10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(JLBdata10)
+                            .addComponent(JTFdata10, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(39, 39, 39)
+                        .addGroup(JPNfundo10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(JTFstatus10, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(JLBstatus10))
+                        .addGap(192, 192, 192))))
         );
         JPNfundo10Layout.setVerticalGroup(
             JPNfundo10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -323,12 +326,18 @@ public class Tela_Lista_Encomendas extends javax.swing.JFrame {
                 .addGroup(JPNfundo10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(JLBnumero10)
                     .addComponent(JLBdata10)
-                    .addComponent(JLBstatus10))
+                    .addComponent(JLBstatus10)
+                    .addComponent(JLBcidadeorigem10)
+                    .addComponent(JLBentregador10)
+                    .addComponent(JLBcidadedestino10))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(JPNfundo10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(JTFnumero10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(JTFdata10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(JTFstatus10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(JTFstatus10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(JTFcidadedestino10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(JTFentregador10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(JTFcidadeorigem10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(99, 99, 99)
                 .addGroup(JPNfundo10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(JTBatualizar10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -362,12 +371,59 @@ public class Tela_Lista_Encomendas extends javax.swing.JFrame {
     }//GEN-LAST:event_JTBtabela10AncestorAdded
 
     private void JTBatualizar10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JTBatualizar10ActionPerformed
-     atualizarTabela();
+     String numeroPedidoStr = JTFnumero10.getText().trim();
+    String novoStatus = JTFstatus10.getText().trim();
+
+    if (!numeroPedidoStr.isEmpty() && !novoStatus.isEmpty()) {
+        try {
+            int numeroPedido = Integer.parseInt(numeroPedidoStr);
+            String sqlUpdate = "UPDATE encomendas SET statuss = ? WHERE numero_pedido = ?";
+            try (PreparedStatement statement = conexao.prepareStatement(sqlUpdate)) {
+                statement.setString(1, novoStatus);
+                statement.setInt(2, numeroPedido);
+
+                int rowsUpdated = statement.executeUpdate();
+
+                if (rowsUpdated > 0) {
+                    JOptionPane.showMessageDialog(null, "Status atualizado com sucesso!");
+                    atualizarTabela(); // Atualiza a tabela após a atualização do status
+                } else {
+                    JOptionPane.showMessageDialog(null, "Falha ao atualizar status.");
+                }
+            }
+        } catch (NumberFormatException | SQLException ex) {
+            JOptionPane.showMessageDialog(null, "Erro ao atualizar status: " + ex.getMessage());
+        }
+    } else {
+        JOptionPane.showMessageDialog(null, "Digite um número de pedido e um novo status.");
+    }
     }//GEN-LAST:event_JTBatualizar10ActionPerformed
 
     private void JTBexcluir10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JTBexcluir10ActionPerformed
     // Chamada do método para excluir um pedido
-        excluirPedido();
+        String numeroPedidoStr = JTFnumero10.getText().trim();
+    if (!numeroPedidoStr.isEmpty()) {
+        try {
+            int numeroPedido = Integer.parseInt(numeroPedidoStr);
+            String sqlDelete = "DELETE FROM encomendas WHERE numero_pedido = ?";
+            try (PreparedStatement statement = conexao.prepareStatement(sqlDelete)) {
+                statement.setInt(1, numeroPedido);
+
+                int rowsDeleted = statement.executeUpdate();
+
+                if (rowsDeleted > 0) {
+                    JOptionPane.showMessageDialog(null, "Pedido excluído com sucesso!");
+                    atualizarTabela(); // Atualiza a tabela após a exclusão do pedido
+                } else {
+                    JOptionPane.showMessageDialog(null, "Falha ao excluir pedido.");
+                }
+            }
+        } catch (NumberFormatException | SQLException ex) {
+            JOptionPane.showMessageDialog(null, "Erro ao excluir pedido: " + ex.getMessage());
+        }
+    } else {
+        JOptionPane.showMessageDialog(null, "Digite um número de pedido para excluir.");
+    }
     }//GEN-LAST:event_JTBexcluir10ActionPerformed
 
     /**
@@ -406,7 +462,10 @@ public class Tela_Lista_Encomendas extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel JLBcidadedestino10;
+    private javax.swing.JLabel JLBcidadeorigem10;
     private javax.swing.JLabel JLBdata10;
+    private javax.swing.JLabel JLBentregador10;
     private javax.swing.JLabel JLBlista10;
     private javax.swing.JLabel JLBmotoconnect10;
     private javax.swing.JLabel JLBnumero10;
@@ -420,7 +479,10 @@ public class Tela_Lista_Encomendas extends javax.swing.JFrame {
     private javax.swing.JButton JTBexcluir10;
     private javax.swing.JTable JTBtabela10;
     private javax.swing.JButton JTBvoltar10;
+    private javax.swing.JTextField JTFcidadedestino10;
+    private javax.swing.JTextField JTFcidadeorigem10;
     private javax.swing.JTextField JTFdata10;
+    private javax.swing.JTextField JTFentregador10;
     private javax.swing.JTextField JTFnumero10;
     private javax.swing.JTextField JTFstatus10;
     // End of variables declaration//GEN-END:variables

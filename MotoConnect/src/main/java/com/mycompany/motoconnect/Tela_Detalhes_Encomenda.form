@@ -76,62 +76,59 @@
                       <Group type="102" attributes="0">
                           <Group type="103" groupAlignment="1" attributes="0">
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Group type="103" groupAlignment="0" attributes="0">
-                                      <Group type="102" attributes="0">
-                                          <Component id="JLBcidadedestino11" min="-2" max="-2" attributes="0"/>
-                                          <EmptySpace type="separate" max="-2" attributes="0"/>
-                                          <Component id="JTFcidadedestino11" min="-2" pref="308" max="-2" attributes="0"/>
-                                          <EmptySpace min="-2" pref="24" max="-2" attributes="0"/>
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <Group type="103" groupAlignment="0" attributes="0">
+                                          <Component id="JLBnomecompleto11" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          <Component id="JLBcep11" alignment="0" min="-2" max="-2" attributes="0"/>
                                       </Group>
-                                      <Group type="102" attributes="0">
-                                          <Group type="103" groupAlignment="0" attributes="0">
-                                              <Group type="102" attributes="0">
-                                                  <Group type="103" groupAlignment="0" attributes="0">
-                                                      <Component id="JLBnomecompleto11" alignment="0" min="-2" max="-2" attributes="0"/>
-                                                      <Component id="JLBcep11" alignment="0" min="-2" max="-2" attributes="0"/>
-                                                  </Group>
-                                                  <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
-                                                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                                      <Component id="JTFnomecompleto11" pref="310" max="32767" attributes="0"/>
-                                                      <Component id="JTFcpf11" max="32767" attributes="0"/>
-                                                  </Group>
-                                              </Group>
-                                              <Group type="102" attributes="0">
-                                                  <Group type="103" groupAlignment="1" attributes="0">
-                                                      <Group type="102" attributes="0">
-                                                          <Component id="JPNcliente11" min="-2" max="-2" attributes="0"/>
-                                                          <EmptySpace min="-2" pref="52" max="-2" attributes="0"/>
-                                                      </Group>
-                                                      <Component id="JLBvalor11" alignment="0" min="-2" max="-2" attributes="0"/>
-                                                  </Group>
-                                                  <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
-                                                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                                      <Component id="JTFcarga11" max="32767" attributes="0"/>
-                                                      <Component id="JTFvalor11" pref="308" max="32767" attributes="0"/>
-                                                  </Group>
-                                              </Group>
-                                              <Group type="102" alignment="0" attributes="0">
-                                                  <Group type="103" groupAlignment="0" attributes="0">
-                                                      <Component id="JLBenderecocompleto11" alignment="0" min="-2" max="-2" attributes="0"/>
-                                                      <Component id="JLBtelefone11" alignment="0" min="-2" max="-2" attributes="0"/>
-                                                      <Component id="JLBemail11" alignment="0" min="-2" max="-2" attributes="0"/>
-                                                      <Component id="JLBpeso11" alignment="0" min="-2" max="-2" attributes="0"/>
-                                                      <Component id="JLBnumerodopedido11" alignment="0" min="-2" max="-2" attributes="0"/>
-                                                  </Group>
-                                                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                                  <Group type="103" groupAlignment="0" attributes="0">
-                                                      <Component id="JTFcidadeorigem11" min="-2" pref="308" max="-2" attributes="0"/>
-                                                      <Component id="JTFpeso11" min="-2" pref="308" max="-2" attributes="0"/>
-                                                      <Component id="JTFemail11" min="-2" pref="308" max="-2" attributes="0"/>
-                                                      <Component id="JTFtelefone11" min="-2" pref="308" max="-2" attributes="0"/>
-                                                      <Component id="JTFenderecocompleto11" min="-2" pref="308" max="-2" attributes="0"/>
-                                                  </Group>
-                                              </Group>
-                                          </Group>
-                                          <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                                      <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                          <Component id="JTFcpf11" pref="308" max="32767" attributes="0"/>
+                                          <Component id="JTFnomecompleto11" max="32767" attributes="0"/>
                                       </Group>
                                   </Group>
-                                  <Component id="JBTmenu11" min="-2" max="-2" attributes="0"/>
+                                  <Group type="102" attributes="0">
+                                      <Group type="103" groupAlignment="0" attributes="0">
+                                          <Group type="102" attributes="0">
+                                              <Component id="JLBcidadedestino11" min="-2" max="-2" attributes="0"/>
+                                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                                              <Component id="JTFcidadedestino11" min="-2" pref="308" max="-2" attributes="0"/>
+                                          </Group>
+                                          <Group type="102" attributes="0">
+                                              <Group type="103" groupAlignment="1" attributes="0">
+                                                  <Group type="102" attributes="0">
+                                                      <Component id="JPNcliente11" min="-2" max="-2" attributes="0"/>
+                                                      <EmptySpace min="-2" pref="52" max="-2" attributes="0"/>
+                                                  </Group>
+                                                  <Component id="JLBvalor11" alignment="0" min="-2" max="-2" attributes="0"/>
+                                              </Group>
+                                              <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
+                                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                                  <Component id="JTFcarga11" max="32767" attributes="0"/>
+                                                  <Component id="JTFvalor11" pref="308" max="32767" attributes="0"/>
+                                              </Group>
+                                          </Group>
+                                          <Group type="102" alignment="0" attributes="0">
+                                              <Group type="103" groupAlignment="0" attributes="0">
+                                                  <Component id="JLBenderecocompleto11" alignment="0" min="-2" max="-2" attributes="0"/>
+                                                  <Component id="JLBtelefone11" alignment="0" min="-2" max="-2" attributes="0"/>
+                                                  <Component id="JLBemail11" alignment="0" min="-2" max="-2" attributes="0"/>
+                                                  <Component id="JLBpeso11" alignment="0" min="-2" max="-2" attributes="0"/>
+                                                  <Component id="JLBnumerodopedido11" alignment="0" min="-2" max="-2" attributes="0"/>
+                                              </Group>
+                                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                              <Group type="103" groupAlignment="0" attributes="0">
+                                                  <Component id="JTFcidadeorigem11" min="-2" pref="308" max="-2" attributes="0"/>
+                                                  <Component id="JTFpeso11" min="-2" pref="308" max="-2" attributes="0"/>
+                                                  <Component id="JTFemail11" min="-2" pref="308" max="-2" attributes="0"/>
+                                                  <Component id="JTFtelefone11" min="-2" pref="308" max="-2" attributes="0"/>
+                                                  <Component id="JTFenderecocompleto11" min="-2" pref="308" max="-2" attributes="0"/>
+                                              </Group>
+                                          </Group>
+                                          <Component id="JBTmenu11" min="-2" max="-2" attributes="0"/>
+                                      </Group>
+                                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                                  </Group>
                               </Group>
                               <Group type="102" alignment="1" attributes="0">
                                   <Component id="JLBcarga11" min="-2" max="-2" attributes="0"/>
@@ -530,10 +527,7 @@
         <Component class="javax.swing.JTextField" name="JTFnomecompleto11">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="cc" green="33" red="0" type="rgb"/>
-            </Property>
-            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="ff" green="ff" red="ff" type="rgb"/>
+              <Color blue="cc" green="cc" red="cc" type="rgb"/>
             </Property>
           </Properties>
           <Events>
@@ -543,10 +537,7 @@
         <Component class="javax.swing.JTextField" name="JTFcpf11">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="cc" green="33" red="0" type="rgb"/>
-            </Property>
-            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="ff" green="ff" red="ff" type="rgb"/>
+              <Color blue="cc" green="cc" red="cc" type="rgb"/>
             </Property>
           </Properties>
           <Events>
@@ -556,10 +547,7 @@
         <Component class="javax.swing.JTextField" name="JTFtelefone11">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="cc" green="33" red="0" type="rgb"/>
-            </Property>
-            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="ff" green="ff" red="ff" type="rgb"/>
+              <Color blue="cc" green="cc" red="cc" type="rgb"/>
             </Property>
           </Properties>
           <Events>
@@ -569,10 +557,7 @@
         <Component class="javax.swing.JTextField" name="JTFenderecocompleto11">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="cc" green="33" red="0" type="rgb"/>
-            </Property>
-            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="ff" green="ff" red="ff" type="rgb"/>
+              <Color blue="cc" green="cc" red="cc" type="rgb"/>
             </Property>
           </Properties>
           <Events>
@@ -582,10 +567,7 @@
         <Component class="javax.swing.JTextField" name="JTFemail11">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="cc" green="33" red="0" type="rgb"/>
-            </Property>
-            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="ff" green="ff" red="ff" type="rgb"/>
+              <Color blue="cc" green="cc" red="cc" type="rgb"/>
             </Property>
           </Properties>
           <Events>
@@ -595,10 +577,7 @@
         <Component class="javax.swing.JTextField" name="JTFcidadeorigem11">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="cc" green="33" red="0" type="rgb"/>
-            </Property>
-            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="ff" green="ff" red="ff" type="rgb"/>
+              <Color blue="cc" green="cc" red="cc" type="rgb"/>
             </Property>
           </Properties>
           <Events>
@@ -608,10 +587,7 @@
         <Component class="javax.swing.JTextField" name="JTFpeso11">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="cc" green="33" red="0" type="rgb"/>
-            </Property>
-            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="ff" green="ff" red="ff" type="rgb"/>
+              <Color blue="cc" green="cc" red="cc" type="rgb"/>
             </Property>
             <Property name="disabledTextColor" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
@@ -624,10 +600,7 @@
         <Component class="javax.swing.JTextField" name="JTFvalor11">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="cc" green="33" red="0" type="rgb"/>
-            </Property>
-            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="ff" green="ff" red="ff" type="rgb"/>
+              <Color blue="cc" green="cc" red="cc" type="rgb"/>
             </Property>
           </Properties>
           <Events>
@@ -637,10 +610,7 @@
         <Component class="javax.swing.JTextField" name="JTFcarga11">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="cc" green="33" red="0" type="rgb"/>
-            </Property>
-            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="ff" green="ff" red="ff" type="rgb"/>
+              <Color blue="cc" green="cc" red="cc" type="rgb"/>
             </Property>
           </Properties>
           <Events>
@@ -650,10 +620,7 @@
         <Component class="javax.swing.JTextField" name="JTFnomedestinatario11">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="cc" green="33" red="0" type="rgb"/>
-            </Property>
-            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="ff" green="ff" red="ff" type="rgb"/>
+              <Color blue="cc" green="cc" red="cc" type="rgb"/>
             </Property>
           </Properties>
           <Events>
@@ -663,10 +630,7 @@
         <Component class="javax.swing.JTextField" name="JTFtelefonedestinatario11">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="cc" green="33" red="0" type="rgb"/>
-            </Property>
-            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="ff" green="ff" red="ff" type="rgb"/>
+              <Color blue="cc" green="cc" red="cc" type="rgb"/>
             </Property>
           </Properties>
           <Events>
@@ -676,10 +640,7 @@
         <Component class="javax.swing.JTextField" name="JTFenderecodestinatario11">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="cc" green="33" red="0" type="rgb"/>
-            </Property>
-            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="ff" green="ff" red="ff" type="rgb"/>
+              <Color blue="cc" green="cc" red="cc" type="rgb"/>
             </Property>
           </Properties>
           <Events>
@@ -763,10 +724,7 @@
         <Component class="javax.swing.JTextField" name="JTFcidadedestino11">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="cc" green="33" red="0" type="rgb"/>
-            </Property>
-            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="ff" green="ff" red="ff" type="rgb"/>
+              <Color blue="cc" green="cc" red="cc" type="rgb"/>
             </Property>
           </Properties>
         </Component>
