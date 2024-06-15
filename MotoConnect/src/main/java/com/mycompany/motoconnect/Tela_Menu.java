@@ -151,7 +151,7 @@ public class Tela_Menu extends javax.swing.JFrame {
         JPNazulescuro2.add(JPNusuario2, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 30, 300, 60));
         JPNazulescuro2.add(JLBmotoconnect2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, -1, 110));
 
-        JTBlistaencomendas2.setIcon(new javax.swing.ImageIcon("C:\\Users\\PC\\Desktop\\MotoConnect_Projeto\\Giampaolo_Projeto_Technight\\MotoConnect\\src\\main\\java\\imagem_login\\5-removebg-preview (1).png")); // NOI18N
+        JTBlistaencomendas2.setIcon(new javax.swing.ImageIcon("C:\\Users\\PC\\Desktop\\MotoConnect_Projeto\\Giampaolo_Projeto_Technight\\MotoConnect\\src\\main\\java\\imagem_login\\Lista_encomendas.png")); // NOI18N
         JTBlistaencomendas2.setContentAreaFilled(false);
         JTBlistaencomendas2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
