@@ -552,7 +552,7 @@ public class Tela_Cadastro_Cliente extends javax.swing.JFrame {
         Class.forName("com.mysql.cj.jdbc.Driver");
         Connection con = DriverManager.getConnection(url, usuario, senha);
 
-        String sql = "INSERT INTO cliente_destinatario (cpf_cliente, nome_cliente, cep_cliente, estado_cliente, cidade_cliente, bairro_cliente, rua_cliente, numero_cliente, email_cliente, telefone_cliente) " +
+        String sql = "INSERT INTO cliente (cpf_cliente, nome_cliente, cep_cliente, estado_cliente, cidade_cliente, bairro_cliente, rua_cliente, numero_cliente, email_cliente, telefone_cliente) " +
                      "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
 
         PreparedStatement pst = con.prepareStatement(sql);
@@ -609,7 +609,7 @@ public class Tela_Cadastro_Cliente extends javax.swing.JFrame {
         // Conecta ao banco de dados
         con = DriverManager.getConnection(url, usuario, senha);
 
-        String sql = "SELECT * FROM cliente_destinatario WHERE cpf_cliente = ?";
+        String sql = "SELECT * FROM cliente WHERE cpf_cliente = ?";
 
         // Prepara a consulta SQL parametrizada
         pst = con.prepareStatement(sql);

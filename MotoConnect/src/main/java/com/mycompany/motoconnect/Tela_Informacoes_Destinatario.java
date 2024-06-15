@@ -24,65 +24,45 @@ public class Tela_Informacoes_Destinatario extends javax.swing.JFrame {
         initComponents();
     }
     
-    private void salvarOpcaoNoBanco(String opcao, int numeroPedido) {
+    // Método para inserir a opção no banco de dados
+    private void inserirOpcaoNoBanco(String opcao) {
     String url = "jdbc:mysql://localhost:3306/crud"; // URL de conexão com o banco de dados
     String usuario = "root"; // Usuário do banco de dados
     String senha = ""; // Senha do banco de dados
 
-    Connection con = null;
-    PreparedStatement pst = null;
-
-    try {
-        // Carrega o driver do MySQL
-        Class.forName("com.mysql.cj.jdbc.Driver");
-
-        // Conecta ao banco de dados
-        con = DriverManager.getConnection(url, usuario, senha);
-
-        // SQL para atualizar a opção selecionada na tabela encomendas
-        String sql = "UPDATE encomendas SET opcao_selecionada = ? WHERE numero_pedido = ?";
+    try (Connection con = DriverManager.getConnection(url, usuario, senha)) {
+        // SQL para inserir a opção na tabela de opções
+        String sql = "INSERT INTO opcoes (opcao) VALUES (?)";
 
         // Prepara a consulta SQL parametrizada
-        pst = con.prepareStatement(sql);
-        pst.setString(1, opcao); // Define o valor da primeira interrogação como a opção selecionada
-        pst.setInt(2, numeroPedido); // Define o valor da segunda interrogação como o número do pedido
+        try (PreparedStatement pst = con.prepareStatement(sql)) {
+            pst.setString(1, opcao); // Define o valor da primeira interrogação como a opção a ser inserida
 
-        // Executa a atualização
-        int rowsAffected = pst.executeUpdate();
+            // Executa a inserção
+            int rowsAffected = pst.executeUpdate();
 
-        // Verifica se a atualização foi bem-sucedida
-        if (rowsAffected > 0) {
-            JOptionPane.showMessageDialog(null, "Opção salva com sucesso no banco de dados!");
-        } else {
-            JOptionPane.showMessageDialog(null, "Nenhum registro encontrado para o número do pedido: " + numeroPedido,
-                    "Erro de Atualização", JOptionPane.ERROR_MESSAGE);
-        }
-
-    } catch (ClassNotFoundException | SQLException e) {
-        JOptionPane.showMessageDialog(null, "Erro ao salvar opção: " + e.getMessage(),
-                "Erro de Banco de Dados", JOptionPane.ERROR_MESSAGE);
-    } finally {
-        // Fecha o PreparedStatement e a Connection no bloco finally para garantir a liberação dos recursos
-        if (pst != null) {
-            try {
-                pst.close();
-            } catch (SQLException e) {
-                e.printStackTrace();
+            // Verifica se a inserção foi bem-sucedida
+            if (rowsAffected > 0) {
+                System.out.println("Opção inserida com sucesso no banco de dados!");
+            } else {
+                System.out.println("Falha ao inserir a opção no banco de dados.");
             }
         }
-        if (con != null) {
-            try {
-                con.close();
-            } catch (SQLException e) {
-                e.printStackTrace();
-            }
-        }
+    } catch (SQLException e) {
+        System.out.println("Erro ao inserir opção: " + e.getMessage());
     }
 }
 
-
-    
-    
+    // Métodos de evento para seleção de opções
+    private void processarSelecaoOpcao(String opcao) {
+    if (!opcao.equals("Selecione uma opção")) {
+        // Processa a opção selecionada
+        JOptionPane.showMessageDialog(null, "Opção selecionada: " + opcao);
+        inserirOpcaoNoBanco(opcao); // Chama o método de inserção com a opção selecionada
+    } else {
+        JOptionPane.showMessageDialog(null, "Selecione uma opção válida!");
+    }
+    }
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -608,7 +588,7 @@ public class Tela_Informacoes_Destinatario extends javax.swing.JFrame {
         Connection con = DriverManager.getConnection(url, usuario, senha);
 
         // SQL parametrizado para inserir dados na tabela cliente_destinatario
-        String sql = "INSERT INTO cliente_destinatario (destinatario, telefone_destinatario, cep_destinatario, estado_destinatario, cidade_destinatario, bairro_destinatario, rua_destinatario, numero_destinatario) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
+        String sql = "INSERT INTO destinatario (destinatario, telefone_destinatario, cep_destinatario, estado_destinatario, cidade_destinatario, bairro_destinatario, rua_destinatario, numero_destinatario) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
 
         // Prepara o statement com o SQL parametrizado
         PreparedStatement pst = con.prepareStatement(sql);
@@ -648,45 +628,20 @@ public class Tela_Informacoes_Destinatario extends javax.swing.JFrame {
     }//GEN-LAST:event_JBTfinalizar9ActionPerformed
 
     private void JCBopcaoP19ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JCBopcaoP19ActionPerformed
-        String opcao1 = (String) JCBopcaoP19.getSelectedItem();
-    if (opcao1.equals("Selecione uma opção")) {
-        JOptionPane.showMessageDialog(null, "Selecione uma opção válida!");
-    } else {
-        // Obtém o número do pedido associado à opção 1
-        int numeroPedido = 1; // Exemplo: número do pedido a ser associado
-
-        // Processa a opção selecionada
-        JOptionPane.showMessageDialog(null, "Opção selecionada: " + opcao1);
-        salvarOpcaoNoBanco(opcao1, numeroPedido);
-    }
+   
+    String opcao1 = (String) JCBopcaoP19.getSelectedItem();
+    processarSelecaoOpcao(opcao1);
     }//GEN-LAST:event_JCBopcaoP19ActionPerformed
 
     private void JCBopcaoP29ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JCBopcaoP29ActionPerformed
-        String opcao2 = (String) JCBopcaoP29.getSelectedItem();
-    if (opcao2.equals("Selecione uma opção")) {
-        JOptionPane.showMessageDialog(null, "Selecione uma opção válida!");
-    } else {
-        // Obtém o número do pedido associado à opção 2
-        int numeroPedido = 2; // Exemplo: número do pedido a ser associado
-
-        // Processa a opção selecionada
-        JOptionPane.showMessageDialog(null, "Opção selecionada: " + opcao2);
-        salvarOpcaoNoBanco(opcao2, numeroPedido);
-    }
+    // Métodos de evento para seleção de opções
+    String opcao2 = (String) JCBopcaoP29.getSelectedItem();
+    processarSelecaoOpcao(opcao2);
     }//GEN-LAST:event_JCBopcaoP29ActionPerformed
 
     private void JCBopcaoP39ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JCBopcaoP39ActionPerformed
-        String opcao3 = (String) JCBopcaoP39.getSelectedItem();
-    if (opcao3.equals("Selecione uma opção")) {
-        JOptionPane.showMessageDialog(null, "Selecione uma opção válida!");
-    } else {
-        // Obtém o número do pedido associado à opção 3
-        int numeroPedido = 3; // Exemplo: número do pedido a ser associado
-
-        // Processa a opção selecionada
-        JOptionPane.showMessageDialog(null, "Opção selecionada: " + opcao3);
-        salvarOpcaoNoBanco(opcao3, numeroPedido);
-    }
+    String opcao3 = (String) JCBopcaoP39.getSelectedItem();
+    processarSelecaoOpcao(opcao3);
     }//GEN-LAST:event_JCBopcaoP39ActionPerformed
 
     private void JBTdetalhes9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBTdetalhes9ActionPerformed

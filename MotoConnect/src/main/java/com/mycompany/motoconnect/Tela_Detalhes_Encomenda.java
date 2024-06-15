@@ -6,6 +6,11 @@ package com.mycompany.motoconnect;
 
 import java.io.File;
 import java.nio.file.Files;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import javax.swing.JOptionPane;
 
 /**
@@ -58,11 +63,11 @@ public class Tela_Detalhes_Encomenda extends javax.swing.JFrame {
         JPNdestinatario11 = new javax.swing.JPanel();
         jLabel17 = new javax.swing.JLabel();
         JTFnomecompleto11 = new javax.swing.JTextField();
-        JTFcep11 = new javax.swing.JTextField();
+        JTFcpf11 = new javax.swing.JTextField();
         JTFtelefone11 = new javax.swing.JTextField();
         JTFenderecocompleto11 = new javax.swing.JTextField();
         JTFemail11 = new javax.swing.JTextField();
-        JTFnumerodopedido11 = new javax.swing.JTextField();
+        JTFcidadeorigem11 = new javax.swing.JTextField();
         JTFpeso11 = new javax.swing.JTextField();
         JTFvalor11 = new javax.swing.JTextField();
         JTFcarga11 = new javax.swing.JTextField();
@@ -70,8 +75,12 @@ public class Tela_Detalhes_Encomenda extends javax.swing.JFrame {
         JTFtelefonedestinatario11 = new javax.swing.JTextField();
         JTFenderecodestinatario11 = new javax.swing.JTextField();
         JBTvoltar11 = new javax.swing.JButton();
-        JBTimprimir11 = new javax.swing.JButton();
+        JBTpesquisar11 = new javax.swing.JButton();
         JBTmenu11 = new javax.swing.JButton();
+        JTFnumeroPedido11 = new javax.swing.JTextField();
+        JLBcpf11 = new javax.swing.JLabel();
+        JLBcidadedestino11 = new javax.swing.JLabel();
+        JTFcidadedestino11 = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -120,7 +129,7 @@ public class Tela_Detalhes_Encomenda extends javax.swing.JFrame {
         JLBemail11.setText("E-Mail:");
 
         JLBnumerodopedido11.setForeground(new java.awt.Color(255, 255, 255));
-        JLBnumerodopedido11.setText("Numero do pedido:");
+        JLBnumerodopedido11.setText("Cidade de origem");
 
         JLBpeso11.setForeground(new java.awt.Color(255, 255, 255));
         JLBpeso11.setText("Peso Mercadoria:");
@@ -181,8 +190,8 @@ public class Tela_Detalhes_Encomenda extends javax.swing.JFrame {
         JPNmercadoria11Layout.setVerticalGroup(
             JPNmercadoria11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, JPNmercadoria11Layout.createSequentialGroup()
-                .addContainerGap(9, Short.MAX_VALUE)
-                .addComponent(JLBmercadoria11)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(JLBmercadoria11, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
 
@@ -211,25 +220,22 @@ public class Tela_Detalhes_Encomenda extends javax.swing.JFrame {
 
         JTFnomecompleto11.setBackground(new java.awt.Color(0, 51, 204));
         JTFnomecompleto11.setForeground(new java.awt.Color(255, 255, 255));
-        JTFnomecompleto11.setText(" João Silva");
         JTFnomecompleto11.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 JTFnomecompleto11ActionPerformed(evt);
             }
         });
 
-        JTFcep11.setBackground(new java.awt.Color(0, 51, 204));
-        JTFcep11.setForeground(new java.awt.Color(255, 255, 255));
-        JTFcep11.setText("123.456.789-00");
-        JTFcep11.addActionListener(new java.awt.event.ActionListener() {
+        JTFcpf11.setBackground(new java.awt.Color(0, 51, 204));
+        JTFcpf11.setForeground(new java.awt.Color(255, 255, 255));
+        JTFcpf11.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                JTFcep11ActionPerformed(evt);
+                JTFcpf11ActionPerformed(evt);
             }
         });
 
         JTFtelefone11.setBackground(new java.awt.Color(0, 51, 204));
         JTFtelefone11.setForeground(new java.awt.Color(255, 255, 255));
-        JTFtelefone11.setText(" (27)123456789");
         JTFtelefone11.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 JTFtelefone11ActionPerformed(evt);
@@ -238,7 +244,6 @@ public class Tela_Detalhes_Encomenda extends javax.swing.JFrame {
 
         JTFenderecocompleto11.setBackground(new java.awt.Color(0, 51, 204));
         JTFenderecocompleto11.setForeground(new java.awt.Color(255, 255, 255));
-        JTFenderecocompleto11.setText("Rua das Flores, 123, Jardim da Penha, Vitória, ES");
         JTFenderecocompleto11.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 JTFenderecocompleto11ActionPerformed(evt);
@@ -247,25 +252,22 @@ public class Tela_Detalhes_Encomenda extends javax.swing.JFrame {
 
         JTFemail11.setBackground(new java.awt.Color(0, 51, 204));
         JTFemail11.setForeground(new java.awt.Color(255, 255, 255));
-        JTFemail11.setText(" joaosl1234@email.com");
         JTFemail11.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 JTFemail11ActionPerformed(evt);
             }
         });
 
-        JTFnumerodopedido11.setBackground(new java.awt.Color(0, 51, 204));
-        JTFnumerodopedido11.setForeground(new java.awt.Color(255, 255, 255));
-        JTFnumerodopedido11.setText("12345");
-        JTFnumerodopedido11.addActionListener(new java.awt.event.ActionListener() {
+        JTFcidadeorigem11.setBackground(new java.awt.Color(0, 51, 204));
+        JTFcidadeorigem11.setForeground(new java.awt.Color(255, 255, 255));
+        JTFcidadeorigem11.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                JTFnumerodopedido11ActionPerformed(evt);
+                JTFcidadeorigem11ActionPerformed(evt);
             }
         });
 
         JTFpeso11.setBackground(new java.awt.Color(0, 51, 204));
         JTFpeso11.setForeground(new java.awt.Color(255, 255, 255));
-        JTFpeso11.setText("2kg");
         JTFpeso11.setDisabledTextColor(new java.awt.Color(255, 255, 255));
         JTFpeso11.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -275,7 +277,6 @@ public class Tela_Detalhes_Encomenda extends javax.swing.JFrame {
 
         JTFvalor11.setBackground(new java.awt.Color(0, 51, 204));
         JTFvalor11.setForeground(new java.awt.Color(255, 255, 255));
-        JTFvalor11.setText("R$ 57,00");
         JTFvalor11.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 JTFvalor11ActionPerformed(evt);
@@ -284,7 +285,6 @@ public class Tela_Detalhes_Encomenda extends javax.swing.JFrame {
 
         JTFcarga11.setBackground(new java.awt.Color(0, 51, 204));
         JTFcarga11.setForeground(new java.awt.Color(255, 255, 255));
-        JTFcarga11.setText(" Encomendas pequenas");
         JTFcarga11.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 JTFcarga11ActionPerformed(evt);
@@ -293,7 +293,6 @@ public class Tela_Detalhes_Encomenda extends javax.swing.JFrame {
 
         JTFnomedestinatario11.setBackground(new java.awt.Color(0, 51, 204));
         JTFnomedestinatario11.setForeground(new java.awt.Color(255, 255, 255));
-        JTFnomedestinatario11.setText(" Davi Silva");
         JTFnomedestinatario11.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 JTFnomedestinatario11ActionPerformed(evt);
@@ -302,7 +301,6 @@ public class Tela_Detalhes_Encomenda extends javax.swing.JFrame {
 
         JTFtelefonedestinatario11.setBackground(new java.awt.Color(0, 51, 204));
         JTFtelefonedestinatario11.setForeground(new java.awt.Color(255, 255, 255));
-        JTFtelefonedestinatario11.setText(" (27)123876789");
         JTFtelefonedestinatario11.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 JTFtelefonedestinatario11ActionPerformed(evt);
@@ -328,13 +326,13 @@ public class Tela_Detalhes_Encomenda extends javax.swing.JFrame {
             }
         });
 
-        JBTimprimir11.setBackground(new java.awt.Color(255, 51, 51));
-        JBTimprimir11.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
-        JBTimprimir11.setForeground(new java.awt.Color(255, 255, 255));
-        JBTimprimir11.setText("IMPRIMIR");
-        JBTimprimir11.addActionListener(new java.awt.event.ActionListener() {
+        JBTpesquisar11.setBackground(new java.awt.Color(255, 51, 51));
+        JBTpesquisar11.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        JBTpesquisar11.setForeground(new java.awt.Color(255, 255, 255));
+        JBTpesquisar11.setText("PESQUISAR");
+        JBTpesquisar11.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                JBTimprimir11ActionPerformed(evt);
+                JBTpesquisar11ActionPerformed(evt);
             }
         });
 
@@ -348,45 +346,86 @@ public class Tela_Detalhes_Encomenda extends javax.swing.JFrame {
             }
         });
 
+        JTFnumeroPedido11.setBackground(new java.awt.Color(204, 204, 204));
+
+        JLBcpf11.setForeground(new java.awt.Color(255, 255, 255));
+        JLBcpf11.setText("CPF:");
+
+        JLBcidadedestino11.setForeground(new java.awt.Color(255, 255, 255));
+        JLBcidadedestino11.setText("Cidade de destino:");
+
+        JTFcidadedestino11.setBackground(new java.awt.Color(0, 51, 204));
+        JTFcidadedestino11.setForeground(new java.awt.Color(255, 255, 255));
+
         javax.swing.GroupLayout JPNfundo11Layout = new javax.swing.GroupLayout(JPNfundo11);
         JPNfundo11.setLayout(JPNfundo11Layout);
         JPNfundo11Layout.setHorizontalGroup(
             JPNfundo11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(JPNfundo11Layout.createSequentialGroup()
+                .addGap(37, 37, 37)
+                .addComponent(JLBmotoconnect11, javax.swing.GroupLayout.PREFERRED_SIZE, 239, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(JPNfundo11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(JPNfundo11Layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(JPNdetalhesdeencomenda11, javax.swing.GroupLayout.DEFAULT_SIZE, 675, Short.MAX_VALUE)
+                        .addGap(43, 43, 43))
+                    .addGroup(JPNfundo11Layout.createSequentialGroup()
+                        .addGap(230, 230, 230)
+                        .addComponent(JLBcpf11)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(JTFnumeroPedido11, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+            .addGroup(JPNfundo11Layout.createSequentialGroup()
                 .addGap(65, 65, 65)
                 .addGroup(JPNfundo11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(JPNmercadoria11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(JPNfundo11Layout.createSequentialGroup()
-                        .addGroup(JPNfundo11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(JPNfundo11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addGroup(JPNfundo11Layout.createSequentialGroup()
-                                    .addGroup(JPNfundo11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                        .addComponent(JLBtelefone11, javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(JLBnumerodopedido11, javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(JPNcliente11, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(JLBemail11, javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(JLBcarga11, javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(JLBvalor11, javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(JLBpeso11, javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(JLBenderecocompleto11, javax.swing.GroupLayout.Alignment.LEADING))
-                                    .addGap(12, 12, 12)
-                                    .addGroup(JPNfundo11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(JTFenderecocompleto11, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 308, Short.MAX_VALUE)
-                                        .addComponent(JTFtelefone11, javax.swing.GroupLayout.Alignment.TRAILING)
-                                        .addComponent(JTFemail11, javax.swing.GroupLayout.Alignment.TRAILING)
-                                        .addComponent(JTFnumerodopedido11, javax.swing.GroupLayout.Alignment.TRAILING)
-                                        .addComponent(JTFpeso11, javax.swing.GroupLayout.Alignment.TRAILING)
-                                        .addComponent(JTFcarga11)
-                                        .addComponent(JTFvalor11, javax.swing.GroupLayout.Alignment.TRAILING)))
-                                .addGroup(JPNfundo11Layout.createSequentialGroup()
-                                    .addGroup(JPNfundo11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(JLBnomecompleto11)
-                                        .addComponent(JLBcep11))
-                                    .addGap(26, 26, 26)
-                                    .addGroup(JPNfundo11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                        .addComponent(JTFnomecompleto11, javax.swing.GroupLayout.DEFAULT_SIZE, 310, Short.MAX_VALUE)
-                                        .addComponent(JTFcep11))))
-                            .addComponent(JBTmenu11))
+                        .addGroup(JPNfundo11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(JPNfundo11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addGroup(JPNfundo11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(JPNfundo11Layout.createSequentialGroup()
+                                        .addComponent(JLBcidadedestino11)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(JTFcidadedestino11, javax.swing.GroupLayout.PREFERRED_SIZE, 308, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(24, 24, 24))
+                                    .addGroup(JPNfundo11Layout.createSequentialGroup()
+                                        .addGroup(JPNfundo11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addGroup(JPNfundo11Layout.createSequentialGroup()
+                                                .addGroup(JPNfundo11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                    .addComponent(JLBnomecompleto11)
+                                                    .addComponent(JLBcep11))
+                                                .addGap(26, 26, 26)
+                                                .addGroup(JPNfundo11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                                    .addComponent(JTFnomecompleto11, javax.swing.GroupLayout.DEFAULT_SIZE, 310, Short.MAX_VALUE)
+                                                    .addComponent(JTFcpf11)))
+                                            .addGroup(JPNfundo11Layout.createSequentialGroup()
+                                                .addGroup(JPNfundo11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                                    .addGroup(JPNfundo11Layout.createSequentialGroup()
+                                                        .addComponent(JPNcliente11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                        .addGap(52, 52, 52))
+                                                    .addComponent(JLBvalor11, javax.swing.GroupLayout.Alignment.LEADING))
+                                                .addGap(12, 12, 12)
+                                                .addGroup(JPNfundo11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                                    .addComponent(JTFcarga11)
+                                                    .addComponent(JTFvalor11, javax.swing.GroupLayout.DEFAULT_SIZE, 308, Short.MAX_VALUE)))
+                                            .addGroup(JPNfundo11Layout.createSequentialGroup()
+                                                .addGroup(JPNfundo11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                    .addComponent(JLBenderecocompleto11)
+                                                    .addComponent(JLBtelefone11)
+                                                    .addComponent(JLBemail11)
+                                                    .addComponent(JLBpeso11)
+                                                    .addComponent(JLBnumerodopedido11))
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                                .addGroup(JPNfundo11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                    .addComponent(JTFcidadeorigem11, javax.swing.GroupLayout.PREFERRED_SIZE, 308, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                    .addComponent(JTFpeso11, javax.swing.GroupLayout.PREFERRED_SIZE, 308, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                    .addComponent(JTFemail11, javax.swing.GroupLayout.PREFERRED_SIZE, 308, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                    .addComponent(JTFtelefone11, javax.swing.GroupLayout.PREFERRED_SIZE, 308, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                    .addComponent(JTFenderecocompleto11, javax.swing.GroupLayout.PREFERRED_SIZE, 308, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                        .addGap(0, 0, Short.MAX_VALUE)))
+                                .addComponent(JBTmenu11))
+                            .addGroup(JPNfundo11Layout.createSequentialGroup()
+                                .addComponent(JLBcarga11)
+                                .addGap(377, 377, 377)))
                         .addGap(18, 18, 18)
                         .addGroup(JPNfundo11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(JPNdestinatario11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -394,22 +433,17 @@ public class Tela_Detalhes_Encomenda extends javax.swing.JFrame {
                                 .addGroup(JPNfundo11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(JLBenderecodestinatario11)
                                     .addComponent(JLBdestinatario11)
-                                    .addComponent(JLBtelefonedestinatario11)
-                                    .addComponent(JBTimprimir11))
+                                    .addComponent(JLBtelefonedestinatario11))
                                 .addGap(18, 18, 18)
                                 .addGroup(JPNfundo11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                     .addGroup(JPNfundo11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                         .addComponent(JTFtelefonedestinatario11, javax.swing.GroupLayout.PREFERRED_SIZE, 299, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addComponent(JTFnomedestinatario11, javax.swing.GroupLayout.PREFERRED_SIZE, 299, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addComponent(JTFenderecodestinatario11, javax.swing.GroupLayout.PREFERRED_SIZE, 299, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addComponent(JBTvoltar11))))))
-                .addContainerGap(62, Short.MAX_VALUE))
-            .addGroup(JPNfundo11Layout.createSequentialGroup()
-                .addGap(37, 37, 37)
-                .addComponent(JLBmotoconnect11, javax.swing.GroupLayout.PREFERRED_SIZE, 239, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(JPNdetalhesdeencomenda11, javax.swing.GroupLayout.DEFAULT_SIZE, 675, Short.MAX_VALUE)
-                .addGap(43, 43, 43))
+                                    .addComponent(JBTvoltar11)))
+                            .addComponent(JBTpesquisar11)))
+                    .addComponent(JPNmercadoria11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(35, Short.MAX_VALUE))
         );
         JPNfundo11Layout.setVerticalGroup(
             JPNfundo11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -417,8 +451,15 @@ public class Tela_Detalhes_Encomenda extends javax.swing.JFrame {
                 .addGap(33, 33, 33)
                 .addGroup(JPNfundo11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(JLBmotoconnect11, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(JPNdetalhesdeencomenda11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(22, 22, 22)
+                    .addGroup(JPNfundo11Layout.createSequentialGroup()
+                        .addComponent(JPNdetalhesdeencomenda11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(30, 30, 30)
+                        .addGroup(JPNfundo11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(JTFnumeroPedido11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(JLBcpf11))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(JBTpesquisar11)))
+                .addGap(17, 17, 17)
                 .addGroup(JPNfundo11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(JPNcliente11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(JPNdestinatario11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -432,7 +473,7 @@ public class Tela_Detalhes_Encomenda extends javax.swing.JFrame {
                 .addGroup(JPNfundo11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(JLBcep11)
                     .addComponent(JLBtelefonedestinatario11)
-                    .addComponent(JTFcep11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(JTFcpf11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(JTFtelefonedestinatario11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(JPNfundo11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -448,28 +489,31 @@ public class Tela_Detalhes_Encomenda extends javax.swing.JFrame {
                 .addGroup(JPNfundo11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(JLBemail11)
                     .addComponent(JTFemail11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(19, 19, 19)
+                .addGap(13, 13, 13)
                 .addComponent(JPNmercadoria11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(JPNfundo11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(JLBnumerodopedido11)
-                    .addComponent(JTFnumerodopedido11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(JPNfundo11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(JLBpeso11)
                     .addComponent(JTFpeso11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(6, 6, 6)
+                .addGroup(JPNfundo11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(JLBnumerodopedido11)
+                    .addComponent(JTFcidadeorigem11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(JPNfundo11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(JLBvalor11)
-                    .addComponent(JTFvalor11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(JTFcidadedestino11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(JLBcidadedestino11))
                 .addGap(9, 9, 9)
                 .addGroup(JPNfundo11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(JLBcarga11)
-                    .addComponent(JTFcarga11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 33, Short.MAX_VALUE)
+                    .addComponent(JTFvalor11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(JLBvalor11))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(JPNfundo11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(JTFcarga11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(JLBcarga11))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 20, Short.MAX_VALUE)
                 .addGroup(JPNfundo11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(JBTvoltar11)
-                    .addComponent(JBTimprimir11)
                     .addComponent(JBTmenu11))
                 .addGap(46, 46, 46))
         );
@@ -502,41 +546,79 @@ public class Tela_Detalhes_Encomenda extends javax.swing.JFrame {
         JBTmenu11.setVisible(true);
     }//GEN-LAST:event_JBTmenu11ActionPerformed
 
-    private void JBTimprimir11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBTimprimir11ActionPerformed
-      // Aqui você pode obter os dados do cliente e do destinatário
-    String nomeCliente = JTFnomecompleto11.getText();
-    String cpfCliente = JTFcep11.getText();
-    String enderecoCliente = JTFenderecocompleto11.getText();
-    String telefoneCliente = JTFtelefone11.getText();
-    String emailCliente = JTFemail11.getText();
-    
-    String nomeDestinatario = JTFnomedestinatario11.getText();
-    String telefoneDestinatario = JTFtelefonedestinatario11.getText();
-    String enderecoDestinatario = JTFenderecodestinatario11.getText();
-    
-    // Aqui você pode exibir os dados ou implementar lógica de impressão
-    // Exemplo simples: exibir em uma caixa de mensagem (JOptionPane)
-    String mensagem = "Detalhes do Cliente:\n"
-                    + "Nome: " + nomeCliente + "\n"
-                    + "CPF: " + cpfCliente + "\n"
-                    + "Endereço: " + enderecoCliente + "\n"
-                    + "Telefone: " + telefoneCliente + "\n"
-                    + "Email: " + emailCliente + "\n\n"
-                    + "Detalhes do Destinatário:\n"
-                    + "Nome: " + nomeDestinatario + "\n"
-                    + "Telefone: " + telefoneDestinatario + "\n"
-                    + "Endereço: " + enderecoDestinatario + "\n";
-    
-    JOptionPane.showMessageDialog(this, mensagem, "Detalhes da Encomenda", JOptionPane.INFORMATION_MESSAGE);
-    }//GEN-LAST:event_JBTimprimir11ActionPerformed
+    private void JBTpesquisar11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBTpesquisar11ActionPerformed
+      int numeroPedido = Integer.parseInt(JTFnumeroPedido11.getText()); // Obtém o número de pedido do campo de texto
+
+    String url = "jdbc:mysql://localhost:3306/crud"; // URL de conexão com o banco de dados
+    String usuario = "root"; // Usuário do banco de dados
+    String senha = ""; // Senha do banco de dados
+
+    try (Connection con = DriverManager.getConnection(url, usuario, senha)) {
+        // Cria a consulta SQL parametrizada para buscar os dados do cliente, destinatário e calculo_frete com base no número de pedido
+        String sql = "SELECT c.nome_cliente, c.cpf_cliente, c.cep_cliente, c.estado_cliente, c.cidade_cliente, c.bairro_cliente, c.rua_cliente, c.numero_cliente, c.telefone_cliente, c.email_cliente, " +
+                     "d.destinatario, d.telefone_destinatario, d.cep_destinatario, d.estado_destinatario, d.cidade_destinatario, d.bairro_destinatario, d.rua_destinatario, d.numero_destinatario, d.opcao_selecionada, " +
+                     "cf.peso, cf.cidade_origem, cf.cidade_destino, cf.valor " +
+                     "FROM cliente c " +
+                     "INNER JOIN encomendas e ON c.id_cliente = e.id_cliente " +
+                     "INNER JOIN destinatario d ON e.id_cliente = d.id_destinatario " +
+                     "INNER JOIN calculo_frete cf ON e.numero_pedido = cf.numero_pedido " +
+                     "WHERE e.numero_pedido = ?";
+
+        try (PreparedStatement pst = con.prepareStatement(sql)) {
+            pst.setInt(1, numeroPedido); // Define o valor do parâmetro na consulta SQL como o número de pedido
+
+            // Executa a consulta
+            try (ResultSet rs = pst.executeQuery()) {
+                if (rs.next()) {
+                    // Preenche os campos com os dados obtidos do banco de dados
+                    JTFnomecompleto11.setText(rs.getString("nome_cliente"));
+                    JTFcpf11.setText(rs.getString("cpf_cliente"));
+                    JTFtelefone11.setText(rs.getString("telefone_cliente"));
+                    JTFemail11.setText(rs.getString("email_cliente"));
+                    
+                    // Concatena os campos de endereço do cliente
+                    String enderecoCliente = rs.getString("rua_cliente") + ", " +
+                                             rs.getString("numero_cliente") + ", " +
+                                             rs.getString("bairro_cliente") + ", " +
+                                             rs.getString("cidade_cliente") + " - " +
+                                             rs.getString("estado_cliente") + ", " +
+                                             rs.getString("cep_cliente");
+                    JTFenderecocompleto11.setText(enderecoCliente);
+                    
+                    // Concatena os campos de endereço do destinatário
+                    String enderecoDestinatario = rs.getString("rua_destinatario") + ", " +
+                                                  rs.getString("numero_destinatario") + ", " +
+                                                  rs.getString("bairro_destinatario") + ", " +
+                                                  rs.getString("cidade_destinatario") + " - " +
+                                                  rs.getString("estado_destinatario") + ", " +
+                                                  rs.getString("cep_destinatario");
+                    JTFenderecodestinatario11.setText(enderecoDestinatario);
+                    
+                    JTFnomedestinatario11.setText(rs.getString("destinatario"));
+                    JTFtelefonedestinatario11.setText(rs.getString("telefone_destinatario"));
+                    JTFcarga11.setText(rs.getString("opcao_selecionada"));
+                    
+                    JTFpeso11.setText(rs.getString("peso"));
+                    JTFcidadeorigem11.setText(rs.getString("cidade_origem"));
+                    JTFcidadedestino11.setText(rs.getString("cidade_destino"));
+                    JTFvalor11.setText(rs.getString("valor"));
+                } else {
+                    JOptionPane.showMessageDialog(this, "Número de pedido não encontrado.", "Erro", JOptionPane.ERROR_MESSAGE);
+                }
+            }
+        }
+    } catch (SQLException e) {
+        System.out.println("Erro ao pesquisar pedido: " + e.getMessage());
+    }
+    }//GEN-LAST:event_JBTpesquisar11ActionPerformed
 
     private void JTFnomecompleto11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JTFnomecompleto11ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_JTFnomecompleto11ActionPerformed
 
-    private void JTFcep11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JTFcep11ActionPerformed
+    private void JTFcpf11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JTFcpf11ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_JTFcep11ActionPerformed
+    }//GEN-LAST:event_JTFcpf11ActionPerformed
 
     private void JTFenderecocompleto11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JTFenderecocompleto11ActionPerformed
         // TODO add your handling code here:
@@ -550,9 +632,9 @@ public class Tela_Detalhes_Encomenda extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_JTFemail11ActionPerformed
 
-    private void JTFnumerodopedido11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JTFnumerodopedido11ActionPerformed
+    private void JTFcidadeorigem11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JTFcidadeorigem11ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_JTFnumerodopedido11ActionPerformed
+    }//GEN-LAST:event_JTFcidadeorigem11ActionPerformed
 
     private void JTFpeso11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JTFpeso11ActionPerformed
         // TODO add your handling code here:
@@ -614,12 +696,14 @@ public class Tela_Detalhes_Encomenda extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton JBTimprimir11;
     private javax.swing.JButton JBTmenu11;
+    private javax.swing.JButton JBTpesquisar11;
     private javax.swing.JButton JBTvoltar11;
     private javax.swing.JLabel JLBcarga11;
     private javax.swing.JLabel JLBcep11;
+    private javax.swing.JLabel JLBcidadedestino11;
     private javax.swing.JLabel JLBcliente11;
+    private javax.swing.JLabel JLBcpf11;
     private javax.swing.JLabel JLBdestinatario11;
     private javax.swing.JLabel JLBemail11;
     private javax.swing.JLabel JLBenderecocompleto11;
@@ -638,13 +722,15 @@ public class Tela_Detalhes_Encomenda extends javax.swing.JFrame {
     private javax.swing.JPanel JPNfundo11;
     private javax.swing.JPanel JPNmercadoria11;
     private javax.swing.JTextField JTFcarga11;
-    private javax.swing.JTextField JTFcep11;
+    private javax.swing.JTextField JTFcidadedestino11;
+    private javax.swing.JTextField JTFcidadeorigem11;
+    private javax.swing.JTextField JTFcpf11;
     private javax.swing.JTextField JTFemail11;
     private javax.swing.JTextField JTFenderecocompleto11;
     private javax.swing.JTextField JTFenderecodestinatario11;
     private javax.swing.JTextField JTFnomecompleto11;
     private javax.swing.JTextField JTFnomedestinatario11;
-    private javax.swing.JTextField JTFnumerodopedido11;
+    private javax.swing.JTextField JTFnumeroPedido11;
     private javax.swing.JTextField JTFpeso11;
     private javax.swing.JTextField JTFtelefone11;
     private javax.swing.JTextField JTFtelefonedestinatario11;
