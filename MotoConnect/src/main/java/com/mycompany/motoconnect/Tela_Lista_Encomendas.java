@@ -5,15 +5,16 @@
 package com.mycompany.motoconnect;
 
 import java.sql.Connection;
-import java.sql.Date;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
+import java.sql.Statement;
 import javax.swing.JOptionPane;
+import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
+
+
 
 /**
  *
@@ -21,61 +22,90 @@ import javax.swing.table.DefaultTableModel;
  */
 public class Tela_Lista_Encomendas extends javax.swing.JFrame {
     
-    private static final String URI = "jdbc:mysql://localhost:3306/crud";
-    private static final String USUARIO = "root";
-    private static final String SENHA = "";
-
-    private Connection conexao;
-    private DefaultTableModel model;
+    
+    
 
     /**
      * Creates new form Tela_Lista_Encomendas
      */
     public Tela_Lista_Encomendas() {
         initComponents();
-       
+        // Ao iniciar, atualiza a tabela com os dados do banco de dados
+        atualizarTabela();
+        
     }
-    
+    /**
+     * Método para obter a conexão com o banco de dados MySQL.
+     * 
+     * @return A conexão com o banco de dados.
+     */
+    private Connection getDatabaseConnection() {
+        Connection connection = null;
+        try {
+            String url = "jdbc:mysql://localhost:3306/crud"; // URL do banco de dados
+            String username = "root"; // Nome de usuário do MySQL
+            String password = ""; // Senha do MySQL
+            connection = DriverManager.getConnection(url, username, password);
+        } catch (SQLException e) {
+            JOptionPane.showMessageDialog(null, "Erro ao conectar ao banco de dados: " + e.getMessage());
+        }
+        return connection;
+    }
+
+    /**
+     * Constrói um modelo de tabela a partir de um ResultSet.
+     * 
+     * @param rs O ResultSet contendo os dados a serem exibidos na tabela.
+     * @return O DefaultTableModel construído com os dados do ResultSet.
+     * @throws SQLException
+     */
+    private DefaultTableModel buildTableModel(ResultSet rs) throws SQLException {
+        // Definindo os nomes das colunas da tabela
+        String[] columnNames = {"Número Pedido", "Cidade Origem", "Cidade Destino", "Valor", "Status"};
+        DefaultTableModel model = new DefaultTableModel();
+        model.setColumnIdentifiers(columnNames);
+
+        // Preenchendo o modelo com os dados do ResultSet
+        while (rs.next()) {
+            Object[] rowData = {
+                rs.getInt("numero_pedido"),
+                rs.getString("cidade_origem"),
+                rs.getString("cidade_destino"),
+                rs.getDouble("valor"),
+                rs.getString("statuss")
+            };
+            model.addRow(rowData);
+        }
+        return model;
+    }
+
+    /**
+     * Atualiza a tabela de encomendas com os dados do banco de dados.
+     */
     private void atualizarTabela() {
-        model.setRowCount(0); // Limpa todas as linhas da tabela antes de recarregar
-
-        String sql = "SELECT e.numero_pedido, cf.cidade_origem, ent.nome AS nome_entregador, cf.cidade_destino, e.data_entrega, e.statuss "
-                   + "FROM encomendas e "
-                   + "JOIN calculo_frete cf ON e.numero_pedido = cf.numero_pedido "
-                   + "JOIN entregador ent ON e.id_entregador = ent.id_entregador";
-
-        try (PreparedStatement statement = conexao.prepareStatement(sql);
-             ResultSet rs = statement.executeQuery()) {
-
-            while (rs.next()) {
-                int numeroPedido = rs.getInt("numero_pedido");
-                String cidadeOrigem = rs.getString("cidade_origem");
-                String nomeEntregador = rs.getString("nome_entregador");
-                String cidadeDestino = rs.getString("cidade_destino");
-                Date dataEntrega = rs.getDate("data_entrega");
-                String status = rs.getString("statuss");
-
-                Object[] row = {
-                    numeroPedido,
-                    cidadeOrigem,
-                    nomeEntregador,
-                    cidadeDestino,
-                    dataEntrega,
-                    status
-                };
-                model.addRow(row); // Adiciona a linha ao modelo da tabela
-            }
-
-        } catch (SQLException ex) {
-            JOptionPane.showMessageDialog(null, "Erro ao carregar dados da tabela: " + ex.getMessage());
+        String sql = "SELECT numero_pedido, cidade_origem, cidade_destino, valor, statuss FROM encomendas e JOIN calculo_frete cf ON e.id_encomenda = cf.numero_pedido";
+        try (Connection conexao = getDatabaseConnection();
+             Statement stmt = conexao.createStatement();
+             ResultSet rs = stmt.executeQuery(sql)) {
+            // Define o modelo da tabela com os dados obtidos do banco de dados
+            JTBtabela10.setModel(buildTableModel(rs));
+        } catch (SQLException e) {
+            JOptionPane.showMessageDialog(null, "Erro ao executar consulta: " + e.getMessage());
         }
     }
+
+    /**
+     * Limpa os campos de texto na interface gráfica.
+     */
+    private void limparCampos() {
+        JTFnumero10.setText("");
+        JTFcidadeorigem10.setText("");
+        JTFcidadedestino10.setText("");
+        JTFstatus10.setText("");
+        JTFentregador10.setText("");
+        JTFdata10.setText("");
+    }
     
-    
-
-
-        
-
     
     
   
@@ -111,6 +141,8 @@ public class Tela_Lista_Encomendas extends javax.swing.JFrame {
         JLBcidadeorigem10 = new javax.swing.JLabel();
         JLBentregador10 = new javax.swing.JLabel();
         JLBcidadedestino10 = new javax.swing.JLabel();
+        JBTeditar10 = new javax.swing.JButton();
+        JBTpesquisar10 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -145,7 +177,36 @@ public class Tela_Lista_Encomendas extends javax.swing.JFrame {
         JTBtabela10.setForeground(new java.awt.Color(255, 255, 255));
         JTBtabela10.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null}
             },
             new String [] {
                 "numero_pedido", "cidade_origem", "nome", "cidade_destino", "data_entrega", "statuss"
@@ -173,7 +234,7 @@ public class Tela_Lista_Encomendas extends javax.swing.JFrame {
         JTBatualizar10.setBackground(new java.awt.Color(255, 51, 51));
         JTBatualizar10.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         JTBatualizar10.setForeground(new java.awt.Color(255, 255, 255));
-        JTBatualizar10.setText("ATUALIZAR STATUS");
+        JTBatualizar10.setText("ATUALIZAR ");
         JTBatualizar10.setMaximumSize(new java.awt.Dimension(106, 25));
         JTBatualizar10.setPreferredSize(new java.awt.Dimension(106, 25));
         JTBatualizar10.addActionListener(new java.awt.event.ActionListener() {
@@ -259,6 +320,26 @@ public class Tela_Lista_Encomendas extends javax.swing.JFrame {
         JLBcidadedestino10.setForeground(new java.awt.Color(255, 255, 255));
         JLBcidadedestino10.setText("Cidade de destino:");
 
+        JBTeditar10.setBackground(new java.awt.Color(255, 51, 51));
+        JBTeditar10.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        JBTeditar10.setForeground(new java.awt.Color(255, 255, 255));
+        JBTeditar10.setText("EDITAR");
+        JBTeditar10.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                JBTeditar10ActionPerformed(evt);
+            }
+        });
+
+        JBTpesquisar10.setBackground(new java.awt.Color(255, 51, 51));
+        JBTpesquisar10.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        JBTpesquisar10.setForeground(new java.awt.Color(255, 255, 255));
+        JBTpesquisar10.setText("PESQUISAR");
+        JBTpesquisar10.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                JBTpesquisar10ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout JPNfundo10Layout = new javax.swing.GroupLayout(JPNfundo10);
         JPNfundo10.setLayout(JPNfundo10Layout);
         JPNfundo10Layout.setHorizontalGroup(
@@ -269,9 +350,13 @@ public class Tela_Lista_Encomendas extends javax.swing.JFrame {
                     .addGroup(JPNfundo10Layout.createSequentialGroup()
                         .addGroup(JPNfundo10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(JPNfundo10Layout.createSequentialGroup()
-                                .addComponent(JTBatualizar10, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(JTBatualizar10, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(18, 18, 18)
                                 .addComponent(JTBexcluir10)
+                                .addGap(18, 18, 18)
+                                .addComponent(JBTeditar10)
+                                .addGap(18, 18, 18)
+                                .addComponent(JBTpesquisar10)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(JTBvoltar10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(JPNtabelaencomenda10, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -342,7 +427,9 @@ public class Tela_Lista_Encomendas extends javax.swing.JFrame {
                 .addGroup(JPNfundo10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(JTBatualizar10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(JTBvoltar10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(JTBexcluir10, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(JTBexcluir10, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(JBTeditar10, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(JBTpesquisar10, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(32, 32, 32))
         );
 
@@ -361,9 +448,11 @@ public class Tela_Lista_Encomendas extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void JTBvoltar10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JTBvoltar10ActionPerformed
-        this.dispose();
-        Tela_Menu JBTvoltar10 = new Tela_Menu();
-        JBTvoltar10.setVisible(true);
+        // Fecha a janela atual
+        Tela_Lista_Encomendas.this.dispose();
+        // Abre a tela do menu principal
+        Tela_Menu telaMenu = new Tela_Menu();
+        telaMenu.setVisible(true);
     }//GEN-LAST:event_JTBvoltar10ActionPerformed
 
     private void JTBtabela10AncestorAdded(javax.swing.event.AncestorEvent evt) {//GEN-FIRST:event_JTBtabela10AncestorAdded
@@ -371,60 +460,158 @@ public class Tela_Lista_Encomendas extends javax.swing.JFrame {
     }//GEN-LAST:event_JTBtabela10AncestorAdded
 
     private void JTBatualizar10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JTBatualizar10ActionPerformed
-     String numeroPedidoStr = JTFnumero10.getText().trim();
-    String novoStatus = JTFstatus10.getText().trim();
+     // Obtém os valores dos campos de texto
+        String numeroPedidoStr = JTFnumero10.getText().trim();
+        String cidadeOrigem = JTFcidadeorigem10.getText().trim();
+        String cidadeDestino = JTFcidadedestino10.getText().trim();
+        String novoStatus = JTFstatus10.getText().trim();
 
-    if (!numeroPedidoStr.isEmpty() && !novoStatus.isEmpty()) {
-        try {
+        // Verifica se todos os campos foram preenchidos
+        if (!numeroPedidoStr.isEmpty() && !cidadeOrigem.isEmpty() && !cidadeDestino.isEmpty() && !novoStatus.isEmpty()) {
             int numeroPedido = Integer.parseInt(numeroPedidoStr);
-            String sqlUpdate = "UPDATE encomendas SET statuss = ? WHERE numero_pedido = ?";
-            try (PreparedStatement statement = conexao.prepareStatement(sqlUpdate)) {
-                statement.setString(1, novoStatus);
-                statement.setInt(2, numeroPedido);
 
-                int rowsUpdated = statement.executeUpdate();
+            try (Connection conexao = getDatabaseConnection()) {
+                // Query SQL para atualizar os dados da encomenda
+                String sqlUpdate = "UPDATE encomendas e "
+                                + "JOIN calculo_frete cf ON e.id_encomenda = cf.numero_pedido "
+                                + "SET e.cidade_origem = ?, e.cidade_destino = ?, e.statuss = ? "
+                                + "WHERE e.id_encomenda = ?";
+                try (PreparedStatement statement = conexao.prepareStatement(sqlUpdate)) {
+                    // Define os parâmetros da query
+                    statement.setString(1, cidadeOrigem);
+                    statement.setString(2, cidadeDestino);
+                    statement.setString(3, novoStatus);
+                    statement.setInt(4, numeroPedido);
+                    // Executa a query de atualização
+                    int rowsUpdated = statement.executeUpdate();
 
-                if (rowsUpdated > 0) {
-                    JOptionPane.showMessageDialog(null, "Status atualizado com sucesso!");
-                    atualizarTabela(); // Atualiza a tabela após a atualização do status
-                } else {
-                    JOptionPane.showMessageDialog(null, "Falha ao atualizar status.");
+                    // Verifica se os dados foram atualizados com sucesso
+                    if (rowsUpdated > 0) {
+                        JOptionPane.showMessageDialog(null, "Dados atualizados com sucesso!");
+                        limparCampos(); // Limpa os campos de texto
+                        atualizarTabela(); // Atualiza a tabela com os novos dados
+                    } else {
+                        JOptionPane.showMessageDialog(null, "Falha ao atualizar dados.");
+                    }
                 }
+            } catch (NumberFormatException | SQLException ex) {
+                JOptionPane.showMessageDialog(null, "Erro ao atualizar dados: " + ex.getMessage());
             }
-        } catch (NumberFormatException | SQLException ex) {
-            JOptionPane.showMessageDialog(null, "Erro ao atualizar status: " + ex.getMessage());
+        } else {
+            JOptionPane.showMessageDialog(null, "Preencha todos os campos para atualizar os dados.");
         }
-    } else {
-        JOptionPane.showMessageDialog(null, "Digite um número de pedido e um novo status.");
-    }
     }//GEN-LAST:event_JTBatualizar10ActionPerformed
 
     private void JTBexcluir10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JTBexcluir10ActionPerformed
-    // Chamada do método para excluir um pedido
+    // Obtém o número do pedido digitado
         String numeroPedidoStr = JTFnumero10.getText().trim();
-    if (!numeroPedidoStr.isEmpty()) {
-        try {
+
+        // Verifica se o campo do número do pedido não está vazio
+        if (!numeroPedidoStr.isEmpty()) {
             int numeroPedido = Integer.parseInt(numeroPedidoStr);
-            String sqlDelete = "DELETE FROM encomendas WHERE numero_pedido = ?";
-            try (PreparedStatement statement = conexao.prepareStatement(sqlDelete)) {
-                statement.setInt(1, numeroPedido);
+            // Confirmação para excluir o pedido
+            int confirmacao = JOptionPane.showConfirmDialog(null, "Tem certeza que deseja excluir o pedido " + numeroPedido + "?");
 
-                int rowsDeleted = statement.executeUpdate();
+            // Se o usuário confirmar a exclusão
+            if (confirmacao == JOptionPane.YES_OPTION) {
+                try (Connection conexao = getDatabaseConnection()) {
+                    // Query SQL para deletar a encomenda
+                    String sqlDelete = "DELETE FROM encomendas WHERE id_encomenda = ?";
+                    try (PreparedStatement statement = conexao.prepareStatement(sqlDelete)) {
+                        // Define o parâmetro da query
+                        statement.setInt(1, numeroPedido);
+                        // Executa a query de deleção
+                        int rowsDeleted = statement.executeUpdate();
 
-                if (rowsDeleted > 0) {
-                    JOptionPane.showMessageDialog(null, "Pedido excluído com sucesso!");
-                    atualizarTabela(); // Atualiza a tabela após a exclusão do pedido
-                } else {
-                    JOptionPane.showMessageDialog(null, "Falha ao excluir pedido.");
+                        // Verifica se a deleção foi bem sucedida
+                        if (rowsDeleted > 0) {
+                            JOptionPane.showMessageDialog(null, "Pedido excluído com sucesso!");
+                            limparCampos(); // Limpa os campos de texto
+                            atualizarTabela(); // Atualiza a tabela após a exclusão
+                        } else {
+                            JOptionPane.showMessageDialog(null, "Falha ao excluir pedido.");
+                        }
+                    }
+                } catch (NumberFormatException | SQLException ex) {
+                    JOptionPane.showMessageDialog(null, "Erro ao excluir pedido: " + ex.getMessage());
                 }
             }
-        } catch (NumberFormatException | SQLException ex) {
-            JOptionPane.showMessageDialog(null, "Erro ao excluir pedido: " + ex.getMessage());
+        } else {
+            JOptionPane.showMessageDialog(null, "Digite um número de pedido para excluir.");
         }
-    } else {
-        JOptionPane.showMessageDialog(null, "Digite um número de pedido para excluir.");
-    }
+
+   
     }//GEN-LAST:event_JTBexcluir10ActionPerformed
+
+    private void JBTeditar10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBTeditar10ActionPerformed
+       // Obtém o número do pedido digitado
+        String numeroPedidoStr = JTFnumero10.getText().trim();
+
+        // Verifica se o campo do número do pedido não está vazio
+        if (!numeroPedidoStr.isEmpty()) {
+            int numeroPedido = Integer.parseInt(numeroPedidoStr);
+            try (Connection conexao = getDatabaseConnection()) {
+                // Query SQL para buscar os dados da encomenda pelo número do pedido
+                String sqlSelect = "SELECT cidade_origem, cidade_destino, statuss FROM encomendas WHERE id_encomenda = ?";
+                try (PreparedStatement statement = conexao.prepareStatement(sqlSelect)) {
+                    // Define o parâmetro da query
+                    statement.setInt(1, numeroPedido);
+                    // Executa a query de seleção
+                    ResultSet rs = statement.executeQuery();
+
+                    // Verifica se encontrou resultados
+                    if (rs.next()) {
+                        // Preenche os campos de texto com os dados da encomenda
+                        JTFcidadeorigem10.setText(rs.getString("cidade_origem"));
+                        JTFcidadedestino10.setText(rs.getString("cidade_destino"));
+                        JTFstatus10.setText(rs.getString("statuss"));
+                    } else {
+                        JOptionPane.showMessageDialog(null, "Encomenda não encontrada.");
+                    }
+                }
+            } catch (NumberFormatException | SQLException ex) {
+                JOptionPane.showMessageDialog(null, "Erro ao buscar encomenda: " + ex.getMessage());
+            }
+        } else {
+            JOptionPane.showMessageDialog(null, "Digite um número de pedido para editar.");
+        }
+
+    }//GEN-LAST:event_JBTeditar10ActionPerformed
+
+    private void JBTpesquisar10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBTpesquisar10ActionPerformed
+        // Obtém o número do pedido digitado
+        String numeroPedidoStr = JTFnumero10.getText().trim();
+
+        // Verifica se o campo do número do pedido não está vazio
+        if (!numeroPedidoStr.isEmpty()) {
+            int numeroPedido = Integer.parseInt(numeroPedidoStr);
+
+            try (Connection conexao = getDatabaseConnection()) {
+                // Query SQL para buscar os dados da encomenda pelo número do pedido
+                String sqlSelect = "SELECT numero_pedido, cidade_origem, cidade_destino, valor, statuss FROM encomendas e JOIN calculo_frete cf ON e.id_encomenda = cf.numero_pedido WHERE e.id_encomenda = ?";
+                try (PreparedStatement statement = conexao.prepareStatement(sqlSelect)) {
+                    // Define o parâmetro da query
+                    statement.setInt(1, numeroPedido);
+                    // Executa a query de seleção
+                    ResultSet rs = statement.executeQuery();
+
+                    // Verifica se encontrou resultados
+                    if (rs.next()) {
+                        // Cria um modelo de tabela com os dados da encomenda encontrada
+                        DefaultTableModel model = buildTableModel(rs);
+                        // Define o modelo da tabela na interface gráfica
+                        JTBtabela10.setModel(model);
+                    } else {
+                        JOptionPane.showMessageDialog(null, "Encomenda não encontrada.");
+                    }
+                }
+            } catch (NumberFormatException | SQLException ex) {
+                JOptionPane.showMessageDialog(null, "Erro ao buscar encomenda: " + ex.getMessage());
+            }
+        } else {
+            JOptionPane.showMessageDialog(null, "Digite um número de pedido para pesquisar.");
+        }
+    }//GEN-LAST:event_JBTpesquisar10ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -462,6 +649,8 @@ public class Tela_Lista_Encomendas extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton JBTeditar10;
+    private javax.swing.JButton JBTpesquisar10;
     private javax.swing.JLabel JLBcidadedestino10;
     private javax.swing.JLabel JLBcidadeorigem10;
     private javax.swing.JLabel JLBdata10;

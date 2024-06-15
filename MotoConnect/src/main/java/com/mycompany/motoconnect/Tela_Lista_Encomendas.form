@@ -52,9 +52,13 @@
                       <Group type="102" attributes="0">
                           <Group type="103" groupAlignment="1" attributes="0">
                               <Group type="102" attributes="0">
-                                  <Component id="JTBatualizar10" min="-2" pref="155" max="-2" attributes="0"/>
+                                  <Component id="JTBatualizar10" min="-2" pref="114" max="-2" attributes="0"/>
                                   <EmptySpace type="separate" max="-2" attributes="0"/>
                                   <Component id="JTBexcluir10" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                                  <Component id="JBTeditar10" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                                  <Component id="JBTpesquisar10" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="32767" attributes="0"/>
                                   <Component id="JTBvoltar10" min="-2" max="-2" attributes="0"/>
                               </Group>
@@ -145,6 +149,8 @@
                       <Component id="JTBatualizar10" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="JTBvoltar10" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="JTBexcluir10" alignment="3" min="-2" pref="25" max="-2" attributes="0"/>
+                      <Component id="JBTeditar10" alignment="3" min="-2" pref="25" max="-2" attributes="0"/>
+                      <Component id="JBTpesquisar10" alignment="3" min="-2" pref="25" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
               </Group>
@@ -212,7 +218,7 @@
                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
                 </Property>
                 <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
-                  <Table columnCount="6" rowCount="0">
+                  <Table columnCount="6" rowCount="30">
                     <Column editable="true" title="numero_pedido" type="java.lang.Integer"/>
                     <Column editable="true" title="cidade_origem" type="java.lang.String"/>
                     <Column editable="true" title="nome" type="java.lang.String"/>
@@ -276,7 +282,7 @@
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="ATUALIZAR STATUS"/>
+            <Property name="text" type="java.lang.String" value="ATUALIZAR "/>
             <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
               <Dimension value="[106, 25]"/>
             </Property>
@@ -465,6 +471,40 @@
             </Property>
             <Property name="text" type="java.lang.String" value="Cidade de destino:"/>
           </Properties>
+        </Component>
+        <Component class="javax.swing.JButton" name="JBTeditar10">
+          <Properties>
+            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="33" green="33" red="ff" type="rgb"/>
+            </Property>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Arial" size="12" style="1"/>
+            </Property>
+            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="ff" green="ff" red="ff" type="rgb"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="EDITAR"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="JBTeditar10ActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JButton" name="JBTpesquisar10">
+          <Properties>
+            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="33" green="33" red="ff" type="rgb"/>
+            </Property>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Arial" size="12" style="1"/>
+            </Property>
+            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="ff" green="ff" red="ff" type="rgb"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="PESQUISAR"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="JBTpesquisar10ActionPerformed"/>
+          </Events>
         </Component>
       </SubComponents>
     </Container>
