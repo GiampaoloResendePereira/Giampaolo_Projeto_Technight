@@ -25,6 +25,7 @@ public class Tela_Cadastro_Cliente extends javax.swing.JFrame {
         initComponents();
     }
     
+    // Limpa o campo de texto
     private void limparCampos() {
     JTFnomecompleto8.setText("");
     JTFcpf8.setText("");
@@ -440,11 +441,13 @@ public class Tela_Cadastro_Cliente extends javax.swing.JFrame {
     }//GEN-LAST:event_JTFtelefone8ActionPerformed
 
     private void JBTcancelar8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBTcancelar8ActionPerformed
-        // TODO add your handling code here:
+        // Exibe uma mensagem informativa para o usuário
         JOptionPane.showMessageDialog(null, "Você voltara para tela de menu");
-        
+        // Fecha a tela atual de cadastro de cliente (Tela_Cadastro_Cliente)
         Tela_Cadastro_Cliente.this.dispose();
+        // Cria uma nova instância da tela do menu (Tela_Menu)
         Tela_Menu JBTcancelar8 = new Tela_Menu();
+        // Define a tela do menu como visível
         JBTcancelar8.setVisible(true);
     }//GEN-LAST:event_JBTcancelar8ActionPerformed
 
@@ -583,7 +586,7 @@ public class Tela_Cadastro_Cliente extends javax.swing.JFrame {
     }//GEN-LAST:event_JTFbairro8ActionPerformed
 
     private void JBTpesquisar8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBTpesquisar8ActionPerformed
-        String url = "jdbc:mysql://localhost:3306/crud";
+    String url = "jdbc:mysql://localhost:3306/crud";
     String usuario = "root";
     String senha = "";
 
@@ -659,8 +662,11 @@ public class Tela_Cadastro_Cliente extends javax.swing.JFrame {
     }//GEN-LAST:event_JBTpesquisar8ActionPerformed
 
     private void JTBcontinuar8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JTBcontinuar8ActionPerformed
+        // Fecha a tela atual de cadastro de cliente (Tela_Cadastro_Cliente)
         Tela_Cadastro_Cliente.this.dispose();
+        // Cria uma nova instância da tela de informações do destinatário (Tela_Informacoes_Destinatario)
         Tela_Informacoes_Destinatario JBTcontinuar8 = new Tela_Informacoes_Destinatario();
+        // Define a tela de informações do destinatário como visível
         JBTcontinuar8.setVisible(true);
     }//GEN-LAST:event_JTBcontinuar8ActionPerformed
 

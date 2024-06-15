@@ -189,14 +189,14 @@ public class Tela_Tipo_Carga extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void JBTvoltar6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBTvoltar6ActionPerformed
-        // TODO add your handling code here:
+        // Fecha a janela atual (Tela_Tipo_Carga) e abre a tela do menu (Tela_Menu)
         Tela_Tipo_Carga.this.dispose();
         Tela_Menu JBTvoltar6 = new Tela_Menu();
         JBTvoltar6.setVisible(true);
     }//GEN-LAST:event_JBTvoltar6ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        // TODO add your handling code here:
+        // Fecha a janela atual (Tela_Tipo_Carga) e abre a tela de cálculo de frete (Tela_Calculo_Frete)
         Tela_Tipo_Carga.this.dispose();
         Tela_Calculo_Frete JBTcontinuar6 = new Tela_Calculo_Frete();
         JBTcontinuar6.setVisible(true);

@@ -169,21 +169,21 @@ public class Tela_Cadastro_Funcionario extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void JBTvoltar3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBTvoltar3ActionPerformed
-        // TODO add your handling code here:
+        // Fecha a janela atual (Tela_Cadastro_Funcionario) e abre a tela do menu (Tela_Menu)
         Tela_Cadastro_Funcionario.this.dispose();
         Tela_Menu JBTvoltar3 = new Tela_Menu();
         JBTvoltar3.setVisible(true);
     }//GEN-LAST:event_JBTvoltar3ActionPerformed
 
     private void JBTatendente3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBTatendente3ActionPerformed
-        // TODO add your handling code here:
+        // Fecha a janela atual (Tela_Cadastro_Funcionario) e abre a tela de informações do atendente (Tela_Informacoes_Atendente)
         Tela_Cadastro_Funcionario.this.dispose();
         Tela_Informacoes_Atendente JBTatendente3 = new Tela_Informacoes_Atendente();
         JBTatendente3.setVisible(true);
     }//GEN-LAST:event_JBTatendente3ActionPerformed
 
     private void JBTentregador3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBTentregador3ActionPerformed
-        // TODO add your handling code here:
+        // Fecha a janela atual (Tela_Cadastro_Funcionario) e abre a tela de informações do entregador (Tela_Informacoes_Entregador)
         Tela_Cadastro_Funcionario.this.dispose();
         Tela_Informacoes_Entregador JBTentregador3 = new Tela_Informacoes_Entregador();
         JBTentregador3.setVisible(true);

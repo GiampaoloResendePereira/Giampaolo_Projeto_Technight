@@ -424,9 +424,9 @@ public class Tela_Informacoes_Entregador extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void JBTcancelar5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBTcancelar5ActionPerformed
-        // TODO add your handling code here:
+        // Exibe uma mensagem informando que o usuário está voltando para o menu
         JOptionPane.showMessageDialog(null, "Você voltara para tela de menu");
-        
+        // Fecha a janela atual (Tela_Informacoes_Entregador) e abre a tela do menu (Tela_Menu)
         Tela_Informacoes_Entregador.this.dispose();
         Tela_Menu JBTcancelar5 = new Tela_Menu();
         JBTcancelar5.setVisible(true);
@@ -533,8 +533,11 @@ public class Tela_Informacoes_Entregador extends javax.swing.JFrame {
     }//GEN-LAST:event_JBTsalvar5ActionPerformed
 
     private void JBTcontinuar5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBTcontinuar5ActionPerformed
+        // Fecha a tela atual de informações do entregador
         Tela_Informacoes_Entregador.this.dispose();
+        // Cria uma nova instância da tela do menu
         Tela_Menu JBTcontinuar5 = new Tela_Menu();
+        // Exibe a tela do menu
         JBTcontinuar5.setVisible(true);
     }//GEN-LAST:event_JBTcontinuar5ActionPerformed
 

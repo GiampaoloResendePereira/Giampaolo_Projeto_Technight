@@ -489,16 +489,20 @@ public class Tela_Informacoes_Destinatario extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void JBTvoltar9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBTvoltar9ActionPerformed
-        // TODO add your handling code here:
+        // Fecha a tela atual de informações do destinatário (Tela_Informacoes_Destinatario)
         Tela_Informacoes_Destinatario.this.dispose();
+        // Cria uma nova instância da tela de cadastro de cliente (Tela_Cadastro_Cliente)
         Tela_Cadastro_Cliente JBTvoltar9 = new Tela_Cadastro_Cliente();
+        // Define a tela de cadastro de cliente como visível
         JBTvoltar9.setVisible(true);
     }//GEN-LAST:event_JBTvoltar9ActionPerformed
 
     private void JBTcancelar9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBTcancelar9ActionPerformed
-        // TODO add your handling code here:
+        // Fecha a tela atual de informações do destinatário (Tela_Informacoes_Destinatario)
         Tela_Informacoes_Destinatario.this.dispose();
+        // Cria uma nova instância da tela de menu (Tela_Menu)
         Tela_Menu JBTcancelar9 = new Tela_Menu();
+        // Define a tela de menu como visível
         JBTcancelar9.setVisible(true);
     }//GEN-LAST:event_JBTcancelar9ActionPerformed
 
@@ -686,9 +690,11 @@ public class Tela_Informacoes_Destinatario extends javax.swing.JFrame {
     }//GEN-LAST:event_JCBopcaoP39ActionPerformed
 
     private void JBTdetalhes9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBTdetalhes9ActionPerformed
-        // TODO add your handling code here:
+        // Fecha a tela atual de informações do destinatário (Tela_Informacoes_Destinatario)
         Tela_Informacoes_Destinatario.this.dispose();
+        // Cria uma nova instância da tela de detalhes da encomenda (Tela_Detalhes_Encomenda)
         Tela_Detalhes_Encomenda JBTdetalhes9 = new Tela_Detalhes_Encomenda();
+        // Define a tela de detalhes da encomenda como visível
         JBTdetalhes9.setVisible(true);
     }//GEN-LAST:event_JBTdetalhes9ActionPerformed
 

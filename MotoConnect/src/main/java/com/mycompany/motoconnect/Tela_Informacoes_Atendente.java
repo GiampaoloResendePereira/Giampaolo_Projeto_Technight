@@ -371,9 +371,9 @@ public class Tela_Informacoes_Atendente extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void JBTcancelar4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBTcancelar4ActionPerformed
-        // TODO add your handling code here:
+        // Exibe uma mensagem informando que o usuário está voltando para o menu
         JOptionPane.showMessageDialog(null, "Você voltara para tela de menu");
-        
+        // Fecha a janela atual (Tela_Informacoes_Atendente) e abre a tela do menu (Tela_Menu)
         Tela_Informacoes_Atendente.this.dispose();
         Tela_Menu JBTcancelar4 = new Tela_Menu();
         JBTcancelar4.setVisible(true);
@@ -448,7 +448,7 @@ public class Tela_Informacoes_Atendente extends javax.swing.JFrame {
 
         // Conexão com o banco de dados
         Class.forName("com.mysql.cj.jdbc.Driver");
-        Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/seubanco", "root", "");
+        Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/crud", "root", "");
 
         // SQL parametrizado para inserir dados na tabela atendente
         String sql = "INSERT INTO atendente (nome, sobrenome, cep, estado, cidade, bairro, rua, telefone, cpf, senha) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
@@ -486,8 +486,11 @@ public class Tela_Informacoes_Atendente extends javax.swing.JFrame {
     }//GEN-LAST:event_JBTsalvar4ActionPerformed
 
     private void JTBcontinuar4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JTBcontinuar4ActionPerformed
+        // Fecha a janela atual (Tela_Informacoes_Atendente)
         Tela_Informacoes_Atendente.this.dispose();
+        // Cria uma nova instância da tela principal (Tela_Menu)
         Tela_Menu JTBcontinuar4 = new Tela_Menu();
+        // Define a visibilidade da nova instância como verdadeira, exibindo a tela principal
         JTBcontinuar4.setVisible(true);
     }//GEN-LAST:event_JTBcontinuar4ActionPerformed
 

@@ -1084,14 +1084,16 @@ public class Tela_Calculo_Frete extends javax.swing.JFrame {
     }//GEN-LAST:event_RBTexpress7ActionPerformed
 
     private void JBTvoltar7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBTvoltar7ActionPerformed
-        // TODO add your handling code here:
+        // Fecha a tela atual de cálculo de frete
         Tela_Calculo_Frete.this.dispose();
+        // Cria uma nova instância da tela de tipo de carga
         Tela_Tipo_Carga JBTvoltar7 = new Tela_Tipo_Carga();
+        // Exibe a nova tela de tipo de carga
         JBTvoltar7.setVisible(true);
     }//GEN-LAST:event_JBTvoltar7ActionPerformed
 
     private void JBTcadastrodocliente7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBTcadastrodocliente7ActionPerformed
-        // TODO add your handling code here:
+        // Fecha a tela atual de cálculo de frete e abre a tela de cadastro de cliente
         Tela_Calculo_Frete.this.dispose();
         Tela_Cadastro_Cliente JBTcadastrodocliente7 = new Tela_Cadastro_Cliente();
         JBTcadastrodocliente7.setVisible(true);

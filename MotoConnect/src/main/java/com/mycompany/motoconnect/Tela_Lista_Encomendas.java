@@ -43,6 +43,7 @@ public class Tela_Lista_Encomendas extends javax.swing.JFrame {
         try {
             conexao = DriverManager.getConnection(URI, USUARIO, SENHA);
         } catch (SQLException ex) {
+            // JOptionPane.showMessageDialog(null, "Conexão bem-sucedida ao banco de dados.");
             JOptionPane.showMessageDialog(null, "Erro ao conectar ao banco de dados: " + ex.getMessage());
         }
     }

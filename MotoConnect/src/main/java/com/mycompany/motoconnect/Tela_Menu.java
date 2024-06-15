@@ -325,48 +325,49 @@ public class Tela_Menu extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void JBTcadastrodefubcionario2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBTcadastrodefubcionario2ActionPerformed
-        // TODO add your handling code here:
+        // Fecha a janela atual (Tela_Menu) e abre a tela de cadastro de funcionário (Tela_Cadastro_Funcionario)
         Tela_Menu.this.dispose();
         Tela_Cadastro_Funcionario JBTcadastrodefuncionario2 = new Tela_Cadastro_Funcionario();
         JBTcadastrodefuncionario2.setVisible(true);
     }//GEN-LAST:event_JBTcadastrodefubcionario2ActionPerformed
 
     private void JBTregistrocalculodefrete2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBTregistrocalculodefrete2ActionPerformed
-        // TODO add your handling code here:
+        // Fecha a janela atual (Tela_Menu) e abre a tela de tipo de carga (Tela_Tipo_Carga)
         Tela_Menu.this.dispose();
         Tela_Tipo_Carga JBTregistrocalculodefrete2 = new Tela_Tipo_Carga();
         JBTregistrocalculodefrete2.setVisible(true);
     }//GEN-LAST:event_JBTregistrocalculodefrete2ActionPerformed
 
     private void JBTcadastrodecliente2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBTcadastrodecliente2ActionPerformed
-        // TODO add your handling code here:
+        // Fecha a janela atual (Tela_Menu) e abre a tela de cadastro de cliente (Tela_Cadastro_Cliente)
         Tela_Menu.this.dispose();
         Tela_Cadastro_Cliente JBTcadastrodecliente2 = new Tela_Cadastro_Cliente();
         JBTcadastrodecliente2.setVisible(true);
     }//GEN-LAST:event_JBTcadastrodecliente2ActionPerformed
 
     private void JBTobservacoesecomentarios2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBTobservacoesecomentarios2ActionPerformed
-        // TODO add your handling code here:
+        // Fecha a janela atual (Tela_Menu) e abre a tela de observações e comentários (Tela_Observacoes_Comentarioes)
         Tela_Menu.this.dispose();
         Tela_Observacoes_Comentarioes JBTobservacoesecomentarios2 = new Tela_Observacoes_Comentarioes();
         JBTobservacoesecomentarios2.setVisible(true);
     }//GEN-LAST:event_JBTobservacoesecomentarios2ActionPerformed
 
     private void JTBlistaencomendas2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JTBlistaencomendas2ActionPerformed
-        // TODO add your handling code here:
+        // Fecha a janela atual (Tela_Menu) e abre a tela de lista de encomendas (Tela_Lista_Encomendas)
         Tela_Menu.this.dispose();
         Tela_Lista_Encomendas JTBlistaencomendas2 = new Tela_Lista_Encomendas();
         JTBlistaencomendas2.setVisible(true);
     }//GEN-LAST:event_JTBlistaencomendas2ActionPerformed
 
     private void JBTsair2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBTsair2ActionPerformed
-        // TODO add your handling code here:
+        // Fecha a janela atual (Tela_Menu) e abre a tela de login (Tela_Login)
         Tela_Menu.this.dispose();
         Tela_Login JBTsair2 = new Tela_Login();
         JBTsair2.setVisible(true);
     }//GEN-LAST:event_JBTsair2ActionPerformed
 
     private void JBTalertas2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBTalertas2ActionPerformed
+        // Fecha a janela atual (Tela_Menu) e abre a tela de alertas (Tela_Alertas)
         Tela_Menu.this.dispose();
         Tela_Alertas JBTalertas2 = new Tela_Alertas();
         JBTalertas2.setVisible(true);
