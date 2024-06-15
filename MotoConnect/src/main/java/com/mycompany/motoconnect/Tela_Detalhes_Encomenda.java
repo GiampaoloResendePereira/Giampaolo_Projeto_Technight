@@ -4,13 +4,14 @@
  */
 package com.mycompany.motoconnect;
 
-import java.io.File;
-import java.nio.file.Files;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
 import javax.swing.JOptionPane;
 
 /**
@@ -27,6 +28,91 @@ public class Tela_Detalhes_Encomenda extends javax.swing.JFrame {
         
     }
     
+    private void pesquisarCliente(int idCliente) {
+    // URL de conexão com o banco de dados
+    String url = "jdbc:mysql://localhost:3306/crud";
+    
+    // Credenciais de acesso ao banco de dados
+    String usuario = "root";
+    String senha = "";
+
+    // Consultas SQL para buscar informações do cliente, destinatário e cálculo de frete
+    String sqlCliente = "SELECT * FROM cliente WHERE id_cliente = ?";
+    String sqlDestinatario = "SELECT * FROM destinatario WHERE id_destinatario = ?";
+    String sqlCalculoFrete = "SELECT * FROM calculo_frete WHERE numero_pedido = ?";
+
+    try (Connection con = DriverManager.getConnection(url, usuario, senha);
+         PreparedStatement pstCliente = con.prepareStatement(sqlCliente);
+         PreparedStatement pstDestinatario = con.prepareStatement(sqlDestinatario);
+         PreparedStatement pstCalculoFrete = con.prepareStatement(sqlCalculoFrete)) {
+
+        // Consulta na tabela cliente
+        pstCliente.setInt(1, idCliente);
+        try (ResultSet rsCliente = pstCliente.executeQuery()) {
+            if (rsCliente.next()) {
+                // Preenche os campos de texto com as informações do cliente
+                JTFnomecompleto11.setText(rsCliente.getString("nome_cliente"));
+                JTFcpf11.setText(rsCliente.getString("cpf_cliente"));
+                JTFenderecocompleto11.setText(
+                    rsCliente.getString("rua_cliente") + ", " +
+                    rsCliente.getString("numero_cliente") + ", " +
+                    rsCliente.getString("bairro_cliente") + ", " +
+                    rsCliente.getString("cidade_cliente") + " - " +
+                    rsCliente.getString("estado_cliente") + ", " +
+                    rsCliente.getString("cep_cliente")
+                );
+                JTFtelefone11.setText(rsCliente.getString("telefone_cliente"));
+                JTFemail11.setText(rsCliente.getString("email_cliente"));
+            } else {
+                // Mostra uma mensagem de erro se o cliente não for encontrado
+                JOptionPane.showMessageDialog(this, "Cliente não encontrado com o ID: " + idCliente);
+                return;
+            }
+        }
+
+        // Consulta na tabela destinatario
+        pstDestinatario.setInt(1, idCliente);
+        try (ResultSet rsDestinatario = pstDestinatario.executeQuery()) {
+            if (rsDestinatario.next()) {
+                // Preenche os campos de texto com as informações do destinatário
+                JTFnomedestinatario11.setText(rsDestinatario.getString("destinatario"));
+                JTFtelefonedestinatario11.setText(rsDestinatario.getString("telefone_destinatario"));
+                JTFenderecodestinatario11.setText(
+                    rsDestinatario.getString("rua_destinatario") + ", " +
+                    rsDestinatario.getString("numero_destinatario") + ", " +
+                    rsDestinatario.getString("bairro_destinatario") + ", " +
+                    rsDestinatario.getString("cidade_destinatario") + " - " +
+                    rsDestinatario.getString("estado_destinatario") + ", " +
+                    rsDestinatario.getString("cep_destinatario")
+                );
+                JTFcarga11.setText(rsDestinatario.getString("opcao_selecionada"));
+            } else {
+                // Mostra uma mensagem de erro se o destinatário não for encontrado
+                JOptionPane.showMessageDialog(this, "Destinatário não encontrado com o ID: " + idCliente);
+                return;
+            }
+        }
+
+        // Consulta na tabela calculo_frete
+        pstCalculoFrete.setInt(1, idCliente);
+        try (ResultSet rsCalculoFrete = pstCalculoFrete.executeQuery()) {
+            if (rsCalculoFrete.next()) {
+                // Preenche os campos de texto com as informações do cálculo de frete
+                JTFpeso11.setText(rsCalculoFrete.getString("peso"));
+                JTFcidadeorigem11.setText(rsCalculoFrete.getString("cidade_origem"));
+                JTFcidadedestino11.setText(rsCalculoFrete.getString("cidade_destino"));
+                JTFvalor11.setText(rsCalculoFrete.getString("valor"));
+            } else {
+                // Mostra uma mensagem de erro se o cálculo de frete não for encontrado
+                JOptionPane.showMessageDialog(this, "Cálculo de frete não encontrado com o ID: " + idCliente);
+            }
+        }
+
+    } catch (SQLException e) {
+        // Mostra uma mensagem de erro se ocorrer um problema ao acessar o banco de dados
+        System.out.println("Erro ao buscar informações: " + e.getMessage());
+        }
+    }
     
     
     
@@ -309,7 +395,6 @@ public class Tela_Detalhes_Encomenda extends javax.swing.JFrame {
 
         JTFenderecodestinatario11.setBackground(new java.awt.Color(0, 51, 204));
         JTFenderecodestinatario11.setForeground(new java.awt.Color(255, 255, 255));
-        JTFenderecodestinatario11.setText("Rua tabajara, São Torquarto, Vila Velha, ES");
         JTFenderecodestinatario11.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 JTFenderecodestinatario11ActionPerformed(evt);
@@ -349,7 +434,7 @@ public class Tela_Detalhes_Encomenda extends javax.swing.JFrame {
         JTFnumeroPedido11.setBackground(new java.awt.Color(204, 204, 204));
 
         JLBcpf11.setForeground(new java.awt.Color(255, 255, 255));
-        JLBcpf11.setText("CPF:");
+        JLBcpf11.setText("Numero pedido:");
 
         JLBcidadedestino11.setForeground(new java.awt.Color(255, 255, 255));
         JLBcidadedestino11.setText("Cidade de destino:");
@@ -511,7 +596,7 @@ public class Tela_Detalhes_Encomenda extends javax.swing.JFrame {
                 .addGroup(JPNfundo11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(JTFcarga11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(JLBcarga11))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 20, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(JPNfundo11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(JBTvoltar11)
                     .addComponent(JBTmenu11))
@@ -522,13 +607,15 @@ public class Tela_Detalhes_Encomenda extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(JPNfundo11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(JPNfundo11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(JPNfundo11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+                .addComponent(JPNfundo11, javax.swing.GroupLayout.DEFAULT_SIZE, 586, Short.MAX_VALUE)
+                .addGap(14, 14, 14))
         );
 
         pack();
@@ -547,69 +634,11 @@ public class Tela_Detalhes_Encomenda extends javax.swing.JFrame {
     }//GEN-LAST:event_JBTmenu11ActionPerformed
 
     private void JBTpesquisar11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBTpesquisar11ActionPerformed
-      int numeroPedido = Integer.parseInt(JTFnumeroPedido11.getText()); // Obtém o número de pedido do campo de texto
-
-    String url = "jdbc:mysql://localhost:3306/crud"; // URL de conexão com o banco de dados
-    String usuario = "root"; // Usuário do banco de dados
-    String senha = ""; // Senha do banco de dados
-
-    try (Connection con = DriverManager.getConnection(url, usuario, senha)) {
-        // Cria a consulta SQL parametrizada para buscar os dados do cliente, destinatário e calculo_frete com base no número de pedido
-        String sql = "SELECT c.nome_cliente, c.cpf_cliente, c.cep_cliente, c.estado_cliente, c.cidade_cliente, c.bairro_cliente, c.rua_cliente, c.numero_cliente, c.telefone_cliente, c.email_cliente, " +
-                     "d.destinatario, d.telefone_destinatario, d.cep_destinatario, d.estado_destinatario, d.cidade_destinatario, d.bairro_destinatario, d.rua_destinatario, d.numero_destinatario, d.opcao_selecionada, " +
-                     "cf.peso, cf.cidade_origem, cf.cidade_destino, cf.valor " +
-                     "FROM cliente c " +
-                     "INNER JOIN encomendas e ON c.id_cliente = e.id_cliente " +
-                     "INNER JOIN destinatario d ON e.id_cliente = d.id_destinatario " +
-                     "INNER JOIN calculo_frete cf ON e.numero_pedido = cf.numero_pedido " +
-                     "WHERE e.numero_pedido = ?";
-
-        try (PreparedStatement pst = con.prepareStatement(sql)) {
-            pst.setInt(1, numeroPedido); // Define o valor do parâmetro na consulta SQL como o número de pedido
-
-            // Executa a consulta
-            try (ResultSet rs = pst.executeQuery()) {
-                if (rs.next()) {
-                    // Preenche os campos com os dados obtidos do banco de dados
-                    JTFnomecompleto11.setText(rs.getString("nome_cliente"));
-                    JTFcpf11.setText(rs.getString("cpf_cliente"));
-                    JTFtelefone11.setText(rs.getString("telefone_cliente"));
-                    JTFemail11.setText(rs.getString("email_cliente"));
-                    
-                    // Concatena os campos de endereço do cliente
-                    String enderecoCliente = rs.getString("rua_cliente") + ", " +
-                                             rs.getString("numero_cliente") + ", " +
-                                             rs.getString("bairro_cliente") + ", " +
-                                             rs.getString("cidade_cliente") + " - " +
-                                             rs.getString("estado_cliente") + ", " +
-                                             rs.getString("cep_cliente");
-                    JTFenderecocompleto11.setText(enderecoCliente);
-                    
-                    // Concatena os campos de endereço do destinatário
-                    String enderecoDestinatario = rs.getString("rua_destinatario") + ", " +
-                                                  rs.getString("numero_destinatario") + ", " +
-                                                  rs.getString("bairro_destinatario") + ", " +
-                                                  rs.getString("cidade_destinatario") + " - " +
-                                                  rs.getString("estado_destinatario") + ", " +
-                                                  rs.getString("cep_destinatario");
-                    JTFenderecodestinatario11.setText(enderecoDestinatario);
-                    
-                    JTFnomedestinatario11.setText(rs.getString("destinatario"));
-                    JTFtelefonedestinatario11.setText(rs.getString("telefone_destinatario"));
-                    JTFcarga11.setText(rs.getString("opcao_selecionada"));
-                    
-                    JTFpeso11.setText(rs.getString("peso"));
-                    JTFcidadeorigem11.setText(rs.getString("cidade_origem"));
-                    JTFcidadedestino11.setText(rs.getString("cidade_destino"));
-                    JTFvalor11.setText(rs.getString("valor"));
-                } else {
-                    JOptionPane.showMessageDialog(this, "Número de pedido não encontrado.", "Erro", JOptionPane.ERROR_MESSAGE);
-                }
-            }
-        }
-    } catch (SQLException e) {
-        System.out.println("Erro ao pesquisar pedido: " + e.getMessage());
-    }
+      // Obtém o ID do cliente do campo de texto JTFnumeroPedido11 e converte para inteiro
+    int idCliente = Integer.parseInt(JTFnumeroPedido11.getText());
+    
+    // Chama a função para pesquisar o cliente baseado no ID fornecido
+    pesquisarCliente(idCliente);
     }//GEN-LAST:event_JBTpesquisar11ActionPerformed
 
     private void JTFnomecompleto11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JTFnomecompleto11ActionPerformed
