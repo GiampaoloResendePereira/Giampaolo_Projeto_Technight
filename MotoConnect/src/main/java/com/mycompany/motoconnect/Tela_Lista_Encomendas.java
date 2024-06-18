@@ -30,239 +30,95 @@ public class Tela_Lista_Encomendas extends javax.swing.JFrame {
      */
     public Tela_Lista_Encomendas() {
         initComponents();
-        // Ao iniciar, atualiza a tabela com os dados do banco de dados
-        atualizarTabela(1);
+        
+        
         
     }
-    /**
-     * Método para obter a conexão com o banco de dados MySQL.
-     * 
-     * @return A conexão com o banco de dados.
-     */
-    private void pesquisarTabela(int idEncomenda) {
-    String sql = "SELECT e.id_encomenda, e.id_entregador, e.numero_pedido, e.id_statuss " +
-                 "FROM encomendas e " +
-                 "WHERE e.id_encomenda = ?";
-
-    String sqlEntregador = "SELECT nome, sobrenome " +
-                           "FROM entregador " +
-                           "WHERE id_entregador = ?";
-
-    String sqlStatus = "SELECT data_entrega, statuss " +
-                       "FROM statuss " +
-                       "WHERE id_statuss = ?";
-
-    String sqlCalculoFrete = "SELECT cidade_origem, cidade_destino " +
-                             "FROM calculo_frete " +
-                             "WHERE numero_pedido = ?";
-
-    try (Connection con = DatabaseConnection.getConnection();
-         PreparedStatement pst = con.prepareStatement(sql);
+    private void pesquisarTabela(int idTabela) {
+    // URL de conexão com o banco de dados
+    String url = "jdbc:mysql://localhost:3306/crud";
+    
+    // Credenciais de acesso ao banco de dados
+    String usuario = "root";
+    String senha = "";
+    
+    // Consultas SQL para buscar informações do cliente, destinatário e cálculo de frete
+    String sqlEntregador = "SELECT * FROM entregador WHERE id_entregador = ?";
+    String sqlStatus = "SELECT * FROM statuss WHERE id_statuss = ?";
+    String sqlCalculoFrete = "SELECT * FROM calculo_frete WHERE numero_pedido = ?";
+    
+    try (Connection con = DriverManager.getConnection(url, usuario, senha);
          PreparedStatement pstEntregador = con.prepareStatement(sqlEntregador);
          PreparedStatement pstStatus = con.prepareStatement(sqlStatus);
          PreparedStatement pstCalculoFrete = con.prepareStatement(sqlCalculoFrete)) {
+        
+        // Limpa os campos de texto
+        limparCampos();
 
-        // Consulta na tabela encomendas
-        pst.setInt(1, idEncomenda);
-        ResultSet rs = pst.executeQuery();
-        if (rs.next()) {
-            int idEntregador = rs.getInt("id_entregador");
-            int numeroPedido = rs.getInt("numero_pedido");
-            int idStatus = rs.getInt("id_statuss");
-
-            // Consulta na tabela entregador
-            pstEntregador.setInt(1, idEntregador);
-            ResultSet rsEntregador = pstEntregador.executeQuery();
+        // Consulta na tabela Entregador
+        pstEntregador.setInt(1, idTabela);
+        try (ResultSet rsEntregador = pstEntregador.executeQuery()) {
             if (rsEntregador.next()) {
-                // Preenche os campos de texto com as informações do entregador
-                JTFentregador10.setText(rsEntregador.getString("nome") + " " + rsEntregador.getString("sobrenome"));
+                // Preenche os campos de texto com as informações do Entregador
+                JTFentregador10.setText(
+                    rsEntregador.getString("nome") + ", " +
+                    rsEntregador.getString("sobrenome")
+                );
             } else {
-                JOptionPane.showMessageDialog(this, "Entregador não encontrado com o ID: " + idEntregador);
+                // Mostra uma mensagem de erro se o Entregador não for encontrado
+                JOptionPane.showMessageDialog(this, "Entregador não encontrado com o ID: " + idTabela);
                 return;
             }
-
-            // Consulta na tabela statuss
-            pstStatus.setInt(1, idStatus);
-            ResultSet rsStatus = pstStatus.executeQuery();
+        }
+        
+        // Consulta na tabela Status
+        pstStatus.setInt(1, idTabela);
+        try (ResultSet rsStatus = pstStatus.executeQuery()) {
             if (rsStatus.next()) {
-                // Preenche os campos de texto com as informações do status
+                // Preenche os campos de texto com as informações do Status
                 JTFdata10.setText(rsStatus.getString("data_entrega"));
                 JTFstatus10.setText(rsStatus.getString("statuss"));
             } else {
-                JOptionPane.showMessageDialog(this, "Status não encontrado com o ID: " + idStatus);
+                // Mostra uma mensagem de erro se o Status não for encontrado
+                JOptionPane.showMessageDialog(this, "Status não encontrado com o ID: " + idTabela);
                 return;
             }
-
-            // Consulta na tabela calculo_frete
-            pstCalculoFrete.setInt(1, numeroPedido);
-            ResultSet rsCalculoFrete = pstCalculoFrete.executeQuery();
+        }
+        
+        // Consulta na tabela calculo_frete
+        pstCalculoFrete.setInt(1, idTabela);
+        try (ResultSet rsCalculoFrete = pstCalculoFrete.executeQuery()) {
             if (rsCalculoFrete.next()) {
                 // Preenche os campos de texto com as informações do cálculo de frete
                 JTFcidadeorigem10.setText(rsCalculoFrete.getString("cidade_origem"));
                 JTFcidadedestino10.setText(rsCalculoFrete.getString("cidade_destino"));
             } else {
-                JOptionPane.showMessageDialog(this, "Cálculo de frete não encontrado para o número do pedido: " + numeroPedido);
+                // Mostra uma mensagem de erro se o cálculo de frete não for encontrado
+                JOptionPane.showMessageDialog(this, "Cálculo de frete não encontrado com o ID: " + idTabela);
             }
-
-        } else {
-            JOptionPane.showMessageDialog(this, "Encomenda não encontrada com o ID: " + idEncomenda);
         }
-
-    } catch (SQLException e) {
-        JOptionPane.showMessageDialog(null, "Erro ao buscar informações da encomenda: " + e.getMessage());
-    }
-}
-
-
-    
-    
-    private Connection getDatabaseConnection() {
-        Connection connection = null;
-        try {
-            String url = "jdbc:mysql://localhost:3306/crud"; // URL do banco de dados
-            String username = "root"; // Nome de usuário do MySQL
-            String password = ""; // Senha do MySQL
-            connection = DriverManager.getConnection(url, username, password);
-        } catch (SQLException e) {
-            JOptionPane.showMessageDialog(null, "Erro ao conectar ao banco de dados: " + e.getMessage());
-        }
-        return connection;
-    }
-
-    /**
-     * Constrói um modelo de tabela a partir de um ResultSet.
-     * 
-     * @param rs O ResultSet contendo os dados a serem exibidos na tabela.
-     * @return O DefaultTableModel construído com os dados do ResultSet.
-     * @throws SQLException
-     */
-    private DefaultTableModel buildTableModel(ResultSet rs) throws SQLException {
-    // Definindo os nomes das colunas da tabela
-    String[] columnNames = {"Numero da encomenda", "Cidade origem", "Nome completo", "Cidade destino", "Data e hora", "Status"};
-    DefaultTableModel model = new DefaultTableModel();
-    model.setColumnIdentifiers(columnNames);
-
-    // Preenchendo o modelo com os dados do ResultSet
-    while (rs.next()) {
-        // Recuperando os dados do ResultSet para cada coluna
-        int idEncomenda = rs.getInt("id_encomenda");
-        String cidadeOrigem = rs.getString("cidade_origem");
-        String nomeCompleto = rs.getString("nome") + " " + rs.getString("sobrenome");
-        String cidadeDestino = rs.getString("cidade_destino");
-        String dataHora = rs.getString("data_entrega");
-        String status = rs.getString("statuss");
-
-        // Criando um array de objetos com os dados da linha
-        Object[] rowData = {idEncomenda, cidadeOrigem, nomeCompleto, cidadeDestino, dataHora, status};
         
-        // Adicionando a linha ao modelo da tabela
-        model.addRow(rowData);
-    }
-    return model;
-}
-
-
-    /**
-     * Atualiza a tabela de encomendas com os dados do banco de dados.
-     */
-    private void atualizarTabela(int idEncomenda) {
-    // Consultas SQL para buscar informações da encomenda
-    String sqlEncomenda = "SELECT e.id_encomenda, e.id_entregador, e.numero_pedido, e.id_statuss " +
-                          "FROM encomendas e " +
-                          "WHERE e.id_encomenda = ?";
-
-    String sqlEntregador = "SELECT nome, sobrenome " +
-                           "FROM entregador " +
-                           "WHERE id_entregador = ?";
-
-    String sqlStatus = "SELECT data_entrega, statuss " +
-                       "FROM statuss " +
-                       "WHERE id_statuss = ?";
-
-    String sqlCalculoFrete = "SELECT cidade_origem, cidade_destino " +
-                             "FROM calculo_frete " +
-                             "WHERE numero_pedido = ?";
-
-    try (Connection conexao = getDatabaseConnection();
-         PreparedStatement pstEncomenda = conexao.prepareStatement(sqlEncomenda);
-         PreparedStatement pstEntregador = conexao.prepareStatement(sqlEntregador);
-         PreparedStatement pstStatus = conexao.prepareStatement(sqlStatus);
-         PreparedStatement pstCalculoFrete = conexao.prepareStatement(sqlCalculoFrete)) {
-
-        // Consulta na tabela encomendas
-        pstEncomenda.setInt(1, idEncomenda);
-        ResultSet rsEncomenda = pstEncomenda.executeQuery();
-        if (rsEncomenda.next()) {
-            int idEntregador = rsEncomenda.getInt("id_entregador");
-            int numeroPedido = rsEncomenda.getInt("numero_pedido");
-            int idStatus = rsEncomenda.getInt("id_statuss");
-
-            // Consulta na tabela entregador
-            pstEntregador.setInt(1, idEntregador);
-            ResultSet rsEntregador = pstEntregador.executeQuery();
-            if (rsEntregador.next()) {
-                String nomeEntregador = rsEntregador.getString("nome");
-                String sobrenomeEntregador = rsEntregador.getString("sobrenome");
-
-                // Consulta na tabela statuss
-                pstStatus.setInt(1, idStatus);
-                ResultSet rsStatus = pstStatus.executeQuery();
-                if (rsStatus.next()) {
-                    String dataEntrega = rsStatus.getString("data_entrega");
-                    String status = rsStatus.getString("statuss");
-
-                    // Consulta na tabela calculo_frete
-                    pstCalculoFrete.setInt(1, numeroPedido);
-                    ResultSet rsCalculoFrete = pstCalculoFrete.executeQuery();
-                    if (rsCalculoFrete.next()) {
-                        String cidadeOrigem = rsCalculoFrete.getString("cidade_origem");
-                        String cidadeDestino = rsCalculoFrete.getString("cidade_destino");
-
-                        // Preenche os campos da tabela com os dados obtidos
-                        JTFentregador10.setText(nomeEntregador + " " + sobrenomeEntregador);
-                        JTFdata10.setText(dataEntrega);
-                        JTFstatus10.setText(status);
-                        JTFcidadeorigem10.setText(cidadeOrigem);
-                        JTFcidadedestino10.setText(cidadeDestino);
-
-                    } else {
-                        JOptionPane.showMessageDialog(null, "Cálculo de frete não encontrado para o número de pedido: " + numeroPedido);
-                    }
-
-                } else {
-                    JOptionPane.showMessageDialog(null, "Status não encontrado para o ID: " + idStatus);
-                }
-
-            } else {
-                JOptionPane.showMessageDialog(null, "Entregador não encontrado para o ID: " + idEntregador);
-            }
-
-        } else {
-            JOptionPane.showMessageDialog(null, "Encomenda não encontrada para o ID: " + idEncomenda);
-        }
-
     } catch (SQLException e) {
-        JOptionPane.showMessageDialog(null, "Erro ao executar consulta: " + e.getMessage());
+        // Mostra uma mensagem de erro se ocorrer um problema ao acessar o banco de dados
+        System.out.println("Erro ao buscar informações: " + e.getMessage());
+        JOptionPane.showMessageDialog(this, "Erro ao buscar informações: " + e.getMessage());
     }
-}
+    }
 
-
-    /**
-     * Limpa os campos de texto na interface gráfica.
-     */
     private void limparCampos() {
-    JTFnumero10.setText("");
-    JTFcidadeorigem10.setText("");
-    JTFcidadedestino10.setText("");
-    JTFstatus10.setText("");
     JTFentregador10.setText("");
     JTFdata10.setText("");
+    JTFstatus10.setText("");
+    JTFcidadeorigem10.setText("");
+    JTFcidadedestino10.setText("");
 }
-
     
+    /**
+     * Método para obter a conexão com o banco de dados MySQL.
+     * 
+     * @return A conexão com o banco de dados.
+     */
     
-    
-  
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -363,7 +219,7 @@ public class Tela_Lista_Encomendas extends javax.swing.JFrame {
                 {null, null, null, null, null, null}
             },
             new String [] {
-                "Numero da encomenda", "Cidade origem", "Nome completo", "Cidade destino", "Data e hora", "Status"
+                "Numero da encomenda", "Nome completo", "Cidade origem", "Cidade destino", "Data e hora", "Status"
             }
         ));
         JTBtabela10.addAncestorListener(new javax.swing.event.AncestorListener() {
@@ -519,12 +375,12 @@ public class Tela_Lista_Encomendas extends javax.swing.JFrame {
                             .addComponent(JTFnumero10))
                         .addGap(33, 33, 33)
                         .addGroup(JPNfundo10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(JLBcidadeorigem10)
-                            .addComponent(JTFentregador10, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(JTFentregador10, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(JLBentregador10))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(JPNfundo10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(JLBentregador10)
-                            .addComponent(JTFcidadeorigem10, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(JTFcidadeorigem10, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(JLBcidadeorigem10))
                         .addGap(26, 26, 26)
                         .addGroup(JPNfundo10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(JLBcidadedestino10)
@@ -555,9 +411,9 @@ public class Tela_Lista_Encomendas extends javax.swing.JFrame {
                     .addComponent(JLBnumero10)
                     .addComponent(JLBdata10)
                     .addComponent(JLBstatus10)
-                    .addComponent(JLBcidadeorigem10)
                     .addComponent(JLBentregador10)
-                    .addComponent(JLBcidadedestino10))
+                    .addComponent(JLBcidadedestino10)
+                    .addComponent(JLBcidadeorigem10))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(JPNfundo10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(JTFnumero10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -599,110 +455,167 @@ public class Tela_Lista_Encomendas extends javax.swing.JFrame {
     }//GEN-LAST:event_JTBvoltar10ActionPerformed
 
     private void JTBtabela10AncestorAdded(javax.swing.event.AncestorEvent evt) {//GEN-FIRST:event_JTBtabela10AncestorAdded
-        // TODO add your handling code here:
+    String url = "jdbc:mysql://localhost:3306/crud";
+    String usuario = "root";
+    String senha = "";
+
+    String sqlSelect = "SELECT * FROM encomendas";
+
+    try (Connection con = DriverManager.getConnection(url, usuario, senha);
+         Statement stmt = con.createStatement();
+         ResultSet rs = stmt.executeQuery(sqlSelect)) {
+
+        DefaultTableModel model = (DefaultTableModel) JTBtabela10.getModel();
+        model.setRowCount(0); // Limpa a tabela
+
+        while (rs.next()) {
+            Object[] row = {
+                rs.getInt("id"),
+                rs.getString("entregador"),
+                rs.getString("status"),
+                // Adicione outros campos conforme necessário
+            };
+            model.addRow(row);
+        }
+    } catch (SQLException e) {
+        JOptionPane.showMessageDialog(this, "Erro ao carregar dados da tabela: " + e.getMessage());
+    }
     }//GEN-LAST:event_JTBtabela10AncestorAdded
 
     private void JTBatualizar10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JTBatualizar10ActionPerformed
-    // Exemplo de chamada para atualizar a tabela com informações da encomenda de ID 1
-    atualizarTabela(1);
+        String url = "jdbc:mysql://localhost:3306/crud";
+    String usuario = "root";
+    String senha = "";
+
+    String novoEntregador = JTFentregador10.getText();
+    String novoStatus = JTFstatus10.getText();
+    // Adicione outros campos conforme necessário
+
+    String sqlInsert = "INSERT INTO encomendas (entregador, status) VALUES (?, ?)";
+
+    try (Connection con = DriverManager.getConnection(url, usuario, senha);
+         PreparedStatement pst = con.prepareStatement(sqlInsert)) {
+
+        pst.setString(1, novoEntregador);
+        pst.setString(2, novoStatus);
+
+        int rowsInserted = pst.executeUpdate();
+        if (rowsInserted > 0) {
+            JOptionPane.showMessageDialog(this, "Novo registro inserido com sucesso!");
+        } else {
+            JOptionPane.showMessageDialog(this, "Falha ao inserir novo registro.");
+        }
+    } catch (SQLException e) {
+        JOptionPane.showMessageDialog(this, "Erro ao inserir novo registro: " + e.getMessage());
+    }
 
     }//GEN-LAST:event_JTBatualizar10ActionPerformed
 
     private void JTBexcluir10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JTBexcluir10ActionPerformed
-    // Obtém o número do pedido digitado
-    String numeroPedidoStr = JTFnumero10.getText().trim();
-
-    // Verifica se o campo do número do pedido não está vazio
-    if (!numeroPedidoStr.isEmpty()) {
-        int numeroPedido = Integer.parseInt(numeroPedidoStr);
-        // Confirmação para excluir o pedido
-        int confirmacao = JOptionPane.showConfirmDialog(null, "Tem certeza que deseja excluir o pedido " + numeroPedido + "?");
-
-        // Se o usuário confirmar a exclusão
-        if (confirmacao == JOptionPane.YES_OPTION) {
-            try (Connection conexao = getDatabaseConnection()) {
-                // Query SQL para deletar a encomenda
-                String sqlDelete = "DELETE FROM encomendas WHERE id_encomenda = ?";
-                try (PreparedStatement statement = conexao.prepareStatement(sqlDelete)) {
-                    // Define o parâmetro da query
-                    statement.setInt(1, numeroPedido);
-                    // Executa a query de deleção
-                    int rowsDeleted = statement.executeUpdate();
-
-                    // Verifica se a deleção foi bem sucedida
-                    if (rowsDeleted > 0) {
-                        JOptionPane.showMessageDialog(null, "Pedido excluído com sucesso!");
-                        limparCampos(); // Limpa os campos de texto
-                        // Exemplo de chamada para atualizar a tabela com informações da encomenda de ID 1
-                        atualizarTabela(1);
-
-                    } else {
-                        JOptionPane.showMessageDialog(null, "Falha ao excluir pedido.");
-                    }
-                }
-            } catch (NumberFormatException | SQLException ex) {
-                JOptionPane.showMessageDialog(null, "Erro ao excluir pedido: " + ex.getMessage());
+    // URL de conexão com o banco de dados
+    String url = "jdbc:mysql://localhost:3306/crud";
+    
+    // Credenciais de acesso ao banco de dados
+    String usuario = "root";
+    String senha = "";
+    
+    // ID da encomenda a ser excluída
+    int idEncomenda = Integer.parseInt(JTFnumero10.getText());
+    
+    // Consultas SQL para excluir registros das tabelas envolvidas
+    String sqlDeleteEntregador = "DELETE FROM entregador WHERE id_entregador = ?";
+    String sqlDeleteStatus = "DELETE FROM statuss WHERE id_statuss = ?";
+    String sqlDeleteCalculoFrete = "DELETE FROM calculo_frete WHERE numero_pedido = ?";
+    String sqlDeleteCliente = "DELETE FROM cliente WHERE id_cliente = ?";
+    String sqlDeleteDestinatario = "DELETE FROM destinatario WHERE id_destinatario = ?";
+    
+    try (Connection con = DriverManager.getConnection(url, usuario, senha)) {
+        // Desativar auto-commit para garantir que todas as exclusões sejam atômicas
+        con.setAutoCommit(false);
+        
+        try (PreparedStatement pstDeleteEntregador = con.prepareStatement(sqlDeleteEntregador);
+             PreparedStatement pstDeleteStatus = con.prepareStatement(sqlDeleteStatus);
+             PreparedStatement pstDeleteCalculoFrete = con.prepareStatement(sqlDeleteCalculoFrete);
+             PreparedStatement pstDeleteCliente = con.prepareStatement(sqlDeleteCliente);
+             PreparedStatement pstDeletedestinatario = con.prepareStatement(sqlDeleteDestinatario)) {
+            
+            // Excluir da tabela Entregador
+            pstDeleteEntregador.setInt(1, idEncomenda);
+            int rowsDeletedEntregador = pstDeleteEntregador.executeUpdate();
+            
+            // Excluir da tabela Status
+            pstDeleteStatus.setInt(1, idEncomenda);
+            int rowsDeletedStatus = pstDeleteStatus.executeUpdate();
+            
+            // Excluir da tabela CalculoFrete
+            pstDeleteCalculoFrete.setInt(1, idEncomenda);
+            int rowsDeletedCalculoFrete = pstDeleteCalculoFrete.executeUpdate();
+            
+            // Excluir da tabela Destinatario
+            pstDeleteCalculoFrete.setInt(1, idEncomenda);
+            int rowsDeletedCliente = pstDeleteCliente.executeUpdate();
+            
+            // Excluir da tabela Cliente
+            pstDeleteCalculoFrete.setInt(1, idEncomenda);
+            int rowsDeletedDestinatario = pstDeletedestinatario.executeUpdate();
+            
+            // Verifica se algum registro foi excluído em pelo menos uma tabela
+            if (rowsDeletedEntregador > 0 || rowsDeletedStatus > 0 || rowsDeletedCalculoFrete > 0 || rowsDeletedCliente > 0 || rowsDeletedDestinatario > 0) {
+                con.commit(); // Confirma as exclusões
+                JOptionPane.showMessageDialog(this, "Encomenda excluída com sucesso!");
+            } else {
+                con.rollback(); // Reverte a transação se nenhum registro foi excluído
+                JOptionPane.showMessageDialog(this, "Nenhum registro encontrado para o ID informado.");
             }
+            
+        } catch (SQLException e) {
+            con.rollback(); // Reverte a transação em caso de erro
+            JOptionPane.showMessageDialog(this, "Erro ao excluir encomenda: " + e.getMessage());
         }
-    } else {
-        JOptionPane.showMessageDialog(null, "Digite um número de pedido para excluir.");
+        
+    } catch (SQLException e) {
+        // Mostra uma mensagem de erro se ocorrer um problema ao acessar o banco de dados
+        JOptionPane.showMessageDialog(this, "Erro ao conectar ao banco de dados: " + e.getMessage());
     }
     }//GEN-LAST:event_JTBexcluir10ActionPerformed
 
     private void JBTeditar10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBTeditar10ActionPerformed
-       // Obtém o número do pedido digitado
-    String numeroPedidoStr = JTFnumero10.getText().trim();
+         String url = "jdbc:mysql://localhost:3306/crud";
+    String usuario = "root";
+    String senha = "";
 
-    // Verifica se o campo do número do pedido não está vazio
-    if (!numeroPedidoStr.isEmpty()) {
-        try {
-            int numeroPedido = Integer.parseInt(numeroPedidoStr);
+    int idEncomenda = Integer.parseInt(JTFnumero10.getText());
+    String novoEntregador = JTFentregador10.getText();
+    String novoStatus = JTFstatus10.getText();
+    // Adicione outros campos conforme necessário
 
-            // Query SQL para buscar os dados da encomenda pelo número do pedido
-            String sqlSelect = "SELECT cidade_origem, cidade_destino, statuss FROM encomendas WHERE id_encomenda = ?";
-            
-            try (Connection conexao = getDatabaseConnection();
-                 PreparedStatement statement = conexao.prepareStatement(sqlSelect)) {
-                
-                // Define o parâmetro da query
-                statement.setInt(1, numeroPedido);
-                
-                // Executa a query de seleção
-                try (ResultSet rs = statement.executeQuery()) {
-                    // Verifica se encontrou resultados
-                    if (rs.next()) {
-                        // Preenche os campos de texto com os dados da encomenda
-                        JTFcidadeorigem10.setText(rs.getString("cidade_origem"));
-                        JTFcidadedestino10.setText(rs.getString("cidade_destino"));
-                        JTFstatus10.setText(rs.getString("statuss"));
-                    } else {
-                        JOptionPane.showMessageDialog(null, "Encomenda não encontrada.");
-                        limparCampos(); // Limpa os campos de texto se a encomenda não for encontrada
-                    }
-                }
-            } catch (SQLException ex) {
-                JOptionPane.showMessageDialog(null, "Erro ao buscar encomenda: " + ex.getMessage());
-            }
-        } catch (NumberFormatException ex) {
-            JOptionPane.showMessageDialog(null, "Número de pedido inválido.");
+    String sqlUpdate = "UPDATE encomendas SET entregador = ?, status = ? WHERE id = ?";
+
+    try (Connection con = DriverManager.getConnection(url, usuario, senha);
+         PreparedStatement pst = con.prepareStatement(sqlUpdate)) {
+
+        pst.setString(1, novoEntregador);
+        pst.setString(2, novoStatus);
+        pst.setInt(3, idEncomenda);
+
+        int rowsUpdated = pst.executeUpdate();
+        if (rowsUpdated > 0) {
+            JOptionPane.showMessageDialog(this, "Registro atualizado com sucesso!");
+        } else {
+            JOptionPane.showMessageDialog(this, "Nenhum registro encontrado para o ID informado.");
         }
-    } else {
-        JOptionPane.showMessageDialog(null, "Digite um número de pedido para editar.");
+    } catch (SQLException e) {
+        JOptionPane.showMessageDialog(this, "Erro ao atualizar registro: " + e.getMessage());
     }
 
     }//GEN-LAST:event_JBTeditar10ActionPerformed
 
     private void JBTpesquisar10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBTpesquisar10ActionPerformed
-       try {
-        // Obtém o ID da encomenda a partir do campo de texto JTFidEncomenda
-        int idEncomenda = Integer.parseInt(JTFidEncomenda.getText().trim());
-
-        // Chama o método para pesquisar e preencher os campos com base no ID da encomenda
-        pesquisarTabela(idEncomenda);
-
-    } catch (NumberFormatException e) {
-        JOptionPane.showMessageDialog(this, "Digite um número válido para o ID da encomenda.");
-    }
+    // Obtém o ID do cliente do campo de texto JTFnumeroPedido11 e converte para inteiro
+    int idTabela = Integer.parseInt(JTFnumero10.getText());
+    
+    // Chama a função para pesquisar o cliente baseado no ID fornecido
+    pesquisarTabela(idTabela);
     }//GEN-LAST:event_JBTpesquisar10ActionPerformed
 
     /**
