@@ -53,111 +53,112 @@
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
-                  <EmptySpace min="-2" pref="37" max="-2" attributes="0"/>
-                  <Component id="JLBmotoconnect11" min="-2" pref="239" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="102" attributes="0">
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Component id="JPNdetalhesdeencomenda11" pref="675" max="32767" attributes="0"/>
-                          <EmptySpace min="-2" pref="43" max="-2" attributes="0"/>
+                      <Group type="102" alignment="0" attributes="0">
+                          <EmptySpace min="-2" pref="65" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Group type="102" attributes="0">
+                                  <Group type="103" groupAlignment="1" attributes="0">
+                                      <Group type="102" attributes="0">
+                                          <Group type="103" groupAlignment="0" attributes="0">
+                                              <Group type="102" alignment="0" attributes="0">
+                                                  <Group type="103" groupAlignment="0" attributes="0">
+                                                      <Component id="JLBnomecompleto11" alignment="0" min="-2" max="-2" attributes="0"/>
+                                                      <Component id="JLBcep11" alignment="0" min="-2" max="-2" attributes="0"/>
+                                                  </Group>
+                                                  <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
+                                                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                                      <Component id="JTFcpf11" pref="308" max="32767" attributes="0"/>
+                                                      <Component id="JTFnomecompleto11" max="32767" attributes="0"/>
+                                                  </Group>
+                                              </Group>
+                                              <Group type="102" attributes="0">
+                                                  <Component id="JLBcidadedestino11" min="-2" max="-2" attributes="0"/>
+                                                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                                                  <Component id="JTFcidadedestino11" min="-2" pref="308" max="-2" attributes="0"/>
+                                              </Group>
+                                              <Group type="102" attributes="0">
+                                                  <Group type="103" groupAlignment="1" attributes="0">
+                                                      <Group type="102" attributes="0">
+                                                          <Component id="JPNcliente11" min="-2" max="-2" attributes="0"/>
+                                                          <EmptySpace min="-2" pref="52" max="-2" attributes="0"/>
+                                                      </Group>
+                                                      <Component id="JLBvalor11" alignment="0" min="-2" max="-2" attributes="0"/>
+                                                  </Group>
+                                                  <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
+                                                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                                      <Component id="JTFcarga11" max="32767" attributes="0"/>
+                                                      <Component id="JTFvalor11" pref="308" max="32767" attributes="0"/>
+                                                  </Group>
+                                              </Group>
+                                              <Group type="102" alignment="0" attributes="0">
+                                                  <Group type="103" groupAlignment="0" attributes="0">
+                                                      <Component id="JLBenderecocompleto11" alignment="0" min="-2" max="-2" attributes="0"/>
+                                                      <Component id="JLBtelefone11" alignment="0" min="-2" max="-2" attributes="0"/>
+                                                      <Component id="JLBemail11" alignment="0" min="-2" max="-2" attributes="0"/>
+                                                      <Component id="JLBpeso11" alignment="0" min="-2" max="-2" attributes="0"/>
+                                                      <Component id="JLBnumerodopedido11" alignment="0" min="-2" max="-2" attributes="0"/>
+                                                  </Group>
+                                                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                                  <Group type="103" groupAlignment="0" attributes="0">
+                                                      <Component id="JTFcidadeorigem11" min="-2" pref="308" max="-2" attributes="0"/>
+                                                      <Component id="JTFpeso11" min="-2" pref="308" max="-2" attributes="0"/>
+                                                      <Component id="JTFemail11" min="-2" pref="308" max="-2" attributes="0"/>
+                                                      <Component id="JTFtelefone11" min="-2" pref="308" max="-2" attributes="0"/>
+                                                      <Component id="JTFenderecocompleto11" min="-2" pref="308" max="-2" attributes="0"/>
+                                                  </Group>
+                                              </Group>
+                                              <Component id="JBTmenu11" min="-2" max="-2" attributes="0"/>
+                                          </Group>
+                                          <EmptySpace min="0" pref="26" max="32767" attributes="0"/>
+                                      </Group>
+                                      <Group type="102" alignment="1" attributes="0">
+                                          <Component id="JLBcarga11" min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace min="-2" pref="377" max="-2" attributes="0"/>
+                                      </Group>
+                                  </Group>
+                                  <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Component id="JPNdestinatario11" min="-2" max="-2" attributes="0"/>
+                                      <Group type="102" alignment="0" attributes="0">
+                                          <Group type="103" groupAlignment="0" attributes="0">
+                                              <Component id="JLBenderecodestinatario11" alignment="0" min="-2" max="-2" attributes="0"/>
+                                              <Component id="JLBdestinatario11" min="-2" max="-2" attributes="0"/>
+                                              <Component id="JLBtelefonedestinatario11" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          </Group>
+                                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                                          <Group type="103" groupAlignment="1" attributes="0">
+                                              <Group type="103" groupAlignment="0" attributes="0">
+                                                  <Component id="JTFtelefonedestinatario11" min="-2" pref="299" max="-2" attributes="0"/>
+                                                  <Component id="JTFnomedestinatario11" min="-2" pref="299" max="-2" attributes="0"/>
+                                                  <Component id="JTFenderecodestinatario11" alignment="0" min="-2" pref="299" max="-2" attributes="0"/>
+                                              </Group>
+                                              <Component id="JBTvoltar11" min="-2" max="-2" attributes="0"/>
+                                          </Group>
+                                      </Group>
+                                      <Component id="JBTpesquisar11" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                              </Group>
+                              <Component id="JPNmercadoria11" min="-2" max="-2" attributes="0"/>
+                          </Group>
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace min="-2" pref="230" max="-2" attributes="0"/>
-                          <Component id="JLBcpf11" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="25" max="-2" attributes="0"/>
+                          <Component id="JLBmotoconnect11" min="-2" pref="239" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
-                          <Component id="JTFnumeroPedido11" min="-2" pref="71" max="-2" attributes="0"/>
-                          <EmptySpace max="32767" attributes="0"/>
-                      </Group>
-                  </Group>
-              </Group>
-              <Group type="102" alignment="0" attributes="0">
-                  <EmptySpace min="-2" pref="65" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="102" attributes="0">
-                          <Group type="103" groupAlignment="1" attributes="0">
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Group type="102" alignment="0" attributes="0">
-                                      <Group type="103" groupAlignment="0" attributes="0">
-                                          <Component id="JLBnomecompleto11" alignment="0" min="-2" max="-2" attributes="0"/>
-                                          <Component id="JLBcep11" alignment="0" min="-2" max="-2" attributes="0"/>
-                                      </Group>
-                                      <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
-                                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                          <Component id="JTFcpf11" pref="308" max="32767" attributes="0"/>
-                                          <Component id="JTFnomecompleto11" max="32767" attributes="0"/>
-                                      </Group>
-                                  </Group>
-                                  <Group type="102" attributes="0">
-                                      <Group type="103" groupAlignment="0" attributes="0">
-                                          <Group type="102" attributes="0">
-                                              <Component id="JLBcidadedestino11" min="-2" max="-2" attributes="0"/>
-                                              <EmptySpace type="separate" max="-2" attributes="0"/>
-                                              <Component id="JTFcidadedestino11" min="-2" pref="308" max="-2" attributes="0"/>
-                                          </Group>
-                                          <Group type="102" attributes="0">
-                                              <Group type="103" groupAlignment="1" attributes="0">
-                                                  <Group type="102" attributes="0">
-                                                      <Component id="JPNcliente11" min="-2" max="-2" attributes="0"/>
-                                                      <EmptySpace min="-2" pref="52" max="-2" attributes="0"/>
-                                                  </Group>
-                                                  <Component id="JLBvalor11" alignment="0" min="-2" max="-2" attributes="0"/>
-                                              </Group>
-                                              <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
-                                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                                  <Component id="JTFcarga11" max="32767" attributes="0"/>
-                                                  <Component id="JTFvalor11" pref="308" max="32767" attributes="0"/>
-                                              </Group>
-                                          </Group>
-                                          <Group type="102" alignment="0" attributes="0">
-                                              <Group type="103" groupAlignment="0" attributes="0">
-                                                  <Component id="JLBenderecocompleto11" alignment="0" min="-2" max="-2" attributes="0"/>
-                                                  <Component id="JLBtelefone11" alignment="0" min="-2" max="-2" attributes="0"/>
-                                                  <Component id="JLBemail11" alignment="0" min="-2" max="-2" attributes="0"/>
-                                                  <Component id="JLBpeso11" alignment="0" min="-2" max="-2" attributes="0"/>
-                                                  <Component id="JLBnumerodopedido11" alignment="0" min="-2" max="-2" attributes="0"/>
-                                              </Group>
-                                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                              <Group type="103" groupAlignment="0" attributes="0">
-                                                  <Component id="JTFcidadeorigem11" min="-2" pref="308" max="-2" attributes="0"/>
-                                                  <Component id="JTFpeso11" min="-2" pref="308" max="-2" attributes="0"/>
-                                                  <Component id="JTFemail11" min="-2" pref="308" max="-2" attributes="0"/>
-                                                  <Component id="JTFtelefone11" min="-2" pref="308" max="-2" attributes="0"/>
-                                                  <Component id="JTFenderecocompleto11" min="-2" pref="308" max="-2" attributes="0"/>
-                                              </Group>
-                                          </Group>
-                                          <Component id="JBTmenu11" min="-2" max="-2" attributes="0"/>
-                                      </Group>
-                                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                                  </Group>
-                              </Group>
-                              <Group type="102" alignment="1" attributes="0">
-                                  <Component id="JLBcarga11" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace min="-2" pref="377" max="-2" attributes="0"/>
-                              </Group>
-                          </Group>
-                          <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="JPNdestinatario11" min="-2" max="-2" attributes="0"/>
                               <Group type="102" alignment="0" attributes="0">
-                                  <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="JLBenderecodestinatario11" alignment="0" min="-2" max="-2" attributes="0"/>
-                                      <Component id="JLBdestinatario11" min="-2" max="-2" attributes="0"/>
-                                      <Component id="JLBtelefonedestinatario11" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  </Group>
-                                  <EmptySpace type="separate" max="-2" attributes="0"/>
-                                  <Group type="103" groupAlignment="1" attributes="0">
-                                      <Group type="103" groupAlignment="0" attributes="0">
-                                          <Component id="JTFtelefonedestinatario11" min="-2" pref="299" max="-2" attributes="0"/>
-                                          <Component id="JTFnomedestinatario11" min="-2" pref="299" max="-2" attributes="0"/>
-                                          <Component id="JTFenderecodestinatario11" alignment="0" min="-2" pref="299" max="-2" attributes="0"/>
-                                      </Group>
-                                      <Component id="JBTvoltar11" min="-2" max="-2" attributes="0"/>
-                                  </Group>
+                                  <Component id="JPNdetalhesdeencomenda11" pref="687" max="32767" attributes="0"/>
+                                  <EmptySpace min="-2" pref="8" max="-2" attributes="0"/>
                               </Group>
-                              <Component id="JBTpesquisar11" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Group type="102" alignment="0" attributes="0">
+                                  <EmptySpace min="-2" pref="242" max="-2" attributes="0"/>
+                                  <Component id="JLBcpf11" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Component id="JTFnumeroPedido11" min="-2" pref="71" max="-2" attributes="0"/>
+                              </Group>
                           </Group>
                       </Group>
-                      <Component id="JPNmercadoria11" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace pref="35" max="32767" attributes="0"/>
               </Group>
@@ -301,7 +302,7 @@
         <Component class="javax.swing.JLabel" name="JLBmotoconnect11">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="2" name="C:\Users\PC\Desktop\MotoConnect_Projeto\Giampaolo_Projeto_Technight\MotoConnect\src\main\java\imagem_login\motoqueiro.png"/>
+              <Image iconType="2" name="D:\Users\grpereira\Desktop\Giampaolo_Projeto_TechNight\Giampaolo_Projeto_Technight\Giampaolo_Projeto_Technight\MotoConnect\src\main\java\imagem_login\motoqueiro.png"/>
             </Property>
           </Properties>
         </Component>

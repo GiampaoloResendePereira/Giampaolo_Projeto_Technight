@@ -136,7 +136,7 @@
         <Component class="javax.swing.JLabel" name="JLBmotoconnect13">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="2" name="C:\Users\PC\Desktop\MotoConnect_Projeto\Giampaolo_Projeto_Technight\MotoConnect\src\main\java\imagem_login\motoqueiro.png"/>
+              <Image iconType="2" name="D:\Users\grpereira\Desktop\Giampaolo_Projeto_TechNight\Giampaolo_Projeto_Technight\Giampaolo_Projeto_Technight\MotoConnect\src\main\java\imagem_login\motoqueiro.png"/>
             </Property>
           </Properties>
         </Component>
@@ -180,7 +180,7 @@
                           <Component id="JTFcargo13" alignment="0" max="32767" attributes="0"/>
                           <Component id="JTFnomecompleto13" alignment="0" max="32767" attributes="0"/>
                       </Group>
-                      <EmptySpace pref="24" max="32767" attributes="0"/>
+                      <EmptySpace pref="23" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -202,7 +202,7 @@
                           <Component id="JLBassunto13" min="-2" max="-2" attributes="0"/>
                           <Component id="JSPassunto13" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace pref="133" max="32767" attributes="0"/>
+                      <EmptySpace pref="143" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>

@@ -91,7 +91,7 @@ public class Tela_Alertas extends javax.swing.JFrame {
                 .addContainerGap(10, Short.MAX_VALUE))
         );
 
-        JLBmotoconnect13.setIcon(new javax.swing.ImageIcon("C:\\Users\\PC\\Desktop\\MotoConnect_Projeto\\Giampaolo_Projeto_Technight\\MotoConnect\\src\\main\\java\\imagem_login\\motoqueiro.png")); // NOI18N
+        JLBmotoconnect13.setIcon(new javax.swing.ImageIcon("D:\\Users\\grpereira\\Desktop\\Giampaolo_Projeto_TechNight\\Giampaolo_Projeto_Technight\\Giampaolo_Projeto_Technight\\MotoConnect\\src\\main\\java\\imagem_login\\motoqueiro.png")); // NOI18N
 
         JBTvoltar13.setBackground(new java.awt.Color(255, 51, 51));
         JBTvoltar13.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
@@ -164,7 +164,7 @@ public class Tela_Alertas extends javax.swing.JFrame {
                     .addComponent(JSPassunto13, javax.swing.GroupLayout.DEFAULT_SIZE, 768, Short.MAX_VALUE)
                     .addComponent(JTFcargo13)
                     .addComponent(JTFnomecompleto13))
-                .addContainerGap(24, Short.MAX_VALUE))
+                .addContainerGap(23, Short.MAX_VALUE))
         );
         JPNazulclaro13Layout.setVerticalGroup(
             JPNazulclaro13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)

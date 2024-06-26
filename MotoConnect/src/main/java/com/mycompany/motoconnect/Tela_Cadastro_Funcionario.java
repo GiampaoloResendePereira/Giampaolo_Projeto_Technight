@@ -75,14 +75,14 @@ public class Tela_Cadastro_Funcionario extends javax.swing.JFrame {
         JLBou3.setForeground(new java.awt.Color(255, 255, 255));
         JLBou3.setText("ou");
 
-        JLBmotoconnect3.setIcon(new javax.swing.ImageIcon("C:\\Users\\PC\\Desktop\\MotoConnect_Projeto\\Giampaolo_Projeto_Technight\\MotoConnect\\src\\main\\java\\imagem_login\\motoqueiro.png")); // NOI18N
+        JLBmotoconnect3.setIcon(new javax.swing.ImageIcon("D:\\Users\\grpereira\\Desktop\\Giampaolo_Projeto_TechNight\\Giampaolo_Projeto_Technight\\Giampaolo_Projeto_Technight\\MotoConnect\\src\\main\\java\\imagem_login\\motoqueiro.png")); // NOI18N
 
         javax.swing.GroupLayout JPNazulclaro3Layout = new javax.swing.GroupLayout(JPNazulclaro3);
         JPNazulclaro3.setLayout(JPNazulclaro3Layout);
         JPNazulclaro3Layout.setHorizontalGroup(
             JPNazulclaro3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, JPNazulclaro3Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(JPNazulclaro3Layout.createSequentialGroup()
+                .addContainerGap(89, Short.MAX_VALUE)
                 .addGroup(JPNazulclaro3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, JPNazulclaro3Layout.createSequentialGroup()
                         .addGroup(JPNazulclaro3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
@@ -94,11 +94,10 @@ public class Tela_Cadastro_Funcionario extends javax.swing.JFrame {
                         .addGap(188, 188, 188))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, JPNazulclaro3Layout.createSequentialGroup()
                         .addComponent(JLBcadastrodefuncionario3)
-                        .addGap(126, 126, 126))))
-            .addGroup(JPNazulclaro3Layout.createSequentialGroup()
-                .addGap(76, 76, 76)
-                .addComponent(JLBmotoconnect3, javax.swing.GroupLayout.PREFERRED_SIZE, 232, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 94, Short.MAX_VALUE))
+                        .addGap(126, 126, 126))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, JPNazulclaro3Layout.createSequentialGroup()
+                        .addComponent(JLBmotoconnect3, javax.swing.GroupLayout.PREFERRED_SIZE, 232, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(81, 81, 81))))
         );
         JPNazulclaro3Layout.setVerticalGroup(
             JPNazulclaro3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)

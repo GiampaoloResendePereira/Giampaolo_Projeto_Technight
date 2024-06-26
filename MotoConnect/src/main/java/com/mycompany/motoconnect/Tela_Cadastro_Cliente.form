@@ -143,7 +143,7 @@
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" attributes="0">
                       <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
-                      <Component id="JLBcadastrodecliente8" max="32767" attributes="0"/>
+                      <Component id="JLBcadastrodecliente8" pref="115" max="32767" attributes="0"/>
                       <EmptySpace min="-2" pref="21" max="-2" attributes="0"/>
                   </Group>
               </Group>
@@ -186,7 +186,7 @@
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="1" attributes="0">
-                      <EmptySpace pref="273" max="32767" attributes="0"/>
+                      <EmptySpace pref="276" max="32767" attributes="0"/>
                       <Component id="JLBinformacoesdocliente8" min="-2" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="259" max="-2" attributes="0"/>
                   </Group>
@@ -578,7 +578,7 @@
         <Component class="javax.swing.JLabel" name="JLBmotoconnect8">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="2" name="C:\Users\PC\Desktop\MotoConnect_Projeto\Giampaolo_Projeto_Technight\MotoConnect\src\main\java\imagem_login\motoqueiro.png"/>
+              <Image iconType="2" name="D:\Users\grpereira\Desktop\Giampaolo_Projeto_TechNight\Giampaolo_Projeto_Technight\Giampaolo_Projeto_Technight\MotoConnect\src\main\java\imagem_login\motoqueiro.png"/>
             </Property>
           </Properties>
         </Component>

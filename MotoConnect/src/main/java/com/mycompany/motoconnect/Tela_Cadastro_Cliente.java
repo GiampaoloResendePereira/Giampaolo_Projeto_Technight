@@ -103,7 +103,7 @@ public class Tela_Cadastro_Cliente extends javax.swing.JFrame {
             JPNcadastrodecliente8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(JPNcadastrodecliente8Layout.createSequentialGroup()
                 .addGap(27, 27, 27)
-                .addComponent(JLBcadastrodecliente8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(JLBcadastrodecliente8, javax.swing.GroupLayout.DEFAULT_SIZE, 115, Short.MAX_VALUE)
                 .addGap(21, 21, 21))
         );
         JPNcadastrodecliente8Layout.setVerticalGroup(
@@ -126,7 +126,7 @@ public class Tela_Cadastro_Cliente extends javax.swing.JFrame {
         JPNinformacoesdocliente8Layout.setHorizontalGroup(
             JPNinformacoesdocliente8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, JPNinformacoesdocliente8Layout.createSequentialGroup()
-                .addContainerGap(273, Short.MAX_VALUE)
+                .addContainerGap(276, Short.MAX_VALUE)
                 .addComponent(JLBinformacoesdocliente8)
                 .addGap(259, 259, 259))
         );
@@ -332,7 +332,7 @@ public class Tela_Cadastro_Cliente extends javax.swing.JFrame {
         JLBpesquisar8.setForeground(new java.awt.Color(255, 255, 255));
         JLBpesquisar8.setText("Pesquisa Cliente:");
 
-        JLBmotoconnect8.setIcon(new javax.swing.ImageIcon("C:\\Users\\PC\\Desktop\\MotoConnect_Projeto\\Giampaolo_Projeto_Technight\\MotoConnect\\src\\main\\java\\imagem_login\\motoqueiro.png")); // NOI18N
+        JLBmotoconnect8.setIcon(new javax.swing.ImageIcon("D:\\Users\\grpereira\\Desktop\\Giampaolo_Projeto_TechNight\\Giampaolo_Projeto_Technight\\Giampaolo_Projeto_Technight\\MotoConnect\\src\\main\\java\\imagem_login\\motoqueiro.png")); // NOI18N
 
         JTBcontinuar8.setBackground(new java.awt.Color(255, 51, 51));
         JTBcontinuar8.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N

@@ -47,7 +47,7 @@
         <Component class="javax.swing.JButton" name="JBTcadastrodefubcionario2">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="2" name="C:\Users\PC\Desktop\MotoConnect_Projeto\Giampaolo_Projeto_Technight\MotoConnect\src\main\java\imagem_login\Cadastro de Funcionario.png"/>
+              <Image iconType="2" name="D:\Users\grpereira\Desktop\Giampaolo_Projeto_TechNight\Giampaolo_Projeto_Technight\Giampaolo_Projeto_Technight\MotoConnect\src\main\java\imagem_login\Cadastro de Funcionario.png"/>
             </Property>
             <Property name="contentAreaFilled" type="boolean" value="false"/>
             <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
@@ -72,7 +72,7 @@
         <Component class="javax.swing.JButton" name="JBTregistrocalculodefrete2">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="2" name="C:\Users\PC\Desktop\MotoConnect_Projeto\Giampaolo_Projeto_Technight\MotoConnect\src\main\java\imagem_login\Calculo de frete.png"/>
+              <Image iconType="2" name="D:\Users\grpereira\Desktop\Giampaolo_Projeto_TechNight\Giampaolo_Projeto_Technight\Giampaolo_Projeto_Technight\MotoConnect\src\main\java\imagem_login\Calculo de frete.png"/>
             </Property>
             <Property name="contentAreaFilled" type="boolean" value="false"/>
             <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
@@ -97,7 +97,7 @@
         <Component class="javax.swing.JButton" name="JBTobservacoesecomentarios2">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="2" name="C:\Users\PC\Desktop\MotoConnect_Projeto\Giampaolo_Projeto_Technight\MotoConnect\src\main\java\imagem_login\Observa&#xe7;&#xf5;es e Comentarios.png"/>
+              <Image iconType="2" name="D:\Users\grpereira\Desktop\Giampaolo_Projeto_TechNight\Giampaolo_Projeto_Technight\Giampaolo_Projeto_Technight\MotoConnect\src\main\java\imagem_login\Observa&#xe7;&#xf5;es e Comentarios.png"/>
             </Property>
             <Property name="contentAreaFilled" type="boolean" value="false"/>
           </Properties>
@@ -113,7 +113,7 @@
         <Component class="javax.swing.JButton" name="JBTalertas2">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="2" name="C:\Users\PC\Desktop\MotoConnect_Projeto\Giampaolo_Projeto_Technight\MotoConnect\src\main\java\imagem_login\Alertas.png"/>
+              <Image iconType="2" name="D:\Users\grpereira\Desktop\Giampaolo_Projeto_TechNight\Giampaolo_Projeto_Technight\Giampaolo_Projeto_Technight\MotoConnect\src\main\java\imagem_login\Alertas.png"/>
             </Property>
             <Property name="contentAreaFilled" type="boolean" value="false"/>
           </Properties>
@@ -129,7 +129,7 @@
         <Component class="javax.swing.JButton" name="JBTcadastrodecliente2">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="2" name="C:\Users\PC\Desktop\MotoConnect_Projeto\Giampaolo_Projeto_Technight\MotoConnect\src\main\java\imagem_login\Cadastro de Cliente.png"/>
+              <Image iconType="2" name="D:\Users\grpereira\Desktop\Giampaolo_Projeto_TechNight\Giampaolo_Projeto_Technight\Giampaolo_Projeto_Technight\MotoConnect\src\main\java\imagem_login\Cadastro de Cliente.png"/>
             </Property>
             <Property name="contentAreaFilled" type="boolean" value="false"/>
             <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
@@ -201,7 +201,7 @@
         <Component class="javax.swing.JButton" name="JTBlistaencomendas2">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="2" name="C:\Users\PC\Desktop\MotoConnect_Projeto\Giampaolo_Projeto_Technight\MotoConnect\src\main\java\imagem_login\Lista_encomendas.png"/>
+              <Image iconType="2" name="D:\Users\grpereira\Desktop\Giampaolo_Projeto_TechNight\Giampaolo_Projeto_Technight\Giampaolo_Projeto_Technight\MotoConnect\src\main\java\imagem_login\Lista_encomendas.png"/>
             </Property>
             <Property name="contentAreaFilled" type="boolean" value="false"/>
           </Properties>
@@ -217,7 +217,7 @@
         <Component class="javax.swing.JLabel" name="jLabel1">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="2" name="C:\Users\PC\Desktop\MotoConnect_Projeto\Giampaolo_Projeto_Technight\MotoConnect\src\main\java\imagem_login\motoqueiro.png"/>
+              <Image iconType="2" name="D:\Users\grpereira\Desktop\Giampaolo_Projeto_TechNight\Giampaolo_Projeto_Technight\Giampaolo_Projeto_Technight\MotoConnect\src\main\java\imagem_login\motoqueiro.png"/>
             </Property>
           </Properties>
           <Constraints>
@@ -296,7 +296,7 @@
         <Component class="javax.swing.JLabel" name="JLBsair2">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="2" name="C:\Users\PC\Desktop\MotoConnect_Projeto\Giampaolo_Projeto_Technight\MotoConnect\src\main\java\imagem_login\Sair.png"/>
+              <Image iconType="2" name="D:\Users\grpereira\Desktop\Giampaolo_Projeto_TechNight\Giampaolo_Projeto_Technight\Giampaolo_Projeto_Technight\MotoConnect\src\main\java\imagem_login\Sair.png"/>
             </Property>
           </Properties>
           <Constraints>

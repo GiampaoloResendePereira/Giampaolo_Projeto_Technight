@@ -67,7 +67,7 @@ public class Tela_Informacoes_Entregador extends javax.swing.JFrame {
         JLBinformacoesdoentregador5 = new javax.swing.JLabel();
         JBTcancelar5 = new javax.swing.JButton();
         JBTsalvar5 = new javax.swing.JButton();
-        jLabel1 = new javax.swing.JLabel();
+        JLBmotoconnect5 = new javax.swing.JLabel();
         JBTcontinuar5 = new javax.swing.JButton();
         JTBlimpar5 = new javax.swing.JButton();
 
@@ -338,7 +338,7 @@ public class Tela_Informacoes_Entregador extends javax.swing.JFrame {
             }
         });
 
-        jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\PC\\Desktop\\MotoConnect_Projeto\\Giampaolo_Projeto_Technight\\MotoConnect\\src\\main\\java\\imagem_login\\motoqueiro.png")); // NOI18N
+        JLBmotoconnect5.setIcon(new javax.swing.ImageIcon("D:\\Users\\grpereira\\Desktop\\Giampaolo_Projeto_TechNight\\Giampaolo_Projeto_Technight\\Giampaolo_Projeto_Technight\\MotoConnect\\src\\main\\java\\imagem_login\\motoqueiro.png")); // NOI18N
 
         JBTcontinuar5.setBackground(new java.awt.Color(255, 51, 51));
         JBTcontinuar5.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
@@ -371,7 +371,7 @@ public class Tela_Informacoes_Entregador extends javax.swing.JFrame {
                         .addComponent(JPNcadastrodeentregador5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(85, 85, 85))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, JPNfundo5Layout.createSequentialGroup()
-                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 234, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(JLBmotoconnect5, javax.swing.GroupLayout.PREFERRED_SIZE, 234, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(50, 50, 50)))
                 .addGroup(JPNfundo5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(JPNinformacoesdoentregador5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -393,7 +393,7 @@ public class Tela_Informacoes_Entregador extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addGroup(JPNfundo5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(JPNfundo5Layout.createSequentialGroup()
-                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(JLBmotoconnect5, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(JPNcadastrodeentregador5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(JPNazulclaro5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -604,6 +604,7 @@ public class Tela_Informacoes_Entregador extends javax.swing.JFrame {
     private javax.swing.JLabel JLBestado5;
     private javax.swing.JLabel JLBimagemdecnh5;
     private javax.swing.JLabel JLBinformacoesdoentregador5;
+    private javax.swing.JLabel JLBmotoconnect5;
     private javax.swing.JLabel JLBnome5;
     private javax.swing.JLabel JLBnumero5;
     private javax.swing.JLabel JLBrua5;
@@ -627,6 +628,5 @@ public class Tela_Informacoes_Entregador extends javax.swing.JFrame {
     private javax.swing.JTextField JTFsenha5;
     private javax.swing.JTextField JTFsobrenome5;
     private javax.swing.JTextField JTFtelefone5;
-    private javax.swing.JLabel jLabel1;
     // End of variables declaration//GEN-END:variables
 }

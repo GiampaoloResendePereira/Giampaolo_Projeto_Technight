@@ -77,7 +77,7 @@ public class Tela_Observacoes_Comentarioes extends javax.swing.JFrame {
                 .addContainerGap(10, Short.MAX_VALUE))
         );
 
-        JLBmotoconnect12.setIcon(new javax.swing.ImageIcon("C:\\Users\\PC\\Desktop\\MotoConnect_Projeto\\Giampaolo_Projeto_Technight\\MotoConnect\\src\\main\\java\\imagem_login\\motoqueiro.png")); // NOI18N
+        JLBmotoconnect12.setIcon(new javax.swing.ImageIcon("D:\\Users\\grpereira\\Desktop\\Giampaolo_Projeto_TechNight\\Giampaolo_Projeto_Technight\\Giampaolo_Projeto_Technight\\MotoConnect\\src\\main\\java\\imagem_login\\motoqueiro.png")); // NOI18N
 
         JBTvoltar12.setBackground(new java.awt.Color(255, 51, 51));
         JBTvoltar12.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N

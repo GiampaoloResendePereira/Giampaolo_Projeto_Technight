@@ -173,7 +173,7 @@ public class Tela_Lista_Encomendas extends javax.swing.JFrame {
             .addGroup(JPNlista10Layout.createSequentialGroup()
                 .addGap(267, 267, 267)
                 .addComponent(JLBlista10)
-                .addContainerGap(259, Short.MAX_VALUE))
+                .addContainerGap(262, Short.MAX_VALUE))
         );
         JPNlista10Layout.setVerticalGroup(
             JPNlista10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -280,7 +280,7 @@ public class Tela_Lista_Encomendas extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        JLBmotoconnect10.setIcon(new javax.swing.ImageIcon("C:\\Users\\PC\\Desktop\\MotoConnect_Projeto\\Giampaolo_Projeto_Technight\\MotoConnect\\src\\main\\java\\imagem_login\\motoqueiro.png")); // NOI18N
+        JLBmotoconnect10.setIcon(new javax.swing.ImageIcon("D:\\Users\\grpereira\\Desktop\\Giampaolo_Projeto_TechNight\\Giampaolo_Projeto_Technight\\Giampaolo_Projeto_Technight\\MotoConnect\\src\\main\\java\\imagem_login\\motoqueiro.png")); // NOI18N
 
         JTFnumero10.setBackground(new java.awt.Color(204, 204, 204));
 

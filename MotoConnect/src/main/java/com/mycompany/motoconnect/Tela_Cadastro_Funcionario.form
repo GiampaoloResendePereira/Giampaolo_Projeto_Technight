@@ -90,8 +90,8 @@
           <Layout>
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" alignment="1" attributes="0">
-                      <EmptySpace max="32767" attributes="0"/>
+                  <Group type="102" attributes="0">
+                      <EmptySpace pref="89" max="32767" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" alignment="1" attributes="0">
                               <Group type="103" groupAlignment="1" attributes="0">
@@ -108,12 +108,11 @@
                               <Component id="JLBcadastrodefuncionario3" min="-2" max="-2" attributes="0"/>
                               <EmptySpace min="-2" pref="126" max="-2" attributes="0"/>
                           </Group>
+                          <Group type="102" alignment="1" attributes="0">
+                              <Component id="JLBmotoconnect3" min="-2" pref="232" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="81" max="-2" attributes="0"/>
+                          </Group>
                       </Group>
-                  </Group>
-                  <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="76" max="-2" attributes="0"/>
-                      <Component id="JLBmotoconnect3" min="-2" pref="232" max="-2" attributes="0"/>
-                      <EmptySpace min="0" pref="94" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -207,7 +206,7 @@
             <Component class="javax.swing.JLabel" name="JLBmotoconnect3">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="2" name="C:\Users\PC\Desktop\MotoConnect_Projeto\Giampaolo_Projeto_Technight\MotoConnect\src\main\java\imagem_login\motoqueiro.png"/>
+                  <Image iconType="2" name="D:\Users\grpereira\Desktop\Giampaolo_Projeto_TechNight\Giampaolo_Projeto_Technight\Giampaolo_Projeto_Technight\MotoConnect\src\main\java\imagem_login\motoqueiro.png"/>
                 </Property>
               </Properties>
             </Component>

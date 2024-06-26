@@ -124,7 +124,7 @@ public class Tela_Informacoes_Destinatario extends javax.swing.JFrame {
             JPNcadastrodecliente9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(JPNcadastrodecliente9Layout.createSequentialGroup()
                 .addGap(23, 23, 23)
-                .addComponent(JLBcadastrodecliente9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(JLBcadastrodecliente9, javax.swing.GroupLayout.DEFAULT_SIZE, 115, Short.MAX_VALUE)
                 .addGap(25, 25, 25))
         );
         JPNcadastrodecliente9Layout.setVerticalGroup(
@@ -149,7 +149,7 @@ public class Tela_Informacoes_Destinatario extends javax.swing.JFrame {
             .addGroup(JPNinformacoesdodestinatario9Layout.createSequentialGroup()
                 .addGap(276, 276, 276)
                 .addComponent(JLBinformacoesdodestinatario9)
-                .addContainerGap(258, Short.MAX_VALUE))
+                .addContainerGap(261, Short.MAX_VALUE))
         );
         JPNinformacoesdodestinatario9Layout.setVerticalGroup(
             JPNinformacoesdodestinatario9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -173,7 +173,7 @@ public class Tela_Informacoes_Destinatario extends javax.swing.JFrame {
             .addGroup(JPNtiposdecargas9Layout.createSequentialGroup()
                 .addGap(317, 317, 317)
                 .addComponent(JLBtiposdecargas9)
-                .addContainerGap(294, Short.MAX_VALUE))
+                .addContainerGap(296, Short.MAX_VALUE))
         );
         JPNtiposdecargas9Layout.setVerticalGroup(
             JPNtiposdecargas9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -316,7 +316,7 @@ public class Tela_Informacoes_Destinatario extends javax.swing.JFrame {
             }
         });
 
-        jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\PC\\Desktop\\MotoConnect_Projeto\\Giampaolo_Projeto_Technight\\MotoConnect\\src\\main\\java\\imagem_login\\motoqueiro.png")); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon("D:\\Users\\grpereira\\Desktop\\Giampaolo_Projeto_TechNight\\Giampaolo_Projeto_Technight\\Giampaolo_Projeto_Technight\\MotoConnect\\src\\main\\java\\imagem_login\\motoqueiro.png")); // NOI18N
 
         javax.swing.GroupLayout JPNfundo9Layout = new javax.swing.GroupLayout(JPNfundo9);
         JPNfundo9.setLayout(JPNfundo9Layout);
